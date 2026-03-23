@@ -122,8 +122,8 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
           />
         </svg>
 
-        {/* Center text */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
+        {/* Center text — only value+suffix, centered */}
+        <div className="absolute inset-0 flex items-center justify-center">
           <span
             ref={numberRef}
             className="text-3xl font-bold text-white"
@@ -131,12 +131,13 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
           >
             0{suffix}
           </span>
-          <span className="text-xs text-white/60">{label}</span>
         </div>
       </div>
 
-      {/* Description below circle */}
-      <p className="mt-6 max-w-xs text-center text-sm text-white/60">
+      {/* Label below circle */}
+      <span className="mt-4 text-sm font-medium text-white/80">{label}</span>
+      {/* Description below label */}
+      <p className="mt-3 max-w-xs text-center text-sm text-white/60">
         {description}
       </p>
     </div>

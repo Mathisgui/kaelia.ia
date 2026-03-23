@@ -9,7 +9,7 @@ import StatsSection from "@/components/stats/StatsSection";
 import ProcessSection from "@/components/process/ProcessSection";
 import WhySection from "@/components/why/WhySection";
 import CTASection from "@/components/cta/CTASection";
-import TechnologySection from "@/components/technology/TechnologySection";
+
 import ContactSection from "@/components/contact/ContactSection";
 import Footer from "@/components/footer/Footer";
 import AmbientSound from "@/components/ui/AmbientSound";
@@ -36,7 +36,6 @@ export default function Home() {
           <ProcessSection />
           <WhySection />
           <CTASection />
-          <TechnologySection />
           <ContactSection />
         </main>
         <Footer />

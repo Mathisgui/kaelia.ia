@@ -1,11 +1,15 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { content } from "@/content/fr";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,7 +19,6 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -29,54 +32,65 @@ const Navbar: React.FC = () => {
 
   const handleNavClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      // Page links (not anchors) — let browser navigate normally
-      if (!href.startsWith("#")) {
-        setMobileOpen(false);
-        return;
-      }
-      e.preventDefault();
       setMobileOpen(false);
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
+      if (!href.startsWith("#")) return;
+
+      if (isHome) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        e.preventDefault();
+        window.location.href = `/${href}`;
       }
     },
-    []
+    [isHome]
   );
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          scrolled
-            ? "backdrop-blur-[12px] bg-bg/80 border-b border-white/5"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-          {/* Logo */}
+      <nav className="fixed top-0 left-0 right-0 z-40 h-20 flex items-center">
+        <div className="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+          {/* Logo — always visible, no background */}
           <a
-            href="#"
+            href="/"
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              if (isHome) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
             }}
-            className="text-white font-bold text-lg tracking-[0.2em] uppercase select-none"
+            className="flex items-center select-none shrink-0 relative z-10"
           >
-            {content.brand}
+            <Image
+              src="/logo-kaelia.png"
+              alt="Kael'IA"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop links — pill background only around these */}
+          <div
+            className={`hidden md:flex items-center gap-8 transition-all duration-500 ${
+              scrolled
+                ? "bg-[#0a0a12]/90 backdrop-blur-xl border border-white/[0.06] rounded-full px-8 py-2.5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+                : "bg-transparent px-0 py-0 border border-transparent"
+            }`}
+          >
             {content.nav.links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="group relative text-sm uppercase tracking-wider text-white/60 hover:text-white transition-colors duration-300"
+                className="group relative text-sm uppercase tracking-wider bg-gradient-to-r from-[#a78bfa] to-[#c084fc] bg-clip-text text-transparent transition-all duration-300 hover:from-[#c4b5fd] hover:to-[#e9d5ff] hover:drop-shadow-[0_0_12px_rgba(167,139,250,0.6)] whitespace-nowrap"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
@@ -89,17 +103,17 @@ const Navbar: React.FC = () => {
             aria-label="Menu"
           >
             <span
-              className={`block w-6 h-[1.5px] bg-white transition-all duration-300 origin-center ${
+              className={`block w-6 h-[1.5px] bg-[#a78bfa] transition-all duration-300 origin-center ${
                 mobileOpen ? "rotate-45 translate-y-[6.5px]" : ""
               }`}
             />
             <span
-              className={`block w-6 h-[1.5px] bg-white transition-all duration-300 ${
+              className={`block w-6 h-[1.5px] bg-[#a78bfa] transition-all duration-300 ${
                 mobileOpen ? "opacity-0 scale-x-0" : ""
               }`}
             />
             <span
-              className={`block w-6 h-[1.5px] bg-white transition-all duration-300 origin-center ${
+              className={`block w-6 h-[1.5px] bg-[#a78bfa] transition-all duration-300 origin-center ${
                 mobileOpen ? "-rotate-45 -translate-y-[6.5px]" : ""
               }`}
             />
@@ -115,15 +129,13 @@ const Navbar: React.FC = () => {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-bg/95 backdrop-blur-xl"
+          className="absolute inset-0 bg-[#0a0a12]/95 backdrop-blur-xl"
           onClick={() => setMobileOpen(false)}
         />
 
-        {/* Panel */}
         <div
-          className={`absolute top-0 right-0 h-full w-[75%] max-w-xs bg-bg-light/95 backdrop-blur-xl border-l border-white/10 transition-transform duration-500 ease-out ${
+          className={`absolute top-0 right-0 h-full w-[75%] max-w-xs bg-[#0e0e1a]/95 backdrop-blur-xl border-l border-white/10 transition-transform duration-500 ease-out ${
             mobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -133,7 +145,7 @@ const Navbar: React.FC = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-lg uppercase tracking-wider text-white/70 hover:text-accent transition-colors duration-300"
+                className="text-lg uppercase tracking-wider text-[#a78bfa]/80 hover:text-[#c4b5fd] transition-colors duration-300"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
                 {link.label}

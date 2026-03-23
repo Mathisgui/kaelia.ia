@@ -216,9 +216,9 @@ function shapeNeural(i: number, t: number): [number, number, number] {
 }
 
 /* ============ SHAPE SEQUENCE ============ */
-// 7 shapes spread over scroll 0→1 with transitions
-// Order: organic sphere → cube → robot → explosion → circuit → DNA → galaxy → neural
-const SHAPES = [shapeExplosion, shapeCube, shapeRobot, shapeCircuit, shapeDNA, shapeGalaxy, shapeNeural, shapeExplosion];
+// 8 shapes spread over scroll 0→1 with transitions
+// Order: explosion → cube → robot → DNA → circuit(Méthode) → galaxy → neural → explosion
+const SHAPES = [shapeExplosion, shapeCube, shapeRobot, shapeDNA, shapeCircuit, shapeGalaxy, shapeNeural, shapeExplosion];
 const SEGMENT = 1 / SHAPES.length; // ~0.125 each
 
 function getShapeTarget(i: number, scroll: number, t: number): [number, number, number] {
@@ -250,15 +250,19 @@ function Particles() {
   const mouseRef = useRef({ x: 0, y: 0 });
   const scrollRef = useRef(0);
   const targetScrollRef = useRef(0);
+  const introPhaseRef = useRef(0); // 0→1 over ~2.5s, controls orb→explosion
 
   const { positions, velocities } = useMemo(() => {
     const pos = new Float32Array(COUNT * 3);
     const vel = new Float32Array(COUNT * 3);
     for (let i = 0; i < COUNT; i++) {
-      const [x, y, z] = shapeExplosion(i, 0);
-      pos[i * 3] = x;
-      pos[i * 3 + 1] = y;
-      pos[i * 3 + 2] = z;
+      // Start all particles at center (tight orb)
+      const theta = hash(i, 60) * Math.PI * 2;
+      const phi = Math.acos(2 * hash(i, 61) - 1);
+      const r = hash(i, 62) * 0.3; // very tight cluster
+      pos[i * 3] = Math.sin(phi) * Math.cos(theta) * r;
+      pos[i * 3 + 1] = Math.sin(phi) * Math.sin(theta) * r;
+      pos[i * 3 + 2] = Math.cos(phi) * r;
       vel[i * 3] = (hash(i, 50) - 0.5) * 0.0004;
       vel[i * 3 + 1] = (hash(i, 51) - 0.5) * 0.0004;
       vel[i * 3 + 2] = (hash(i, 52) - 0.5) * 0.0004;
@@ -300,28 +304,57 @@ function Particles() {
     const pts = pointsRef.current;
     if (!pts) return;
 
+    // Intro phase: 0→1 over first 2.5 seconds (orb → explode into first shape)
+    const introProgress = Math.min(1, introPhaseRef.current);
+    if (introPhaseRef.current < 1) {
+      introPhaseRef.current += 0.02; // ~1s at 60fps — fast explosion
+    }
+    // Smoothstep for intro
+    const intro = introProgress * introProgress * (3 - 2 * introProgress);
+
     // Smooth scroll + slow auto-drift so shapes & colors stay alive when idle
     scrollRef.current += (targetScrollRef.current - scrollRef.current) * 0.04;
-    const timeDrift = Math.sin(t * 0.12) * 0.06; // gentle oscillation ±6%
+    const timeDrift = Math.sin(t * 0.12) * 0.06;
     const scroll = Math.max(0, Math.min(1, scrollRef.current + timeDrift));
 
     const posAttr = pts.geometry.attributes.position as THREE.BufferAttribute;
     const arr = posAttr.array as Float32Array;
 
+    // During intro: lerp speed is faster, particles move from orb to shape
+    const lerpSpeed = intro < 1 ? 0.015 + intro * 0.03 : 0.025;
+
     // Move particles toward target shape + breathing motion
-    const breathe = Math.sin(t * 0.8) * 0.008; // subtle pulsing
+    const breathe = Math.sin(t * 0.8) * 0.008;
     for (let i = 0; i < COUNT; i++) {
       const i3 = i * 3;
-      const [tx, ty, tz] = getShapeTarget(i, scroll, t);
-      // Gentle outward/inward breathing
+      const [sx, sy, sz] = getShapeTarget(i, scroll, t);
+
+      // During intro, target is a blend from orb center to shape
+      const orbR = (1 - intro) * 0.15;
+      const theta = hash(i, 60) * Math.PI * 2;
+      const phi = Math.acos(2 * hash(i, 61) - 1);
+      const ox = Math.sin(phi) * Math.cos(theta) * orbR;
+      const oy = Math.sin(phi) * Math.sin(theta) * orbR;
+      const oz = Math.cos(phi) * orbR;
+
+      const tx = ox + (sx - ox) * intro;
+      const ty = oy + (sy - oy) * intro;
+      const tz = oz + (sz - oz) * intro;
+
       const bx = arr[i3] * breathe;
       const by = arr[i3 + 1] * breathe;
       const bz = arr[i3 + 2] * breathe;
-      arr[i3] += (tx - arr[i3]) * 0.025 + velocities[i3] + bx;
-      arr[i3 + 1] += (ty - arr[i3 + 1]) * 0.025 + velocities[i3 + 1] + by;
-      arr[i3 + 2] += (tz - arr[i3 + 2]) * 0.025 + velocities[i3 + 2] + bz;
+      arr[i3] += (tx - arr[i3]) * lerpSpeed + velocities[i3] + bx;
+      arr[i3 + 1] += (ty - arr[i3 + 1]) * lerpSpeed + velocities[i3 + 1] + by;
+      arr[i3 + 2] += (tz - arr[i3 + 2]) * lerpSpeed + velocities[i3 + 2] + bz;
     }
     posAttr.needsUpdate = true;
+
+    // Particle glow during intro: bigger & brighter when clustered
+    const ptsMat = pts.material as THREE.PointsMaterial;
+    const introGlow = (1 - intro);
+    ptsMat.size = 0.04 + introGlow * 0.12; // starts big, shrinks to normal
+    ptsMat.opacity = 0.85 + introGlow * 0.15; // starts brighter
 
     // Connections
     const connDist = getConnDist(scroll);
@@ -334,7 +367,6 @@ function Particles() {
     const lb = scrollColor.b;
 
     // Update particle color to match
-    const ptsMat = pts.material as THREE.PointsMaterial;
     ptsMat.color.copy(scrollColor);
 
     for (let i = 0; i < COUNT && lineIdx < MAX_LINES; i += 2) {
@@ -354,7 +386,7 @@ function Particles() {
           linePositions[l6 + 3] = arr[j3];
           linePositions[l6 + 4] = arr[j3 + 1];
           linePositions[l6 + 5] = arr[j3 + 2];
-          const intensity = 0.4;
+          const intensity = 0.2;
           lineColors[l6] = lr * alpha * intensity;
           lineColors[l6 + 1] = lg * alpha * intensity;
           lineColors[l6 + 2] = lb * alpha * intensity;
@@ -370,13 +402,19 @@ function Particles() {
     (lineGeometry.attributes.position as THREE.BufferAttribute).needsUpdate = true;
     (lineGeometry.attributes.color as THREE.BufferAttribute).needsUpdate = true;
 
-    // Camera
-    const cx = mouseRef.current.x * 0.5;
+    // Camera — centered at start, smooth shift left during Value, smooth return at Services
+    // Smooth bell curve for fluid transition
+    const valuePeak = 0.15;
+    const valueWidth = 0.06;
+    const valueDelta = (scroll - valuePeak) / valueWidth;
+    const valueShift = Math.exp(-valueDelta * valueDelta) * 8;
+
+    const cx = mouseRef.current.x * 0.5 + valueShift;
     const cy = mouseRef.current.y * 0.4;
-    camera.position.x += (cx - camera.position.x) * 0.02;
+    camera.position.x += (cx - camera.position.x) * 0.035; // smooth lerp
     camera.position.y += (cy - camera.position.y) * 0.02;
     camera.position.z = 9 + scroll * 2;
-    camera.lookAt(0, 0, 0);
+    camera.lookAt(valueShift * 0.7, 0, 0);
   });
 
   return (
@@ -401,7 +439,7 @@ function Particles() {
         />
       </points>
       <lineSegments ref={linesRef} geometry={lineGeometry}>
-        <lineBasicMaterial vertexColors transparent opacity={0.5} depthWrite={false} />
+        <lineBasicMaterial vertexColors transparent opacity={0.15} depthWrite={false} />
       </lineSegments>
     </>
   );
@@ -412,8 +450,8 @@ export default function HeroScene() {
     <Canvas
       camera={{ position: [0, 0, 9], fov: 60 }}
       dpr={[1, 1.5]}
-      gl={{ antialias: false, alpha: true }}
-      style={{ background: "transparent" }}
+      gl={{ antialias: false, alpha: false }}
+      style={{ background: "#0a0a12" }}
     >
       <fog attach="fog" args={["#0a0a12", 7, 18]} />
       <Particles />

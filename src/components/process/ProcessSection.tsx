@@ -7,6 +7,7 @@ import { ANIMATION } from "@/lib/constants";
 
 const ProcessSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
   const dotsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -17,7 +18,25 @@ const ProcessSection: React.FC = () => {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Animate the vertical timeline line (desktop only)
+      /* Section header fade in */
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+      }
+
       if (line) {
         gsap.fromTo(
           line,
@@ -36,16 +55,17 @@ const ProcessSection: React.FC = () => {
         );
       }
 
-      // Animate each step sequentially
       stepsRef.current.forEach((step, i) => {
         if (!step) return;
+        const fromLeft = i % 2 === 0;
 
         gsap.fromTo(
           step,
-          { opacity: 0, x: 40 },
+          { opacity: 0, x: fromLeft ? -50 : 50, y: 20 },
           {
             opacity: 1,
             x: 0,
+            y: 0,
             duration: ANIMATION.fadeInDuration,
             ease: "power3.out",
             scrollTrigger: {
@@ -57,10 +77,8 @@ const ProcessSection: React.FC = () => {
         );
       });
 
-      // Animate dots
-      dotsRef.current.forEach((dot, i) => {
+      dotsRef.current.forEach((dot) => {
         if (!dot) return;
-
         gsap.fromTo(
           dot,
           { scale: 0, opacity: 0 },
@@ -69,11 +87,7 @@ const ProcessSection: React.FC = () => {
             opacity: 1,
             duration: 0.4,
             ease: "back.out(2)",
-            scrollTrigger: {
-              trigger: dot,
-              start: "top 80%",
-              once: true,
-            },
+            scrollTrigger: { trigger: dot, start: "top 80%", once: true },
           }
         );
       });
@@ -83,68 +97,99 @@ const ProcessSection: React.FC = () => {
   }, []);
 
   return (
-    <section
-      id="methode"
-      ref={sectionRef}
-      className="relative py-40 md:py-56"
-    >
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Section header */}
-        <p className="mb-4 text-center text-sm font-medium uppercase tracking-wider text-[#7c3aed]">
-          {content.process.sectionTitle}
-        </p>
-        <p className="mx-auto mb-20 max-w-2xl text-center text-white/60 leading-relaxed">
-          {content.process.sectionDescription}
-        </p>
+    <section id="methode" ref={sectionRef} className="relative py-40 md:py-56">
+      {/* Violet gradient glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute right-0 top-1/4 h-[500px] w-[400px] rounded-full bg-[#7c3aed]/8 blur-[100px]" />
+        <div className="absolute left-0 bottom-1/4 h-[400px] w-[300px] rounded-full bg-[#5b21b6]/6 blur-[80px]" />
+      </div>
 
-        {/* Desktop: vertical timeline */}
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div ref={headerRef} className="opacity-0">
+          <p className="mb-3 text-center text-sm font-medium uppercase tracking-wider text-[#7c3aed]">
+            Notre méthode
+          </p>
+          <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+            {content.process.sectionTitle}
+          </h2>
+          <p className="mx-auto mb-20 max-w-2xl text-center text-white/50 leading-relaxed">
+            {content.process.sectionDescription}
+          </p>
+        </div>
+
+        {/* Desktop: alternating timeline */}
         <div className="relative hidden md:block">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px">
+          {/* Center vertical line */}
+          <div className="absolute left-1/2 top-0 bottom-0 -translate-x-px w-[2px]">
             <div
               ref={lineRef}
-              className="h-full w-full bg-gradient-to-b from-[#7c3aed] via-[#7c3aed]/60 to-[#7c3aed]/20"
+              className="h-full w-full bg-gradient-to-b from-[#7c3aed] via-[#a78bfa] to-[#7c3aed]/20"
               style={{ transformOrigin: "top center" }}
             />
           </div>
 
-          <div className="flex flex-col gap-16">
-            {content.process.steps.map((step, i) => (
-              <div key={i} className="relative flex items-start gap-16 pl-8">
-                {/* Dot on timeline */}
-                <div
-                  ref={(el) => {
-                    dotsRef.current[i] = el;
-                  }}
-                  className="absolute left-8 top-3 z-10 -translate-x-1/2 h-4 w-4 rounded-full border-2 border-[#7c3aed] bg-[#0a0a12] shadow-[0_0_12px_rgba(124,58,237,0.5)]"
-                />
+          <div className="flex flex-col gap-24">
+            {content.process.steps.map((step, i) => {
+              const isLeft = i % 2 === 0;
 
-                {/* Step content */}
-                <div
-                  ref={(el) => {
-                    stepsRef.current[i] = el;
-                  }}
-                  className="ml-12 flex-1"
-                >
-                  <span className="mb-2 block text-6xl font-bold text-[#7c3aed]/20">
-                    {step.number}
-                  </span>
-                  <h3 className="mb-3 text-2xl font-bold text-white">
-                    {step.title}
-                  </h3>
-                  <p className="mb-2 text-white/70 leading-relaxed">
-                    {step.description}
-                  </p>
-                  <p className="text-white/50 leading-relaxed">
-                    {step.details}
-                  </p>
+              return (
+                <div key={i} className="relative flex items-start">
+                  {/* Dot on center line */}
+                  <div
+                    ref={(el) => { dotsRef.current[i] = el; }}
+                    className="absolute left-1/2 top-6 z-10 -translate-x-1/2 h-5 w-5 rounded-full border-2 border-[#7c3aed] bg-[#0a0a12] shadow-[0_0_20px_rgba(124,58,237,0.6)]"
+                  />
+
+                  {/* Left side content */}
+                  <div className={`w-1/2 ${isLeft ? "pr-16 text-right" : ""}`}>
+                    {isLeft && (
+                      <div
+                        ref={(el) => { stepsRef.current[i] = el; }}
+                      >
+                        <span className="mb-2 block text-6xl font-bold text-[#7c3aed]/15">
+                          {step.number}
+                        </span>
+                        <h3 className="font-serif mb-3 text-2xl font-bold text-white">
+                          {step.title}
+                        </h3>
+                        <p className="mb-2 text-white/70 leading-relaxed">
+                          {step.description}
+                        </p>
+                        <p className="text-white/50 leading-relaxed text-sm">
+                          {step.details}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right side content */}
+                  <div className={`w-1/2 ${!isLeft ? "pl-16" : ""}`}>
+                    {!isLeft && (
+                      <div
+                        ref={(el) => { stepsRef.current[i] = el; }}
+                      >
+                        <span className="mb-2 block text-6xl font-bold text-[#7c3aed]/15">
+                          {step.number}
+                        </span>
+                        <h3 className="font-serif mb-3 text-2xl font-bold text-white">
+                          {step.title}
+                        </h3>
+                        <p className="mb-2 text-white/70 leading-relaxed">
+                          {step.description}
+                        </p>
+                        <p className="text-white/50 leading-relaxed text-sm">
+                          {step.details}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
-        {/* Mobile: simple stacked layout */}
+        {/* Mobile: stacked */}
         <div className="flex flex-col gap-12 md:hidden">
           {content.process.steps.map((step, i) => (
             <div
@@ -154,18 +199,19 @@ const ProcessSection: React.FC = () => {
                   stepsRef.current[i] = el;
                 }
               }}
-              className="relative"
+              className="relative pl-8 border-l-2 border-[#7c3aed]/30"
             >
-              <span className="mb-2 block text-5xl font-bold text-[#7c3aed]/20">
+              <div className="absolute left-0 top-2 -translate-x-[5px] h-3 w-3 rounded-full bg-[#7c3aed] shadow-[0_0_12px_rgba(124,58,237,0.5)]" />
+              <span className="mb-2 block text-5xl font-bold text-[#7c3aed]/15">
                 {step.number}
               </span>
-              <h3 className="mb-3 text-xl font-bold text-white">
+              <h3 className="font-serif mb-3 text-xl font-bold text-white">
                 {step.title}
               </h3>
               <p className="mb-2 text-white/70 leading-relaxed">
                 {step.description}
               </p>
-              <p className="text-white/50 leading-relaxed">
+              <p className="text-white/50 leading-relaxed text-sm">
                 {step.details}
               </p>
             </div>
