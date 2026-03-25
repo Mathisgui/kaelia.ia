@@ -111,20 +111,20 @@ const ServicesSection: React.FC = () => {
 
       cardsRef.current.forEach((card, i) => {
         if (!card) return;
-        const fromLeft = i % 2 === 0;
 
         gsap.fromTo(
           card,
-          { opacity: 0, x: fromLeft ? -60 : 60, scale: 0.97 },
+          { opacity: 0, y: 50, scale: 0.97 },
           {
             opacity: 1,
-            x: 0,
+            y: 0,
             scale: 1,
             duration: ANIMATION.fadeInDuration + 0.1,
+            delay: i * 0.15,
             ease: "power3.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 80%",
+              start: "top 85%",
               once: true,
             },
           }
@@ -168,7 +168,7 @@ const ServicesSection: React.FC = () => {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div ref={headerRef} className="opacity-0">
-          <p className="mb-3 text-center text-sm font-medium uppercase tracking-wider text-[#7c3aed]">
+          <p className="mb-3 text-center text-sm font-medium uppercase tracking-wider text-[#c084fc]">
             Nos expertises
           </p>
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
@@ -179,68 +179,57 @@ const ServicesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-20">
-          {content.services.items.map((item, i) => {
-            const isEven = i % 2 === 1;
-            // Alternate card shapes
-            const shapes = [
-              "rounded-[2rem] rounded-tr-[4rem]",
-              "rounded-[2rem] rounded-bl-[4rem]",
-              "rounded-[2rem] rounded-tl-[4rem]",
-            ];
+        {/* 2 + 1 grid layout with liquid-glass cards */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 max-w-6xl mx-auto">
+          {content.services.items.map((item, i) => (
+            <div
+              key={i}
+              ref={(el) => { cardsRef.current[i] = el; }}
+              className={`group relative ${i === 2 ? "md:col-span-2 md:max-w-3xl md:mx-auto w-full" : ""}`}
+            >
+              {/* Liquid-glass card — ultra transparent */}
+              <div className="relative rounded-2xl overflow-hidden h-full border border-white/[0.03] backdrop-blur-sm bg-white/[0.008] transition-all duration-500 hover:bg-white/[0.02] hover:border-white/[0.06] hover:shadow-[0_8px_40px_rgba(124,58,237,0.06)]">
+                {/* Hover glow */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[#7c3aed]/0 to-transparent transition-all duration-500 group-hover:from-[#7c3aed]/[0.03]" />
 
-            return (
-              <div
-                key={i}
-                ref={(el) => { cardsRef.current[i] = el; }}
-                className="group relative"
-              >
-                {/* Gradient border wrapper */}
-                <div className={`absolute -inset-px bg-gradient-to-br from-[#7c3aed]/40 via-[#7c3aed]/10 to-transparent ${shapes[i]} transition-all duration-500 group-hover:from-[#7c3aed]/60 group-hover:via-[#7c3aed]/20`} />
-
-                <div className={`relative flex flex-col gap-10 ${shapes[i]} bg-[#0e0e1a] p-8 md:p-12 backdrop-blur-xl transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(124,58,237,0.15)] ${
-                  isEven ? "md:flex-row-reverse" : "md:flex-row"
-                }`}>
-                  {/* Illustration area */}
-                  <div className="flex shrink-0 items-center justify-center md:w-1/3">
-                    <div className="relative flex h-40 w-40 items-center justify-center">
-                      {/* Glow behind */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#7c3aed]/15 to-[#5b21b6]/8 blur-2xl transition-all duration-500 group-hover:from-[#7c3aed]/30 group-hover:blur-3xl" />
-                      <div className="relative">{illustrations[item.icon] ?? null}</div>
+                <div className="relative flex flex-col gap-6 p-8 md:p-10">
+                  {/* Top row: illustration + counter */}
+                  <div className="flex items-center gap-6">
+                    <div className="relative shrink-0">
+                      <div className="absolute inset-0 rounded-full bg-[#7c3aed]/8 blur-2xl scale-150 transition-all duration-500 group-hover:bg-[#7c3aed]/15 group-hover:blur-3xl" />
+                      <div className="relative scale-75">{illustrations[item.icon] ?? null}</div>
                     </div>
-                  </div>
-
-                  {/* Content area */}
-                  <div className="flex flex-1 flex-col justify-center">
-                    <div className="mb-4 flex items-baseline gap-4">
-                      <span className="text-4xl font-bold text-[#a78bfa]">
+                    <div>
+                      <span className="text-3xl font-bold text-[#a78bfa]">
                         <span ref={(el) => { countersRef.current[i] = el; }}>0</span>
                         {item.suffix}
                       </span>
-                      <h3 className="font-serif text-2xl font-bold text-white md:text-3xl">
+                      <h3 className="font-serif text-2xl font-bold text-white mt-1">
                         {item.title}
                       </h3>
                     </div>
-
-                    <p className="mb-6 text-white/60 leading-relaxed">
-                      {item.longDescription}
-                    </p>
-
-                    <ul className="space-y-3">
-                      {item.benefits.map((benefit, j) => (
-                        <li key={j} className="flex items-start gap-3">
-                          <svg className="mt-1 h-5 w-5 shrink-0 text-[#7c3aed]" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                          <span className="text-white/70">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
+
+                  {/* Description */}
+                  <p className="text-white/55 leading-relaxed">
+                    {item.longDescription}
+                  </p>
+
+                  {/* Benefits */}
+                  <ul className="space-y-2.5">
+                    {item.benefits.map((benefit, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <svg className="mt-1 h-4 w-4 shrink-0 text-[#a78bfa]" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-sm text-white/60">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

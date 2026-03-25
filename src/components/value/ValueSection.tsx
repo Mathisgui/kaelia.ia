@@ -37,41 +37,41 @@ const ValueSection: React.FC = () => {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      /* Left title — zoom in from left */
+      /* Left title — slow zoom in from left */
       if (titleRef.current) {
         gsap.fromTo(
           titleRef.current,
-          { opacity: 0, x: -100, scale: 0.8 },
+          { opacity: 0, x: -80, scale: 0.85 },
           {
             opacity: 1,
             x: 0,
             scale: 1,
-            duration: 1.2,
-            ease: "power3.out",
+            duration: 1.8,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 75%",
+              start: "top 70%",
               once: true,
             },
           }
         );
       }
 
-      /* Right items — each rises up individually, staggered */
+      /* Right items — slow rise, big stagger for smooth scroll effect */
       itemsRef.current.forEach((item, i) => {
         if (!item) return;
         gsap.fromTo(
           item,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 60 },
           {
             opacity: 1,
             y: 0,
-            duration: 1.1,
-            delay: 0.4 + i * 0.3,
+            duration: 1.6,
+            delay: 0.6 + i * 0.5,
             ease: "power2.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 70%",
+              start: "top 65%",
               once: true,
             },
           }

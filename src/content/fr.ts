@@ -12,10 +12,10 @@ export const content = {
   },
 
   hero: {
-    subtitle: "SYSTÈMES IA & AUTOMATISATION",
-    title: "Entrez dans l'ère de l'intelligence artificielle",
+    title: "Entrez dans l'ère de l'intelligence artificielle.",
     description:
       "Des systèmes IA sur mesure, des automatisations intelligentes et un accompagnement stratégique pour propulser votre entreprise vers de nouveaux sommets de performance.",
+    tagline: "Solutions IA sur mesure. Résultats concrets. Accompagnement stratégique.",
     cta: "Réserver un audit gratuit",
   },
 
@@ -82,8 +82,8 @@ export const content = {
       },
       {
         icon: "strategy",
-        counter: 50,
-        suffix: "+",
+        counter: 98,
+        suffix: "%",
         title: "Conseil stratégique",
         description:
           "Un audit complet de vos processus pour identifier les gains rapides et construire une feuille de route IA.",

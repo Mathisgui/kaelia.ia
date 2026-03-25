@@ -143,7 +143,7 @@ const WhySection: React.FC = () => {
       <div className="relative mx-auto max-w-7xl px-6">
         {/* ── Section header ── */}
         <div ref={headerRef} className="mb-16 text-center opacity-0">
-          <p className="mb-3 text-sm font-medium uppercase tracking-wider text-[#7c3aed]">
+          <p className="mb-3 text-sm font-medium uppercase tracking-wider text-[#c084fc]">
             Pourquoi nous
           </p>
           <h2 className="font-serif mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
