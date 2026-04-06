@@ -288,7 +288,7 @@ export default function AboutContent() {
                     alt="Mathis Guillemois"
                     fill
                     className="object-cover"
-                    style={{ objectPosition: "center 22%", transform: "scale(1.6)", transformOrigin: "center 30%" }}
+                    style={{ objectPosition: "center 20%", transform: "scale(2.4)", transformOrigin: "center 28%" }}
                     priority
                   />
                   {/* Gloss overlay */}
