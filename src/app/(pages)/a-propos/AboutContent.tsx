@@ -22,23 +22,23 @@ const SKILLS = [
 const TIMELINE = [
   {
     year: "2023",
-    title: "Premières missions IA",
-    desc: "Premiers déploiements concrets d'automatisations et d'agents IA pour des PME. La conviction que l'IA peut transformer n'importe quelle organisation, quelle que soit sa taille.",
+    title: "Le déclic",
+    desc: "Je regardais des équipes entières passer leurs journées à copier-coller, à relancer des e-mails, à remplir des tableaux. Des heures de travail intelligent sacrifiées sur l'autel du répétitif. J'ai su que l'IA pouvait changer ça. Alors j'ai commencé à le prouver.",
   },
   {
     year: "2024",
-    title: "Structuration de l'offre",
-    desc: "Développement d'une méthode éprouvée : audit, stratégie, implémentation, formation. Partenariat avec Kaelia pour structurer les formations certifiées Qualiopi.",
+    title: "La preuve par les faits",
+    desc: "Un à un, les résultats sont arrivés. Des workflows qui tournaient en 3 heures s'exécutaient en 4 minutes. Des dirigeants qui me disaient : \"mes équipes font enfin le travail qui compte.\" Ce n'était plus une conviction. C'était une certitude.",
   },
   {
     year: "2025",
-    title: "Création de Kael'IA",
-    desc: "Fondation officielle de Kael'IA avec une mission claire : rendre l'IA accessible, concrète et rentable. Automatiser ce qui peut l'être, former ceux qui pilotent.",
+    title: "Kael'IA",
+    desc: "J'ai fondé Kael'IA avec une règle simple : ne jamais livrer un système que je ne montrerais pas à ma propre équipe. Chaque automatisation, chaque agent IA, chaque formation doit avoir un impact réel, mesurable, immédiat. Pas de gadget. Pas de promesse creuse.",
   },
   {
-    year: "Aujourd'hui",
-    title: "Impact & accélération",
-    desc: "Plus de 200 automatisations déployées, 100 sessions de formation animées. Des dizaines d'équipes qui travaillent mieux, plus vite, avec moins de friction.",
+    year: "Maintenant",
+    title: "Ce n'est que le début",
+    desc: "Des dizaines d'entreprises qui travaillent autrement. Des centaines d'heures rendues à ce qui compte vraiment. Et une conviction qui grandit chaque jour : les organisations qui embrassent l'IA aujourd'hui ne joueront plus dans la même catégorie demain.",
   },
 ];
 
@@ -235,9 +235,9 @@ export default function AboutContent() {
               <div className="hero-fade opacity-0 mb-8 h-px w-40 bg-gradient-to-r from-[#7c3aed] to-transparent" />
 
               <p className="hero-fade opacity-0 max-w-lg text-lg leading-relaxed text-white/60">
-                Entrepreneur passionné par l&apos;automatisation et l&apos;intelligence artificielle.
-                Fondateur de Kael&apos;IA avec une conviction : simplifier le travail, éliminer
-                les tâches sans valeur, et rendre chaque heure de vos équipes réellement utile.
+                J&apos;ai toujours cru qu&apos;un travail bien fait, c&apos;est un travail qui a de la valeur.
+                Pas du remplissage. Pas de la friction. J&apos;ai fondé Kael&apos;IA pour que l&apos;IA
+                fasse le reste, et que vos équipes se concentrent sur ce que les machines ne feront jamais.
               </p>
 
               <div className="hero-fade opacity-0 mt-8 flex flex-wrap gap-3 font-mono text-xs text-white/30 uppercase tracking-widest">
@@ -312,14 +312,14 @@ export default function AboutContent() {
 
           <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.3em] text-[#7c3aed] uppercase">Vision</p>
           <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
-            L&apos;obsession du travail utile.
+            Il y a un type de travail qui épuise.<br />
+            <span className="text-[#7c3aed]">Et un type qui transforme.</span>
           </h2>
           <p className="text-lg leading-relaxed text-white/60">
-            Trop d&apos;équipes passent leurs journées sur des tâches répétitives, à faible valeur,
-            qui pourraient être automatisées en quelques jours. Kael&apos;IA est né de cette frustration.
-            Chaque heure gagnée sur une automatisation, c&apos;est une heure rendue à ce qui compte vraiment :
-            la stratégie, la relation client, l&apos;innovation. L&apos;IA n&apos;est pas un gadget.
-            C&apos;est un levier de productivité réel, mesurable, immédiat.
+            Le premier, c&apos;est tout ce qu&apos;on répète sans réfléchir. Le rapport du lundi matin.
+            La relance client. La saisie de données. Ce sont des heures volées à l&apos;intelligence de vos équipes.
+            Le second, c&apos;est ce qu&apos;on ne peut déléguer qu&apos;à l&apos;humain : la vision, la décision, la relation.
+            Kael&apos;IA existe pour rendre le premier invisible, et le second inévitable.
           </p>
         </div>
       </section>
@@ -413,20 +413,20 @@ export default function AboutContent() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="about-card opacity-0 rounded-2xl border border-white/[0.07] bg-[#0d0d1a] p-8">
             <div className="section-label opacity-0 mb-4 font-mono text-xs tracking-widest text-[#7c3aed] uppercase">Partenariat</div>
-            <h3 className="mb-3 text-xl font-bold text-white">Kaelia — Formations certifiées</h3>
+            <h3 className="mb-3 text-xl font-bold text-white">Kaelia — Savoir faire, savoir transmettre</h3>
             <p className="text-white/50 text-sm leading-relaxed">
-              En partenariat avec Kaelia, organisme de formation certifié Qualiopi,
-              les formations proposées sont éligibles aux financements OPCO.
-              Un cadre pédagogique rigoureux pour un investissement optimisé.
+              Déployer un système IA sans former les équipes qui l&apos;utilisent,
+              c&apos;est construire sur du sable. Le partenariat avec Kaelia, organisme certifié Qualiopi,
+              garantit que la technologie s&apos;installe dans les habitudes — pas seulement dans les serveurs.
             </p>
           </div>
           <div className="about-card opacity-0 rounded-2xl border border-[#7c3aed]/20 bg-[#0d0d1a] p-8">
             <div className="section-label opacity-0 mb-4 font-mono text-xs tracking-widest text-[#7c3aed] uppercase">Approche</div>
-            <h3 className="mb-3 text-xl font-bold text-white">L&apos;automatisation d&apos;abord</h3>
+            <h3 className="mb-3 text-xl font-bold text-white">La règle des 48 heures</h3>
             <p className="text-white/50 text-sm leading-relaxed">
-              Chaque mission démarre par une question simple : qu&apos;est-ce qui fait perdre
-              du temps à vos équipes chaque jour ? Les réponses deviennent des automatisations.
-              Les automatisations deviennent des résultats mesurables.
+              Chaque mission commence par une question : quelle tâche répétitive fait perdre
+              le plus de temps à vos équipes cette semaine ? En 48 heures, on a un prototype qui tourne.
+              En 30 jours, un système en production. Pas de roadmap à 18 mois. Des résultats maintenant.
             </p>
           </div>
         </div>
@@ -436,10 +436,11 @@ export default function AboutContent() {
       <section className="about-reveal opacity-0 px-6 py-28 text-center">
         <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.3em] text-[#7c3aed] uppercase">Contact</p>
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          Construisons quelque chose ensemble.
+          Votre prochaine heure gagnée<br />commence ici.
         </h2>
         <p className="mb-10 text-lg text-white/50">
-          Un diagnostic gratuit, sans engagement. 30 minutes pour identifier votre potentiel IA.
+          30 minutes. Pas de pitch. On regarde ensemble où l&apos;IA peut avoir un impact
+          réel dans votre organisation — et on sort avec un plan concret.
         </p>
         <Link
           href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0elwGhJ_Xy3KFyk17moeheL-G9N4jsDSeZf0mLVqNvsF3QGGyCE3UOtbPzWDkJ_6gHO8ZAJlE0"
