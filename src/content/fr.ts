@@ -222,13 +222,7 @@ export const content = {
     ],
     adaptability:
       "Peu importe votre niveau actuel, nous adaptons l'accompagnement à vos besoins, votre rythme et votre maturité digitale.",
-    differentiators: [
-      "Une approche pédagogique claire, humaine et orientée impact",
-      "Un accompagnement 100 % personnalisé",
-      "Des résultats visibles dès les premières semaines",
-      "La combinaison unique de formation et implémentation concrète",
-      "Vous devenez autonome, pas dépendant d'un prestataire",
-    ],
+    differentiators: `Une approche pédagogique claire, humaine et orientée impact. Un accompagnement 100 % personnalisé, loin des formations génériques. Des résultats visibles dès les premières semaines. La combinaison unique de formation et d'implémentation concrète. Et surtout : vous devenez autonome, pas dépendant d'un prestataire.`,
     cta: "Découvrir nos formations",
   },
 

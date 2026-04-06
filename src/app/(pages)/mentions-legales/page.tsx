@@ -18,11 +18,9 @@ export default function MentionsLegalesPage() {
           <p>
             Kael&apos;IA
             <br />
-            Adresse : [À compléter]
+            Adresse : 198 rue de l&apos;Industrie, Neuilly-sur-Seine
             <br />
-            Email : contact@kaelia.fr
-            <br />
-            SIRET : [À compléter]
+            Email : m.guillemois@kaelia-formacoach.com
           </p>
         </section>
 

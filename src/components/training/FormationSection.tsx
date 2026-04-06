@@ -72,11 +72,11 @@ const FormationSection: React.FC = () => {
           scrollTrigger: { trigger: ".fm-why-card", start: "top 86%", once: true } }
       );
 
-      // Right col — each differentiator
+      // Right col — differentiators paragraph
       gsap.fromTo(".fm-diff-item",
-        { opacity: 0, x: 20 },
-        { opacity: 1, x: 0, duration: 0.5, stagger: 0.1, ease: "power3.out",
-          scrollTrigger: { trigger: ".fm-diff-list", start: "top 85%", once: true } }
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power2.out",
+          scrollTrigger: { trigger: ".fm-why-card", start: "top 82%", once: true } }
       );
 
       // Right col — finançable card
@@ -172,14 +172,9 @@ const FormationSection: React.FC = () => {
                 Pourquoi nos formations
               </p>
               <div className="fm-connector mb-6 h-px w-full bg-gradient-to-r from-[#7c3aed]/60 via-[#a78bfa]/30 to-transparent" />
-              <ul className="fm-diff-list space-y-4">
-                {t.differentiators.map((d, i) => (
-                  <li key={i} className="fm-diff-item opacity-0 flex items-start gap-3 text-white/70">
-                    <CheckIcon />
-                    <span>{d}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="fm-diff-item opacity-0 text-white/70 leading-relaxed text-sm">
+                {t.differentiators}
+              </p>
             </div>
 
             <div className="fm-fin-card opacity-0 rounded-2xl border border-[#7c3aed]/40 bg-[#100d20] p-8">

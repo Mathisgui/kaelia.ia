@@ -311,15 +311,13 @@ export default function AboutContent() {
           <div className="absolute top-4 right-4 h-7 w-7 border-t border-r border-[#7c3aed]/30" />
 
           <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.3em] text-[#7c3aed] uppercase">Vision</p>
-          <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
-            Il y a un type de travail qui épuise.<br />
-            <span className="text-[#7c3aed]">Et un type qui transforme.</span>
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">Notre vision</h2>
           <p className="text-lg leading-relaxed text-white/60">
-            Le premier, c&apos;est tout ce qu&apos;on répète sans réfléchir. Le rapport du lundi matin.
-            La relance client. La saisie de données. Ce sont des heures volées à l&apos;intelligence de vos équipes.
-            Le second, c&apos;est ce qu&apos;on ne peut déléguer qu&apos;à l&apos;humain : la vision, la décision, la relation.
-            Kael&apos;IA existe pour rendre le premier invisible, et le second inévitable.
+            L&apos;IA n&apos;est pas une menace, c&apos;est un levier.
+            L&apos;objectif : rendre l&apos;intelligence artificielle accessible,
+            pratique et profitable pour chaque entreprise, quelle que soit sa
+            taille ou son secteur. La technologie doit servir l&apos;humain, pas
+            le remplacer.
           </p>
         </div>
       </section>

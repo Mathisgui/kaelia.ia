@@ -57,7 +57,7 @@ export default function ConfidentialitePage() {
             Conformément au RGPD, chaque utilisateur dispose d&apos;un droit
             d&apos;accès, de rectification, de suppression et de portabilité de
             ses données personnelles. Pour exercer ces droits, contactez-nous à
-            l&apos;adresse : contact@kaelia.fr.
+            l&apos;adresse : m.guillemois@kaelia-formacoach.com.
           </p>
         </section>
 
@@ -75,7 +75,7 @@ export default function ConfidentialitePage() {
           <h2 className="mb-3 text-xl font-semibold text-white">Contact</h2>
           <p>
             Pour toute question relative à la politique de confidentialité,
-            contactez-nous à : contact@kaelia.fr.
+            contactez-nous à : m.guillemois@kaelia-formacoach.com.
           </p>
         </section>
       </div>
