@@ -5,9 +5,13 @@ export const content = {
     links: [
       { label: "Services", href: "#services" },
       { label: "Méthode", href: "#methode" },
+      { label: "Formation", href: "#formation" },
       { label: "Blog", href: "/blog" },
       { label: "À propos", href: "/a-propos" },
-      { label: "Prendre un RDV", href: "#contact" },
+      {
+        label: "Prendre un RDV",
+        href: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0elwGhJ_Xy3KFyk17moeheL-G9N4jsDSeZf0mLVqNvsF3QGGyCE3UOtbPzWDkJ_6gHO8ZAJlE0",
+      },
     ],
   },
 
@@ -46,11 +50,11 @@ export const content = {
   services: {
     sectionTitle: "Des solutions qui transforment votre quotidien",
     sectionDescription:
-      "Des solutions concrètes pour chaque étape de votre transformation IA. Chaque service est conçu pour résoudre un problème précis et livrer des résultats mesurables.",
+      "Notre expertise au service de votre transformation. Chaque service est conçu pour résoudre un problème précis et livrer des résultats mesurables.",
     items: [
       {
         icon: "workflow",
-        counter: 100,
+        counter: 200,
         suffix: "+",
         title: "Automatisations",
         description:
@@ -66,7 +70,7 @@ export const content = {
       },
       {
         icon: "brain",
-        counter: 50,
+        counter: 100,
         suffix: "+",
         title: "Formations IA",
         description:
@@ -84,11 +88,11 @@ export const content = {
         icon: "strategy",
         counter: 98,
         suffix: "%",
-        title: "Conseil stratégique",
+        title: "Conseil stratégique et système IA",
         description:
-          "Un audit complet de vos processus pour identifier les gains rapides et construire une feuille de route IA.",
+          "Conception et déploiement d'agents IA adaptés aux besoins spécifiques de chaque organisation, avec un audit complet pour construire votre feuille de route.",
         longDescription:
-          "Difficile de savoir où l'IA crée vraiment de la valeur dans votre entreprise ? Un audit approfondi de vos processus identifie les opportunités à fort impact. Une feuille de route claire, priorisée par ROI, guide votre transformation IA étape par étape — sans risque, sans surcoût, avec des résultats concrets à chaque palier.",
+          "Nous concevons et déployons des agents IA sur mesure, des systèmes intelligents qui s'intègrent directement dans vos processus métier. Un audit approfondi identifie où l'IA crée vraiment de la valeur, et une feuille de route claire, priorisée par ROI, guide chaque étape de votre transformation. Chaque système livré est concret, mesurable et calibré sur vos contraintes réelles.",
         benefits: [
           "Cartographie complète de vos opportunités IA",
           "Priorisation par impact et faisabilité",
@@ -105,28 +109,28 @@ export const content = {
       "Chaque mission est conçue pour livrer des résultats mesurables et un impact durable sur votre activité.",
     items: [
       {
-        value: "100",
+        value: "97",
         suffix: "%",
         label: "Satisfaction client",
         description:
-          "Chaque mission est conçue pour livrer des résultats mesurables. La satisfaction client est la priorité absolue — un engagement de qualité, pas une promesse marketing.",
-        percentage: 100,
+          "97 pour cent de satisfaction client sur l'ensemble de nos missions. Notre priorité : des livrables concrets, une communication transparente et des résultats à la hauteur de vos attentes.",
+        percentage: 97,
       },
       {
-        value: "10",
+        value: "3",
         suffix: "x",
         label: "Productivité",
         description:
-          "Les solutions IA déployées multiplient la capacité de traitement des équipes par 10 en moyenne. Des processus qui prenaient des heures s'exécutent en minutes.",
-        percentage: 83,
+          "Les solutions IA déployées multiplient en moyenne par 3 la capacité de traitement des équipes. Des processus qui prenaient des heures s'exécutent en minutes.",
+        percentage: 75,
       },
       {
-        value: "24",
-        suffix: "/7",
-        label: "Disponibilité",
+        value: "50",
+        suffix: "%",
+        label: "Économies réalisées",
         description:
-          "Contrairement aux équipes humaines, les agents IA et automatisations fonctionnent sans interruption — week-ends et jours fériés inclus.",
-        percentage: 100,
+          "En automatisant vos processus répétitifs, nos clients récupèrent en moyenne 50% du temps de leurs équipes, réalloué sur des missions à forte valeur ajoutée.",
+        percentage: 88,
       },
     ],
   },
@@ -177,6 +181,12 @@ export const content = {
       "Une approche pragmatique, des résultats concrets et un engagement total envers votre réussite.",
     items: [
       {
+        icon: "handshake",
+        title: "Accompagnement sur mesure",
+        description:
+          "Chaque entreprise est unique. Les solutions sont adaptées à votre métier, vos outils existants, vos équipes et vos objectifs spécifiques.",
+      },
+      {
         icon: "target",
         title: "Approche pragmatique",
         description:
@@ -194,19 +204,38 @@ export const content = {
         description:
           "Des formations certifiées et finançables, conçues en partenariat avec Kaelia. Un cadre reconnu pour un investissement formation optimisé et accessible.",
       },
-      {
-        icon: "handshake",
-        title: "Accompagnement sur mesure",
-        description:
-          "Chaque entreprise est unique. Les solutions sont adaptées à votre métier, vos outils existants, vos équipes et vos objectifs spécifiques.",
-      },
     ],
+  },
+
+  training: {
+    sectionTitle: "Formation IA",
+    sectionSubtitle: "Maîtrisez l'intelligence artificielle et faites-en un levier de performance au quotidien.",
+    sectionDescription:
+      "Nos formations permettent aux dirigeants et équipes de découvrir des usages concrets de l'IA, d'expérimenter des cas réels et d'acquérir les bons réflexes au quotidien. L'objectif : rendre chaque participant autonome et confiant, afin que l'IA devienne un véritable levier de performance.",
+    tagline: "Faire de l'IA un moteur de performance et de valeur.",
+    objectives: [
+      "Comprendre l'IA sans jargon technique",
+      "Gagner du temps au quotidien",
+      "Rendre l'entreprise plus agile et efficace",
+      "Former les équipes à l'IA et passer à l'automatisation",
+      "Construire une stratégie adaptée aux moyens de l'entreprise",
+    ],
+    adaptability:
+      "Peu importe votre niveau actuel, nous adaptons l'accompagnement à vos besoins, votre rythme et votre maturité digitale.",
+    differentiators: [
+      "Une approche pédagogique claire, humaine et orientée impact",
+      "Un accompagnement 100 % personnalisé",
+      "Des résultats visibles dès les premières semaines",
+      "La combinaison unique de formation et implémentation concrète",
+      "Vous devenez autonome, pas dépendant d'un prestataire",
+    ],
+    cta: "Découvrir nos formations",
   },
 
   cta: {
     title: "Prêt à transformer votre entreprise ?",
     description:
-      "Chaque jour sans IA est un jour de productivité perdu. Réservez un rendez-vous et découvrez combien de temps et d'argent vos équipes peuvent gagner.",
+      "Un diagnostic gratuit de votre potentiel IA.\nEn 30 minutes, identifions ensemble comment l'intelligence artificielle peut simplifier votre quotidien et booster votre productivité.",
     button: "Prendre un RDV",
   },
 
@@ -215,7 +244,8 @@ export const content = {
     description:
       "Un projet IA en tête ? Réservez un créneau pour un échange sans engagement. Nous définirons ensemble l'approche sur mesure qui correspond à vos besoins.",
     email: "m.guillemois@kaelia-formacoach.com",
-    calendarUrl: "https://calendar.app.google/LT4EhCvccQLGgNnx8",
+    calendarUrl:
+      "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0elwGhJ_Xy3KFyk17moeheL-G9N4jsDSeZf0mLVqNvsF3QGGyCE3UOtbPzWDkJ_6gHO8ZAJlE0",
     ctaButton: "Réserver un créneau",
   },
 

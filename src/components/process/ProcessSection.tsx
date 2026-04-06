@@ -146,7 +146,8 @@ const ProcessSection: React.FC = () => {
                       <div
                         ref={(el) => { stepsRef.current[i] = el; }}
                       >
-                        <span className="mb-2 block text-6xl font-bold text-[#7c3aed]/40">
+                        <span className="mb-2 block text-6xl font-bold"
+                          style={{ color: "#a78bfa" }}>
                           {step.number}
                         </span>
                         <h3 className="font-serif mb-3 text-2xl font-bold text-white">
@@ -168,7 +169,8 @@ const ProcessSection: React.FC = () => {
                       <div
                         ref={(el) => { stepsRef.current[i] = el; }}
                       >
-                        <span className="mb-2 block text-6xl font-bold text-[#7c3aed]/40">
+                        <span className="mb-2 block text-6xl font-bold"
+                          style={{ color: "#a78bfa" }}>
                           {step.number}
                         </span>
                         <h3 className="font-serif mb-3 text-2xl font-bold text-white">
@@ -202,7 +204,7 @@ const ProcessSection: React.FC = () => {
               className="relative pl-8 border-l-2 border-[#7c3aed]/30"
             >
               <div className="absolute left-0 top-2 -translate-x-[5px] h-3 w-3 rounded-full bg-[#7c3aed] shadow-[0_0_12px_rgba(124,58,237,0.5)]" />
-              <span className="mb-2 block text-5xl font-bold text-[#7c3aed]/40">
+              <span className="mb-2 block text-5xl font-bold" style={{ color: "#a78bfa" }}>
                 {step.number}
               </span>
               <h3 className="font-serif mb-3 text-xl font-bold text-white">

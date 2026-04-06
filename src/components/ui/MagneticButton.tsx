@@ -53,6 +53,7 @@ const MagneticButton: React.FC<MagneticButtonProps> = ({
       scale: 1,
       backgroundColor: "transparent",
       borderColor: "rgba(255,255,255,0.3)",
+      color: COLORS.white,
       boxShadow: `0 0 0px transparent`,
       duration: 0.6,
       ease: "power4.out",

@@ -50,8 +50,8 @@ const Navbar: React.FC = () => {
   );
 
   // Separate nav links from CTA
-  const navLinks = content.nav.links.filter((l) => l.href !== "#contact");
-  const ctaLink = content.nav.links.find((l) => l.href === "#contact");
+  const navLinks = content.nav.links.filter((l) => l.label !== "Prendre un RDV");
+  const ctaLink = content.nav.links.find((l) => l.label === "Prendre un RDV");
 
   return (
     <>
@@ -105,7 +105,8 @@ const Navbar: React.FC = () => {
           {ctaLink && (
             <a
               href={ctaLink.href}
-              onClick={(e) => handleNavClick(e, ctaLink.href)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group hidden md:inline-flex relative items-center px-6 py-2.5 rounded-full text-[15px] font-medium whitespace-nowrap overflow-hidden"
             >
               {/* White background — slides up on hover */}

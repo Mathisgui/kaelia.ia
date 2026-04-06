@@ -4,8 +4,8 @@ import React, { useRef, useMemo, useCallback, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const COUNT = 3500;
-const MAX_LINES = 2500;
+const COUNT = 7000;
+const MAX_LINES = 4000;
 const PURPLE = new THREE.Color("#7c3aed");
 const RED = new THREE.Color("#ef4444");
 const CYAN = new THREE.Color("#22d3ee");
@@ -20,9 +20,9 @@ function createGlowTexture(): THREE.CanvasTexture {
   const center = size / 2;
   const gradient = ctx.createRadialGradient(center, center, 0, center, center, center);
   gradient.addColorStop(0, "rgba(255,255,255,1)");
-  gradient.addColorStop(0.12, "rgba(255,255,255,0.85)");
-  gradient.addColorStop(0.35, "rgba(255,255,255,0.3)");
-  gradient.addColorStop(0.65, "rgba(255,255,255,0.05)");
+  gradient.addColorStop(0.15, "rgba(255,255,255,0.95)");
+  gradient.addColorStop(0.4, "rgba(255,255,255,0.5)");
+  gradient.addColorStop(0.7, "rgba(255,255,255,0.15)");
   gradient.addColorStop(1, "rgba(255,255,255,0)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, size, size);
@@ -355,8 +355,8 @@ function Particles() {
     // Particle glow during intro: bigger & brighter orb
     const ptsMat = pts.material as THREE.PointsMaterial;
     const introGlow = (1 - intro);
-    ptsMat.size = 0.09 + introGlow * 0.2;
-    ptsMat.opacity = 0.9 + introGlow * 0.1;
+    ptsMat.size = 0.12 + introGlow * 0.25;
+    ptsMat.opacity = 1.0;
 
     // Connections
     const connDist = getConnDist(scroll);
@@ -386,7 +386,7 @@ function Particles() {
           linePositions[l6 + 3] = arr[j3];
           linePositions[l6 + 4] = arr[j3 + 1];
           linePositions[l6 + 5] = arr[j3 + 2];
-          const intensity = 0.15;
+          const intensity = 0.35;
           lineColors[l6] = lr * alpha * intensity;
           lineColors[l6 + 1] = lg * alpha * intensity;
           lineColors[l6 + 2] = lb * alpha * intensity;
@@ -430,17 +430,17 @@ function Particles() {
         </bufferGeometry>
         <pointsMaterial
           map={glowTexture}
-          color="#e8dff5"
-          size={0.09}
+          color="#ffffff"
+          size={0.12}
           sizeAttenuation
           transparent
-          opacity={0.9}
+          opacity={1.0}
           depthWrite={false}
           blending={THREE.AdditiveBlending}
         />
       </points>
       <lineSegments ref={linesRef} geometry={lineGeometry}>
-        <lineBasicMaterial vertexColors transparent opacity={0.08} depthWrite={false} />
+        <lineBasicMaterial vertexColors transparent opacity={0.25} depthWrite={false} />
       </lineSegments>
     </>
   );

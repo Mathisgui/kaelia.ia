@@ -9,8 +9,7 @@ import StatsSection from "@/components/stats/StatsSection";
 import ProcessSection from "@/components/process/ProcessSection";
 import WhySection from "@/components/why/WhySection";
 import CTASection from "@/components/cta/CTASection";
-
-import ContactSection from "@/components/contact/ContactSection";
+import FormationSection from "@/components/training/FormationSection";
 import Footer from "@/components/footer/Footer";
 import AmbientSound from "@/components/ui/AmbientSound";
 
@@ -34,9 +33,9 @@ export default function Home() {
           <ServicesSection />
           <StatsSection />
           <ProcessSection />
+          <FormationSection />
           <WhySection />
           <CTASection />
-          <ContactSection />
         </main>
         <Footer />
       </div>
