@@ -287,7 +287,8 @@ export default function AboutContent() {
                     src="/mathis.jpg"
                     alt="Mathis Guillemois"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover"
+                    style={{ objectPosition: "center 18%" }}
                     priority
                   />
                   {/* Gloss overlay */}
