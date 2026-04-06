@@ -18,7 +18,7 @@ export default function MentionsLegalesPage() {
           <p>
             Kael&apos;IA
             <br />
-            Adresse : 198 rue de l&apos;Industrie, Neuilly-sur-Seine
+            Adresse : 198 rue de l&apos;Industrie, Neulise (Isère)
             <br />
             Email : m.guillemois@kaelia-formacoach.com
           </p>
