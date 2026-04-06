@@ -18,7 +18,7 @@ export default function MentionsLegalesPage() {
           <p>
             Kael&apos;IA
             <br />
-            Adresse : 198 rue de l&apos;Industrie, Neulise (Isère)
+            Adresse : 198 Rue des Amis de l&apos;Industrie, 42590 Neulise
             <br />
             Email : m.guillemois@kaelia-formacoach.com
           </p>
