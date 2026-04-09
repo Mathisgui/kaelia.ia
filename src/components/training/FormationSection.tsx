@@ -125,10 +125,23 @@ const FormationSection: React.FC = () => {
           <p className="fm-label opacity-0 mb-3 text-sm font-medium uppercase tracking-wider text-[#c084fc]">
             Formation
           </p>
-          <h2 className="fm-title opacity-0 font-serif mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+          <h2 className="fm-title opacity-0 font-serif mb-6 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {t.sectionTitle}
           </h2>
-          <p className="fm-desc opacity-0 mx-auto max-w-2xl text-white/50 leading-relaxed">
+
+          {/* Offre de lancement */}
+          <div className="fm-desc opacity-0 inline-flex items-center gap-3 mb-6 px-5 py-2.5 rounded-full border border-[#a78bfa]/40 bg-[#7c3aed]/10 backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a78bfa] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a78bfa]" />
+            </span>
+            <span className="text-sm font-semibold text-[#a78bfa] tracking-wide uppercase">Offre de lancement</span>
+            <span className="h-4 w-px bg-[#a78bfa]/30" />
+            <span className="text-sm font-bold text-white">−30%</span>
+            <span className="text-xs text-white/40">sur toutes les formations</span>
+          </div>
+
+          <p className="mx-auto max-w-2xl text-white/50 leading-relaxed">
             {t.sectionDescription}
           </p>
         </div>

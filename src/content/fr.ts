@@ -113,7 +113,7 @@ export const content = {
         suffix: "%",
         label: "Satisfaction client",
         description:
-          "97 pour cent de satisfaction client sur l'ensemble de nos missions. Notre priorité : des livrables concrets, une communication transparente et des résultats à la hauteur de vos attentes.",
+          "97% de satisfaction client sur l'ensemble de nos missions. Notre priorité : des livrables concrets, une communication transparente et des résultats à la hauteur de vos attentes.",
         percentage: 97,
       },
       {
@@ -176,7 +176,7 @@ export const content = {
   },
 
   why: {
-    sectionTitle: "Ce qui nous rend différents",
+    sectionTitle: "Ce qui nous différencie",
     sectionDescription:
       "Une approche pragmatique, des résultats concrets et un engagement total envers votre réussite.",
     items: [
