@@ -71,12 +71,28 @@ const HeroSection: React.FC = () => {
           {content.hero.title}
         </h1>
 
-        <div ref={ctaRef} className="opacity-0">
+        <div ref={ctaRef} className="opacity-0 flex flex-col items-start gap-3">
           <a
             href={content.contact.calendarUrl}
             className="inline-flex items-center gap-3 px-7 py-3.5 border border-white/30 rounded-full text-sm uppercase tracking-wider text-white hover:bg-white hover:text-[#0a0a12] transition-all duration-300"
           >
             {content.hero.cta}
+          </a>
+
+          <a
+            href="#formation"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#a78bfa]/40 bg-[#7c3aed]/10 hover:bg-[#7c3aed]/20 transition-all duration-200 cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector("#formation")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a78bfa] opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#a78bfa]" />
+            </span>
+            <span className="text-xs font-semibold text-[#a78bfa] uppercase tracking-wide">Offre de lancement formation</span>
+            <span className="text-xs font-bold text-white">−30%</span>
           </a>
         </div>
       </div>
