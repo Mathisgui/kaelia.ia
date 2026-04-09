@@ -101,36 +101,20 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Right: CTA + badge stacked */}
+          {/* Right: CTA button */}
           {ctaLink && (
-            <div className="hidden md:flex flex-col items-center gap-1.5">
-              <a
-                href={ctaLink.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative inline-flex items-center px-6 py-2.5 rounded-full text-[15px] font-medium whitespace-nowrap overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-white transition-transform duration-300 ease-out group-hover:-translate-y-full" />
-                <span className="absolute inset-0 bg-gradient-to-r from-[#3b0764] via-[#6d28d9] to-[#9f1239] translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
-                <span className="relative z-10 text-[#0a0a12] transition-colors duration-300 group-hover:text-white">
-                  {ctaLink.label}
-                </span>
-              </a>
-
-              {/* Offre lancement */}
-              <a
-                href="#formation"
-                onClick={(e) => handleNavClick(e, "#formation")}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#a78bfa]/40 bg-[#7c3aed]/10 hover:bg-[#7c3aed]/20 transition-all duration-200 cursor-pointer"
-              >
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a78bfa] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#a78bfa]" />
-                </span>
-                <span className="text-[10px] font-semibold text-[#a78bfa] uppercase tracking-wide">Offre de lancement formation</span>
-                <span className="text-[10px] font-bold text-white">−30%</span>
-              </a>
-            </div>
+            <a
+              href={ctaLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group hidden md:inline-flex relative items-center px-6 py-2.5 rounded-full text-[15px] font-medium whitespace-nowrap overflow-hidden"
+            >
+              <span className="absolute inset-0 bg-white transition-transform duration-300 ease-out group-hover:-translate-y-full" />
+              <span className="absolute inset-0 bg-gradient-to-r from-[#3b0764] via-[#6d28d9] to-[#9f1239] translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+              <span className="relative z-10 text-[#0a0a12] transition-colors duration-300 group-hover:text-white">
+                {ctaLink.label}
+              </span>
+            </a>
           )}
 
           {/* Mobile hamburger */}
