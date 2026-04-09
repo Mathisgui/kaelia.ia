@@ -101,6 +101,20 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
+          {/* Offre lancement */}
+          <a
+            href="#formation"
+            onClick={(e) => handleNavClick(e, "#formation")}
+            className="hidden md:inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#a78bfa]/40 bg-[#7c3aed]/10 hover:bg-[#7c3aed]/20 transition-all duration-200 cursor-pointer"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a78bfa] opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#a78bfa]" />
+            </span>
+            <span className="text-xs font-semibold text-[#a78bfa] uppercase tracking-wide">Offre de lancement</span>
+            <span className="text-xs font-bold text-white">−30%</span>
+          </a>
+
           {/* Right: CTA button */}
           {ctaLink && (
             <a
