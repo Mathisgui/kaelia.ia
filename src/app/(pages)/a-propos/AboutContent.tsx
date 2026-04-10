@@ -33,7 +33,7 @@ const TIMELINE = [
   {
     year: "2025",
     title: "Kael'IA",
-    desc: "J'ai fondé Kael'IA avec une règle simple : ne jamais livrer un système que je ne montrerais pas à ma propre équipe. Chaque automatisation, chaque agent IA, chaque formation doit avoir un impact réel, mesurable, immédiat. Pas de gadget. Pas de promesse creuse.",
+    desc: "J'ai rejoint Kaelia comme associé pour lancer la branche IA avec une règle simple : ne jamais livrer un système que je ne montrerais pas à ma propre équipe. Chaque automatisation, chaque agent IA doit avoir un impact réel, mesurable, immédiat. Pas de gadget. Pas de promesse creuse.",
   },
   {
     year: "Maintenant",
@@ -222,7 +222,7 @@ export default function AboutContent() {
             {/* Left — text */}
             <div>
               <p className="hero-fade opacity-0 mb-5 font-mono text-xs tracking-[0.4em] text-[#7c3aed] uppercase">
-                Fondateur &amp; CEO — Kael&apos;IA
+                Associé — Branche IA
               </p>
 
               <h1
@@ -297,7 +297,7 @@ export default function AboutContent() {
 
                 {/* Corner tag */}
                 <div className="absolute -bottom-4 -right-4 rounded-xl border border-[#7c3aed]/30 bg-[#0d0d1a]/90 px-4 py-2 backdrop-blur-sm">
-                  <p className="font-mono text-[10px] tracking-widest text-[#7c3aed] uppercase">Fondateur Kael&apos;IA</p>
+                  <p className="font-mono text-[10px] tracking-widest text-[#7c3aed] uppercase">Associé — Branche IA</p>
                 </div>
               </div>
             </div>
@@ -370,6 +370,82 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* ─── KAELIA TEAM ─── */}
+      <section className="about-reveal opacity-0 relative mx-auto max-w-5xl px-6 py-16">
+        <div className="relative overflow-hidden rounded-2xl border border-[#7c3aed]/25 bg-[#0b0b16] p-10 md:p-14">
+          {/* Ambient glow */}
+          <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#7c3aed]/8 blur-[80px]" />
+          <div className="absolute top-4 right-4 h-7 w-7 border-t border-r border-[#7c3aed]/30" />
+          <div className="absolute bottom-4 left-4 h-7 w-7 border-b border-l border-[#7c3aed]/20" />
+
+          <div className="relative z-10">
+            <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.3em] text-[#7c3aed] uppercase">Partenariat</p>
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+              En partenariat avec Kaelia
+            </h2>
+            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-white/75">
+              Ce site est la <span className="text-[#c084fc] font-semibold">branche IA</span> — nous concevons et déployons des systèmes d&apos;intelligence artificielle sur mesure.
+              En partenariat avec <span className="text-[#c084fc] font-semibold">Kaelia</span>, organisme certifié Qualiopi, nous assurons aussi la formation et le financement des équipes.
+              Ensemble, nous couvrons tout le spectre : de l&apos;automatisation à l&apos;adoption.
+            </p>
+
+            {/* Team photo grid — 3 colonnes */}
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {/* Karine Weil — CEO Kaelia */}
+              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-[#7c3aed]/20 bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/40">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src="/ka-kaelia.jpg"
+                    alt="Karine Weil"
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-transparent to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-white">Karine Weil</h3>
+                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed] uppercase">CEO — Kaelia</p>
+                </div>
+              </div>
+
+              {/* Killian Guillemois — Président Kaelia */}
+              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-[#7c3aed]/20 bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/40">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src="/ki-kaelia-1.jpg"
+                    alt="Killian Guillemois"
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-transparent to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-white">Killian Guillemois</h3>
+                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed] uppercase">Président — Kaelia</p>
+                </div>
+              </div>
+
+              {/* Mathis Guillemois — Associé */}
+              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-[#7c3aed]/20 bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/40">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src="/mathis.jpg"
+                    alt="Mathis Guillemois"
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-transparent to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-white">Mathis Guillemois</h3>
+                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed] uppercase">Associé — Branche IA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── SKILLS ─── */}
       <section className="about-reveal opacity-0 relative mx-auto max-w-5xl px-6 py-20">
         <div className="mb-12 text-center">
@@ -427,80 +503,6 @@ export default function AboutContent() {
               le plus de temps à vos équipes cette semaine ? En 48 heures, on a un prototype qui tourne.
               En 30 jours, un système en production. Pas de roadmap à 18 mois. Des résultats maintenant.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── KAEL'IA TEAM ─── */}
-      <section className="about-reveal opacity-0 relative mx-auto max-w-5xl px-6 py-24">
-        <div className="relative overflow-hidden rounded-2xl border border-[#7c3aed]/25 bg-[#0b0b16] p-10 md:p-14">
-          {/* Ambient glow */}
-          <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#7c3aed]/8 blur-[80px]" />
-          <div className="absolute top-4 right-4 h-7 w-7 border-t border-r border-[#7c3aed]/30" />
-          <div className="absolute bottom-4 left-4 h-7 w-7 border-b border-l border-[#7c3aed]/20" />
-
-          <div className="relative z-10">
-            <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.3em] text-[#7c3aed] uppercase">L&apos;entreprise</p>
-            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-              Propulsé par Kaelia
-            </h2>
-            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-white/75">
-              Cette initiative est portée par <span className="text-[#c084fc] font-semibold">Kaelia</span>, la branche spécialisée en intelligence artificielle.
-              Notre équipe conçoit, déploie et forme — du premier prototype jusqu&apos;à la mise en production.
-              Ce sont ces personnes qui travaillent chaque jour pour que l&apos;IA devienne un réel avantage compétitif pour vos équipes.
-            </p>
-
-            {/* Team photo grid */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-              {/* Slot 1 — Mathis (already available) */}
-              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-[#7c3aed]/20 bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/40">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src="/mathis.jpg"
-                    alt="Mathis Guillemois"
-                    fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-transparent to-transparent" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-white">Mathis Guillemois</h3>
-                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed] uppercase">Fondateur &amp; CEO</p>
-                </div>
-              </div>
-
-              {/* Slot 2 — photo à ajouter */}
-              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-white/[0.06] bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/30">
-                <div className="relative h-56 overflow-hidden bg-[#0d0d1a] flex items-center justify-center">
-                  <div className="flex flex-col items-center gap-3 opacity-30">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-                    </svg>
-                    <span className="font-mono text-[10px] tracking-widest text-[#7c3aed] uppercase">Photo à venir</span>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-white/40">—</h3>
-                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed]/40 uppercase">Équipe Kaelia</p>
-                </div>
-              </div>
-
-              {/* Slot 3 — photo à ajouter */}
-              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-white/[0.06] bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/30 sm:col-span-2 md:col-span-1">
-                <div className="relative h-56 overflow-hidden bg-[#0d0d1a] flex items-center justify-center">
-                  <div className="flex flex-col items-center gap-3 opacity-30">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
-                    </svg>
-                    <span className="font-mono text-[10px] tracking-widest text-[#7c3aed] uppercase">Photo à venir</span>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-white/40">—</h3>
-                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed]/40 uppercase">Équipe Kaelia</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
