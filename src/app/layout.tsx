@@ -18,6 +18,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kaelia.vercel.app"),
+  icons: {
+    icon: "/logo-kaelia-nobg.png",
+    shortcut: "/logo-kaelia-nobg.png",
+    apple: "/logo-kaelia-nobg.png",
+  },
   title: {
     default: "Kael'IA | Systèmes IA & Automatisation pour Entreprises",
     template: "%s | Kael'IA",
