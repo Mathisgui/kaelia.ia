@@ -384,9 +384,9 @@ export default function AboutContent() {
               En partenariat avec Kaelia
             </h2>
             <p className="mb-10 max-w-2xl text-lg leading-relaxed text-white/75">
-              Ce site est la <span className="text-[#c084fc] font-semibold">branche IA</span> — nous concevons et déployons des systèmes d&apos;intelligence artificielle sur mesure.
-              En partenariat avec <span className="text-[#c084fc] font-semibold">Kaelia</span>, organisme certifié Qualiopi, nous assurons aussi la formation et le financement des équipes.
-              Ensemble, nous couvrons tout le spectre : de l&apos;automatisation à l&apos;adoption.
+              Notre partenariat avec <span className="text-[#c084fc] font-semibold">Kaelia</span>, organisme certifié Qualiopi,
+              nous permet de proposer des formations entièrement finançables — CPF, OPCO, plan de développement des compétences.
+              Vos équipes se forment à l&apos;IA sans que cela vous coûte un centime.
             </p>
 
             {/* Team photo grid — 3 colonnes */}
