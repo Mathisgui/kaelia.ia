@@ -234,13 +234,13 @@ export default function AboutContent() {
 
               <div className="hero-fade opacity-0 mb-8 h-px w-40 bg-gradient-to-r from-[#7c3aed] to-transparent" />
 
-              <p className="hero-fade opacity-0 max-w-lg text-lg leading-relaxed text-white/60">
+              <p className="hero-fade opacity-0 max-w-lg text-lg leading-relaxed text-white/75">
                 J&apos;ai toujours cru qu&apos;un travail bien fait, c&apos;est un travail qui a de la valeur.
                 Pas du remplissage. Pas de la friction. J&apos;ai fondé Kael&apos;IA pour que l&apos;IA
                 fasse le reste, et que vos équipes se concentrent sur ce que les machines ne feront jamais.
               </p>
 
-              <div className="hero-fade opacity-0 mt-8 flex flex-wrap gap-3 font-mono text-xs text-white/30 uppercase tracking-widest">
+              <div className="hero-fade opacity-0 mt-8 flex flex-wrap gap-3 font-mono text-xs text-white/50 uppercase tracking-widest">
                 <span className="rounded-full border border-white/10 px-3 py-1">Automatisation</span>
                 <span className="rounded-full border border-white/10 px-3 py-1">Systèmes IA</span>
                 <span className="rounded-full border border-white/10 px-3 py-1">Formation</span>
@@ -313,7 +313,7 @@ export default function AboutContent() {
 
           <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.3em] text-[#7c3aed] uppercase">Vision</p>
           <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">Notre vision</h2>
-          <p className="text-lg leading-relaxed text-white/60">
+          <p className="text-lg leading-relaxed text-white/75">
             L&apos;IA n&apos;est pas une menace, c&apos;est un levier.
             L&apos;objectif : rendre l&apos;intelligence artificielle accessible,
             pratique et profitable pour chaque entreprise, quelle que soit sa
@@ -360,7 +360,7 @@ export default function AboutContent() {
                   <div className={`w-1/2 ${isLeft ? "pr-10 text-right" : "pl-10 ml-auto"}`}>
                     <div className="rounded-xl border border-white/[0.07] bg-[#0d0d1a] p-6 transition-all duration-300 hover:border-[#7c3aed]/30">
                       <h3 className="mb-2 font-semibold text-white">{item.title}</h3>
-                      <p className="text-sm leading-relaxed text-white/50">{item.desc}</p>
+                      <p className="text-sm leading-relaxed text-white/70">{item.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ export default function AboutContent() {
           <div className="about-card opacity-0 rounded-2xl border border-white/[0.07] bg-[#0d0d1a] p-8">
             <div className="section-label opacity-0 mb-4 font-mono text-xs tracking-widest text-[#7c3aed] uppercase">Partenariat</div>
             <h3 className="mb-3 text-xl font-bold text-white">Kaelia — Savoir faire, savoir transmettre</h3>
-            <p className="text-white/50 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed">
               Déployer un système IA sans former les équipes qui l&apos;utilisent,
               c&apos;est construire sur du sable. Le partenariat avec Kaelia, organisme certifié Qualiopi,
               garantit que la technologie s&apos;installe dans les habitudes — pas seulement dans les serveurs.
@@ -422,11 +422,85 @@ export default function AboutContent() {
           <div className="about-card opacity-0 rounded-2xl border border-[#7c3aed]/20 bg-[#0d0d1a] p-8">
             <div className="section-label opacity-0 mb-4 font-mono text-xs tracking-widest text-[#7c3aed] uppercase">Approche</div>
             <h3 className="mb-3 text-xl font-bold text-white">La règle des 48 heures</h3>
-            <p className="text-white/50 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed">
               Chaque mission commence par une question : quelle tâche répétitive fait perdre
               le plus de temps à vos équipes cette semaine ? En 48 heures, on a un prototype qui tourne.
               En 30 jours, un système en production. Pas de roadmap à 18 mois. Des résultats maintenant.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── KAEL'IA TEAM ─── */}
+      <section className="about-reveal opacity-0 relative mx-auto max-w-5xl px-6 py-24">
+        <div className="relative overflow-hidden rounded-2xl border border-[#7c3aed]/25 bg-[#0b0b16] p-10 md:p-14">
+          {/* Ambient glow */}
+          <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#7c3aed]/8 blur-[80px]" />
+          <div className="absolute top-4 right-4 h-7 w-7 border-t border-r border-[#7c3aed]/30" />
+          <div className="absolute bottom-4 left-4 h-7 w-7 border-b border-l border-[#7c3aed]/20" />
+
+          <div className="relative z-10">
+            <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.3em] text-[#7c3aed] uppercase">L&apos;entreprise</p>
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+              Propulsé par Kaelia
+            </h2>
+            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-white/75">
+              Cette initiative est portée par <span className="text-[#c084fc] font-semibold">Kaelia</span>, la branche spécialisée en intelligence artificielle.
+              Notre équipe conçoit, déploie et forme — du premier prototype jusqu&apos;à la mise en production.
+              Ce sont ces personnes qui travaillent chaque jour pour que l&apos;IA devienne un réel avantage compétitif pour vos équipes.
+            </p>
+
+            {/* Team photo grid */}
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+              {/* Slot 1 — Mathis (already available) */}
+              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-[#7c3aed]/20 bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/40">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src="/mathis.jpg"
+                    alt="Mathis Guillemois"
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-transparent to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-white">Mathis Guillemois</h3>
+                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed] uppercase">Fondateur &amp; CEO</p>
+                </div>
+              </div>
+
+              {/* Slot 2 — photo à ajouter */}
+              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-white/[0.06] bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/30">
+                <div className="relative h-56 overflow-hidden bg-[#0d0d1a] flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-3 opacity-30">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+                    </svg>
+                    <span className="font-mono text-[10px] tracking-widest text-[#7c3aed] uppercase">Photo à venir</span>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-white/40">—</h3>
+                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed]/40 uppercase">Équipe Kaelia</p>
+                </div>
+              </div>
+
+              {/* Slot 3 — photo à ajouter */}
+              <div className="about-card opacity-0 group relative overflow-hidden rounded-xl border border-white/[0.06] bg-[#0d0d1a] transition-all duration-300 hover:border-[#7c3aed]/30 sm:col-span-2 md:col-span-1">
+                <div className="relative h-56 overflow-hidden bg-[#0d0d1a] flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-3 opacity-30">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+                    </svg>
+                    <span className="font-mono text-[10px] tracking-widest text-[#7c3aed] uppercase">Photo à venir</span>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-white/40">—</h3>
+                  <p className="mt-1 font-mono text-xs tracking-wider text-[#7c3aed]/40 uppercase">Équipe Kaelia</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -437,7 +511,7 @@ export default function AboutContent() {
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
           Votre prochaine heure gagnée<br />commence ici.
         </h2>
-        <p className="mb-10 text-lg text-white/50">
+        <p className="mb-10 text-lg text-white/70">
           30 minutes. Pas de pitch. On regarde ensemble où l&apos;IA peut avoir un impact
           réel dans votre organisation — et on sort avec un plan concret.
         </p>

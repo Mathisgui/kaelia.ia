@@ -402,11 +402,12 @@ function Particles() {
     (lineGeometry.attributes.position as THREE.BufferAttribute).needsUpdate = true;
     (lineGeometry.attributes.color as THREE.BufferAttribute).needsUpdate = true;
 
-    // Camera — smooth shift during Value section
+    // Camera — smooth shift during Value section (reduced on mobile to prevent clipping)
     const valuePeak = 0.15;
     const valueWidth = 0.06;
     const valueDelta = (scroll - valuePeak) / valueWidth;
-    const valueShift = Math.exp(-valueDelta * valueDelta) * 8;
+    const maxShift = window.innerWidth < 768 ? 2.5 : 8;
+    const valueShift = Math.exp(-valueDelta * valueDelta) * maxShift;
 
     const cx = mouseRef.current.x * 0.3 + valueShift;
     const cy = mouseRef.current.y * 0.2;

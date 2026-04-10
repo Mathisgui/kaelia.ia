@@ -82,7 +82,7 @@ const StatsSection: React.FC = () => {
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {content.stats.sectionTitle}
           </h2>
-          <p className="mx-auto mb-20 max-w-2xl text-center text-white/50">
+          <p className="mx-auto mb-20 max-w-2xl text-center text-white/70">
             {content.stats.sectionDescription}
           </p>
         </div>

@@ -101,7 +101,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-0 left-0 right-0 z-10 px-8 md:px-16 lg:px-24 xl:px-32 pb-12">
         <div className="flex items-end justify-between gap-8 pt-6">
           <div ref={bottomLeftRef} className="opacity-0 max-w-lg">
-            <p className="text-base leading-relaxed text-white/50">
+            <p className="text-base leading-relaxed text-white/70">
               {content.hero.description}
             </p>
           </div>

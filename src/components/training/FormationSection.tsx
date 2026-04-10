@@ -141,7 +141,7 @@ const FormationSection: React.FC = () => {
             <span className="text-xs text-white/40">sur toutes les formations</span>
           </div>
 
-          <p className="mx-auto max-w-2xl text-white/50 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-white/70 leading-relaxed">
             {t.sectionDescription}
           </p>
         </div>
@@ -194,7 +194,7 @@ const FormationSection: React.FC = () => {
               <p className="mb-2 text-white font-semibold text-lg">
                 Formations finançables
               </p>
-              <p className="text-white/50 text-sm leading-relaxed mb-6">
+              <p className="text-white/70 text-sm leading-relaxed mb-6">
                 Éligibles aux dispositifs de financement de la formation professionnelle.
                 Notre expertise, sans surcoût pour votre entreprise.
               </p>

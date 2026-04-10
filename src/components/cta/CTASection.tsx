@@ -164,7 +164,7 @@ const CTASection: React.FC = () => {
 
             <p
               ref={descRef}
-              className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-white/50 md:text-lg whitespace-pre-line opacity-0"
+              className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-white/70 md:text-lg whitespace-pre-line opacity-0"
             >
               {content.cta.description}
             </p>

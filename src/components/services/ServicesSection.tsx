@@ -174,7 +174,7 @@ const ServicesSection: React.FC = () => {
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {content.services.sectionTitle}
           </h2>
-          <p className="mx-auto mb-20 max-w-2xl text-center text-white/50 leading-relaxed">
+          <p className="mx-auto mb-20 max-w-2xl text-center text-white/70 leading-relaxed">
             {content.services.sectionDescription}
           </p>
         </div>
@@ -211,7 +211,7 @@ const ServicesSection: React.FC = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-white/55 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed">
                     {item.longDescription}
                   </p>
 
@@ -222,7 +222,7 @@ const ServicesSection: React.FC = () => {
                         <svg className="mt-1 h-4 w-4 shrink-0 text-[#a78bfa]" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-sm text-white/60">{benefit}</span>
+                        <span className="text-sm text-white/75">{benefit}</span>
                       </li>
                     ))}
                   </ul>

@@ -112,7 +112,7 @@ const ProcessSection: React.FC = () => {
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {content.process.sectionTitle}
           </h2>
-          <p className="mx-auto mb-20 max-w-2xl text-center text-white/50 leading-relaxed">
+          <p className="mx-auto mb-20 max-w-2xl text-center text-white/70 leading-relaxed">
             {content.process.sectionDescription}
           </p>
         </div>
@@ -156,7 +156,7 @@ const ProcessSection: React.FC = () => {
                         <p className="mb-2 text-white/70 leading-relaxed">
                           {step.description}
                         </p>
-                        <p className="text-white/50 leading-relaxed text-sm">
+                        <p className="text-white/70 leading-relaxed text-sm">
                           {step.details}
                         </p>
                       </div>
@@ -179,7 +179,7 @@ const ProcessSection: React.FC = () => {
                         <p className="mb-2 text-white/70 leading-relaxed">
                           {step.description}
                         </p>
-                        <p className="text-white/50 leading-relaxed text-sm">
+                        <p className="text-white/70 leading-relaxed text-sm">
                           {step.details}
                         </p>
                       </div>
