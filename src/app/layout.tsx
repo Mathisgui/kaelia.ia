@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     description:
       "Des systèmes IA sur mesure pour transformer votre entreprise. Automatisation, formation certifiée Qualiopi et conseil stratégique.",
   },
+  verification: {
+    google: "EboTpzkAGNxKEak1aSfB5v_lYuXGr77iwxiCqQBSV0g",
+  },
   robots: {
     index: true,
     follow: true,
