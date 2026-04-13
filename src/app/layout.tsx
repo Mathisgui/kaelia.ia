@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kaelia.vercel.app"),
+  metadataBase: new URL("https://kaelia-ai.com"),
   icons: {
     icon: "/logo-kaelia-nobg.png",
     shortcut: "/logo-kaelia-nobg.png",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://kaelia.vercel.app",
+    url: "https://kaelia-ai.com",
     title: "Kael'IA | Systèmes IA & Automatisation pour Entreprises",
     description:
       "Des systèmes IA sur mesure, des automatisations intelligentes et un accompagnement stratégique. +100 automatisations déployées, +50 formations réalisées.",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://kaelia.vercel.app",
+    canonical: "https://kaelia-ai.com",
   },
 };
 
