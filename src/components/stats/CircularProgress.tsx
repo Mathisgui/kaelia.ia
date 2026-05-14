@@ -135,9 +135,9 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
       </div>
 
       {/* Label below circle */}
-      <span className="mt-4 text-sm font-medium text-white/80">{label}</span>
+      <span className="mt-4 text-base font-semibold text-white">{label}</span>
       {/* Description below label */}
-      <p className="mt-3 max-w-xs text-center text-sm text-white/60">
+      <p className="mt-3 max-w-xs text-center text-sm leading-relaxed text-white/90">
         {description}
       </p>
     </div>

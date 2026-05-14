@@ -71,11 +71,11 @@ const Navbar: React.FC = () => {
               className="flex items-center select-none shrink-0"
             >
               <Image
-                src="/logo-kaelia.png"
+                src="/kaelia-logo.png"
                 alt="Kael'IA"
-                width={36}
-                height={36}
-                className="h-9 w-auto"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
                 priority
               />
             </a>

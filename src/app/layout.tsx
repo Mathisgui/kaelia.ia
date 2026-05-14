@@ -19,9 +19,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kaelia-ai.com"),
   icons: {
-    icon: "/logo-kaelia-nobg.png",
-    shortcut: "/logo-kaelia-nobg.png",
-    apple: "/logo-kaelia-nobg.png",
+    icon: "/kaelia-logo.png",
+    shortcut: "/kaelia-logo.png",
+    apple: "/kaelia-logo.png",
   },
   title: {
     default: "Kael'IA | Systèmes IA & Automatisation pour Entreprises",

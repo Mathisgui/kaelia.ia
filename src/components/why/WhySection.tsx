@@ -107,7 +107,7 @@ const WhySection: React.FC = () => {
           <h2 className="font-serif mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {content.why.sectionTitle}
           </h2>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/70">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/90">
             {content.why.sectionDescription}
           </p>
         </div>
@@ -138,7 +138,7 @@ const WhySection: React.FC = () => {
                 {/* Title underline */}
                 <div className="why-connector mb-5 h-px w-full origin-left bg-gradient-to-r from-[#7c3aed]/60 via-[#a78bfa]/30 to-transparent" />
 
-                <p className="text-sm leading-relaxed text-white/70 transition-colors group-hover:text-white/85">
+                <p className="text-sm leading-relaxed text-white/90 transition-colors group-hover:text-white/85">
                   {item.description}
                 </p>
 
@@ -211,7 +211,7 @@ const WhySection: React.FC = () => {
                 {/* Title underline */}
                 <div className="why-connector mb-5 h-px w-full origin-left bg-gradient-to-r from-[#7c3aed]/60 via-[#a78bfa]/30 to-transparent" />
 
-                <p className="text-sm leading-relaxed text-white/70 transition-colors group-hover:text-white/85">
+                <p className="text-sm leading-relaxed text-white/90 transition-colors group-hover:text-white/85">
                   {item.description}
                 </p>
 

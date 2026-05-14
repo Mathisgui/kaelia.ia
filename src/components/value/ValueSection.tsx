@@ -127,7 +127,7 @@ const ValueSection: React.FC = () => {
                   <h3 className="font-serif mb-2 text-xl font-semibold text-white md:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="max-w-lg text-sm leading-relaxed text-white/70 transition-colors duration-300 group-hover:text-white/85 md:text-base">
+                  <p className="max-w-lg text-sm leading-relaxed text-white/90 transition-colors duration-300 group-hover:text-white/85 md:text-base">
                     {item.description}
                   </p>
                 </div>

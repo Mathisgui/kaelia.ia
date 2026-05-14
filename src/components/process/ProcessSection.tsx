@@ -112,7 +112,7 @@ const ProcessSection: React.FC = () => {
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {content.process.sectionTitle}
           </h2>
-          <p className="mx-auto mb-20 max-w-2xl text-center text-white/70 leading-relaxed">
+          <p className="mx-auto mb-20 max-w-2xl text-center text-white leading-relaxed">
             {content.process.sectionDescription}
           </p>
         </div>
@@ -153,10 +153,10 @@ const ProcessSection: React.FC = () => {
                         <h3 className="font-serif mb-3 text-2xl font-bold text-white">
                           {step.title}
                         </h3>
-                        <p className="mb-2 text-white/70 leading-relaxed">
+                        <p className="mb-3 text-white leading-relaxed font-medium">
                           {step.description}
                         </p>
-                        <p className="text-white/70 leading-relaxed text-sm">
+                        <p className="text-white/55 leading-relaxed text-sm italic">
                           {step.details}
                         </p>
                       </div>
@@ -176,10 +176,10 @@ const ProcessSection: React.FC = () => {
                         <h3 className="font-serif mb-3 text-2xl font-bold text-white">
                           {step.title}
                         </h3>
-                        <p className="mb-2 text-white/70 leading-relaxed">
+                        <p className="mb-3 text-white leading-relaxed font-medium">
                           {step.description}
                         </p>
-                        <p className="text-white/70 leading-relaxed text-sm">
+                        <p className="text-white/55 leading-relaxed text-sm italic">
                           {step.details}
                         </p>
                       </div>
@@ -210,10 +210,10 @@ const ProcessSection: React.FC = () => {
               <h3 className="font-serif mb-3 text-xl font-bold text-white">
                 {step.title}
               </h3>
-              <p className="mb-2 text-white/70 leading-relaxed">
+              <p className="mb-3 text-white leading-relaxed font-medium">
                 {step.description}
               </p>
-              <p className="text-white/50 leading-relaxed text-sm">
+              <p className="text-white/55 leading-relaxed text-sm italic">
                 {step.details}
               </p>
             </div>

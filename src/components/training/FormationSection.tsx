@@ -129,19 +129,7 @@ const FormationSection: React.FC = () => {
             {t.sectionTitle}
           </h2>
 
-          {/* Offre de lancement */}
-          <div className="fm-desc opacity-0 inline-flex items-center gap-3 mb-6 px-5 py-2.5 rounded-full border border-[#a78bfa]/40 bg-[#7c3aed]/10 backdrop-blur-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a78bfa] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a78bfa]" />
-            </span>
-            <span className="text-sm font-semibold text-[#a78bfa] tracking-wide uppercase">Offre de lancement</span>
-            <span className="h-4 w-px bg-[#a78bfa]/30" />
-            <span className="text-sm font-bold text-white">−30%</span>
-            <span className="text-xs text-white/40">sur toutes les formations</span>
-          </div>
-
-          <p className="mx-auto max-w-2xl text-white/70 leading-relaxed">
+          <p className="fm-desc opacity-0 mx-auto max-w-2xl text-white/90 leading-relaxed">
             {t.sectionDescription}
           </p>
         </div>
@@ -162,7 +150,7 @@ const FormationSection: React.FC = () => {
               </p>
               <ul className="fm-obj-list space-y-3">
                 {t.objectives.map((obj, i) => (
-                  <li key={i} className="fm-obj-item opacity-0 flex items-start gap-3 text-white/70">
+                  <li key={i} className="fm-obj-item opacity-0 flex items-start gap-3 text-white/90">
                     <CheckIcon />
                     <span>{obj}</span>
                   </li>
@@ -171,7 +159,7 @@ const FormationSection: React.FC = () => {
             </div>
 
             <div className="fm-adapt opacity-0 rounded-xl border border-[#7c3aed]/30 bg-[#0e0b1a] px-6 py-5">
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-white/90 text-sm leading-relaxed">
                 {t.adaptability}
               </p>
             </div>
@@ -185,7 +173,7 @@ const FormationSection: React.FC = () => {
                 Pourquoi nos formations
               </p>
               <div className="fm-connector mb-6 h-px w-full bg-gradient-to-r from-[#7c3aed]/60 via-[#a78bfa]/30 to-transparent" />
-              <p className="fm-diff-item opacity-0 text-white/70 leading-relaxed text-sm">
+              <p className="fm-diff-item opacity-0 text-white/90 leading-relaxed text-sm">
                 {t.differentiators}
               </p>
             </div>
@@ -194,9 +182,9 @@ const FormationSection: React.FC = () => {
               <p className="mb-2 text-white font-semibold text-lg">
                 Formations finançables
               </p>
-              <p className="text-white/70 text-sm leading-relaxed mb-6">
-                Éligibles aux dispositifs de financement de la formation professionnelle.
-                Notre expertise, sans surcoût pour votre entreprise.
+              <p className="text-white/90 text-sm leading-relaxed mb-6">
+                Nos formations sont éligibles aux dispositifs de financement de la formation
+                professionnelle et vous bénéficiez de notre expertise sans surcoût pour votre entreprise.
               </p>
               <div className="fm-btn opacity-0">
                 <MagneticButton href={content.contact.calendarUrl}>

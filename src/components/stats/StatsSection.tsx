@@ -67,14 +67,17 @@ const StatsSection: React.FC = () => {
       ref={sectionRef}
       className="relative min-h-[70vh] py-40 md:py-56"
     >
-      {/* Brighter violet glow */}
+      {/* Solid dark backdrop so background particles don't compete with the text */}
+      <div className="pointer-events-none absolute inset-0 bg-[#0a0a12]/85 backdrop-blur-[2px]" />
+
+      {/* Local violet glow above the backdrop */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] rounded-full bg-[#7c3aed]/15 blur-[100px]" />
         <div className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-[#5b21b6]/10 blur-[80px]" />
         <div className="absolute right-1/4 bottom-1/3 h-64 w-64 rounded-full bg-[#7c3aed]/8 blur-[80px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div ref={headerRef} className="opacity-0">
           <p className="mb-3 text-center text-sm font-medium uppercase tracking-wider text-[#c084fc]">
             Résultats
@@ -82,7 +85,7 @@ const StatsSection: React.FC = () => {
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             {content.stats.sectionTitle}
           </h2>
-          <p className="mx-auto mb-20 max-w-2xl text-center text-white/70">
+          <p className="mx-auto mb-20 max-w-2xl text-center text-white/90">
             {content.stats.sectionDescription}
           </p>
         </div>

@@ -79,21 +79,6 @@ const HeroSection: React.FC = () => {
             {content.hero.cta}
           </a>
 
-          <a
-            href="#formation"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#a78bfa]/40 bg-[#7c3aed]/10 hover:bg-[#7c3aed]/20 transition-all duration-200 cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#formation")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a78bfa] opacity-75" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#a78bfa]" />
-            </span>
-            <span className="text-xs font-semibold text-[#a78bfa] uppercase tracking-wide">Offre de lancement formation</span>
-            <span className="text-xs font-bold text-white">−30%</span>
-          </a>
         </div>
       </div>
 
@@ -101,12 +86,12 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-0 left-0 right-0 z-10 px-8 md:px-16 lg:px-24 xl:px-32 pb-12">
         <div className="flex items-end justify-between gap-8 pt-6">
           <div ref={bottomLeftRef} className="opacity-0 max-w-lg">
-            <p className="text-base leading-relaxed text-white/70">
+            <p className="text-base leading-relaxed text-white/90">
               {content.hero.description}
             </p>
           </div>
           <div ref={bottomRightRef} className="opacity-0 max-w-sm text-right hidden md:block">
-            <p className="text-base font-medium text-white/70 leading-relaxed">
+            <p className="text-base font-medium text-white/90 leading-relaxed">
               {content.hero.tagline}
             </p>
           </div>

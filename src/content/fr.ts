@@ -61,6 +61,7 @@ export const content = {
           "Des workflows intelligents qui automatisent vos processus métier et éliminent les tâches répétitives.",
         longDescription:
           "Des heures de travail manuel gaspillées chaque semaine sur des tâches répétitives ? Des workflows intelligents connectent vos outils, automatisent vos processus et libèrent vos équipes. De la gestion des leads à la facturation, chaque automatisation est taillée sur mesure pour votre activité et livre des résultats concrets dès le premier mois.",
+        startingPrice: "À partir de 1 500 €",
         benefits: [
           "Réduction de 80% des tâches répétitives",
           "Intégration avec vos outils existants (CRM, ERP, email, etc.)",
@@ -77,6 +78,7 @@ export const content = {
           "Des formations sur mesure, certifiées Qualiopi, qui rendent vos équipes autonomes en quelques jours.",
         longDescription:
           "Vos collaborateurs perdent du temps faute de maîtriser les outils IA. Des programmes de formation personnalisés, alliant théorie et pratique sur des cas concrets de votre métier, permettent à vos équipes de gagner en autonomie rapidement. Chaque formation est conçue pour un impact immédiat : les participants repartent avec des compétences directement applicables.",
+        startingPrice: "À partir de 1 500 €",
         benefits: [
           "Formations finançables",
           "Programmes adaptés à chaque niveau, du débutant à l'expert",
@@ -93,6 +95,7 @@ export const content = {
           "Conception et déploiement d'agents IA adaptés aux besoins spécifiques de chaque organisation, avec un audit complet pour construire votre feuille de route.",
         longDescription:
           "Nous concevons et déployons des agents IA sur mesure, des systèmes intelligents qui s'intègrent directement dans vos processus métier. Un audit approfondi identifie où l'IA crée vraiment de la valeur, et une feuille de route claire, priorisée par ROI, guide chaque étape de votre transformation. Chaque système livré est concret, mesurable et calibré sur vos contraintes réelles.",
+        startingPrice: "À partir de 1 500 €",
         benefits: [
           "Cartographie complète de vos opportunités IA",
           "Priorisation par impact et faisabilité",
@@ -129,7 +132,7 @@ export const content = {
         suffix: "%",
         label: "Économies réalisées",
         description:
-          "En automatisant vos processus répétitifs, nos clients récupèrent en moyenne 50% du temps de leurs équipes, réalloué sur des missions à forte valeur ajoutée.",
+          "En automatisant vos processus répétitifs, vous récupérez en moyenne 50% du temps de vos équipes, réalloué sur des missions à forte valeur ajoutée.",
         percentage: 88,
       },
     ],
@@ -202,7 +205,7 @@ export const content = {
         icon: "certificate",
         title: "Formations finançables",
         description:
-          "Des formations certifiées et finançables, conçues en partenariat avec Kaelia. Un cadre reconnu pour un investissement formation optimisé et accessible.",
+          "Nos formations sont éligibles aux dispositifs de financement de la formation professionnelle et vous bénéficiez de notre expertise sans surcoût pour votre entreprise.",
       },
     ],
   },
