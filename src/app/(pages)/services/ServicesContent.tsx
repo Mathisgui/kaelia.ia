@@ -18,7 +18,7 @@ const services = [
     ],
     benefits: [
       "Programmes adaptés à chaque niveau",
-      "Certifié Qualiopi — finançable OPCO",
+      "Certifié Qualiopi · finançable OPCO",
       "Cas pratiques issus de votre secteur",
       "Suivi post-formation inclus",
     ],
@@ -72,7 +72,7 @@ const services = [
     title: "Développement sur mesure",
     subtitle: "Des solutions qui vous ressemblent",
     description: [
-      "Quand les outils standards ne suffisent plus, Kael'IA conçoit des solutions IA entièrement personnalisées. Applications web, APIs, dashboards, systèmes de recommandation — chaque projet est développé avec les technologies les plus adaptées.",
+      "Quand les outils standards ne suffisent plus, Kael'IA conçoit des solutions IA entièrement personnalisées. Applications web, APIs, dashboards, systèmes de recommandation : chaque projet est développé avec les technologies les plus adaptées.",
       "Le processus de développement est transparent : sprints courts, démonstrations régulières et communication constante pour garantir que le résultat correspond exactement aux attentes.",
       "Chaque livrable inclut documentation technique, formation des équipes et support post-déploiement.",
     ],

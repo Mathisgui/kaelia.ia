@@ -33,7 +33,7 @@ const TIMELINE = [
   {
     year: "Le virage IA",
     title: "Voir la vague avant qu'elle ne casse",
-    desc: "L'IA générative explose. Je comprends immédiatement que ce n'est pas une mode mais une bascule. Je reprends les études, passe un diplôme en data et en IA, et plonge dans la technique pour ne pas seulement en parler — savoir la construire.",
+    desc: "L'IA générative explose. Je comprends immédiatement que ce n'est pas une mode mais une bascule. Je reprends les études, passe un diplôme en data et en IA, et plonge dans la technique pour ne pas seulement en parler, mais savoir la construire.",
   },
   {
     year: "Freelance & Kael'IA",
@@ -50,15 +50,15 @@ const TIMELINE = [
 const TEAM = [
   {
     name: "Killian Guillemois",
-    role: "CEO — Kaelia",
+    role: "CEO · Kaelia",
     src: "/ki-kaelia-1.jpg",
     desc: "Pilote la stratégie globale et la croissance du groupe Kaelia. Garant d'une exécution exigeante et d'un cap clair pour l'ensemble des branches.",
   },
   {
     name: "Karine Weil",
-    role: "COO — Kaelia",
+    role: "COO · Kaelia",
     src: "/ka-kaelia.jpg",
-    desc: "Architecte des opérations et du modèle pédagogique de Kaelia. Veille à ce que chaque formation tienne sa promesse — qualité, conformité Qualiopi, accompagnement humain.",
+    desc: "Architecte des opérations et du modèle pédagogique de Kaelia. Veille à ce que chaque formation tienne sa promesse : qualité, conformité Qualiopi, accompagnement humain.",
   },
 ];
 
@@ -304,7 +304,7 @@ export default function AboutContent() {
             la maîtrisent aujourd&apos;hui ne joueront plus dans la même catégorie demain.
             Branche IA du groupe Kaelia, nous concevons et déployons des systèmes IA, des
             agents intelligents et des automatisations sur mesure pour que la technologie
-            serve enfin ceux qui font tourner les entreprises — pas l&apos;inverse.
+            serve enfin ceux qui font tourner les entreprises, pas l&apos;inverse.
           </p>
 
           <p className="hero-fade opacity-0 mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 italic">
@@ -382,7 +382,7 @@ export default function AboutContent() {
           {/* Texte storytelling — colonne gauche */}
           <div className="lg:col-span-3 lg:order-1">
             <p className="section-label opacity-0 mb-3 font-mono text-xs tracking-[0.4em] text-[#7c3aed] uppercase">
-              Associé · CTO · Fondateur — Branche IA
+              Associé · CTO · Fondateur · Branche IA
             </p>
             <h2 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
               Mathis Guillemois
@@ -396,7 +396,7 @@ export default function AboutContent() {
                 fait un master à l&apos;IAE, puis travaillé plusieurs années dans le
                 marketing et le management. C&apos;est là que j&apos;ai compris une chose
                 fondamentale&nbsp;: ce qui ralentit les entreprises, ce n&apos;est presque
-                jamais le talent — c&apos;est le frottement. Les outils qui ne se parlent
+                jamais le talent, c&apos;est le frottement. Les outils qui ne se parlent
                 pas, les tâches répétitives, les heures perdues à copier-coller ce qui
                 devrait être instantané.
               </p>
@@ -404,7 +404,7 @@ export default function AboutContent() {
                 Et puis l&apos;IA générative est arrivée. Là où beaucoup ont vu une mode,
                 j&apos;y ai vu la fin d&apos;une époque. J&apos;ai repris les études, passé
                 un diplôme en data et en IA, et plongé dans la technique pour ne pas
-                seulement en parler — savoir la construire. J&apos;ai commencé à déployer
+                seulement en parler, mais savoir la construire. J&apos;ai commencé à déployer
                 des systèmes IA pour des entreprises, en freelance, jusqu&apos;à lancer la
                 branche IA de Kaelia avec mes associés.
               </p>
@@ -586,7 +586,7 @@ export default function AboutContent() {
               </h2>
               <p className="text-base leading-relaxed text-white/90 md:text-lg">
                 Kael&apos;IA, c&apos;est la promesse d&apos;une IA qui s&apos;installe
-                dans le quotidien des entreprises — et d&apos;une formation qui rend
+                dans le quotidien des entreprises, et d&apos;une formation qui rend
                 réellement les équipes autonomes. Notre partenariat avec{" "}
                 <span className="font-semibold text-[#c084fc]">Kaelia</span>, organisme
                 certifié Qualiopi, garantit des formations entièrement finançables (CPF,
@@ -626,7 +626,7 @@ export default function AboutContent() {
         </h2>
         <p className="mb-10 text-lg text-white/85">
           30 minutes. Pas de pitch. On regarde ensemble où l&apos;IA peut avoir un impact
-          réel dans votre organisation — et on sort avec un plan concret.
+          réel dans votre organisation, et on sort avec un plan concret.
         </p>
         <Link
           href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0elwGhJ_Xy3KFyk17moeheL-G9N4jsDSeZf0mLVqNvsF3QGGyCE3UOtbPzWDkJ_6gHO8ZAJlE0"

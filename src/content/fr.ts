@@ -248,7 +248,7 @@ export const content = {
 
   footer: {
     copyright: `© ${new Date().getFullYear()} Kael'IA. Tous droits réservés.`,
-    kaelia: "Formations IA finançables — En partenariat avec Kaelia",
+    kaelia: "Formations IA finançables · En partenariat avec Kaelia",
     legal: [
       { label: "Mentions légales", href: "/mentions-legales" },
       { label: "Politique de confidentialité", href: "/confidentialite" },

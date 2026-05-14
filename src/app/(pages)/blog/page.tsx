@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog | Kael'IA — Actualités IA & Automatisation",
+  title: "Blog | Kael'IA · Actualités IA & Automatisation",
   description:
     "Articles et actualités sur l'intelligence artificielle, l'automatisation et la transformation digitale des entreprises.",
 };
