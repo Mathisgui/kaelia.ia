@@ -1,12 +1,16 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap-register";
-import { content } from "@/content/fr";
+import { gsap } from "@/lib/gsap-register";
 import { ANIMATION } from "@/lib/constants";
+import type { HomeContent } from "@/content/types";
 import CircularProgress from "./CircularProgress";
 
-const StatsSection: React.FC = () => {
+interface StatsSectionProps {
+  content: HomeContent["stats"];
+}
+
+const StatsSection: React.FC<StatsSectionProps> = ({ content }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -15,8 +19,12 @@ const StatsSection: React.FC = () => {
     const section = sectionRef.current;
     if (!section) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      headerRef.current?.classList.remove("opacity-0");
+      return;
+    }
+
     const ctx = gsap.context(() => {
-      /* Section header fade in */
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current,
@@ -80,18 +88,18 @@ const StatsSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div ref={headerRef} className="opacity-0">
           <p className="mb-3 text-center text-sm font-medium uppercase tracking-wider text-[#c084fc]">
-            Résultats
+            {content.eyebrow}
           </p>
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-            {content.stats.sectionTitle}
+            {content.title}
           </h2>
           <p className="mx-auto mb-20 max-w-2xl text-center text-white/90">
-            {content.stats.sectionDescription}
+            {content.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-16 md:grid-cols-3">
-          {content.stats.items.map((item, i) => (
+          {content.items.map((item, i) => (
             <div
               key={i}
               ref={(el) => { itemsRef.current[i] = el; }}

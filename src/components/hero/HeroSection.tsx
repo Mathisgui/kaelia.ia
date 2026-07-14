@@ -1,21 +1,33 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import Link from "next/link";
 import { gsap } from "@/lib/gsap-register";
-import { content } from "@/content/fr";
+import type { HomeContent } from "@/content/types";
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  content: HomeContent["hero"];
+  calendarUrl: string;
+  secondaryHref: string;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ content, calendarUrl, secondaryHref }) => {
   const containerRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const bottomLeftRef = useRef<HTMLDivElement>(null);
-  const bottomRightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const titleEl = titleRef.current;
     if (!titleEl) return;
 
-    const words = content.hero.title.split(" ");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      ctaRef.current?.classList.remove("opacity-0");
+      bottomLeftRef.current?.classList.remove("opacity-0");
+      return;
+    }
+
+    const words = content.title.split(" ");
     titleEl.innerHTML = words
       .map(
         (word) =>
@@ -35,7 +47,7 @@ const HeroSection: React.FC = () => {
         opacity: 1,
         y: 0,
         duration: 1.2,
-        stagger: 0.2,
+        stagger: 0.12,
         ease: "power3.out",
       });
 
@@ -47,15 +59,15 @@ const HeroSection: React.FC = () => {
       );
 
       tl.fromTo(
-        [bottomLeftRef.current, bottomRightRef.current],
+        bottomLeftRef.current,
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15 },
+        { y: 0, opacity: 1, duration: 0.8 },
         "-=0.4"
       );
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [content.title]);
 
   return (
     <section
@@ -66,35 +78,43 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-16 lg:px-24 xl:px-32">
         <h1
           ref={titleRef}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold max-w-3xl leading-[1.05] mb-8 text-white"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold max-w-4xl leading-[1.08] mb-8 text-white"
         >
-          {content.hero.title}
+          {content.title}
         </h1>
 
-        <div ref={ctaRef} className="opacity-0 flex flex-col items-start gap-3">
-          <a
-            href={content.contact.calendarUrl}
-            className="inline-flex items-center gap-3 px-7 py-3.5 border border-white/30 rounded-full text-sm uppercase tracking-wider text-white hover:bg-white hover:text-[#0a0a12] transition-all duration-300"
-          >
-            {content.hero.cta}
-          </a>
-
+        <div ref={ctaRef} className="opacity-0 flex flex-col items-start gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <a
+              href={calendarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm uppercase tracking-wider bg-white text-[#0a0a12] hover:bg-transparent hover:text-white border border-white transition-all duration-300"
+            >
+              {content.ctaPrimary}
+            </a>
+            <Link
+              href={secondaryHref}
+              className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 rounded-full text-sm uppercase tracking-wider text-white hover:bg-white hover:text-[#0a0a12] transition-all duration-300"
+            >
+              {content.ctaSecondary}
+              <svg className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </Link>
+          </div>
+          <p className="text-xs uppercase tracking-widest text-white/50">
+            {content.ctaPrimaryNote}
+          </p>
         </div>
       </div>
 
-      {/* Bottom bar — descriptive texts left + right */}
+      {/* Bottom bar — descriptive text */}
       <div className="absolute bottom-0 left-0 right-0 z-10 px-8 md:px-16 lg:px-24 xl:px-32 pb-12">
-        <div className="flex items-end justify-between gap-8 pt-6">
-          <div ref={bottomLeftRef} className="opacity-0 max-w-lg">
-            <p className="text-base leading-relaxed text-white/90">
-              {content.hero.description}
-            </p>
-          </div>
-          <div ref={bottomRightRef} className="opacity-0 max-w-sm text-right hidden md:block">
-            <p className="text-base font-medium text-white/90 leading-relaxed">
-              {content.hero.tagline}
-            </p>
-          </div>
+        <div ref={bottomLeftRef} className="opacity-0 max-w-xl">
+          <p className="text-base leading-relaxed text-white/90">
+            {content.description}
+          </p>
         </div>
       </div>
     </section>

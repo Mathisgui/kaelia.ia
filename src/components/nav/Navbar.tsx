@@ -1,15 +1,39 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { content } from "@/content/fr";
+import Link from "next/link";
+import type { CommonContent } from "@/content/types";
+import { routes, type Locale, type RouteKey } from "@/lib/routes";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  common: CommonContent;
+  locale: Locale;
+}
+
+/** Chemin équivalent dans l'autre langue pour la page courante. */
+function alternateForPathname(pathname: string, locale: Locale): string {
+  const other: Locale = locale === "fr" ? "en" : "fr";
+
+  for (const key of Object.keys(routes) as RouteKey[]) {
+    const entry = routes[key] as Partial<Record<Locale, string>>;
+    if (entry[locale] === pathname && entry[other]) return entry[other]!;
+  }
+  // Articles de blog : retomber sur la liste de l'autre langue.
+  if (pathname.startsWith("/blog/")) return "/en/blog";
+  if (pathname.startsWith("/en/blog/")) return "/blog";
+
+  return other === "fr" ? "/" : "/en";
+}
+
+const Navbar: React.FC<NavbarProps> = ({ common, locale }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const homePath = locale === "fr" ? "/" : "/en";
+  const isHome = pathname === homePath;
+  const altHref = alternateForPathname(pathname, locale);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,29 +54,6 @@ const Navbar: React.FC = () => {
     };
   }, [mobileOpen]);
 
-  const handleNavClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      setMobileOpen(false);
-      if (!href.startsWith("#")) return;
-
-      if (isHome) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        e.preventDefault();
-        window.location.href = `/${href}`;
-      }
-    },
-    [isHome]
-  );
-
-  // Separate nav links from CTA
-  const navLinks = content.nav.links.filter((l) => l.label !== "Prendre un RDV");
-  const ctaLink = content.nav.links.find((l) => l.label === "Prendre un RDV");
-
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-40 h-20 flex items-center">
@@ -60,8 +61,8 @@ const Navbar: React.FC = () => {
           {/* Left group: Logo + pill with links */}
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <a
-              href="/"
+            <Link
+              href={homePath}
               onClick={(e) => {
                 if (isHome) {
                   e.preventDefault();
@@ -71,57 +72,64 @@ const Navbar: React.FC = () => {
               className="flex items-center select-none shrink-0"
             >
               <Image
-                src="/kaelia-logo.png"
+                src="/logo-kaelia.png"
                 alt="Kael'IA"
                 width={40}
                 height={40}
                 className="h-10 w-auto"
                 priority
               />
-            </a>
+            </Link>
 
             {/* Desktop links in pill */}
             <div
-              className={`hidden md:flex items-center gap-6 rounded-full px-6 py-2 transition-all duration-500 ${
+              className={`hidden lg:flex items-center gap-6 rounded-full px-6 py-2 transition-all duration-500 ${
                 scrolled
                   ? "bg-[#0a0a12]/90 backdrop-blur-xl border border-white/[0.1] shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
                   : "bg-white/[0.08] backdrop-blur-md border border-white/[0.1]"
               }`}
             >
-              {navLinks.map((link) => (
-                <a
+              {common.nav.links.map((link) => (
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={() => setMobileOpen(false)}
                   className="text-[15px] text-white/60 hover:text-white transition-colors duration-200 whitespace-nowrap"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
-          {/* Right: CTA button */}
-          {ctaLink && (
+          {/* Right: lang switch + CTA button */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href={altHref}
+              className="text-[13px] font-medium uppercase tracking-wider text-white/50 hover:text-white transition-colors duration-200"
+              aria-label={locale === "fr" ? "Switch to English" : "Passer en français"}
+            >
+              {common.langSwitchLabel}
+            </Link>
             <a
-              href={ctaLink.href}
+              href={common.nav.cta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group hidden md:inline-flex relative items-center px-6 py-2.5 rounded-full text-[15px] font-medium whitespace-nowrap overflow-hidden"
+              className="group relative inline-flex items-center px-6 py-2.5 rounded-full text-[15px] font-medium whitespace-nowrap overflow-hidden"
             >
               <span className="absolute inset-0 bg-white transition-transform duration-300 ease-out group-hover:-translate-y-full" />
               <span className="absolute inset-0 bg-gradient-to-r from-[#3b0764] via-[#6d28d9] to-[#9f1239] translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
               <span className="relative z-10 text-[#0a0a12] transition-colors duration-300 group-hover:text-white">
-                {ctaLink.label}
+                {common.nav.cta.label}
               </span>
             </a>
-          )}
+          </div>
 
           {/* Mobile hamburger */}
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-[5px] z-50"
+            className="lg:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-[5px] z-50"
             aria-label="Menu"
           >
             <span
@@ -145,7 +153,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile overlay */}
       <div
-        className={`fixed inset-0 z-30 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-30 transition-all duration-500 lg:hidden ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -162,17 +170,33 @@ const Navbar: React.FC = () => {
           }`}
         >
           <div className="flex flex-col gap-6 pt-28 px-8">
-            {content.nav.links.map((link, i) => (
-              <a
+            {common.nav.links.map((link, i) => (
+              <Link
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={() => setMobileOpen(false)}
                 className="text-lg text-white/60 hover:text-white transition-colors duration-300"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
+            <a
+              href={common.nav.cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="text-lg font-medium text-[#a78bfa] hover:text-white transition-colors duration-300"
+            >
+              {common.nav.cta.label}
+            </a>
+            <Link
+              href={altHref}
+              onClick={() => setMobileOpen(false)}
+              className="text-sm uppercase tracking-wider text-white/40 hover:text-white transition-colors duration-300"
+            >
+              {common.langSwitchLabel}
+            </Link>
           </div>
         </div>
       </div>

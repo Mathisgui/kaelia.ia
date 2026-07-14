@@ -1,0 +1,81 @@
+---
+title: "How to automate business email management"
+date: "2026-06-30"
+excerpt: "A practical guide to automating business email: flow audit, classification, drafted replies, human review and CRM updates, with realistic, cautious numbers."
+keywords: ["automate business email", "email management", "AI email agent", "n8n", "email classification", "shared inbox"]
+translationKey: "email-automation"
+---
+
+In many small and mid-sized businesses, the shared inbox is the biggest hidden time sink: the morning sorting session, repetitive replies rewritten from scratch, requests lost in the thread, information that never makes it into the CRM. It is also one of the most profitable processes to automate, as long as you do it step by step. Here is the approach we use, the tools involved and the traps that sink most attempts.
+
+## Step 1: audit the flow before touching anything
+
+You cannot automate an inbox you do not understand. For one to two weeks, measure:
+
+- the daily volume of incoming messages that actually need handling;
+- the recurring reasons for contact: quote requests, product questions, order tracking, complaints, billing, spam;
+- the share of repetitive messages, the ones whose reply always follows the same pattern;
+- the time spent every day on sorting and writing.
+
+These numbers pay off twice: they tell you what is worth automating first, and they give you the baseline to measure the gain after deployment. In most shared inboxes we audit, 50 to 70 percent of messages fall into fewer than ten categories.
+
+## Step 2: classify messages automatically
+
+This is the foundation of the system. An n8n (or Make) workflow connects to Gmail or Outlook, and every incoming message is analysed by an AI model through an API (OpenAI, Anthropic or Mistral): reason, urgency level, known sender or not.
+
+The workflow then applies the result: a label is set, the message is routed to the right person, urgent cases are flagged in Slack or Teams.
+
+Two lessons from the field:
+
+- Start with 5 to 8 categories at most. Make them too fine-grained and they overlap, and classification becomes unstable.
+- Always keep a "needs manual sorting" category: anything the model cannot classify with confidence should go to a human, not into the wrong box.
+
+## Step 3: draft the replies, do not send them
+
+For the repetitive categories identified in step 1, the agent drafts a reply based on your standard answers, your documents and the history of the conversation. The draft is placed in the inbox, attached to the original message.
+
+The nuance matters: draft, not send. A prepared reply captures most of the writing time, and the human who reviews it stays accountable for what goes out. This is the core of our [email management agent](/en/ai-email-agent).
+
+## Step 4: keep a human in the loop
+
+At the start, every reply goes through review: the agent drafts, someone reads and clicks. This is not a temporary step to remove as fast as possible, it is a control mechanism. And it does not cancel the gain: reviewing a well-prepared draft takes a few seconds, writing the same reply from scratch takes minutes. The saving is preserved, the control stays.
+
+Switching to automatic sending is a decision you make later, category by category, based on data: if acknowledgement emails have gone out for a month without a single correction, that category can go automatic. Complaints and sensitive topics stay under human review, permanently.
+
+## Step 5: update the CRM and create the follow-up
+
+The real gain does not stop at the reply. For every message handled, the workflow can:
+
+- create or update the contact record in the CRM (HubSpot, Pipedrive or another);
+- create a follow-up task assigned to the right person;
+- log everything: who asked what, what was answered, what remains to be done.
+
+The result: no forgotten requests, and a CRM that reflects reality without manual re-entry. This part is plain [workflow automation](/en/automations): reliable, traceable, no AI needed.
+
+## The tools you need
+
+- **Your current mailbox**: Gmail or Outlook, nothing to replace.
+- **An orchestrator**: n8n (self-hostable, so your data stays under your control) or Make.
+- **An AI API**: OpenAI, Anthropic or Mistral, under business terms that exclude training on your data.
+- **Your existing CRM and tracking tools**, connected through their APIs.
+
+## The traps that sink these projects
+
+- **Automating everything at once.** Classification, replies, CRM and follow-ups deployed together: impossible to tell what works and what fails. Roll out one step at a time and validate each one.
+- **Removing human review too early.** One premature automatic send, and the first clumsy reply to an important customer costs more than all the time saved.
+- **Ignoring sensitive cases.** Complaints, legal topics, unhappy customers: these messages must be escalated to a human every time, by design.
+- **Measuring nothing.** Without the audit from step 1, you cannot prove the gain, so you cannot decide what to do next.
+
+## What results to expect: cautious numbers
+
+Take a shared inbox receiving around fifty messages a day that need handling, 60 percent of which are repetitive:
+
+- the morning sorting session, 30 to 45 minutes, disappears: the inbox is sorted continuously;
+- each drafted repetitive reply saves 2 to 4 minutes of writing;
+- CRM updates and task creation no longer take any human time.
+
+In total, expect 1 hour to 1.5 hours recovered per day for the person running that inbox, roughly 20 to 30 hours per month. Complex messages still go to your team: that is intentional, and it is what keeps the system trustworthy.
+
+One last dose of realism: allow for a ramp-up period. The first two to four weeks are spent adjusting categories, tone and rules based on your corrections. The numbers above describe a stabilised system, not what you should expect on day one.
+
+Want to know what these numbers would look like on your own inbox? Our free 30-minute assessment estimates the volume an agent can handle and the time you would recover each week, based on your real data. See [how our method works](/en/method).

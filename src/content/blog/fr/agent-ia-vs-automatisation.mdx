@@ -1,0 +1,88 @@
+---
+title: "Agent IA ou automatisation : quelle différence ?"
+date: "2026-06-18"
+excerpt: "Automatisation ou agent IA : définitions claires, trois exemples concrets et des critères simples pour choisir la bonne approche selon vos processus métier."
+keywords: ["agent IA", "automatisation", "différence agent IA automatisation", "workflow", "n8n", "PME"]
+translationKey: "agent-vs-automation"
+---
+
+« Il nous faut de l'IA » : c'est souvent comme ça que démarre la conversation. Puis, en regardant le processus de près, on découvre qu'un simple workflow suffit. Ou l'inverse : une automatisation classique casse parce que le contenu à traiter change à chaque fois. Agent IA et automatisation sont deux briques différentes, avec des coûts et des forces qui n'ont rien à voir. Bien les distinguer, c'est éviter de payer de l'IA pour ce qu'un workflow fait mieux, et inversement.
+
+## L'automatisation : un scénario prédéfini, exécuté sans faille
+
+Une automatisation suit un scénario écrit à l'avance : si tel événement se produit, alors exécuter telles actions, toujours dans le même ordre. Elle se construit dans un outil comme n8n ou Make, connecté à vos logiciels existants.
+
+Un exemple classique : un prospect remplit un formulaire sur votre site. Le workflow crée le contact dans le CRM, envoie un email de bienvenue et assigne une tâche au bon commercial. À chaque fois, de la même façon.
+
+Ses caractéristiques :
+
+- **Déterministe** : les mêmes entrées produisent toujours le même résultat.
+- **Traçable** : chaque exécution est enregistrée, chaque erreur est visible.
+- **Économique** : une fois construite, chaque exécution ne coûte presque rien.
+- **Limitée au prévu** : si le contenu varie ou qu'un cas imprévu arrive, elle s'arrête ou se trompe.
+
+## L'agent IA : comprendre un contenu variable et décider
+
+Un agent IA s'appuie sur un modèle de langage pour analyser un contenu qui change à chaque fois : un email, un document scanné, une demande client rédigée librement. Il identifie l'intention, retrouve le contexte utile et choisit une action dans un périmètre que vous définissez.
+
+Exemple : un email client arrive. L'agent comprend qu'il s'agit d'une réclamation sur une facture, retrouve l'historique du client et le document concerné, puis prépare une réponse adaptée, prête à valider.
+
+Ses caractéristiques :
+
+- **Souple** : il gère la variabilité du langage et des documents.
+- **Payant à l'usage** : chaque analyse déclenche un appel à une API IA, facturé au volume.
+- **Probabiliste** : le résultat est très bon en moyenne, mais jamais garanti à 100 %. D'où l'importance de la validation humaine sur les actions sensibles.
+- **À encadrer** : un agent sérieux a un périmètre d'action défini, des règles et des logs.
+
+Précision utile : un agent IA n'est pas un chatbot. Il ne se contente pas de répondre à des questions, il exécute des tâches dans vos outils. Nous détaillons ce fonctionnement sur notre page [agents IA](/agents-ia).
+
+## Quelle approche pour quel processus ?
+
+La question à se poser est simple : est-ce que les mêmes entrées doivent toujours produire la même décision ?
+
+Choisissez l'**automatisation** quand :
+
+- le processus est stable et se décrit entièrement en règles (si X, alors Y) ;
+- les données sont structurées : formulaires, champs, statuts, dates ;
+- la fiabilité prime : facturation, notifications, synchronisation d'outils.
+
+Choisissez l'**agent IA** quand :
+
+- le contenu est variable : texte libre, documents hétérogènes, langues multiples ;
+- la décision demande de l'interprétation : trier, qualifier, résumer, rédiger ;
+- le volume justifie le coût des appels IA.
+
+## Le système combiné : l'agent décide, le workflow exécute
+
+Dans la réalité des projets, la question « agent ou automatisation » est souvent mal posée. Les systèmes qui fonctionnent en entreprise combinent les deux.
+
+> L'agent comprend et décide. Le workflow exécute, trace et alerte en cas de problème.
+
+Concrètement, le workflow encadre l'agent : il déclenche l'analyse au bon moment, enregistre chaque décision, soumet les actions sensibles à une validation humaine et bascule vers un traitement manuel si un cas sort du cadre. L'IA n'est appelée que là où elle apporte de la valeur, le reste tourne en logique classique, fiable et quasi gratuite.
+
+## Trois exemples concrets
+
+### 1. La relance des devis sans réponse : automatisation seule
+
+Un devis est envoyé, aucune réponse sous 7 jours, une relance part, puis une seconde à J+14. La décision de relancer ne demande aucune interprétation : c'est une règle de délai. Un workflow suffit, et il ne coûte presque rien à faire tourner. Payer des appels IA pour cela serait du gaspillage.
+
+### 2. La boîte email partagée : agent et workflow combinés
+
+Une adresse contact@ reçoit des demandes de devis, des questions techniques, des réclamations et du spam, le tout en texte libre. L'agent classe chaque message, détecte les urgences et prépare une réponse. Le workflow crée la tâche de suivi, met à jour le CRM et n'envoie la réponse qu'après validation humaine. C'est le fonctionnement de notre [agent email](/agent-ia-email).
+
+### 3. Les factures fournisseurs : agent et workflow combinés
+
+Chaque fournisseur a son format de facture. L'agent lit le document et en extrait les montants, les dates et les références. Le workflow vérifie la cohérence des totaux, classe le fichier au bon endroit et alimente l'outil comptable. Les cas douteux (document illisible, montant incohérent) sont mis de côté pour vérification humaine au lieu d'être devinés.
+
+## Les erreurs courantes
+
+- **Payer de l'IA pour ce qu'un workflow fait mieux.** Recopier un champ de formulaire dans le CRM n'a pas besoin d'un modèle de langage : l'appel IA ajoute du coût, de la latence et de l'incertitude là où une règle simple est parfaite.
+- **Demander à un workflow d'interpréter.** Trier des emails en texte libre avec des filtres par mots-clés casse au premier message mal formulé. C'est le territoire de l'agent.
+- **Déployer un agent sans cadre.** Sans périmètre défini, sans logs et sans validation humaine, un agent devient une boîte noire. Personne ne sait ce qu'il a fait ni pourquoi.
+- **Partir de l'outil plutôt que du processus.** La bonne question n'est pas « où mettre de l'IA ? » mais « où perdons-nous du temps, et cette tâche demande-t-elle de l'interprétation ? ».
+
+## Ce qu'il faut retenir
+
+L'automatisation exécute des règles, vite et sans erreur. L'agent IA comprend des contenus variables et décide dans un cadre défini. La plupart des vrais projets combinent les deux : l'agent en cerveau, le workflow en colonne vertébrale. Et une part surprenante des gains vient de [workflows simples](/automatisations), sans aucune IA.
+
+Vous hésitez entre les deux approches pour un processus précis ? C'est exactement l'objet de notre diagnostic gratuit de 30 minutes : nous cartographions le processus, tranchons entre workflow, agent ou système combiné, et estimons le gain avant tout engagement. Découvrez [comment se déroule notre méthode](/methode).

@@ -1,11 +1,35 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap-register";
-import { content } from "@/content/fr";
+import Link from "next/link";
+import { gsap } from "@/lib/gsap-register";
 import { ANIMATION } from "@/lib/constants";
+import type { HomeContent } from "@/content/types";
 
-const ProcessSection: React.FC = () => {
+interface ProcessSectionProps {
+  content: HomeContent["method"];
+  methodHref: string;
+}
+
+type Step = HomeContent["method"]["steps"][number];
+
+const StepContent: React.FC<{ step: Step; compact?: boolean }> = ({ step, compact }) => (
+  <>
+    <span
+      className={`mb-2 block font-bold ${compact ? "text-5xl" : "text-6xl"}`}
+      style={{ color: "#a78bfa" }}
+    >
+      {step.number}
+    </span>
+    <h3 className={`font-serif mb-3 font-bold text-white ${compact ? "text-xl" : "text-2xl"}`}>
+      {step.title}
+    </h3>
+    <p className="mb-3 text-white leading-relaxed font-medium">{step.description}</p>
+    <p className="text-white/55 leading-relaxed text-sm italic">{step.details}</p>
+  </>
+);
+
+const ProcessSection: React.FC<ProcessSectionProps> = ({ content, methodHref }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
@@ -17,8 +41,12 @@ const ProcessSection: React.FC = () => {
     const line = lineRef.current;
     if (!section) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      headerRef.current?.classList.remove("opacity-0");
+      return;
+    }
+
     const ctx = gsap.context(() => {
-      /* Section header fade in */
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current,
@@ -107,13 +135,13 @@ const ProcessSection: React.FC = () => {
       <div className="relative mx-auto max-w-7xl px-6">
         <div ref={headerRef} className="opacity-0">
           <p className="mb-3 text-center text-sm font-medium uppercase tracking-wider text-[#c084fc]">
-            Notre méthode
+            {content.eyebrow}
           </p>
           <h2 className="font-serif mb-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-            {content.process.sectionTitle}
+            {content.title}
           </h2>
           <p className="mx-auto mb-20 max-w-2xl text-center text-white leading-relaxed">
-            {content.process.sectionDescription}
+            {content.description}
           </p>
         </div>
 
@@ -129,7 +157,7 @@ const ProcessSection: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-24">
-            {content.process.steps.map((step, i) => {
+            {content.steps.map((step, i) => {
               const isLeft = i % 2 === 0;
 
               return (
@@ -140,48 +168,18 @@ const ProcessSection: React.FC = () => {
                     className="absolute left-1/2 top-6 z-10 -translate-x-1/2 h-5 w-5 rounded-full border-2 border-[#7c3aed] bg-[#0a0a12] shadow-[0_0_20px_rgba(124,58,237,0.6)]"
                   />
 
-                  {/* Left side content */}
                   <div className={`w-1/2 ${isLeft ? "pr-16 text-right" : ""}`}>
                     {isLeft && (
-                      <div
-                        ref={(el) => { stepsRef.current[i] = el; }}
-                      >
-                        <span className="mb-2 block text-6xl font-bold"
-                          style={{ color: "#a78bfa" }}>
-                          {step.number}
-                        </span>
-                        <h3 className="font-serif mb-3 text-2xl font-bold text-white">
-                          {step.title}
-                        </h3>
-                        <p className="mb-3 text-white leading-relaxed font-medium">
-                          {step.description}
-                        </p>
-                        <p className="text-white/55 leading-relaxed text-sm italic">
-                          {step.details}
-                        </p>
+                      <div ref={(el) => { stepsRef.current[i] = el; }}>
+                        <StepContent step={step} />
                       </div>
                     )}
                   </div>
 
-                  {/* Right side content */}
                   <div className={`w-1/2 ${!isLeft ? "pl-16" : ""}`}>
                     {!isLeft && (
-                      <div
-                        ref={(el) => { stepsRef.current[i] = el; }}
-                      >
-                        <span className="mb-2 block text-6xl font-bold"
-                          style={{ color: "#a78bfa" }}>
-                          {step.number}
-                        </span>
-                        <h3 className="font-serif mb-3 text-2xl font-bold text-white">
-                          {step.title}
-                        </h3>
-                        <p className="mb-3 text-white leading-relaxed font-medium">
-                          {step.description}
-                        </p>
-                        <p className="text-white/55 leading-relaxed text-sm italic">
-                          {step.details}
-                        </p>
+                      <div ref={(el) => { stepsRef.current[i] = el; }}>
+                        <StepContent step={step} />
                       </div>
                     )}
                   </div>
@@ -193,31 +191,28 @@ const ProcessSection: React.FC = () => {
 
         {/* Mobile: stacked */}
         <div className="flex flex-col gap-12 md:hidden">
-          {content.process.steps.map((step, i) => (
+          {content.steps.map((step, i) => (
             <div
               key={i}
-              ref={(el) => {
-                if (typeof window !== "undefined" && window.innerWidth < 768) {
-                  stepsRef.current[i] = el;
-                }
-              }}
               className="relative pl-8 border-l-2 border-[#7c3aed]/30"
             >
               <div className="absolute left-0 top-2 -translate-x-[5px] h-3 w-3 rounded-full bg-[#7c3aed] shadow-[0_0_12px_rgba(124,58,237,0.5)]" />
-              <span className="mb-2 block text-5xl font-bold" style={{ color: "#a78bfa" }}>
-                {step.number}
-              </span>
-              <h3 className="font-serif mb-3 text-xl font-bold text-white">
-                {step.title}
-              </h3>
-              <p className="mb-3 text-white leading-relaxed font-medium">
-                {step.description}
-              </p>
-              <p className="text-white/55 leading-relaxed text-sm italic">
-                {step.details}
-              </p>
+              <StepContent step={step} compact />
             </div>
           ))}
+        </div>
+
+        {/* Link to full method page */}
+        <div className="mt-16 text-center">
+          <Link
+            href={methodHref}
+            className="inline-flex items-center gap-2 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/[0.08] px-6 py-2.5 text-sm text-white/85 transition-colors duration-300 hover:bg-[#7c3aed]/[0.15] hover:text-white"
+          >
+            {content.pageLink}
+            <svg className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 8h10M9 4l4 4-4 4" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

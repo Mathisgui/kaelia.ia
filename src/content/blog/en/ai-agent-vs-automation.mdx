@@ -1,0 +1,88 @@
+---
+title: "AI agent or automation: what's the difference?"
+date: "2026-06-18"
+excerpt: "Automation or AI agent? Clear definitions, three real-world examples and the simple criteria for choosing the right approach for your business processes."
+keywords: ["AI agent", "automation", "AI agent vs automation", "workflow", "n8n", "business processes"]
+translationKey: "agent-vs-automation"
+---
+
+"We need AI somewhere in the business." That is how many conversations start. Then you look closely at the process and a plain workflow turns out to be enough. Or the opposite happens: a classic automation keeps breaking because the content it handles changes every time. AI agents and automations are two different building blocks, with very different costs, strengths and limits. Telling them apart means you stop paying for AI where a workflow does the job better, and vice versa.
+
+## Automation: a predefined scenario, executed reliably
+
+An automation follows a script written in advance: when this event happens, run these actions, always in the same order. It is built in a tool like n8n or Make, connected to the software you already use.
+
+A classic example: a prospect fills in a form on your website. The workflow creates the contact in the CRM, sends a welcome email and assigns a task to the right salesperson. Every single time, the same way.
+
+What defines it:
+
+- **Deterministic**: the same inputs always produce the same result.
+- **Traceable**: every run is logged, every error is visible.
+- **Cheap to run**: once built, each execution costs close to nothing.
+- **Limited to what was planned**: when the content varies or an unexpected case shows up, it stops or gets it wrong.
+
+## AI agent: understanding variable content and making a call
+
+An AI agent relies on a language model to analyse content that changes every time: an email, a scanned document, a customer request written in free text. It identifies the intent, gathers the relevant context and picks an action within a scope you define.
+
+Example: a customer email arrives. The agent understands it is a complaint about an invoice, pulls up the customer's history and the document in question, then drafts an appropriate reply, ready for review.
+
+What defines it:
+
+- **Flexible**: it handles the variability of language and documents.
+- **Pay per use**: every analysis triggers a call to an AI API, billed on volume.
+- **Probabilistic**: results are very good on average, but never guaranteed at 100 percent. That is why human review matters on sensitive actions.
+- **Needs guardrails**: a serious agent has a defined scope, rules and logs.
+
+One useful clarification: an AI agent is not a chatbot. It does not just answer questions, it performs tasks inside your tools. We cover this in detail on our [AI agents page](/en/ai-agents).
+
+## Which approach for which process?
+
+The question to ask is simple: should the same inputs always lead to the same decision?
+
+Choose **automation** when:
+
+- the process is stable and can be fully described as rules (if X, then Y);
+- the data is structured: forms, fields, statuses, dates;
+- reliability is the priority: billing, notifications, syncing tools.
+
+Choose an **AI agent** when:
+
+- the content varies: free text, mixed document formats, multiple languages;
+- the decision requires interpretation: sorting, qualifying, summarising, drafting;
+- the volume justifies the cost of the AI calls.
+
+## The combined system: the agent decides, the workflow executes
+
+In real projects, "agent or automation" is usually the wrong question. The systems that hold up in production combine both.
+
+> The agent understands and decides. The workflow executes, logs and raises the alarm when something goes wrong.
+
+In practice, the workflow wraps around the agent: it triggers the analysis at the right moment, records every decision, routes sensitive actions through human review and falls back to manual handling when a case is out of scope. AI is only called where it adds value; everything else runs on plain logic, reliable and essentially free.
+
+## Three concrete examples
+
+### 1. Following up on unanswered quotes: automation only
+
+A quote goes out, no reply within 7 days, a follow-up is sent, then a second one at day 14. Deciding when to follow up requires no interpretation: it is a time-based rule. A workflow handles it, and it costs almost nothing to run. Paying for AI calls here would be a waste.
+
+### 2. A shared inbox: agent and workflow combined
+
+A contact@ address receives quote requests, technical questions, complaints and spam, all in free text. The agent classifies each message, flags urgent ones and drafts a reply. The workflow creates the follow-up task, updates the CRM and only sends the reply after human approval. This is exactly how our [email agent](/en/ai-email-agent) works.
+
+### 3. Supplier invoices: agent and workflow combined
+
+Every supplier formats invoices differently. The agent reads the document and extracts amounts, dates and references. The workflow checks that the totals add up, files the document in the right place and feeds the accounting tool. Ambiguous cases (unreadable document, inconsistent amount) are set aside for human review instead of being guessed.
+
+## Common mistakes
+
+- **Paying for AI where a workflow does it better.** Copying a form field into the CRM does not need a language model: the AI call adds cost, latency and uncertainty where a simple rule is perfect.
+- **Expecting a workflow to interpret.** Sorting free-text emails with keyword filters breaks on the first oddly worded message. That is agent territory.
+- **Deploying an agent without guardrails.** No defined scope, no logs, no human review: the agent becomes a black box. Nobody knows what it did or why.
+- **Starting from the tool instead of the process.** The right question is not "where can we add AI?" but "where do we lose time, and does that task require interpretation?".
+
+## The takeaway
+
+Automation executes rules, fast and without errors. An AI agent understands variable content and makes decisions within a defined scope. Most real projects combine both: the agent as the brain, the workflow as the backbone. And a surprising share of the gains comes from [simple workflows](/en/automations) with no AI at all.
+
+Not sure which approach fits a specific process in your business? That is exactly what our free 30-minute assessment is for: we map the process, decide between a workflow, an agent or a combined system, and estimate the expected gains before any commitment. See [how our method works](/en/method).

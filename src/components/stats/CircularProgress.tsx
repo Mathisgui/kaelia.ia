@@ -34,7 +34,15 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
     const container = containerRef.current;
     if (!circle || !numberEl || !container) return;
 
-    // Set initial state
+    // La valeur finale est déjà dans le HTML (SSR/SEO) ; sans animation, on la garde.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set(circle, {
+        strokeDashoffset: CIRCUMFERENCE - (percentage / 100) * CIRCUMFERENCE,
+      });
+      return;
+    }
+
+    // Remise à zéro au montage, puis animation au scroll.
     gsap.set(circle, { strokeDashoffset: CIRCUMFERENCE });
     numberEl.textContent = `0${suffix}`;
 
@@ -129,7 +137,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
             className="text-3xl font-bold text-white"
             style={{ fontVariantNumeric: "tabular-nums" }}
           >
-            0{suffix}
+            {value}{suffix}
           </span>
         </div>
       </div>
