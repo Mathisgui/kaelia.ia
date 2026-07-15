@@ -279,7 +279,14 @@ function Particles() {
   useFrame(({ clock, camera }) => {
     const t = clock.getElapsedTime();
     const pts = pointsRef.current;
-    if (!pts) return;
+    const lines = linesRef.current;
+    if (!pts || !lines) return;
+
+    const lineGeometry = lines.geometry;
+    const linePositionAttribute = lineGeometry.getAttribute("position") as THREE.BufferAttribute;
+    const lineColorAttribute = lineGeometry.getAttribute("color") as THREE.BufferAttribute;
+    const linePositions = linePositionAttribute.array as Float32Array;
+    const lineColors = lineColorAttribute.array as Float32Array;
 
     // Intro phase: 0→1 (orb forms then expands)
     const introProgress = Math.min(1, introPhaseRef.current);
@@ -399,8 +406,8 @@ function Particles() {
     }
 
     lineGeometry.setDrawRange(0, lineIdx * 2);
-    (lineGeometry.attributes.position as THREE.BufferAttribute).needsUpdate = true;
-    (lineGeometry.attributes.color as THREE.BufferAttribute).needsUpdate = true;
+    linePositionAttribute.needsUpdate = true;
+    lineColorAttribute.needsUpdate = true;
 
     // Camera — smooth shift during Value section (reduced on mobile to prevent clipping)
     const valuePeak = 0.15;

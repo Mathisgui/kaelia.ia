@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap-register";
+import { gsap } from "@/lib/gsap-register";
 import { ANIMATION } from "@/lib/constants";
 
 interface CircularProgressProps {
