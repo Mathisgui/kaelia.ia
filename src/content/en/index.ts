@@ -1,7 +1,7 @@
 import type { Dictionary } from "../types";
 import { common } from "./common";
 import { home } from "./home";
-import { agentsHub, agentEmail, agentDocs, agentSales, agentKnowledge } from "./agents";
+import { agentsHub, agentEmail, agentDocs, agentSales, agentKnowledge, agentReporting } from "./agents";
 import { automationsHub, sectorTraining, sectorLegal } from "./automations";
 import { cases } from "./cases";
 import { method } from "./method";
@@ -18,6 +18,7 @@ export const en = {
   agentDocs,
   agentSales,
   agentKnowledge,
+  agentReporting,
   sectorTraining,
   sectorLegal,
   cases,

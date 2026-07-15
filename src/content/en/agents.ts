@@ -4,7 +4,7 @@ export const agentsHub: SolutionPageContent = {
   meta: {
     title: "Custom AI Agents for Business",
     description:
-      "AI agents that understand your requests, use your company's context and take action inside your tools: email, documents, CRM, internal knowledge.",
+      "AI agents that understand your requests and take action inside your tools: documents, CRM, email, reporting, internal knowledge. Plus custom agents for your specific needs.",
   },
   hero: {
     eyebrow: "AI Agents",
@@ -20,6 +20,16 @@ export const agentsHub: SolutionPageContent = {
       "Agents are designed around your actual tasks, not around the technology.",
     items: [
       {
+        title: "Read and produce your documents",
+        description:
+          "Invoices, quotes, forms, reports: the agent extracts the useful data and assembles documents from your templates.",
+      },
+      {
+        title: "Keep your tools up to date",
+        description:
+          "CRM, spreadsheets, databases: the agent logs the information extracted from each exchange, with no manual re-entry.",
+      },
+      {
         title: "Understand and sort incoming requests",
         description:
           "Email, forms, messages: the agent identifies the topic, the urgency and the right recipient, then prepares the handling.",
@@ -30,19 +40,9 @@ export const agentsHub: SolutionPageContent = {
           "The agent draws on your documents, your client history and your business rules to write a reply ready for approval.",
       },
       {
-        title: "Keep your tools up to date",
-        description:
-          "CRM, spreadsheets, databases: the agent logs the information extracted from each exchange, with no manual re-entry.",
-      },
-      {
         title: "Search your internal knowledge",
         description:
           "Procedures, contracts, meeting notes: the agent finds the information and answers with cited sources.",
-      },
-      {
-        title: "Generate documents",
-        description:
-          "Reports, summaries, proposals: the agent assembles documents from your data and your templates.",
       },
       {
         title: "Trigger the right actions",
@@ -60,17 +60,10 @@ export const agentsHub: SolutionPageContent = {
   },
   children: {
     eyebrow: "Our agents",
-    title: "Four agents, four jobs",
+    title: "Five specialized agents, plus custom builds",
     description:
-      "Each agent specializes in one type of operation and has its own detailed page.",
+      "Each agent specializes in one type of operation and has its own detailed page. And if your need doesn't fit any of these boxes, we design the agent you need: let's talk about it during the assessment.",
     items: [
-      {
-        title: "Email management agent",
-        description:
-          "Sorts incoming requests, drafts the replies, creates tasks and updates the CRM.",
-        href: "/en/ai-email-agent",
-        linkLabel: "See the email agent",
-      },
       {
         title: "Document agent",
         description:
@@ -84,6 +77,20 @@ export const agentsHub: SolutionPageContent = {
           "Qualifies leads, keeps the CRM up to date and triggers follow-ups at the right time.",
         href: "/en/ai-sales-agent",
         linkLabel: "See the sales agent",
+      },
+      {
+        title: "Email management agent",
+        description:
+          "Sorts incoming requests, drafts the replies, creates tasks and updates the CRM.",
+        href: "/en/ai-email-agent",
+        linkLabel: "See the email agent",
+      },
+      {
+        title: "Reporting agent",
+        description:
+          "Collects the numbers from your tools, consolidates them and generates your reports at the frequency you choose.",
+        href: "/en/ai-reporting-agent",
+        linkLabel: "See the reporting agent",
       },
       {
         title: "Internal knowledge agent",
@@ -354,7 +361,7 @@ export const agentDocs: AgentPageContent = {
     title: "Also worth exploring",
     items: [
       { label: "Email management agent", href: "/en/ai-email-agent" },
-      { label: "Business automations", href: "/en/automations" },
+      { label: "Reporting agent", href: "/en/ai-reporting-agent" },
       { label: "Our case studies", href: "/en/case-studies" },
     ],
   },
@@ -466,7 +473,7 @@ export const agentSales: AgentPageContent = {
     title: "Also worth exploring",
     items: [
       { label: "Email management agent", href: "/en/ai-email-agent" },
-      { label: "Business automations", href: "/en/automations" },
+      { label: "Reporting agent", href: "/en/ai-reporting-agent" },
       { label: "Our case studies", href: "/en/case-studies" },
     ],
   },
@@ -586,6 +593,118 @@ export const agentKnowledge: AgentPageContent = {
     title: "Is your internal knowledge really accessible?",
     description:
       "In 30 minutes, we evaluate your document corpus and the most useful use case for your teams.",
+    button: "Book my free assessment",
+    note: "30 minutes · No commitment",
+  },
+};
+
+/* ------------------------------------------------------------------ */
+
+export const agentReporting: AgentPageContent = {
+  meta: {
+    title: "AI Reporting Agent: Your Reports Generated Automatically",
+    description:
+      "An AI agent that collects data from your tools, consolidates it and generates your reports in the expected format, at the frequency you choose. No more month-end compiling.",
+  },
+  breadcrumbLabel: "Reporting agent",
+  hero: {
+    eyebrow: "AI Agent · Reporting",
+    title: "The agent that builds your reports for you",
+    description:
+      "Data collection, consolidation and formatting: your reports arrive ready, at the frequency you choose.",
+  },
+  mission: {
+    title: "Its mission",
+    description:
+      "Eliminate the hours spent compiling numbers at the end of every month. The agent collects data where it lives (CRM, spreadsheets, business tools), checks its consistency and produces the report in the expected format, with a readable summary.",
+  },
+  capabilities: {
+    title: "It can",
+    items: [
+      "Collect data from several tools at once",
+      "Consolidate the numbers and check their consistency",
+      "Generate the report in the format you want: PDF, spreadsheet, Notion",
+      "Write a readable summary of the key figures",
+      "Send the report to the right people, at the right frequency",
+      "Flag anomalies: a missing figure, an unusual variance",
+    ],
+  },
+  control: {
+    title: "Control",
+    description:
+      "Every figure stays traceable back to its source. The report can go through approval before it is sent, and detected anomalies are flagged rather than smoothed over.",
+  },
+  howItWorks: {
+    title: "How it works in your tools",
+    steps: [
+      {
+        title: "The deadline arrives, or you ask for it",
+        description:
+          "Weekly, monthly or on demand: the agent starts preparing the report on your schedule.",
+      },
+      {
+        title: "The data is collected and consolidated",
+        description:
+          "The agent gathers the numbers from your tools, cross-checks them and flags anything missing or out of line.",
+      },
+      {
+        title: "The report goes out, verified",
+        description:
+          "The document is generated from your template, summary included, then sent to the right people or submitted for your approval.",
+      },
+    ],
+  },
+  beforeAfter: {
+    eyebrow: "Before / After",
+    title: "What changes day to day",
+    rows: [
+      {
+        before: "Half a day of compiling at every month end",
+        after: "The report ready on the 1st, without a thought",
+      },
+      {
+        before: "Different numbers depending on the file you open",
+        after: "One source, consistent numbers",
+      },
+      {
+        before: "Reporting done when there is time left over",
+        after: "A steady cadence, kept effortlessly",
+      },
+    ],
+  },
+  integrations: {
+    title: "Connected tools",
+    tools: ["Google Sheets", "Excel", "Airtable", "Notion", "HubSpot", "Pipedrive", "Slack"],
+  },
+  faq: [
+    {
+      question: "Which data sources can the agent work from?",
+      answer:
+        "CRM, spreadsheets, databases, and business tools accessible via API or export. The assessment checks access to each source before any commitment.",
+    },
+    {
+      question: "Can we keep our current report template?",
+      answer:
+        "Yes, and we recommend it: the agent fills in your existing template (PDF, spreadsheet, slides) rather than imposing a new format.",
+    },
+    {
+      question: "What happens if a data point is missing?",
+      answer:
+        "The agent says so explicitly instead of producing a wrong report: the missing data is listed, with its source, for a quick fix.",
+    },
+  ],
+  related: {
+    title: "Also worth exploring",
+    items: [
+      { label: "Document agent", href: "/en/ai-document-agent" },
+      { label: "Sales agent", href: "/en/ai-sales-agent" },
+      { label: "Our case studies", href: "/en/case-studies" },
+    ],
+  },
+  cta: {
+    title: "How many hours go into your reports every month?",
+    description:
+      "In 30 minutes, we list your recurring reports and estimate what the agent can prepare for you.",
     button: "Book my free assessment",
     note: "30 minutes · No commitment",
   },

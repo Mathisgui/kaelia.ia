@@ -128,34 +128,45 @@ export function AgentsShowcase({
       description={content.description}
     >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {content.items.map((item, i) => (
-          <Reveal key={i} delay={Math.min(i * 0.08, 0.3)}>
-            <Link href={routePath(item.routeKey, locale)} className="block h-full">
-              <GlassCard>
-                <div className="flex h-full flex-col gap-4 p-8 md:p-10">
-                  <h3 className="font-serif text-2xl font-bold text-white">{item.title}</h3>
-                  <p className="leading-relaxed text-white/85">{item.mission}</p>
-                  <ul className="space-y-2.5">
-                    {item.canDo.map((capability, j) => (
-                      <li key={j} className="flex items-start gap-3">
-                        <svg className="mt-1 h-4 w-4 shrink-0 text-[#a78bfa]" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-sm text-white/90">{capability}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-[#a78bfa]">
-                    {item.linkLabel}
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M3 8h10M9 4l4 4-4 4" />
-                    </svg>
-                  </span>
-                </div>
-              </GlassCard>
-            </Link>
-          </Reveal>
-        ))}
+        {content.items.map((item, i) => {
+          const card = (
+            <GlassCard>
+              <div className="flex h-full flex-col gap-4 p-8 md:p-10">
+                <h3 className="font-serif text-2xl font-bold text-white">{item.title}</h3>
+                <p className="leading-relaxed text-white/85">{item.mission}</p>
+                <ul className="space-y-2.5">
+                  {item.canDo.map((capability, j) => (
+                    <li key={j} className="flex items-start gap-3">
+                      <svg className="mt-1 h-4 w-4 shrink-0 text-[#a78bfa]" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm text-white/90">{capability}</span>
+                    </li>
+                  ))}
+                </ul>
+                <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-[#a78bfa]">
+                  {item.linkLabel}
+                  <svg className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </span>
+              </div>
+            </GlassCard>
+          );
+          return (
+            <Reveal key={i} delay={Math.min(i * 0.08, 0.3)}>
+              {item.externalHref && !item.routeKey ? (
+                <a href={item.externalHref} target="_blank" rel="noopener noreferrer" className="block h-full">
+                  {card}
+                </a>
+              ) : (
+                <Link href={routePath(item.routeKey ?? "agents", locale)} className="block h-full">
+                  {card}
+                </Link>
+              )}
+            </Reveal>
+          );
+        })}
       </div>
     </Section>
   );

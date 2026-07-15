@@ -4,7 +4,7 @@ export const agentsHub: SolutionPageContent = {
   meta: {
     title: "Agents IA sur mesure pour entreprises",
     description:
-      "Des agents IA qui comprennent vos demandes, utilisent le contexte de votre entreprise et exécutent des actions dans vos outils : emails, documents, CRM, connaissance interne.",
+      "Des agents IA qui comprennent vos demandes et exécutent des actions dans vos outils : documents, CRM, emails, reporting, connaissance interne. Et du sur mesure selon votre besoin.",
   },
   hero: {
     eyebrow: "Agents IA",
@@ -20,6 +20,16 @@ export const agentsHub: SolutionPageContent = {
       "Les agents sont conçus autour de vos tâches réelles, pas autour de la technologie.",
     items: [
       {
+        title: "Lire et produire vos documents",
+        description:
+          "Factures, devis, formulaires, rapports : l'agent extrait les données utiles et assemble les documents à partir de vos modèles.",
+      },
+      {
+        title: "Tenir vos outils à jour",
+        description:
+          "CRM, tableurs, bases de données : l'agent y reporte les informations extraites des échanges, sans ressaisie manuelle.",
+      },
+      {
         title: "Comprendre et trier les demandes entrantes",
         description:
           "Emails, formulaires, messages : l'agent identifie le motif, l'urgence et le bon destinataire, puis prépare le traitement.",
@@ -30,19 +40,9 @@ export const agentsHub: SolutionPageContent = {
           "L'agent s'appuie sur vos documents, votre historique client et vos règles métier pour rédiger une réponse prête à valider.",
       },
       {
-        title: "Tenir vos outils à jour",
-        description:
-          "CRM, tableurs, bases de données : l'agent y reporte les informations extraites des échanges, sans ressaisie manuelle.",
-      },
-      {
         title: "Chercher dans votre connaissance interne",
         description:
           "Procédures, contrats, comptes rendus : l'agent retrouve l'information et répond avec les sources citées.",
-      },
-      {
-        title: "Générer des documents",
-        description:
-          "Rapports, synthèses, propositions : l'agent assemble les documents à partir de vos données et de vos modèles.",
       },
       {
         title: "Déclencher les bonnes actions",
@@ -60,17 +60,10 @@ export const agentsHub: SolutionPageContent = {
   },
   children: {
     eyebrow: "Nos agents",
-    title: "Quatre agents, quatre métiers",
+    title: "Cinq agents spécialisés, et du sur mesure",
     description:
-      "Chaque agent est spécialisé sur un type d'opération et détaillé sur sa propre page.",
+      "Chaque agent est spécialisé sur un type d'opération et détaillé sur sa propre page. Et si votre besoin ne rentre dans aucune case, nous concevons l'agent qu'il vous faut : parlons-en au diagnostic.",
     items: [
-      {
-        title: "Agent de gestion des emails",
-        description:
-          "Trie les demandes entrantes, prépare les réponses, crée les tâches et met à jour le CRM.",
-        href: "/agent-ia-email",
-        linkLabel: "Voir l'agent email",
-      },
       {
         title: "Agent documentaire",
         description:
@@ -84,6 +77,20 @@ export const agentsHub: SolutionPageContent = {
           "Qualifie les leads, tient le CRM à jour et déclenche les relances au bon moment.",
         href: "/agent-ia-commercial",
         linkLabel: "Voir l'agent commercial",
+      },
+      {
+        title: "Agent de gestion des emails",
+        description:
+          "Trie les demandes entrantes, prépare les réponses, crée les tâches et met à jour le CRM.",
+        href: "/agent-ia-email",
+        linkLabel: "Voir l'agent email",
+      },
+      {
+        title: "Agent de reporting",
+        description:
+          "Collecte les chiffres dans vos outils, les consolide et génère vos rapports à la fréquence choisie.",
+        href: "/agent-ia-reporting",
+        linkLabel: "Voir l'agent de reporting",
       },
       {
         title: "Agent de connaissance interne",
@@ -354,7 +361,7 @@ export const agentDocs: AgentPageContent = {
     title: "À découvrir aussi",
     items: [
       { label: "Agent de gestion des emails", href: "/agent-ia-email" },
-      { label: "Automatisations métier", href: "/automatisations" },
+      { label: "Agent de reporting", href: "/agent-ia-reporting" },
       { label: "Nos cas clients", href: "/cas-clients" },
     ],
   },
@@ -466,7 +473,7 @@ export const agentSales: AgentPageContent = {
     title: "À découvrir aussi",
     items: [
       { label: "Agent de gestion des emails", href: "/agent-ia-email" },
-      { label: "Automatisations métier", href: "/automatisations" },
+      { label: "Agent de reporting", href: "/agent-ia-reporting" },
       { label: "Nos cas clients", href: "/cas-clients" },
     ],
   },
@@ -586,6 +593,118 @@ export const agentKnowledge: AgentPageContent = {
     title: "Votre connaissance interne est-elle vraiment accessible ?",
     description:
       "En 30 minutes, nous évaluons votre corpus documentaire et le cas d'usage le plus utile pour vos équipes.",
+    button: "Réserver mon diagnostic gratuit",
+    note: "30 minutes · Sans engagement",
+  },
+};
+
+/* ------------------------------------------------------------------ */
+
+export const agentReporting: AgentPageContent = {
+  meta: {
+    title: "Agent IA de reporting : vos rapports générés automatiquement",
+    description:
+      "Un agent IA qui collecte les données dans vos outils, les consolide et génère vos rapports au format attendu, à la fréquence choisie. Fini les fins de mois à compiler.",
+  },
+  breadcrumbLabel: "Agent de reporting",
+  hero: {
+    eyebrow: "Agent IA · Reporting",
+    title: "L'agent qui assemble vos rapports à votre place",
+    description:
+      "Collecte des chiffres, consolidation et mise en forme : vos rapports arrivent prêts, à la fréquence que vous choisissez.",
+  },
+  mission: {
+    title: "Sa mission",
+    description:
+      "Supprimer les heures passées à compiler des chiffres en fin de mois. L'agent collecte les données là où elles vivent (CRM, tableurs, outils métier), vérifie leur cohérence et produit le rapport au format attendu, avec une synthèse lisible.",
+  },
+  capabilities: {
+    title: "Il peut",
+    items: [
+      "Collecter les données depuis plusieurs outils à la fois",
+      "Consolider les chiffres et vérifier leur cohérence",
+      "Générer le rapport au format voulu : PDF, tableur, Notion",
+      "Rédiger une synthèse lisible des chiffres clés",
+      "Envoyer le rapport aux bonnes personnes, à la bonne fréquence",
+      "Signaler les anomalies : chiffre manquant, écart inhabituel",
+    ],
+  },
+  control: {
+    title: "Contrôle",
+    description:
+      "Chaque chiffre reste traçable jusqu'à sa source. Le rapport peut passer par une validation avant envoi, et les anomalies détectées sont signalées au lieu d'être lissées.",
+  },
+  howItWorks: {
+    title: "Comment ça marche dans vos outils",
+    steps: [
+      {
+        title: "L'échéance arrive, ou vous le demandez",
+        description:
+          "Chaque semaine, chaque mois ou à la demande : l'agent lance la préparation du rapport selon votre calendrier.",
+      },
+      {
+        title: "Les données sont collectées et consolidées",
+        description:
+          "L'agent rassemble les chiffres depuis vos outils, les recoupe et signale ce qui manque ou ce qui détonne.",
+      },
+      {
+        title: "Le rapport part, vérifié",
+        description:
+          "Le document est généré depuis votre modèle, avec sa synthèse, puis envoyé aux bonnes personnes ou soumis à votre validation.",
+      },
+    ],
+  },
+  beforeAfter: {
+    eyebrow: "Avant / Après",
+    title: "Ce qui change au quotidien",
+    rows: [
+      {
+        before: "Une demi-journée de compilation chaque fin de mois",
+        after: "Le rapport prêt le 1er du mois, sans y penser",
+      },
+      {
+        before: "Des chiffres différents selon le fichier consulté",
+        after: "Une seule source, des chiffres cohérents",
+      },
+      {
+        before: "Un reporting fait quand il reste du temps",
+        after: "Une cadence tenue, sans effort",
+      },
+    ],
+  },
+  integrations: {
+    title: "Outils connectés",
+    tools: ["Google Sheets", "Excel", "Airtable", "Notion", "HubSpot", "Pipedrive", "Slack"],
+  },
+  faq: [
+    {
+      question: "Depuis quelles sources de données l'agent peut-il travailler ?",
+      answer:
+        "CRM, tableurs, bases de données, outils métier accessibles par API ou par export. Le diagnostic vérifie l'accès à chaque source avant tout engagement.",
+    },
+    {
+      question: "Peut-on garder notre modèle de rapport actuel ?",
+      answer:
+        "Oui, c'est même recommandé : l'agent remplit votre modèle existant (PDF, tableur, présentation) plutôt que d'imposer un nouveau format.",
+    },
+    {
+      question: "Que se passe-t-il si une donnée manque ?",
+      answer:
+        "L'agent le signale explicitement au lieu de produire un rapport faux : la donnée manquante est listée, avec sa source, pour une correction rapide.",
+    },
+  ],
+  related: {
+    title: "À découvrir aussi",
+    items: [
+      { label: "Agent documentaire", href: "/agent-ia-documentaire" },
+      { label: "Agent commercial", href: "/agent-ia-commercial" },
+      { label: "Nos cas clients", href: "/cas-clients" },
+    ],
+  },
+  cta: {
+    title: "Combien d'heures partent dans vos reportings chaque mois ?",
+    description:
+      "En 30 minutes, nous listons vos rapports récurrents et estimons ce que l'agent peut préparer à votre place.",
     button: "Réserver mon diagnostic gratuit",
     note: "30 minutes · Sans engagement",
   },

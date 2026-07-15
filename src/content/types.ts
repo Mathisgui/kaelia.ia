@@ -98,7 +98,10 @@ export interface HomeContent {
       title: string;
       mission: string;
       canDo: string[];
-      routeKey: "agentEmail" | "agentDocs" | "agentSales" | "agentKnowledge";
+      /** Page agent interne. Absent si la carte pointe vers un lien externe (externalHref). */
+      routeKey?: "agentEmail" | "agentDocs" | "agentSales" | "agentKnowledge" | "agentReporting";
+      /** Lien externe (ex. diagnostic) pour les cartes sans page dédiée. Exclusif avec routeKey. */
+      externalHref?: string;
       linkLabel: string;
     }[];
   };
@@ -315,6 +318,7 @@ export interface Dictionary {
   agentDocs: AgentPageContent;
   agentSales: AgentPageContent;
   agentKnowledge: AgentPageContent;
+  agentReporting: AgentPageContent;
   sectorTraining: SectorPageContent;
   sectorLegal: SectorPageContent;
   cases: CasesPageContent;

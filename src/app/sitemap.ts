@@ -11,6 +11,7 @@ const PRIORITIES: Partial<Record<RouteKey, number>> = {
   agentDocs: 0.8,
   agentSales: 0.8,
   agentKnowledge: 0.8,
+  agentReporting: 0.8,
   sectorTraining: 0.8,
   sectorLegal: 0.8,
   cases: 0.8,

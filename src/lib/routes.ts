@@ -15,6 +15,7 @@ export const routes = {
   agentDocs: { fr: "/agent-ia-documentaire", en: "/en/ai-document-agent" },
   agentSales: { fr: "/agent-ia-commercial", en: "/en/ai-sales-agent" },
   agentKnowledge: { fr: "/agent-ia-connaissance", en: "/en/ai-knowledge-agent" },
+  agentReporting: { fr: "/agent-ia-reporting", en: "/en/ai-reporting-agent" },
   sectorTraining: {
     fr: "/automatisation-organisme-formation",
     en: "/en/training-provider-automation",
