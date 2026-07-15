@@ -4,40 +4,30 @@ export const automationsHub: SolutionPageContent = {
   meta: {
     title: "Automatisation de processus métier (n8n, Make)",
     description:
-      "Des workflows sur mesure qui connectent vos outils et exécutent vos processus répétitifs : formulaires, factures, onboarding, relances, reporting. Sans changer d'outils.",
+      "Des automatisations sur mesure qui connectent vos outils et exécutent vos processus répétitifs : factures, relances, formulaires, reporting, onboarding. Sans changer d'outils.",
   },
   hero: {
     eyebrow: "Automatisations",
-    title: "Des workflows qui exécutent vos processus, sans erreur",
+    title: "Des automatisations qui exécutent vos processus, sans erreur",
     description:
       "Une automatisation connecte vos outils entre eux et exécute un processus prédéfini, de façon fiable et traçable. C'est la brique la plus rentable pour éliminer la ressaisie et les oublis.",
     cta: "Identifier mes processus automatisables",
   },
   useCases: {
     eyebrow: "Cas d'usage",
-    title: "Des exemples de workflows que nous déployons",
+    title: "Des exemples d'automatisations que nous déployons",
     description:
-      "Chaque workflow est construit sur mesure autour de vos outils et de vos règles métier.",
+      "Chaque automatisation est construite sur mesure autour de vos outils et de vos règles métier.",
     items: [
-      {
-        title: "Formulaire → CRM → email → tâche",
-        description:
-          "Une demande arrive : le contact est créé dans le CRM, l'email de confirmation part, la tâche commerciale est assignée.",
-      },
       {
         title: "Facture → extraction → classement → comptabilité",
         description:
           "Les factures reçues sont lues, extraites, classées et transmises à votre outil comptable, sans saisie.",
       },
       {
-        title: "Signature → onboarding client",
+        title: "Formulaire → CRM → email → tâche",
         description:
-          "Dès la signature : création des espaces client, envoi du dossier de bienvenue, planification des étapes.",
-      },
-      {
-        title: "Feuille de présence → OCR → tableur → reporting",
-        description:
-          "Les feuilles scannées sont lues et consolidées automatiquement dans vos tableaux de suivi.",
+          "Une demande arrive : le contact est créé dans le CRM, l'email de confirmation part, la tâche commerciale est assignée.",
       },
       {
         title: "Devis sans réponse → relances automatiques",
@@ -45,17 +35,27 @@ export const automationsHub: SolutionPageContent = {
           "Passé votre délai, la relance part selon vos règles : nombre, ton, exceptions.",
       },
       {
+        title: "Feuille de présence → OCR → tableur → reporting",
+        description:
+          "Les feuilles scannées sont lues et consolidées automatiquement dans vos tableaux de suivi.",
+      },
+      {
         title: "Données CRM → rapport PDF",
         description:
           "Votre reporting hebdomadaire ou mensuel généré automatiquement depuis les données réelles.",
       },
+      {
+        title: "Signature → onboarding client",
+        description:
+          "Dès la signature : création des espaces client, envoi du dossier de bienvenue, planification des étapes.",
+      },
     ],
   },
   explainer: {
-    title: "Pourquoi n8n et Make",
+    title: "Des automatisations dont vous restez propriétaire",
     paragraphs: [
-      "Nous construisons les workflows sur n8n et Make, deux plateformes éprouvées qui se connectent à des centaines d'outils. Vous restez propriétaire de vos automatisations : pas de boîte noire, pas de dépendance à un développement opaque.",
-      "Quand un processus demande de la compréhension (lire un email, interpréter un document), un agent IA s'insère dans le workflow : l'agent comprend et décide, le workflow exécute et trace.",
+      "Pas de boîte noire, pas de dépendance à un développement opaque : tout est documenté, réversible et branché sur les outils que vous utilisez déjà. Nous construisons sur n8n et Make, deux plateformes éprouvées qui se connectent à des centaines d'outils.",
+      "Quand un processus demande de la compréhension (lire un email, interpréter un document), un agent IA s'insère dans l'automatisation : l'agent comprend et décide, l'automatisation exécute et trace.",
     ],
   },
   children: {
@@ -82,7 +82,7 @@ export const automationsHub: SolutionPageContent = {
   },
   beforeAfter: {
     eyebrow: "Impact",
-    title: "Ce qui change avec des workflows en place",
+    title: "Ce qui change avec des automatisations en place",
     rows: [
       {
         before: "Des heures de copier-coller entre outils",
@@ -105,9 +105,9 @@ export const automationsHub: SolutionPageContent = {
         "Une automatisation suit un scénario prédéfini, sans interprétation : c'est fiable, rapide et peu coûteux. Un agent IA s'ajoute quand il faut comprendre un contenu variable. Beaucoup de projets commencent par une automatisation pure, puis ajoutent l'IA là où elle apporte vraiment.",
     },
     {
-      question: "Que se passe-t-il si un workflow tombe en panne ?",
+      question: "Que se passe-t-il si une automatisation tombe en panne ?",
       answer:
-        "Chaque exécution est tracée, les erreurs déclenchent une alerte et un traitement de secours est prévu : rien ne se perd en silence. La maintenance couvre la surveillance et les corrections.",
+        "Chaque exécution est tracée, les erreurs déclenchent une alerte et un traitement de secours est prévu : rien ne se perd en silence. Pour la suite, deux options : nous surveillons et corrigeons via un forfait de maintenance, ou vous gérez en interne avec le système documenté et la formation incluse.",
     },
     {
       question: "Nos outils sont-ils compatibles ?",
@@ -117,13 +117,13 @@ export const automationsHub: SolutionPageContent = {
     {
       question: "Quel budget prévoir ?",
       answer:
-        "Au forfait, à partir de 1 500 € pour un premier workflow. Le diagnostic gratuit estime le coût et le temps gagné avant tout engagement.",
+        "Au forfait, à partir de 1 500 € pour une première automatisation. Le diagnostic gratuit estime le coût et le temps gagné avant tout engagement.",
     },
   ],
   cta: {
     title: "Quel processus vous coûte le plus de temps ?",
     description:
-      "En 30 minutes, nous cartographions vos processus répétitifs et sélectionnons le workflow le plus rentable à déployer en premier.",
+      "En 30 minutes, nous cartographions vos processus répétitifs et sélectionnons l'automatisation la plus rentable à déployer en premier.",
     button: "Réserver mon diagnostic gratuit",
     note: "30 minutes · Sans engagement",
   },
@@ -135,7 +135,7 @@ export const sectorTraining: SectorPageContent = {
   meta: {
     title: "Automatisation pour organismes de formation",
     description:
-      "Inscriptions, convocations, émargements, facturation, exigences Qualiopi : automatisez l'administratif de votre organisme de formation avec des workflows sur mesure.",
+      "Inscriptions, convocations, émargements, facturation, exigences Qualiopi : automatisez l'administratif de votre organisme de formation avec des automatisations sur mesure.",
   },
   breadcrumbLabel: "Organismes de formation",
   hero: {
@@ -200,7 +200,7 @@ export const sectorTraining: SectorPageContent = {
     title: "Les briques que nous déployons pour les OF",
     items: [
       {
-        title: "Workflows administratifs",
+        title: "Automatisations administratives",
         description:
           "Inscription → convention → convocation → émargement → attestation → facturation, orchestré de bout en bout.",
         href: "/automatisations",
@@ -261,7 +261,7 @@ export const sectorLegal: SectorPageContent = {
     eyebrow: "Secteur · Professions juridiques",
     title: "Automatiser un cabinet d'avocats, sans compromis sur la confidentialité",
     description:
-      "Les cabinets perdent des heures facturables sur des tâches administratives répétitives. Des workflows encadrés les prennent en charge, avec des garanties adaptées au secret professionnel.",
+      "Les cabinets perdent des heures facturables sur des tâches administratives répétitives. Des automatisations encadrées les prennent en charge, avec des garanties adaptées au secret professionnel.",
   },
   painPoints: {
     eyebrow: "Le quotidien",
@@ -319,7 +319,7 @@ export const sectorLegal: SectorPageContent = {
     title: "Les briques que nous déployons pour les cabinets",
     items: [
       {
-        title: "Workflows d'intake et de suivi",
+        title: "Automatisations d'intake et de suivi",
         description:
           "Du premier contact à l'ouverture du dossier, puis relances de pièces et suivi des échéances.",
         href: "/automatisations",

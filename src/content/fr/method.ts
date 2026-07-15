@@ -17,7 +17,7 @@ export const method: MethodPageContent = {
       number: "01",
       title: "Diagnostic",
       description:
-        "Nous cartographions vos opérations réelles : emails, documents, outils, ressaisies, relances. L'objectif est d'identifier les gisements de temps et de sélectionner un premier cas d'usage à fort potentiel.",
+        "Nous cartographions vos opérations réelles : documents, ressaisies, relances, emails, outils. L'objectif est d'identifier les gisements de temps et de sélectionner un premier cas d'usage à fort potentiel.",
       deliverables: [
         "Cartographie de vos processus répétitifs",
         "Estimation des gains par processus",
@@ -32,7 +32,7 @@ export const method: MethodPageContent = {
       description:
         "Nous construisons un pilote limité et mesurable sur le cas d'usage sélectionné. Il tourne sur vos vraies données, dans un périmètre restreint, pour valider le résultat avant d'industrialiser.",
       deliverables: [
-        "Agent ou workflow fonctionnel sur périmètre restreint",
+        "Agent ou automatisation fonctionnelle sur périmètre restreint",
         "Test sur vos données réelles",
         "Mesure du gain constaté",
         "Décision d'industrialisation en connaissance de cause",
@@ -58,20 +58,20 @@ export const method: MethodPageContent = {
       description:
         "Un système vivant se surveille et s'améliore : suivi des erreurs, des coûts d'API et des résultats, ajustement des règles métier, évolution des intégrations quand vos outils changent.",
       deliverables: [
-        "Surveillance des workflows et alertes",
+        "Surveillance des automatisations et alertes",
         "Correction des anomalies",
         "Suivi des coûts et des gains",
         "Améliorations continues des prompts et règles",
       ],
-      duration: "En continu, via un forfait de maintenance optionnel",
+      duration: "En continu : forfait de maintenance, ou reprise en interne après formation",
     },
   ],
   maintenance: {
-    title: "Et après ? La maintenance",
+    title: "Et après ? Deux options pour la maintenance",
     description:
-      "Vous restez autonome : le système est documenté et vos équipes sont formées. Pour ceux qui préfèrent déléguer, un forfait de maintenance couvre :",
+      "Soit vous la reprenez en interne : le système est documenté et vos équipes sont formées pour être autonomes. Soit nous nous en occupons, avec un forfait de maintenance qui couvre :",
     items: [
-      "La surveillance des workflows et la correction des erreurs",
+      "La surveillance des automatisations et la correction des erreurs",
       "L'évolution des intégrations quand vos outils changent",
       "Le suivi des coûts d'API et leur optimisation",
       "L'amélioration continue des prompts et des règles métier",

@@ -10,7 +10,7 @@ export const about: AboutPageContent = {
     eyebrow: "The AI arm of the Kaelia group",
     brand: "KAEL'IA",
     manifesto:
-      "Kael'IA builds AI agents and automations that genuinely take over part of a company's operations: email, documents, CRM, follow-ups, reporting. Concrete, measurable systems, integrated into your existing tools.",
+      "Kael'IA builds AI agents and automations that genuinely take over part of a company's operations: documents, CRM, follow-ups, email, reporting. Concrete, measurable systems, integrated into your existing tools.",
     vision:
       "What we believe: the right question is not \"how do we use AI?\" but \"which tasks can we hand over to it, with what controls and what results?\". That is the question every engagement answers.",
     chips: ["AI Agents", "Automations", "Kael'IA · 2025"],
@@ -55,7 +55,7 @@ export const about: AboutPageContent = {
         year: "Today",
         title: "Systems in production",
         description:
-          "Companies supported across several industries, agents and workflows running in production every day, and one constant standard: deliver measurable results.",
+          "Companies supported across several industries, agents and automations running in production every day, and one constant standard: deliver measurable results.",
       },
     ],
   },

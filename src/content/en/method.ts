@@ -17,7 +17,7 @@ export const method: MethodPageContent = {
       number: "01",
       title: "Assessment",
       description:
-        "We map your actual operations: email, documents, tools, double data entry, follow-ups. The goal is to pinpoint where the hours are going and select a first high-potential use case.",
+        "We map your actual operations: documents, double data entry, follow-ups, email, tools. The goal is to pinpoint where the hours are going and select a first high-potential use case.",
       deliverables: [
         "Map of your repetitive processes",
         "Estimated gains per process",
@@ -32,7 +32,7 @@ export const method: MethodPageContent = {
       description:
         "We build a small, measurable pilot on the selected use case. It runs on your real data, within a limited scope, to validate the results before scaling up.",
       deliverables: [
-        "Working agent or workflow on a limited scope",
+        "Working agent or automation on a limited scope",
         "Testing on your real data",
         "Measurement of the observed gains",
         "An informed decision on scaling up",
@@ -58,20 +58,20 @@ export const method: MethodPageContent = {
       description:
         "A living system needs monitoring and improvement: tracking errors, API costs and results, tuning business rules, updating integrations as your tools evolve.",
       deliverables: [
-        "Workflow monitoring and alerts",
+        "Automation monitoring and alerts",
         "Anomaly fixes",
         "Cost and gains tracking",
         "Continuous improvement of prompts and rules",
       ],
-      duration: "Ongoing, through an optional maintenance plan",
+      duration: "Ongoing: a maintenance plan, or an in-house takeover after training",
     },
   ],
   maintenance: {
-    title: "And afterwards? Maintenance",
+    title: "And afterwards? Two maintenance options",
     description:
-      "You stay autonomous: the system is documented and your teams are trained. For those who prefer to delegate, a maintenance plan covers:",
+      "Either you take it over in-house: the system is documented and your teams are trained to be autonomous. Or we handle it for you, with a maintenance plan that covers:",
     items: [
-      "Workflow monitoring and error fixes",
+      "Automation monitoring and error fixes",
       "Integration updates as your tools evolve",
       "API cost tracking and optimization",
       "Continuous improvement of prompts and business rules",

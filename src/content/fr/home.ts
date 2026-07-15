@@ -1,16 +1,17 @@
 import type { HomeContent } from "../types";
+import { CALENDAR_URL } from "./common";
 
 export const home: HomeContent = {
   meta: {
     title: "Agents IA & automatisation pour entreprises | Kael'IA",
     description:
-      "Kael'IA conçoit des agents IA et des automatisations sur mesure pour gérer vos emails, documents, CRM, relances et reportings. Diagnostic gratuit de 30 minutes.",
+      "Kael'IA conçoit des agents IA et des automatisations sur mesure pour gérer vos documents, CRM, emails, relances et reportings. Diagnostic gratuit de 30 minutes.",
   },
 
   hero: {
-    title: "Des agents IA qui exécutent vos tâches métier, directement dans vos outils.",
+    title: "Des agents IA et des automatisations qui exécutent vos tâches métier, directement dans vos outils.",
     description:
-      "Kael'IA automatise les emails, les documents, les relances, le CRM et le reporting de votre entreprise grâce à des agents IA et des workflows sur mesure. Moins de ressaisie. Moins d'oublis. Plus de temps pour vos équipes.",
+      "Kael'IA automatise les documents, le CRM, les relances, les emails et le reporting de votre entreprise grâce à des agents IA et des automatisations sur mesure. Moins de ressaisie. Moins d'oublis. Plus de temps pour vos équipes.",
     ctaPrimary: "Identifier mes processus automatisables",
     ctaPrimaryNote: "Diagnostic de 30 minutes · Premier cas d'usage identifié · Sans engagement",
     ctaSecondary: "Voir des exemples d'agents IA",
@@ -20,14 +21,8 @@ export const home: HomeContent = {
     eyebrow: "Ce que nous automatisons",
     title: "Les opérations que Kael'IA peut prendre en charge",
     description:
-      "Chaque entreprise perd des heures sur les mêmes tâches : trier, ressaisir, relancer, reporter. Voici ce que nos agents et workflows exécutent à votre place.",
+      "Chaque entreprise perd des heures sur les mêmes tâches : ressaisir, relancer, trier, reporter. Voici ce que nos agents IA et nos automatisations exécutent à votre place.",
     items: [
-      {
-        icon: "mail",
-        title: "Emails et demandes entrantes",
-        description:
-          "Classement des messages, détection des urgences, préparation des réponses et création automatique des tâches de suivi.",
-      },
       {
         icon: "document",
         title: "Documents et données",
@@ -41,16 +36,22 @@ export const home: HomeContent = {
           "Qualification des demandes, mise à jour automatique des fiches, relances déclenchées selon vos règles commerciales.",
       },
       {
-        icon: "handshake",
-        title: "Onboarding client",
+        icon: "mail",
+        title: "Emails et demandes entrantes",
         description:
-          "Dès la signature : création des espaces client, envoi des documents, planification des étapes. Un parcours identique pour chaque client.",
+          "Classement des messages, détection des urgences, préparation des réponses et création automatique des tâches de suivi.",
       },
       {
         icon: "chart",
         title: "Reporting et pilotage",
         description:
           "Vos rapports générés automatiquement depuis les données réelles de vos outils, à la fréquence que vous choisissez.",
+      },
+      {
+        icon: "handshake",
+        title: "Onboarding client",
+        description:
+          "Dès la signature : création des espaces client, envoi des documents, planification des étapes. Un parcours identique pour chaque client.",
       },
       {
         icon: "book",
@@ -63,27 +64,27 @@ export const home: HomeContent = {
 
   pedagogy: {
     eyebrow: "Comprendre",
-    title: "Agent IA ou automatisation : quelle différence ?",
+    title: "Ce que nous mettons en place chez vous",
     description:
-      "Deux briques complémentaires. Bien les distinguer, c'est éviter de payer une IA pour ce qu'un simple workflow fait mieux, et inversement.",
+      "Deux briques simples, combinées selon votre besoin. Vous n'avez pas à choisir la technologie : vous décrivez le résultat attendu, nous assemblons ce qu'il faut.",
     automation: {
-      title: "L'automatisation",
+      title: "Les tâches répétitives se font toutes seules",
       description:
-        "Elle suit un scénario prédéfini, toujours le même, de façon fiable et traçable.",
+        "Une automatisation enchaîne les étapes d'un processus, toujours de la même façon, sans erreur et sans oubli.",
       example:
         "Un formulaire est envoyé : le contact est créé dans le CRM, un email de bienvenue part, une tâche commerciale est assignée.",
     },
     agent: {
-      title: "L'agent IA",
+      title: "L'IA lit et comprend pour vous",
       description:
-        "Il analyse un contenu variable et choisit une action dans un cadre que vous définissez.",
+        "Un agent IA analyse un contenu variable (un email, un document) et choisit la bonne action, dans un cadre que vous définissez.",
       example:
         "Un email client arrive : l'agent comprend la demande, retrouve les informations pertinentes et prépare une réponse adaptée.",
     },
     combined: {
-      title: "Le système combiné",
+      title: "Les deux ensemble, c'est là que ça devient puissant",
       description:
-        "L'agent comprend et décide, le workflow exécute et trace. C'est cette combinaison qui produit des résultats fiables en entreprise, avec une validation humaine là où elle compte.",
+        "L'IA comprend et décide, l'automatisation exécute et trace. Résultat : des processus qui tournent de bout en bout, avec une validation humaine là où elle compte.",
     },
   },
 
@@ -93,18 +94,6 @@ export const home: HomeContent = {
     description:
       "Chaque agent travaille dans vos outils existants, avec un périmètre d'action défini et une validation humaine activable.",
     items: [
-      {
-        title: "Agent de gestion des emails",
-        mission:
-          "Analyse les demandes entrantes, prépare les réponses et organise leur suivi.",
-        canDo: [
-          "Classer les messages et détecter les urgences",
-          "Préparer une réponse à valider",
-          "Créer les tâches et mettre à jour le CRM",
-        ],
-        routeKey: "agentEmail",
-        linkLabel: "Découvrir l'agent email",
-      },
       {
         title: "Agent documentaire",
         mission:
@@ -130,6 +119,30 @@ export const home: HomeContent = {
         linkLabel: "Découvrir l'agent commercial",
       },
       {
+        title: "Agent de gestion des emails",
+        mission:
+          "Analyse les demandes entrantes, prépare les réponses et organise leur suivi.",
+        canDo: [
+          "Classer les messages et détecter les urgences",
+          "Préparer une réponse à valider",
+          "Créer les tâches et mettre à jour le CRM",
+        ],
+        routeKey: "agentEmail",
+        linkLabel: "Découvrir l'agent email",
+      },
+      {
+        title: "Agent de reporting",
+        mission:
+          "Collecte les chiffres dans vos outils, les consolide et génère vos rapports.",
+        canDo: [
+          "Rassembler les données depuis plusieurs outils",
+          "Générer le rapport depuis votre modèle",
+          "Envoyer aux bonnes personnes, à la bonne fréquence",
+        ],
+        routeKey: "agentReporting",
+        linkLabel: "Découvrir l'agent de reporting",
+      },
+      {
         title: "Agent de connaissance interne",
         mission:
           "Répond aux questions de vos équipes à partir de vos documents internes.",
@@ -141,6 +154,18 @@ export const home: HomeContent = {
         routeKey: "agentKnowledge",
         linkLabel: "Découvrir l'agent de connaissance",
       },
+      {
+        title: "Agent sur mesure",
+        mission:
+          "Votre besoin ne rentre dans aucune case ? Nous concevons l'agent qu'il vous faut, pour votre métier et vos outils.",
+        canDo: [
+          "Cadrer le besoin lors du diagnostic gratuit",
+          "Définir un périmètre d'action clair et sécurisé",
+          "Garder une validation humaine où vous le souhaitez",
+        ],
+        externalHref: CALENDAR_URL,
+        linkLabel: "Réserver un diagnostic gratuit",
+      },
     ],
   },
 
@@ -149,16 +174,16 @@ export const home: HomeContent = {
     title: "Ce qui change concrètement",
     rows: [
       {
-        before: "Emails triés manuellement chaque matin",
-        after: "Classification et routage automatiques en continu",
-      },
-      {
         before: "Informations recopiées dans le CRM",
         after: "CRM mis à jour automatiquement à chaque échange",
       },
       {
         before: "Relances qui dépendent de la mémoire de chacun",
         after: "Relances déclenchées selon vos règles, sans oubli",
+      },
+      {
+        before: "Emails triés manuellement chaque matin",
+        after: "Classification et routage automatiques en continu",
       },
       {
         before: "Rapports assemblés à la main en fin de mois",
@@ -216,7 +241,7 @@ export const home: HomeContent = {
         description:
           "Cartographie de vos processus et identification des gisements de temps.",
         details:
-          "Nous analysons vos opérations réelles : emails, documents, outils, ressaisies. Livrable : une liste priorisée de vos processus automatisables, avec l'estimation des gains et de la faisabilité pour chacun.",
+          "Nous analysons vos opérations réelles : documents, ressaisies, relances, emails, outils. Livrable : une liste priorisée de vos processus automatisables, avec l'estimation des gains et de la faisabilité pour chacun.",
       },
       {
         number: "02",
@@ -240,7 +265,7 @@ export const home: HomeContent = {
         description:
           "Suivi des erreurs, des coûts et des résultats. Le système s'améliore en continu.",
         details:
-          "Surveillance des workflows, correction des anomalies, ajustement des règles métier et suivi des coûts d'utilisation. Vous savez toujours ce que le système fait et ce qu'il vous rapporte.",
+          "Surveillance des automatisations, correction des anomalies, ajustement des règles métier et suivi des coûts d'utilisation. Vous savez toujours ce que le système fait et ce qu'il vous rapporte.",
       },
     ],
     pageLink: "Voir la méthode en détail",
@@ -250,7 +275,7 @@ export const home: HomeContent = {
     eyebrow: "Intégrations",
     title: "Connecté aux outils que vous utilisez déjà",
     description:
-      "Pas de nouvelle plateforme à adopter : les agents et workflows s'intègrent à votre environnement existant.",
+      "Pas de nouvelle plateforme à adopter : les agents et automatisations s'intègrent à votre environnement existant.",
     tools: [
       "n8n",
       "Make",
@@ -289,7 +314,7 @@ export const home: HomeContent = {
           "Envoi d'un email, modification d'un document, engagement client : vous choisissez ce qui part automatiquement et ce qui attend votre feu vert.",
       },
       {
-        title: "Que se passe-t-il si un workflow échoue ?",
+        title: "Que se passe-t-il si une automatisation échoue ?",
         description:
           "Chaque exécution est tracée. En cas d'erreur, le système alerte, bascule vers un traitement manuel et rien ne se perd en silence.",
       },
@@ -301,24 +326,9 @@ export const home: HomeContent = {
     title: "Questions fréquentes",
     items: [
       {
-        question: "Quelle différence entre un agent IA et une automatisation ?",
+        question: "Quel budget faut-il prévoir ?",
         answer:
-          "Une automatisation suit un scénario prédéfini (si X alors Y), de façon fiable et traçable. Un agent IA analyse un contenu variable (un email, un document) et choisit une action dans un cadre défini. Dans la plupart des projets, les deux se combinent : l'agent comprend et décide, le workflow exécute et trace.",
-      },
-      {
-        question: "Peut-on connecter la solution à nos outils actuels ?",
-        answer:
-          "Oui, c'est le principe. Nous travaillons avec n8n et Make, qui se connectent à des centaines d'outils : Google Workspace, Microsoft 365, Notion, Airtable, HubSpot, Pipedrive, logiciels métier via API. Le diagnostic vérifie la faisabilité sur votre environnement précis.",
-      },
-      {
-        question: "Nos données sont-elles utilisées pour entraîner les modèles ?",
-        answer:
-          "Non. Nous utilisons les API professionnelles d'OpenAI, Anthropic ou Mistral, dont les conditions excluent l'entraînement sur vos données. Vos données restent dans vos outils et ne transitent que pour le traitement demandé.",
-      },
-      {
-        question: "Une validation humaine est-elle possible ?",
-        answer:
-          "Oui, et nous la recommandons pour toute action sortante au démarrage : l'agent prépare, un humain valide en un clic. Une fois la confiance établie, vous choisissez ce qui passe en automatique.",
+          "Les projets sont au forfait, à partir de 1 500 € pour une première automatisation ou un premier agent. Le diagnostic gratuit permet d'estimer précisément le coût et le gain attendu avant tout engagement.",
       },
       {
         question: "Combien de temps prend un premier déploiement ?",
@@ -326,14 +336,29 @@ export const home: HomeContent = {
           "Un premier pilote fonctionne généralement en 2 à 4 semaines après le diagnostic, selon la complexité du processus et les accès aux outils. L'objectif : un résultat mesurable rapidement, pas un projet de six mois.",
       },
       {
-        question: "Comment la maintenance est-elle organisée ?",
+        question: "Peut-on connecter la solution à nos outils actuels ?",
         answer:
-          "Chaque déploiement inclut la documentation et la formation de vos équipes. Ensuite, un forfait de maintenance optionnel couvre la surveillance des workflows, la correction des erreurs, l'évolution des intégrations et le suivi des coûts d'API.",
+          "Oui, c'est le principe. Nous travaillons avec n8n et Make, qui se connectent à des centaines d'outils : Google Workspace, Microsoft 365, Notion, Airtable, HubSpot, Pipedrive, logiciels métier via API. Le diagnostic vérifie la faisabilité sur votre environnement précis.",
       },
       {
-        question: "Quel budget faut-il prévoir ?",
+        question: "Une validation humaine est-elle possible ?",
         answer:
-          "Les projets sont au forfait, à partir de 1 500 € pour une première automatisation ou un premier agent. Le diagnostic gratuit permet d'estimer précisément le coût et le gain attendu avant tout engagement.",
+          "Oui, et nous la recommandons pour toute action sortante au démarrage : l'agent prépare, un humain valide en un clic. Une fois la confiance établie, vous choisissez ce qui passe en automatique.",
+      },
+      {
+        question: "Comment la maintenance est-elle organisée ?",
+        answer:
+          "Deux options, selon votre besoin. Soit nous nous en occupons via un forfait de maintenance : surveillance, correction des erreurs, évolution des intégrations et suivi des coûts. Soit vous la reprenez en interne : chaque déploiement inclut un système documenté et la formation de vos équipes pour être autonomes.",
+      },
+      {
+        question: "Quelle différence entre un agent IA et une automatisation ?",
+        answer:
+          "Une automatisation suit un scénario prédéfini (si X alors Y), de façon fiable et traçable. Un agent IA analyse un contenu variable (un email, un document) et choisit une action dans un cadre défini. Dans la plupart des projets, les deux se combinent : l'agent comprend et décide, l'automatisation exécute et trace.",
+      },
+      {
+        question: "Nos données sont-elles utilisées pour entraîner les modèles ?",
+        answer:
+          "Non. Nous utilisons les API professionnelles d'OpenAI, Anthropic ou Mistral, dont les conditions excluent l'entraînement sur vos données. Vos données restent dans vos outils et ne transitent que pour le traitement demandé.",
       },
       {
         question: "Formez-vous les équipes après le déploiement ?",

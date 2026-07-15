@@ -39,7 +39,7 @@ export const cases: CasesPageContent = {
         "Les preuves Qualiopi étaient rassemblées dans l'urgence avant chaque audit",
       ],
       solution:
-        "Un workflow n8n orchestre le parcours complet depuis l'inscription : génération des conventions et convocations, lecture OCR des émargements, consolidation des présences, envoi automatique des questionnaires aux bonnes dates et archivage structuré des preuves.",
+        "Une automatisation n8n orchestre le parcours complet depuis l'inscription : génération des conventions et convocations, lecture OCR des émargements, consolidation des présences, envoi automatique des questionnaires aux bonnes dates et archivage structuré des preuves.",
       tools: ["n8n", "Google Workspace", "Google Sheets", "OCR", "Notion"],
       duration: "4 semaines, du diagnostic à la mise en production",
       results: [
@@ -111,7 +111,7 @@ export const cases: CasesPageContent = {
         "Des envois en retard en période de charge",
       ],
       solution:
-        "Un workflow consolide automatiquement les données des trois sources, génère un rapport PDF au format unique du cabinet et le soumet au consultant pour validation avant envoi planifié au client.",
+        "Une automatisation consolide les données des trois sources, génère un rapport PDF au format unique du cabinet et le soumet au consultant pour validation avant envoi planifié au client.",
       tools: ["Make", "Airtable", "Google Sheets", "Google Docs", "Gmail"],
       duration: "2 semaines, du diagnostic à la mise en production",
       results: [

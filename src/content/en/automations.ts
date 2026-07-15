@@ -4,40 +4,30 @@ export const automationsHub: SolutionPageContent = {
   meta: {
     title: "Business Process Automation (n8n, Make)",
     description:
-      "Custom workflows that connect your tools and run your repetitive processes: forms, invoices, onboarding, follow-ups, reporting. Without changing your tools.",
+      "Custom automations that connect your tools and run your repetitive processes: invoices, follow-ups, forms, reporting, onboarding. Without changing your tools.",
   },
   hero: {
     eyebrow: "Automations",
-    title: "Workflows that run your processes, error-free",
+    title: "Automations that run your processes, error-free",
     description:
       "An automation connects your tools to each other and runs a predefined process, reliably and with a full audit trail. It is the highest-return building block for eliminating re-keying and missed steps.",
     cta: "Identify my automation opportunities",
   },
   useCases: {
     eyebrow: "Use cases",
-    title: "Examples of workflows we deploy",
+    title: "Examples of automations we deploy",
     description:
-      "Every workflow is built to order around your tools and your business rules.",
+      "Every automation is built to order around your tools and your business rules.",
     items: [
-      {
-        title: "Form → CRM → email → task",
-        description:
-          "A request comes in: the contact is created in the CRM, the confirmation email goes out, the sales task is assigned.",
-      },
       {
         title: "Invoice → extraction → filing → accounting",
         description:
           "Incoming invoices are read, extracted, filed and passed to your accounting tool, with no data entry.",
       },
       {
-        title: "Contract signed → client onboarding",
+        title: "Form → CRM → email → task",
         description:
-          "The moment the contract is signed: client workspaces created, welcome pack sent, milestones scheduled.",
-      },
-      {
-        title: "Attendance sheet → OCR → spreadsheet → reporting",
-        description:
-          "Scanned sheets are read and consolidated automatically into your tracking spreadsheets.",
+          "A request comes in: the contact is created in the CRM, the confirmation email goes out, the sales task is assigned.",
       },
       {
         title: "Unanswered quote → automatic follow-ups",
@@ -45,17 +35,27 @@ export const automationsHub: SolutionPageContent = {
           "Once your deadline passes, the follow-up goes out per your rules: number, tone, exceptions.",
       },
       {
+        title: "Attendance sheet → OCR → spreadsheet → reporting",
+        description:
+          "Scanned sheets are read and consolidated automatically into your tracking spreadsheets.",
+      },
+      {
         title: "CRM data → PDF report",
         description:
           "Your weekly or monthly reporting generated automatically from the live data.",
       },
+      {
+        title: "Contract signed → client onboarding",
+        description:
+          "The moment the contract is signed: client workspaces created, welcome pack sent, milestones scheduled.",
+      },
     ],
   },
   explainer: {
-    title: "Why n8n and Make",
+    title: "Automations you actually own",
     paragraphs: [
-      "We build workflows on n8n and Make, two proven platforms that connect to hundreds of tools. You keep ownership of your automations: no black box, no dependency on opaque custom code.",
-      "When a process requires understanding (reading an email, interpreting a document), an AI agent slots into the workflow: the agent understands and decides, the workflow executes and logs.",
+      "No black box, no dependency on opaque custom code: everything is documented, reversible and plugged into the tools you already use. We build on n8n and Make, two proven platforms that connect to hundreds of tools.",
+      "When a process requires understanding (reading an email, interpreting a document), an AI agent slots into the automation: the agent understands and decides, the automation executes and logs.",
     ],
   },
   children: {
@@ -82,7 +82,7 @@ export const automationsHub: SolutionPageContent = {
   },
   beforeAfter: {
     eyebrow: "Impact",
-    title: "What changes with workflows in place",
+    title: "What changes with automations in place",
     rows: [
       {
         before: "Hours of copy-paste between tools",
@@ -105,9 +105,9 @@ export const automationsHub: SolutionPageContent = {
         "An automation follows a predefined scenario, with no interpretation: it is reliable, fast and inexpensive. An AI agent is added when variable content needs to be understood. Many projects start with pure automation, then add AI where it genuinely earns its keep.",
     },
     {
-      question: "What happens if a workflow breaks down?",
+      question: "What happens if an automation breaks down?",
       answer:
-        "Every run is logged, errors trigger an alert and a fallback handling path is in place: nothing is lost silently. Maintenance covers monitoring and fixes.",
+        "Every run is logged, errors trigger an alert and a fallback handling path is in place: nothing is lost silently. From there, two options: we monitor and fix through a maintenance plan, or you run it in-house with the documented system and training included.",
     },
     {
       question: "Are our tools compatible?",
@@ -117,13 +117,13 @@ export const automationsHub: SolutionPageContent = {
     {
       question: "What budget should we plan for?",
       answer:
-        "Fixed-price, from €1,500 for a first workflow. The free assessment estimates the cost and the time saved before any commitment.",
+        "Fixed-price, from €1,500 for a first automation. The free assessment estimates the cost and the time saved before any commitment.",
     },
   ],
   cta: {
     title: "Which process costs you the most time?",
     description:
-      "In 30 minutes, we map your repetitive processes and select the most profitable workflow to deploy first.",
+      "In 30 minutes, we map your repetitive processes and select the most profitable automation to deploy first.",
     button: "Book my free assessment",
     note: "30 minutes · No commitment",
   },
@@ -135,7 +135,7 @@ export const sectorTraining: SectorPageContent = {
   meta: {
     title: "Automation for Training Providers",
     description:
-      "Enrollments, session notices, attendance sheets, invoicing, Qualiopi requirements: automate your training organization's admin work with custom workflows.",
+      "Enrollments, session notices, attendance sheets, invoicing, Qualiopi requirements: automate your training organization's admin work with custom automations.",
   },
   breadcrumbLabel: "Training providers",
   hero: {
@@ -200,7 +200,7 @@ export const sectorTraining: SectorPageContent = {
     title: "The building blocks we deploy for training providers",
     items: [
       {
-        title: "Administrative workflows",
+        title: "Administrative automations",
         description:
           "Enrollment → agreement → session notice → attendance → certificate → invoicing, orchestrated end to end.",
         href: "/en/automations",
@@ -261,7 +261,7 @@ export const sectorLegal: SectorPageContent = {
     eyebrow: "Industry · Legal professions",
     title: "Automating a law firm, with no compromise on confidentiality",
     description:
-      "Firms lose billable hours to repetitive administrative tasks. Tightly scoped workflows take them over, with safeguards built for professional secrecy.",
+      "Firms lose billable hours to repetitive administrative tasks. Tightly scoped automations take them over, with safeguards built for professional secrecy.",
   },
   painPoints: {
     eyebrow: "The daily grind",
@@ -319,7 +319,7 @@ export const sectorLegal: SectorPageContent = {
     title: "The building blocks we deploy for firms",
     items: [
       {
-        title: "Intake and follow-up workflows",
+        title: "Intake and follow-up automations",
         description:
           "From first contact to file opening, then document chasing and deadline tracking.",
         href: "/en/automations",

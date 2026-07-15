@@ -10,7 +10,7 @@ export const about: AboutPageContent = {
     eyebrow: "La branche IA du groupe Kaelia",
     brand: "KAEL'IA",
     manifesto:
-      "Kael'IA construit des agents IA et des automatisations qui prennent réellement en charge une partie des opérations des entreprises : emails, documents, CRM, relances, reporting. Des systèmes concrets, mesurables, intégrés aux outils existants.",
+      "Kael'IA construit des agents IA et des automatisations qui prennent réellement en charge une partie des opérations des entreprises : documents, CRM, relances, emails, reporting. Des systèmes concrets, mesurables, intégrés aux outils existants.",
     vision:
       "Notre conviction : la bonne question n'est pas « comment utiliser l'IA ? » mais « quelles tâches peut-on lui confier, avec quel contrôle et quel résultat ? ». C'est à cette question que chaque mission répond.",
     chips: ["Agents IA", "Automatisations", "Kael'IA · 2025"],
@@ -55,7 +55,7 @@ export const about: AboutPageContent = {
         year: "Aujourd'hui",
         title: "Des systèmes en production",
         description:
-          "Des entreprises accompagnées dans plusieurs secteurs, des agents et workflows en production au quotidien, et une exigence constante : livrer des résultats mesurables.",
+          "Des entreprises accompagnées dans plusieurs secteurs, des agents et automatisations en production au quotidien, et une exigence constante : livrer des résultats mesurables.",
       },
     ],
   },

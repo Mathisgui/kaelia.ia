@@ -39,7 +39,7 @@ export const cases: CasesPageContent = {
         "Qualiopi compliance evidence (the French training quality certification) was scrambled together before each audit",
       ],
       solution:
-        "An n8n workflow orchestrates the full journey from enrollment: generating agreements and session notices, reading attendance sheets by OCR, consolidating attendance, sending surveys automatically on the right dates and archiving the evidence in a structured way.",
+        "An n8n automation orchestrates the full journey from enrollment: generating agreements and session notices, reading attendance sheets by OCR, consolidating attendance, sending surveys automatically on the right dates and archiving the evidence in a structured way.",
       tools: ["n8n", "Google Workspace", "Google Sheets", "OCR", "Notion"],
       duration: "4 weeks, from assessment to production",
       results: [
@@ -111,7 +111,7 @@ export const cases: CasesPageContent = {
         "Late deliveries during busy periods",
       ],
       solution:
-        "A workflow automatically consolidates the data from the three sources, generates a PDF report in the firm's single format and submits it to the consultant for approval before the scheduled send to the client.",
+        "An automation consolidates the data from the three sources, generates a PDF report in the firm's single format and submits it to the consultant for approval before the scheduled send to the client.",
       tools: ["Make", "Airtable", "Google Sheets", "Google Docs", "Gmail"],
       duration: "2 weeks, from assessment to production",
       results: [
