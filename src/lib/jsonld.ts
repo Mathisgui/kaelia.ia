@@ -3,8 +3,8 @@ import type { Locale } from "./routes";
 import type { FaqItem } from "@/content/types";
 
 const DESCRIPTIONS: Record<Locale, string> = {
-  fr: "Kael'IA conçoit et déploie des agents IA et des automatisations métier sur mesure : emails, documents, CRM, relances et reporting, directement dans les outils des entreprises.",
-  en: "Kael'IA designs and deploys custom AI agents and business automations: emails, documents, CRM, follow-ups and reporting, directly inside company tools.",
+  fr: "Kael'IA conçoit et déploie des agents IA et des automatisations métier sur mesure : documents, CRM, relances, emails et reporting, directement dans les outils des entreprises.",
+  en: "Kael'IA designs and deploys custom AI agents and business automations: documents, CRM, follow-ups, emails and reporting, directly inside company tools.",
 };
 
 const SERVICE_TYPES: Record<Locale, string[]> = {

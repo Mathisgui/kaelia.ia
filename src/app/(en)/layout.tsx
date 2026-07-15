@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Kael'IA designs custom AI agents and automations to handle your emails, documents, CRM, follow-ups and reporting. Free 30-minute assessment.",
+    "Kael'IA designs custom AI agents and automations to handle your documents, CRM, emails, follow-ups and reporting. Free 30-minute assessment.",
   keywords: [
     "AI agent for business",
     "custom AI agent",

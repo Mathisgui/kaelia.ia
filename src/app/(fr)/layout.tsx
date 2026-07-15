@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Kael'IA conçoit des agents IA et des automatisations sur mesure pour gérer vos emails, documents, CRM, relances et reportings. Diagnostic gratuit.",
+    "Kael'IA conçoit des agents IA et des automatisations sur mesure pour gérer vos documents, CRM, emails, relances et reportings. Diagnostic gratuit.",
   keywords: [
     "agent IA entreprise",
     "agent IA sur mesure",
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "automatisation n8n",
     "automatisation Make",
     "automatisation PME",
+    "agent IA reporting",
     "RAG entreprise",
     "Kael'IA",
   ],
