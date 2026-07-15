@@ -249,7 +249,7 @@ export const home: HomeContent = {
         description:
           "Construction d'un pilote limité et mesurable sur le cas d'usage le plus rentable.",
         details:
-          "Un premier agent ou workflow fonctionnel sur un périmètre restreint. Vous constatez le résultat sur vos vraies données avant d'aller plus loin.",
+          "Un premier agent ou une première automatisation, fonctionnel sur un périmètre restreint. Vous constatez le résultat sur vos vraies données avant d'aller plus loin.",
       },
       {
         number: "03",

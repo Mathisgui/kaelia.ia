@@ -249,7 +249,7 @@ export const home: HomeContent = {
         description:
           "We build a small, measurable pilot on your most profitable use case.",
         details:
-          "A first working agent or workflow on a limited scope. You see the results on your real data before going any further.",
+          "A first working agent or automation on a limited scope. You see the results on your real data before going any further.",
       },
       {
         number: "03",

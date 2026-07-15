@@ -355,7 +355,7 @@ export const sectorLegal: SectorPageContent = {
     {
       question: "Est-ce compatible avec notre logiciel métier ?",
       answer:
-        "Nous nous intégrons aux outils disposant d'une API ou d'exports, et les workflows peuvent aussi fonctionner autour de votre logiciel (email, documents, agenda). Le diagnostic vérifie votre configuration.",
+        "Nous nous intégrons aux outils disposant d'une API ou d'exports, et les automatisations peuvent aussi fonctionner autour de votre logiciel (email, documents, agenda). Le diagnostic vérifie votre configuration.",
     },
   ],
   cta: {

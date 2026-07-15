@@ -355,7 +355,7 @@ export const sectorLegal: SectorPageContent = {
     {
       question: "Is it compatible with our practice management software?",
       answer:
-        "We integrate with tools that offer an API or exports, and workflows can also run around your software (email, documents, calendar). The assessment checks your setup.",
+        "We integrate with tools that offer an API or exports, and automations can also run around your software (email, documents, calendar). The assessment checks your setup.",
     },
   ],
   cta: {
