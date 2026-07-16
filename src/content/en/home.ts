@@ -9,7 +9,7 @@ export const home: HomeContent = {
   },
 
   hero: {
-    title: "AI agents and automations that handle your business tasks, right inside your tools.",
+    title: "Automate the work that slows your teams down.",
     description:
       "Kael'IA automates your company's documents, CRM, follow-ups, email and reporting with custom AI agents and automations. Less re-keying. Fewer things slipping through the cracks. More time for your teams.",
     ctaPrimary: "Identify my automation opportunities",

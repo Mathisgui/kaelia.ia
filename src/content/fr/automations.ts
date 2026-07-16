@@ -59,10 +59,10 @@ export const automationsHub: SolutionPageContent = {
     ],
   },
   children: {
-    eyebrow: "Par secteur",
+    eyebrow: "Tous secteurs",
     title: "Des automatisations pensées pour votre métier",
     description:
-      "Deux secteurs où nous avons une expertise particulière, détaillés sur leur propre page.",
+      "Quel que soit votre secteur, vos processus répétitifs peuvent être automatisés. Voici deux métiers que nous connaissons en profondeur, détaillés sur leur propre page. La démarche est la même pour le vôtre.",
     items: [
       {
         title: "Organismes de formation",
