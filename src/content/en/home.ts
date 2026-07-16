@@ -9,7 +9,7 @@ export const home: HomeContent = {
   },
 
   hero: {
-    title: "Automate the work that slows your teams down.",
+    title: "AI agents and automations: delegate your repetitive tasks.",
     description:
       "Kael'IA automates your company's documents, CRM, follow-ups, email and reporting with custom AI agents and automations. Less re-keying. Fewer things slipping through the cracks. More time for your teams.",
     ctaPrimary: "Identify my automation opportunities",

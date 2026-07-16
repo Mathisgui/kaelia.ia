@@ -9,7 +9,7 @@ export const home: HomeContent = {
   },
 
   hero: {
-    title: "Automatisez les opérations qui ralentissent vos équipes.",
+    title: "Agents IA et automatisations : déléguez vos tâches répétitives.",
     description:
       "Kael'IA automatise les documents, le CRM, les relances, les emails et le reporting de votre entreprise grâce à des agents IA et des automatisations sur mesure. Moins de ressaisie. Moins d'oublis. Plus de temps pour vos équipes.",
     ctaPrimary: "Identifier mes processus automatisables",
