@@ -59,10 +59,10 @@ export const automationsHub: SolutionPageContent = {
     ],
   },
   children: {
-    eyebrow: "By industry",
+    eyebrow: "Every industry",
     title: "Automations designed for your line of work",
     description:
-      "Two industries where we have deep expertise, each detailed on its own page.",
+      "Whatever your industry, your repetitive processes can be automated. Here are two lines of work we know in depth, each detailed on its own page. The approach is the same for yours.",
     items: [
       {
         title: "Training providers",

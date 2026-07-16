@@ -314,7 +314,7 @@ export default function AboutContent({
                 }}
               >
                 <Image
-                  src="/mathis.jpg"
+                  src="/mathis-portrait.jpg"
                   alt={content.profile.name}
                   fill
                   className="object-cover"
