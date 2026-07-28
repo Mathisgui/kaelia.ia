@@ -33,7 +33,7 @@ FR + EN, coche la ligne avec la date de publication, puis commit et push sur `ma
 | Fait | translationKey | fr-slug | en-slug | Titre de travail | Angle | Mots-clés cibles |
 |------|----------------|---------|---------|------------------|-------|------------------|
 | [x] | onboarding-automation | automatiser-onboarding-client | automate-client-onboarding | Automatiser l'onboarding client | Du contrat signé au client opérationnel, sans étape oubliée | onboarding client, automatisation onboarding, parcours client | 2026-07-21 |
-| [ ] | reporting-automation | reporting-automatique-pme | automated-reporting-smb | Le reporting automatique en PME | Fini les fins de mois à compiler des chiffres | reporting automatique, tableau de bord PME, rapport automatique |
+| [x] | reporting-automation | reporting-automatique-pme | automated-reporting-smb | Le reporting automatique en PME | Fini les fins de mois à compiler des chiffres | reporting automatique, tableau de bord PME, rapport automatique | 2026-07-28 |
 | [ ] | rgpd-ai-agents | rgpd-agents-ia-entreprise | gdpr-ai-agents-business | RGPD et agents IA : ce qu'il faut savoir | Où vont vos données, quelles garanties exiger | RGPD IA, données agent IA, confidentialité IA entreprise |
 | [ ] | automation-mistakes | erreurs-automatisation-pme | automation-mistakes-smb | Les 5 erreurs classiques d'un premier projet d'automatisation | Ce qui fait rater un projet et comment l'éviter | erreur automatisation, echec automatisation, projet automatisation |
 | [ ] | customer-service-automation | automatiser-service-client-pme | automate-customer-service-smb | Automatiser le service client sans déshumaniser | L'IA prépare, l'humain valide | service client IA, automatisation support, réponse client automatique |
