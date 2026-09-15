@@ -1,0 +1,47 @@
+---
+title: "How to stay in control of an AI agent"
+date: "2026-09-15"
+excerpt: "Scope, human validation, traceability: three concrete levers to stay in control of an AI agent at work without limiting what it can do for you."
+keywords: ["AI agent security", "AI agent control", "human validation AI", "AI traceability business"]
+translationKey: "ai-agent-security"
+---
+
+An AI agent that answers emails, updates a CRM, or drafts quotes is no longer just suggesting things, it is acting. That is exactly what makes it useful, and it is also what makes a business owner uneasy, understandably. How do you stay in control of something that acts on your behalf? The answer comes down to three concrete levers: a defined scope, human validation on what matters, and traceability of what was done. Here is how to put them in place without turning the agent back into a mere suggestion tool.
+
+## Define a scope before connecting anything
+
+Before even talking about validation or traceability, the first question is scope: which tools can the agent reach, which data can it act on, and which actions can it take without asking for more? An agent that drafts quotes needs no access to the HR inbox, and an agent that sorts incoming emails needs no write access to the accounting system. This framing happens during the initial assessment, before the first prototype, exactly as described in our [method](/en/method): we always start from a narrow, checkable scope, widening it later once trust has been established.
+
+A scope that is too broad from the start, chosen for convenience, is the most common source of unpleasant surprises. It is almost always easier to start narrow and open up gradually than the other way around.
+
+## Human validation on the actions that matter
+
+Not all of an agent's actions carry the same weight. Sorting an email, summarizing a document, or drafting a quote are reversible, low-risk actions: the agent can handle them alone. Sending that quote to a client, replying publicly to a review, or changing a billed record are actions that commit the business and deserve a human checkpoint before they happen. This is the logic we systematically apply to the [AI sales agent](/en/ai-sales-agent): the AI prepares, a person validates before anything goes out to a third party.
+
+This split is not fixed forever. An action can move from manually validated to automatic once dozens of runs have gone through without a correction, which lets you progressively tighten the amount of human time needed without ever skipping the trust-building step.
+
+## Traceability: knowing what the agent did and why
+
+An agent that acts without leaving a trail becomes unmanageable the moment something goes wrong. Every action should be logged: what data was read, what decision was made, what output was produced, and when. This traceability serves two very concrete purposes: reconstructing what happened in case of an error or a complaint, and improving the agent by spotting where it gets things wrong most often. It has also become a point of regulatory attention, in line with what we cover in our article on [GDPR and AI agents](/en/blog/gdpr-ai-agents-business): being able to say precisely what data was processed, by which system, and for what purpose.
+
+An action log does not need to be sophisticated to be useful. A spreadsheet filled in automatically on every run is plenty for most SMBs, as long as it gets reviewed regularly rather than filled in and never read again.
+
+## Limit access to data and tools
+
+The principle of least privilege applies to an AI agent the same way it applies to any user account: it should only see what it needs for the task it has been given. Read-only access when write access is not required, a dedicated API key rather than a shared admin account, access limited to a single folder or a single inbox rather than the whole system. These choices are made at the technical configuration stage, but they determine most of the actual risk: a poorly scoped agent with access to too much represents a far bigger danger than a narrowly scoped agent that occasionally makes a one-off mistake within its own boundaries.
+
+## Plan for reversibility and a stop button
+
+An AI agent should always be pausable immediately, without depending on a complex technical intervention. In practice, that means a switch accessible to the person responsible for the process, not only to the provider who built the automation. It also means the actions the agent takes remain, as much as possible, reversible, or at least documented well enough to be corrected quickly. A quote sent by mistake is fixed with a follow-up email; a billing record changed by mistake with no trace of what it looked like before is much harder to undo.
+
+## What a serious control framework costs
+
+Putting this framework in place, narrow scope, validation checkpoints, an action log, is generally not a separate project but a measured add-on to the automation project itself. A first targeted project starts at 1,500 euros as a fixed fee, and adding human validation on sensitive actions along with an execution log typically adds a few hundred euros depending on how complex the process is, landing the project between roughly 2,000 and 4,000 euros. Monthly running costs stay at a few dozen euros of API usage, and maintenance runs between 100 and 200 euros a month if we keep monitoring the system, or it can be taken over internally if someone at the company is comfortable with the tools involved.
+
+These figures remain orders of magnitude, with a caution discount applied to any estimated time savings: a simple process with a single validation checkpoint does not cost the same as one that touches several systems and several levels of decision-making.
+
+## The takeaway
+
+Staying in control of an AI agent does not mean giving up on automation, it means framing it properly: a narrow scope from the start, human validation on actions that commit the business, traceability that lets you reconstruct what happened, and access limited to only the data that is needed. This framing, more than the technology itself, is what determines whether an AI agent is an asset or a risk.
+
+To find out how to frame an AI agent for your business, our free 30-minute assessment starts from your real processes to define a concrete scope and quote. Check out our [AI agents](/en/ai-agents) or our [case studies](/en/case-studies) for examples of similar projects.
