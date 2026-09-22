@@ -1,0 +1,304 @@
+# Carte de contenu du blog Kael'IA
+#
+# Une entree = une URL = une requete principale. C'est ce fichier qui
+# empeche deux articles de viser la meme intention : avant d'ouvrir un
+# brief, le stratege verifie ici que la requete n'est pas deja couverte,
+# par ce blog comme par celui de Kaelia (champ crossSite).
+#
+# status : planifie | brief | redige | publie | a-mettre-a-jour | retire
+# pillar : cle de src/lib/routes.ts vers laquelle l'article remonte
+# covers : intentions absorbees par cette entree, en plus de la requete
+#          principale. Sert au controle anti-doublon.
+
+version: 1
+site: kaelia-ai.com
+updated: "2026-09-22"
+
+entries:
+  - id: smb-automation-examples
+    status: publie
+    primaryKeyword: "automatisation PME"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: automations
+    secondaryKeywords: ["tâches à automatiser", "gagner du temps entreprise", "automatisation factures", "exemples automatisation"]
+    fr: { slug: taches-a-automatiser-pme, published: "2026-05-21", updated: null }
+    en: { slug: tasks-smb-can-automate }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: getting-started-automation
+    status: publie
+    primaryKeyword: "commencer automatisation"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: method
+    secondaryKeywords: ["automatisation entreprise débutant", "premier projet automatisation", "automatisation PME", "pilote automatisation"]
+    fr: { slug: par-ou-commencer-automatisation, published: "2026-05-28", updated: null }
+    en: { slug: where-to-start-automation }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: chatgpt-vs-agent
+    status: publie
+    primaryKeyword: "ChatGPT entreprise"
+    intent: ""            # a renseigner par le stratege
+    cluster: agents-ia
+    pillar: agents
+    secondaryKeywords: ["agent IA vs ChatGPT", "IA pour PME", "agent IA entreprise", "automatisation IA"]
+    fr: { slug: chatgpt-vs-agent-ia-entreprise, published: "2026-06-05", updated: null }
+    en: { slug: chatgpt-vs-ai-agent-business }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: invoice-automation
+    status: publie
+    primaryKeyword: "automatisation factures"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: agentDocs
+    secondaryKeywords: ["OCR facture", "saisie comptable automatique", "extraction données facture", "traitement factures PME"]
+    fr: { slug: automatiser-traitement-factures, published: "2026-06-11", updated: null }
+    en: { slug: automate-invoice-processing }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: agent-vs-automation
+    status: publie
+    primaryKeyword: "agent IA"
+    intent: ""            # a renseigner par le stratege
+    cluster: agents-ia
+    pillar: agents
+    secondaryKeywords: ["automatisation", "différence agent IA automatisation", "workflow", "n8n", "PME"]
+    fr: { slug: agent-ia-vs-automatisation, published: "2026-06-18", updated: null }
+    en: { slug: ai-agent-vs-automation }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: follow-up-automation
+    status: publie
+    primaryKeyword: "relance client automatique"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: agentSales
+    secondaryKeywords: ["relance devis", "relance facture impayée", "automatisation commerciale", "relance automatique PME"]
+    fr: { slug: relances-clients-automatiques, published: "2026-06-24", updated: null }
+    en: { slug: automated-client-follow-ups }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: email-automation
+    status: publie
+    primaryKeyword: "automatiser emails professionnels"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: agentEmail
+    secondaryKeywords: ["gestion boîte mail", "agent IA email", "n8n", "tri automatique emails", "PME"]
+    fr: { slug: automatiser-gestion-emails-professionnels, published: "2026-06-30", updated: null }
+    en: { slug: automate-business-email-management }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: automation-roi
+    status: publie
+    primaryKeyword: "ROI automatisation"
+    intent: ""            # a renseigner par le stratege
+    cluster: prix-roi
+    pillar: automations
+    secondaryKeywords: ["rentabilité automatisation", "coût automatisation", "calcul ROI", "automatisation PME"]
+    fr: { slug: calculer-roi-automatisation, published: "2026-07-09", updated: null }
+    en: { slug: calculate-automation-roi }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: automation-pricing
+    status: publie
+    primaryKeyword: "prix automatisation IA"
+    intent: ""            # a renseigner par le stratege
+    cluster: prix-roi
+    pillar: automations
+    secondaryKeywords: ["coût agent IA", "tarif automatisation PME", "budget automatisation", "coût automatisation IA"]
+    fr: { slug: prix-automatisation-ia-pme, published: "2026-07-14", updated: null }
+    en: { slug: ai-automation-pricing-smb }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: onboarding-automation
+    status: publie
+    primaryKeyword: "onboarding client"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: agentSales
+    secondaryKeywords: ["automatisation onboarding", "parcours client", "intégration client PME"]
+    fr: { slug: automatiser-onboarding-client, published: "2026-07-21", updated: null }
+    en: { slug: automate-client-onboarding }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: reporting-automation
+    status: publie
+    primaryKeyword: "reporting automatique"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: agentReporting
+    secondaryKeywords: ["tableau de bord PME", "rapport automatique", "automatisation reporting"]
+    fr: { slug: reporting-automatique-pme, published: "2026-07-28", updated: null }
+    en: { slug: automated-reporting-smb }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: rgpd-ai-agents
+    status: publie
+    primaryKeyword: "RGPD IA"
+    intent: ""            # a renseigner par le stratege
+    cluster: securite-rgpd
+    pillar: agents
+    secondaryKeywords: ["données agent IA", "confidentialité IA entreprise", "conformité IA PME"]
+    fr: { slug: rgpd-agents-ia-entreprise, published: "2026-08-04", updated: null }
+    en: { slug: gdpr-ai-agents-business }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: automation-mistakes
+    status: publie
+    primaryKeyword: "erreur automatisation"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: automations
+    secondaryKeywords: ["echec automatisation", "projet automatisation", "premier projet IA"]
+    fr: { slug: erreurs-automatisation-pme, published: "2026-08-11", updated: null }
+    en: { slug: automation-mistakes-smb }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: customer-service-automation
+    status: publie
+    primaryKeyword: "service client IA"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: agents
+    secondaryKeywords: ["automatisation support", "réponse client automatique", "chatbot PME", "satisfaction client"]
+    fr: { slug: automatiser-service-client-pme, published: "2026-08-18", updated: null }
+    en: { slug: automate-customer-service-smb }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: project-duration
+    status: publie
+    primaryKeyword: "délai automatisation"
+    intent: ""            # a renseigner par le stratege
+    cluster: prix-roi
+    pillar: method
+    secondaryKeywords: ["durée projet IA", "mise en place automatisation", "pilote automatisation"]
+    fr: { slug: duree-projet-automatisation, published: "2026-08-25", updated: null }
+    en: { slug: automation-project-timeline }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: accounting-firm-automation
+    status: publie
+    primaryKeyword: "automatisation cabinet comptable"
+    intent: ""            # a renseigner par le stratege
+    cluster: metiers
+    pillar: automations
+    secondaryKeywords: ["expert-comptable IA", "saisie comptable automatique", "automatisation collaborateur comptable"]
+    fr: { slug: automatisation-cabinet-comptable, published: "2026-09-01", updated: null }
+    en: { slug: accounting-firm-automation }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: training-provider-tools
+    status: publie
+    primaryKeyword: "automatisation organisme de formation"
+    intent: ""            # a renseigner par le stratege
+    cluster: metiers
+    pillar: sectorTraining
+    secondaryKeywords: ["Digiforma automatisation", "Qualiopi automatisation", "gestion formation automatique"]
+    fr: { slug: automatisation-organisme-formation-outils, published: "2026-09-08", updated: null }
+    en: { slug: training-provider-automation-tools }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: ai-agent-security
+    status: publie
+    primaryKeyword: "sécurité agent IA"
+    intent: ""            # a renseigner par le stratege
+    cluster: securite-rgpd
+    pillar: agents
+    secondaryKeywords: ["contrôle agent IA", "validation humaine IA", "traçabilité IA entreprise"]
+    fr: { slug: securiser-agent-ia-entreprise, published: "2026-09-15", updated: null }
+    en: { slug: securing-ai-agents-business }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: quote-automation
+    status: publie
+    primaryKeyword: "automatisation devis"
+    intent: ""            # a renseigner par le stratege
+    cluster: automatisation
+    pillar: agentSales
+    secondaryKeywords: ["génération devis", "devis automatique", "création devis PME"]
+    fr: { slug: automatiser-creation-devis, published: "2026-09-22", updated: null }
+    en: { slug: automate-quote-creation }
+    covers: []
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  # ---- Sujets validés par Mathis le 2026-09-22, en attente de rédaction ----
+
+  - id: law-firm-ai
+    status: brief
+    primaryKeyword: "intelligence artificielle cabinet d'avocat"
+    intent: info-commerciale
+    cluster: metiers
+    pillar: sectorLegal
+    secondaryKeywords: ["ia avocat", "cabinet avocat intelligence artificielle", "deontologie ia avocat"]
+    fr: { slug: intelligence-artificielle-cabinet-avocat, published: null, updated: null }
+    en: { slug: ai-in-law-firms }
+    covers: ["ia pour avocat", "chatgpt avocat", "secret professionnel ia"]
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: real-estate-ai
+    status: brief
+    primaryKeyword: "ia pour agent immobilier"
+    intent: info-commerciale
+    cluster: metiers
+    pillar: agents
+    secondaryKeywords: ["ia agence immobiliere", "intelligence artificielle agent immobilier", "agent ia immobilier"]
+    fr: { slug: ia-pour-agent-immobilier, published: null, updated: null }
+    en: { slug: ai-for-real-estate-agents }
+    covers: ["meilleur ia pour agent immobilier", "ia pour agence immobiliere"]
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: craftsman-ai
+    status: brief
+    primaryKeyword: "agent ia pour artisan"
+    intent: info-commerciale
+    cluster: metiers
+    pillar: automations
+    secondaryKeywords: ["ia pour artisan", "assistant ia artisan", "ia batiment tpe"]
+    fr: { slug: agent-ia-pour-artisan, published: null, updated: null }
+    en: { slug: ai-agents-for-tradespeople }
+    covers: ["meilleur ia pour artisan", "ia artisanat", "ia btp tpe"]
+    crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }

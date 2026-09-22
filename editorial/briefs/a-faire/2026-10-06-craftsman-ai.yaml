@@ -1,0 +1,94 @@
+id: craftsman-ai
+createdBy: mathis
+createdAt: 2026-09-22
+validatedBy: mathis
+primaryKeyword: "agent ia pour artisan"
+titleCandidates:
+  - "Agent IA pour artisan : par quoi commencer vraiment"
+  - "Agent IA pour artisan : les usages qui tiennent au réel"
+angle: >-
+  Huit artisans sur dix ne voient pas l'utilité de l'IA, et ils ont de bonnes
+  raisons : ce qu'on leur montre ne ressemble pas à leur métier. L'article
+  part de ce refus, le prend au sérieux, et montre les deux ou trois endroits
+  où l'IA change réellement une journée d'artisan : le devis, la paperasse,
+  les réponses aux clients. Le reste, il le dit franchement.
+audience: artisans
+searchIntent: "Un artisan ou un chef d'entreprise du bâtiment se demande si l'IA sert à quelque chose chez lui, concrètement."
+serpNotes:
+  - "Requête très peu disputée : trois suggestions Google distinctes existent mais aucune page ne cible précisément cette expression."
+  - "Les contenus existants sont des listes d'outils sans rapport avec le quotidien d'un chantier."
+  - "Personne ne prend au sérieux l'argument du scepticisme, qui est pourtant majoritaire dans la profession d'après les chiffres."
+questionsPAA:
+  - "L'IA sert-elle vraiment à un artisan ?"
+  - "Comment faire ses devis plus vite ?"
+  - "Combien de temps l'IA fait-elle gagner à un artisan ?"
+  - "Faut-il être à l'aise avec l'informatique pour s'y mettre ?"
+outline:
+  - h2: "Pourquoi huit artisans sur dix n'y voient pas l'intérêt"
+    mustInclude: ["chiffres CCCA-BTP de la source s1, cités avec leur date", "prendre le scepticisme au sérieux plutôt que le balayer"]
+  - h2: "Ce que les artisans qui s'y sont mis en tirent"
+    mustInclude: ["chiffres de la source s1 : 2,1 heures par semaine, 84 %, 87 %", "toujours en fourchette basse, decote-prudence"]
+  - h2: "Le devis, le premier endroit où ça change quelque chose"
+    mustInclude: ["encadré Scenario, annoncé comme un exemple", "renvoi vers l'article sur l'automatisation des devis"]
+  - h2: "La paperasse : facturation électronique en ligne de mire"
+    mustInclude: ["échéance du 1er septembre 2026 pour la réception des factures, source s2", "les 76 % du BTP équipés d'un logiciel de facturation, source s2"]
+  - h2: "Ce qui ne sert à rien sur un chantier"
+    mustInclude: ["réponse négative assumée"]
+  - h2: "Une première étape qui tient en une heure"
+    mustInclude: ["étape réalisable seul, sans prestataire", "diagnostic-gratuit"]
+sources:
+  - id: s1
+    title: "L'intelligence artificielle dans l'artisanat : impacts et cas d'usages"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/comprendre-et-adopter-lia/lintelligence-artificielle-2"
+    date: "2026-09-22"
+    verified: >-
+      Citations exactes relevées sur la page : « 27 % des chefs d'entreprise interrogés
+      déclarent utiliser un outil d'intelligence artificielle dans le cadre de leur travail » ;
+      « la création et la mise à jour de supports de communication avec 81 % des utilisateurs
+      de l'IA ; la relation client avec 24 % » ; « 84 % des utilisateurs de l'IA déclarent
+      gagner du temps grâce à son utilisation et 87 % considèrent qu'elle permet d'améliorer
+      la qualité de la tâche réalisée » ; « Le gain de temps estimé pour les utilisateurs est
+      de 2,1 heures par semaine, soit un gain de productivité de 5 % » ; « D'après les
+      résultats des derniers baromètres du CCCA-BTP, seules 7 % des entreprises du BTP
+      interrogées en 2024 déclarent avoir déjà eu recours à l'utilisation de solutions liées
+      à l'IA, et 9 % regrettent de ne pas le faire » ; « Si 81,5 % des entreprises ne
+      ressentent pas l'utilité des IA, 3 % disent ne pas savoir ce que c'est ».
+  - id: s2
+    title: "Baromètre France Num 2025 : le numérique et l'intelligence artificielle dans les TPE et PME"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2025-le"
+    date: "2026-09-22"
+    verified: >-
+      Citations exactes : « Réception des factures : à partir du 1er septembre 2026 » pour
+      l'obligation de facturation électronique ; « En 2025, 69 % des TPE PME (+ 2 points)
+      sont équipées d'un logiciel de facturation » ; « L'industrie (84 %), le transport et la
+      logistique (78 %), le commerce (78 %), et le BTP (76 %) sont les secteurs les plus
+      équipés » ; « seules 20 % des entreprises interrogées indiquent émettre leurs factures
+      dans un format structuré ».
+    attention: "Vérifier que l'échéance du 1er septembre 2026 est formulée telle que la page la formule : réception des factures. Ne pas l'étendre à l'émission."
+faitsReference: [tarif-forfait-min, cout-api-mensuel, diagnostic-gratuit, decote-prudence]
+internalLinks:
+  pillar: "/automatisations"
+  lateral:
+    - "/blog/automatiser-creation-devis"
+    - "/blog/taches-a-automatiser-pme"
+    - "/blog/prix-automatisation-ia-pme"
+  backlinksToInsert:
+    - in: "automatiser-creation-devis"
+      anchor: "les artisans"
+      sentenceHint: "Là où l'article cite les métiers qui produisent beaucoup de devis."
+    - in: "taches-a-automatiser-pme"
+      anchor: "dans l'artisanat"
+      sentenceHint: "Dans la liste des secteurs, renvoyer vers le nouvel article."
+terrainCaseId: null
+terrainNote: >-
+  Aucun cas artisan réel chez Kael'IA : ne pas employer l'encadré Terrain, qui
+  affirme une expérience vécue et porte la signature de Mathis. Employer
+  l'encadré Scenario, annoncé comme un exemple, sur une situation ordinaire du
+  métier : une entreprise de couverture de trois salariés qui sort une trentaine
+  de devis par mois et les prépare le soir. Aucun chiffre de résultat dans cet
+  encadré : les seuls chiffres de l'article sont ceux des sources.
+en:
+  slug: ai-agents-for-tradespeople
+  titleCandidates:
+    - "AI agents for tradespeople: where to actually start"
+constraints: "Aucune. Les chiffres du BTP datent de 2024 : toujours les dater dans le texte."

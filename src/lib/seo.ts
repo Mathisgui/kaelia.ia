@@ -16,6 +16,12 @@ interface BuildMetadataParams {
   alternate?: { locale: Locale; path: string };
   title: string;
   description: string;
+  /** "article" pour un billet de blog : ajoute les métadonnées OpenGraph associées. */
+  type?: "website" | "article";
+  /** Illustration propre à la page ; à défaut, l'image OG du site. */
+  image?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 /**
@@ -29,6 +35,10 @@ export function buildMetadata({
   alternate,
   title,
   description,
+  type = "website",
+  image,
+  publishedTime,
+  modifiedTime,
 }: BuildMetadataParams): Metadata {
   const entry = routeKey
     ? (routes[routeKey] as Partial<Record<Locale, string>>)
@@ -36,6 +46,7 @@ export function buildMetadata({
   const pagePath = path ?? entry?.[locale] ?? "/";
   const canonical = `${SITE_URL}${pagePath === "/" ? "" : pagePath}`;
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  const ogImage = image ?? OG_IMAGE;
 
   const languages: Record<string, string> = {};
   const frPath = locale === "fr" ? pagePath : alternate?.locale === "fr" ? alternate.path : entry?.fr;
@@ -56,19 +67,26 @@ export function buildMetadata({
       ...(Object.keys(languages).length > 1 ? { languages } : {}),
     },
     openGraph: {
-      type: "website",
+      type,
       locale: OG_LOCALE[locale],
       url: canonical,
       title: fullTitle,
       description,
       siteName: SITE_NAME,
-      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      ...(type === "article"
+        ? {
+            publishedTime,
+            modifiedTime: modifiedTime ?? publishedTime,
+            authors: ["Mathis Guillemois"],
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [OG_IMAGE],
+      images: [ogImage],
     },
   };
 }

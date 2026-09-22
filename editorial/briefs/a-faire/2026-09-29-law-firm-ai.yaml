@@ -1,0 +1,73 @@
+id: law-firm-ai
+createdBy: mathis
+createdAt: 2026-09-22
+validatedBy: mathis
+primaryKeyword: "intelligence artificielle cabinet d'avocat"
+titleCandidates:
+  - "Intelligence artificielle en cabinet d'avocat : le cadre"
+  - "IA en cabinet d'avocat : ce que le cadre 2026 autorise"
+angle: >-
+  Le Conseil national des barreaux a publié un guide de déontologie sur l'IA
+  le 17 mars 2026. La plupart des contenus qui se classent vendent des outils.
+  Celui-ci part du cadre et en déduit ce qu'un cabinet peut réellement
+  automatiser sans toucher au secret professionnel.
+audience: avocats
+searchIntent: "Un avocat veut savoir ce qu'il a le droit de faire avec une IA, et ce qui marche vraiment en cabinet."
+serpNotes:
+  - "La première page est occupée par des éditeurs de logiciels juridiques et des sites de contenu qui reprennent tous le guide du CNB."
+  - "Aucun ne part du travail réel d'un cabinet qui exerce seul : ils listent des outils, pas des usages."
+  - "Personne ne traite la question du changement de logiciel métier, qui est pourtant le vrai sujet quand on veut brancher quoi que ce soit."
+questionsPAA:
+  - "Un avocat a-t-il le droit d'utiliser ChatGPT ?"
+  - "Comment respecter le secret professionnel avec une IA ?"
+  - "Quelles tâches d'un cabinet d'avocat peuvent être automatisées ?"
+  - "Faut-il informer son client qu'on utilise une IA ?"
+outline:
+  - h2: "Que dit le guide du CNB de mars 2026 ?"
+    mustInclude: ["date du 17 mars 2026", "source s1", "les exigences citées : secret professionnel, RGPD, compétence, prudence, indépendance, information, honoraires"]
+  - h2: "Le secret professionnel survit-il à un outil d'IA ?"
+    mustInclude: ["distinction entre outil grand public et système où la donnée reste maîtrisée", "source s3"]
+  - h2: "Ce qui s'automatise vraiment dans un cabinet"
+    mustInclude: ["tableau : tâche, ce qui est automatisable, ce qui reste à l'avocat"]
+  - h2: "Ce que l'IA ne doit pas faire dans un cabinet"
+    mustInclude: ["réponse négative assumée : la rédaction finale, l'appréciation juridique, la relation client"]
+  - h2: "Le vrai point de départ : vos modèles, pas l'outil"
+    mustInclude: ["encadré Terrain, cas-01"]
+  - h2: "Par où commencer sans tout casser ?"
+    mustInclude: ["chiffre faits-reference tarif-forfait-min", "chiffre faits-reference diagnostic-gratuit"]
+sources:
+  - id: s1
+    title: "Le CNB adopte un guide sur la déontologie et l'Intelligence artificielle"
+    url: "https://cnb.avocat.fr/actualite/le-cnb-adopte-un-guide-sur-la-deontologie-et-l-intelligence-artificielle"
+    date: "2026-09-22"
+    verified: "Guide adopté le 17 mars 2026 par le Conseil national des barreaux. Exigences citées sur la page : protection du secret professionnel, respect du RGPD, compétence, prudence, indépendance, information du client, fixation équilibrée des honoraires. Se présente comme un guide opérationnel avec risques, bonnes pratiques et exemples jurisprudentiels."
+  - id: s2
+    title: "Baromètre France Num 2025 : le numérique et l'intelligence artificielle dans les TPE et PME"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2025-le"
+    date: "2026-09-22"
+    verified: "Citation exacte : « Les taux d'utilisation les plus importants sont constatés dans les secteurs du numérique (51 %, + 11 points), des services spécialisés et techniques : architectes, bureaux d'études, professions juridiques, etc… : (41 %, +19 points) ». Et : le recours à l'IA « a doublé en un an, et atteint 26 % »."
+  - id: s3
+    title: "Les fiches pratiques IA de la CNIL"
+    url: "https://www.cnil.fr/fr/les-fiches-pratiques-ia"
+    date: "2026-09-22"
+    verified: "Fiches pratiques de la CNIL sur l'application du RGPD aux systèmes d'IA. Ne pas leur faire dire plus que leur périmètre : elles portent sur la phase de développement des systèmes."
+faitsReference: [tarif-forfait-min, diagnostic-gratuit, decote-prudence]
+internalLinks:
+  pillar: "/automatisation-cabinet-avocat"
+  lateral:
+    - "/blog/rgpd-agents-ia-entreprise"
+    - "/blog/securiser-agent-ia-entreprise"
+    - "/agent-ia-documentaire"
+  backlinksToInsert:
+    - in: "rgpd-agents-ia-entreprise"
+      anchor: "en cabinet d'avocat"
+      sentenceHint: "Dans la section sur les métiers réglementés, renvoyer vers le nouvel article."
+    - in: "securiser-agent-ia-entreprise"
+      anchor: "le cadre déontologique des avocats"
+      sentenceHint: "Là où l'article parle de validation humaine, citer le cas des professions réglementées."
+terrainCaseId: cas-01
+en:
+  slug: ai-in-law-firms
+  titleCandidates:
+    - "AI in law firms: what the 2026 framework allows"
+constraints: "Aucune. Ne jamais donner de conseil juridique : l'article décrit un cadre, il ne l'interprète pas."

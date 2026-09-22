@@ -1,0 +1,25 @@
+name: Contenu
+
+# Le blog publie sans relecture humaine : cette vérification est le seul
+# filet entre la routine et la production. Elle doit rester rapide et
+# bloquante.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Règles éditoriales
+        run: node scripts/content-lint.mjs
+      - name: Build
+        run: npm run build

@@ -250,6 +250,7 @@ export const agentEmail: AgentPageContent = {
     items: [
       { label: "Agent commercial", href: "/agent-ia-commercial" },
       { label: "Agent de connaissance interne", href: "/agent-ia-connaissance" },
+      { label: "Automatiser le traitement des emails", href: "/blog/automatiser-gestion-emails-professionnels" },
       { label: "Nos cas clients", href: "/cas-clients" },
     ],
   },
@@ -362,6 +363,7 @@ export const agentDocs: AgentPageContent = {
     items: [
       { label: "Agent de gestion des emails", href: "/agent-ia-email" },
       { label: "Agent de reporting", href: "/agent-ia-reporting" },
+      { label: "Automatiser le traitement des factures", href: "/blog/automatiser-traitement-factures" },
       { label: "Nos cas clients", href: "/cas-clients" },
     ],
   },

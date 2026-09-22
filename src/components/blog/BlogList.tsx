@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogPageContent } from "@/content/types";
 import type { BlogPostMeta } from "@/lib/blog";
 import type { Locale } from "@/lib/routes";
@@ -33,13 +34,27 @@ export default function BlogList({ posts, content, locale }: BlogListProps) {
               href={`${basePath}/${post.slug}`}
               className="group rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md transition-all duration-300 hover:border-[#7c3aed]/40 hover:shadow-[0_0_30px_rgba(124,58,237,0.1)]"
             >
-              <time className="text-sm text-white/40">
-                {new Date(post.date).toLocaleDateString(DATE_LOCALE[locale], {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
+              {post.image ? (
+                <Image
+                  src={post.image}
+                  alt={post.imageAlt ?? post.title}
+                  width={1200}
+                  height={800}
+                  className="mb-5 aspect-[3/2] w-full rounded-xl object-cover"
+                />
+              ) : null}
+              <p className="flex flex-wrap items-center gap-2 text-sm text-white/40">
+                <time>
+                  {new Date(post.updated ?? post.date).toLocaleDateString(
+                    DATE_LOCALE[locale],
+                    { year: "numeric", month: "long", day: "numeric" }
+                  )}
+                </time>
+                <span aria-hidden="true">·</span>
+                <span>
+                  {post.readingMinutes} {content.article.readingTime}
+                </span>
+              </p>
               <h2 className="mt-2 text-2xl font-bold text-white transition-colors group-hover:text-[#a78bfa]">
                 {post.title}
               </h2>

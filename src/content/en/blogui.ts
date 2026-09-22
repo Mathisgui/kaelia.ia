@@ -13,4 +13,15 @@ export const blog: BlogPageContent = {
   emptyDescription: "The first articles will be published shortly.",
   readMore: "Read the article",
   backToList: "Back to the blog",
+  article: {
+    home: "Home",
+    by: "By",
+    published: "Published on",
+    updated: "Updated on",
+    readingTime: "min read",
+    faqTitle: "Frequently asked questions",
+    sourcesTitle: "Sources",
+    consultedOn: "accessed on",
+    relatedTitle: "Read next",
+  },
 };

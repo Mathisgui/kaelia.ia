@@ -100,22 +100,37 @@ export function articleJsonLd(params: {
   title: string;
   description: string;
   datePublished: string;
+  /** Date de dernière mise à jour ; à défaut, la date de publication. */
+  dateModified?: string;
   path: string;
   locale: Locale;
+  /** Chemin absolu de l'illustration (ex. /blog/mon-article.webp). */
+  image?: string;
+  keywords?: string[];
+  /** Cluster éditorial de l'article. */
+  section?: string;
+  authorPath?: string;
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: params.title,
     description: params.description,
     datePublished: params.datePublished,
-    dateModified: params.datePublished,
+    dateModified: params.dateModified ?? params.datePublished,
     inLanguage: params.locale,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}${params.path}`,
     },
-    author: { "@type": "Person", name: "Mathis Guillemois" },
+    ...(params.image ? { image: [`${SITE_URL}${params.image}`] } : {}),
+    ...(params.keywords?.length ? { keywords: params.keywords.join(", ") } : {}),
+    ...(params.section ? { articleSection: params.section } : {}),
+    author: {
+      "@type": "Person",
+      name: "Mathis Guillemois",
+      ...(params.authorPath ? { url: `${SITE_URL}${params.authorPath}` } : {}),
+    },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,

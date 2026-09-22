@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
       entries.push({
         url: absolute(`${basePath}/${post.slug}`),
-        lastModified: new Date(post.date),
+        lastModified: new Date(post.updated ?? post.date),
         changeFrequency: "monthly",
         priority: 0.6,
         ...(translated ? { alternates: { languages } } : {}),

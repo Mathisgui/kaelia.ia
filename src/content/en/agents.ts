@@ -250,6 +250,7 @@ export const agentEmail: AgentPageContent = {
     items: [
       { label: "Sales agent", href: "/en/ai-sales-agent" },
       { label: "Internal knowledge agent", href: "/en/ai-knowledge-agent" },
+      { label: "Automating professional email", href: "/en/blog/automate-business-email-management" },
       { label: "Our case studies", href: "/en/case-studies" },
     ],
   },

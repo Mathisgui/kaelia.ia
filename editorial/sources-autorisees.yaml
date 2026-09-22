@@ -1,0 +1,34 @@
+# Domaines acceptés comme source externe dans un article Kael'IA.
+# Le linter refuse toute source hors de cette liste : une source est une
+# preuve, pas une décoration, et la liste évite qu'un contenu aspiré sur le
+# web devienne une référence du blog.
+domains:
+  # Institutions et droit
+  - legifrance.gouv.fr
+  - cnb.avocat.fr
+  - cnil.fr
+  - economie.gouv.fr
+  - service-public.fr
+  - entreprendre.service-public.fr
+  - insee.fr
+  - francenum.gouv.fr
+  - europa.eu
+  - bpifrance.fr
+  # Organismes et études
+  - oecd.org
+  - gartner.com
+  - mckinsey.com
+  - statista.com
+  # Documentation technique des outils cités
+  - docs.n8n.io
+  - n8n.io
+  - make.com
+  - docs.anthropic.com
+  - anthropic.com
+  - platform.openai.com
+  - openai.com
+  - developers.google.com
+  - support.google.com
+  - learn.microsoft.com
+  - developer.mozilla.org
+  - schema.org

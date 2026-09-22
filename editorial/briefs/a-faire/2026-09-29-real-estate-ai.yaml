@@ -1,0 +1,69 @@
+id: real-estate-ai
+createdBy: mathis
+createdAt: 2026-09-22
+validatedBy: mathis
+primaryKeyword: "ia pour agent immobilier"
+titleCandidates:
+  - "IA pour agent immobilier : les usages qui tiennent"
+  - "IA pour agent immobilier : ce qui marche, ce qui non"
+angle: >-
+  Les contenus sur l'IA dans l'immobilier parlent d'estimation de biens et de
+  photos retouchées. Le vrai gain d'un professionnel seul est ailleurs : dans
+  le suivi d'un réseau de contacts qui ne tient plus dans une tête, et dans
+  tout ce qui se passe entre deux rendez-vous.
+audience: immobilier
+searchIntent: "Un agent ou conseiller immobilier cherche quels outils d'IA valent le coup dans son quotidien, pas une démonstration technologique."
+serpNotes:
+  - "La page est tenue par des éditeurs de logiciels immobiliers et des listes d'outils génériques, souvent recopiées les unes des autres."
+  - "Beaucoup de contenus promettent de la génération d'annonces, sujet déjà couvert et peu différenciant."
+  - "Personne ne traite la question du suivi d'un portefeuille de plusieurs centaines de contacts, qui est le point de douleur réel d'un indépendant."
+questionsPAA:
+  - "Quelle IA utiliser quand on est agent immobilier ?"
+  - "L'IA peut-elle rédiger une annonce immobilière ?"
+  - "Comment relancer ses contacts sans y passer ses journées ?"
+  - "L'IA remplace-t-elle un agent immobilier ?"
+outline:
+  - h2: "Où l'IA fait vraiment gagner du temps dans l'immobilier"
+    mustInclude: ["tableau : tâche, gain réel, limite"]
+  - h2: "Le suivi d'un portefeuille de contacts, le vrai sujet"
+    mustInclude: ["encadré Terrain, cas-02"]
+  - h2: "Faut-il laisser une IA écrire aux clients ?"
+    mustInclude: ["réponse : non sans validation humaine", "renvoi vers l'article sur le contrôle d'un agent"]
+  - h2: "Ce que l'IA ne fera pas à votre place"
+    mustInclude: ["réponse négative assumée : la visite, la négociation, la confiance"]
+  - h2: "Combien ça coûte et en combien de temps ?"
+    mustInclude: ["faits-reference tarif-forfait-min", "faits-reference cout-api-mensuel", "decote-prudence"]
+  - h2: "Par quoi commencer cette semaine ?"
+    mustInclude: ["une première étape réalisable seul", "diagnostic-gratuit"]
+sources:
+  - id: s1
+    title: "Baromètre France Num 2025 : le numérique et l'intelligence artificielle dans les TPE et PME"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2025-le"
+    date: "2026-09-22"
+    verified: "Citations exactes disponibles : « Le nombre de TPE PME qui ont indiqué avoir recours à des solutions d'intelligence artificielle a doublé en un an, et atteint 26 % » ; « Les usages sont dominés par l'intelligence artificielle générative (22%, + 12 points) et les chatbots et assistants (14%, + 9 points) » ; « Les solutions permettant l'analyse de documents (6%, + 3 points), l'automatisation de tâches (5%, + 2 points), ou l'analyse des données (5%, + 2 points), restent moins répandues »."
+    attention: "ATTENTION : cette page ne donne AUCUN chiffre pour le secteur immobilier. Ne pas en inventer un, ne pas extrapoler depuis un autre secteur. Utiliser les chiffres tous secteurs confondus, en le disant."
+  - id: s2
+    title: "Les fiches pratiques IA de la CNIL"
+    url: "https://www.cnil.fr/fr/les-fiches-pratiques-ia"
+    date: "2026-09-22"
+    verified: "Cadre de la CNIL sur l'IA et les données personnelles. Pertinent pour la partie fichier de contacts et prospection."
+faitsReference: [tarif-forfait-min, cout-api-mensuel, diagnostic-gratuit, decote-prudence]
+internalLinks:
+  pillar: "/agents-ia"
+  lateral:
+    - "/blog/relances-clients-automatiques"
+    - "/blog/securiser-agent-ia-entreprise"
+    - "/agent-ia-commercial"
+  backlinksToInsert:
+    - in: "relances-clients-automatiques"
+      anchor: "dans l'immobilier"
+      sentenceHint: "Là où l'article évoque les métiers où la relance fait le chiffre d'affaires."
+    - in: "automatiser-onboarding-client"
+      anchor: "un agent immobilier"
+      sentenceHint: "Dans les exemples de parcours client, renvoyer vers le nouvel article."
+terrainCaseId: cas-02
+en:
+  slug: ai-for-real-estate-agents
+  titleCandidates:
+    - "AI for real estate agents: what actually helps"
+constraints: "Aucune. Ne pas promettre de gain chiffré propre à l'immobilier : aucune source ne le donne."

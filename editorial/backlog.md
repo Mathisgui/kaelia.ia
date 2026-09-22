@@ -1,3 +1,8 @@
+> **Ce fichier ne pilote plus rien depuis le 22 septembre 2026.**
+> Les sujets viennent maintenant de `carte-contenu.yaml` et des briefs de
+> `briefs/a-faire/`, et la méthode vit dans `PLAYBOOK-redacteur.md`.
+> Conservé en l'état comme trace des 19 premiers articles.
+
 # Backlog éditorial du blog Kael'IA
 
 Ce fichier alimente la routine hebdomadaire de publication d'articles. Chaque semaine,

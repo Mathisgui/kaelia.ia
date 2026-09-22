@@ -1,0 +1,59 @@
+# Les seuls chiffres qu'un article a le droit d'avancer au sujet de Kael'IA,
+# de ses prix ou de ses délais. Tout autre chiffre doit venir d'une source
+# externe citée dans le corps du texte.
+#
+# Un chiffre absent d'ici et absent des sources ne s'écrit pas, même s'il
+# paraît évident : c'est de cette façon qu'une approximation devient une
+# affirmation publique.
+#
+# Mettre à jour ce fichier avant d'écrire un article qui contredirait une
+# ligne, jamais l'inverse.
+
+version: 1
+updated: "2026-09-22"
+
+faits:
+  - id: tarif-forfait-min
+    valeur: "à partir de 1 500 euros"
+    porte_sur: "un projet d'automatisation au forfait"
+    note: "Forfait par système, jamais de taux journalier."
+    source: "grille Kael'IA"
+    verifie_le: "2026-09-22"
+
+  - id: cout-horaire-charge-pme
+    valeur: "25 à 40 euros de l'heure"
+    porte_sur: "le coût horaire chargé d'un poste administratif en PME"
+    note: "Sert aux calculs de retour sur investissement. Toujours présenté comme une fourchette."
+    source: "ordre de grandeur employé dans les chiffrages Kael'IA"
+    verifie_le: "2026-09-22"
+
+  - id: cout-api-mensuel
+    valeur: "quelques dizaines d'euros par mois"
+    porte_sur: "la consommation d'API d'un agent en usage courant en TPE ou PME"
+    source: "relevés de consommation sur les systèmes livrés"
+    verifie_le: "2026-09-22"
+
+  - id: maintenance-mensuelle
+    valeur: "100 à 200 euros par mois, ou reprise en interne"
+    porte_sur: "la maintenance d'un système livré"
+    source: "grille Kael'IA"
+    verifie_le: "2026-09-22"
+
+  - id: diagnostic-gratuit
+    valeur: "30 minutes, sans frais"
+    porte_sur: "le premier échange proposé sur le site"
+    source: "offre publiée sur kaelia-ai.com"
+    verifie_le: "2026-09-22"
+
+  - id: decote-prudence
+    valeur: "annoncer une fourchette basse"
+    porte_sur: "tout gain de temps ou d'argent avancé dans un article"
+    note: >-
+      Règle de rédaction, pas un chiffre : un gain se présente toujours en
+      dessous de ce qui a été observé. Un lecteur déçu ne revient pas.
+    source: "règle éditoriale Kael'IA"
+    verifie_le: "2026-09-22"
+
+# Kaelia n'est pas Kael'IA : aucun chiffre de financement, de prise en charge
+# ou de certification Qualiopi ne s'écrit sur ce blog. Ces sujets relèvent du
+# site kaelia-formacoach.com, avec ses propres règles de conformité.

@@ -303,6 +303,18 @@ export interface BlogPageContent {
   emptyDescription: string;
   readMore: string;
   backToList: string;
+  /** Libellés d'un article : fil d'Ariane, signature, sections de pied de page. */
+  article: {
+    home: string;
+    by: string;
+    published: string;
+    updated: string;
+    readingTime: string;
+    faqTitle: string;
+    sourcesTitle: string;
+    consultedOn: string;
+    relatedTitle: string;
+  };
 }
 
 /* ------------------------------------------------------------------ */
