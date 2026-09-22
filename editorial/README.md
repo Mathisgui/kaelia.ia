@@ -8,7 +8,7 @@ routines automatiques et par toute personne qui écrit un article à la main.
 | Vous êtes | Lisez, dans cet ordre |
 |---|---|
 | La routine rédactrice | `PLAYBOOK-redacteur.md`, puis le brief le plus ancien de `briefs/a-faire/`, puis `gabarit-article.mdx` |
-| La routine stratège | `PLAYBOOK-stratege.md`, puis `carte-contenu.yaml` |
+| La routine stratège | `PLAYBOOK-stratege.md`, puis `carte-contenu.yaml` et `journal.md` |
 | Un humain qui écrit un article | `gabarit-article.mdx` et `PLAYBOOK-redacteur.md` |
 
 ## Ce que contient ce dossier
