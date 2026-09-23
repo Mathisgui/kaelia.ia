@@ -10,3 +10,4 @@ Format : `AAAA-MM-JJ · <routine> · <ce qui a été fait> · <commit> · <véri
 ## 2026
 
 - 2026-09-22 · mise en place · socle du blog repris (schéma de frontmatter validé, FAQ, sources, auteur, articles liés, fil d'Ariane, flux RSS, llms.txt), linter de contenu créé, dossier editorial ouvert · à committer · linter 0 bloquant sur les 38 articles existants
+- 2026-09-23 · rédacteur · brief law-firm-ai traité : article publié FR (intelligence-artificielle-cabinet-avocat) / EN (ai-in-law-firms), liens retour posés dans rgpd-agents-ia-entreprise et securiser-agent-ia-entreprise (FR+EN) · à committer · content-lint --changed 0 bloquant, npm run build vert

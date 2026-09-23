@@ -1,0 +1,100 @@
+---
+title: "AI in law firms: what the 2026 framework allows"
+date: "2026-09-23"
+excerpt: "France's bar council published an AI ethics guide in March 2026. What it allows, what it forbids, and where a law firm can safely start automating."
+keywords: ["ai in law firms", "law firm automation", "attorney client privilege ai", "legal ai compliance france"]
+translationKey: "law-firm-ai"
+primaryKeyword: "ai in law firms"
+cluster: "metiers"
+pillar: "sectorLegal"
+faq:
+  - question: "Can lawyers use ChatGPT?"
+    answer: "Yes, but not without precautions. France's bar council guide from March 2026 does not ban any tool on principle, it sets conditions: professional secrecy preserved, GDPR compliance, competence and caution in how the tool is used. A consumer tool such as ChatGPT raises a specific problem, its terms of use often allow reuse of conversations, which makes it risky as soon as any case information passes through it."
+  - question: "How do you protect attorney client privilege when using AI?"
+    answer: "By choosing a system where the data stays under control rather than a consumer tool: identified hosting, no retraining on your conversations, a confidentiality agreement with the provider. A firm should never enter identifying case information into a tool that cannot guarantee this control, however popular that tool is otherwise."
+  - question: "Which tasks in a law firm can be automated?"
+    answer: "Drafting a first version of a document from the firm's own templates, tracking deadlines and overdue files, searching an existing document library. What always stays with the lawyer: the final wording, the legal judgment on the case, and the relationship with the client. AI prepares, it never decides in the lawyer's place."
+  - question: "Do you have to tell your client you are using AI?"
+    answer: "Yes. The bar council guide lists informing the client among the requirements of its framework, alongside professional secrecy or fair fee setting. This does not require a separate document, a mention in the engagement letter is enough, as long as it clearly states that an AI tool takes part in preparing certain case documents."
+sources:
+  - title: "Le CNB adopte un guide sur la déontologie et l'Intelligence artificielle"
+    url: "https://cnb.avocat.fr/actualite/le-cnb-adopte-un-guide-sur-la-deontologie-et-l-intelligence-artificielle"
+    date: "2026-09-22"
+  - title: "Baromètre France Num 2025 : le numérique et l'intelligence artificielle dans les TPE et PME"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2025-le"
+    date: "2026-09-22"
+  - title: "Les fiches pratiques IA de la CNIL"
+    url: "https://www.cnil.fr/fr/les-fiches-pratiques-ia"
+    date: "2026-09-22"
+---
+
+France's bar council published an AI ethics guide for law firms on March 17, 2026. It allows the use of AI tools under several conditions: professional secrecy preserved, GDPR compliance, competence, caution, independence, client information, balanced fees. This framework sets what a firm can actually automate without losing anything that matters.
+
+## What does the bar council's March 2026 guide say?
+
+France's bar council, the Conseil national des barreaux, adopted a [guide on ethics and artificial intelligence](https://cnb.avocat.fr/actualite/le-cnb-adopte-un-guide-sur-la-deontologie-et-l-intelligence-artificielle) on March 17, 2026, built as an operational document rather than a statement of principle: it lists concrete risks, good practices, and examples drawn from case law.
+
+Seven requirements are named, and none of them bans AI, they set conditions for using it:
+
+- protecting professional secrecy,
+- complying with GDPR,
+- competence in how the tool is used,
+- caution about its output,
+- the lawyer's independence in the final decision,
+- informing the client about the use of AI,
+- setting fees fairly when AI reduces time spent on a file.
+
+This framework arrives as adoption is moving fast across legal professions: according to the [France Num 2025 barometer](https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2025-le), the usage rate among specialized and technical services, which includes legal professions, reaches 41 percent, up 19 points, and AI adoption overall has doubled in a year to reach 26 percent.
+
+## Does attorney client privilege survive an AI tool?
+
+Yes, provided the right type of tool is chosen. Professional secrecy does not ban AI as such, it bans letting case information leave the firm toward a system that cannot guarantee it stays under control. A consumer tool, whose terms of use often allow reusing conversations to train future models, does not meet that guarantee: information entrusted by a client should never end up there.
+
+A system where the data stays under control, identified hosting, no retraining, traceable access, belongs to a different category of tool. We cover this distinction in more depth in our article on [GDPR and AI agents](/en/blog/gdpr-ai-agents-business).
+
+The [CNIL's practical AI factsheets](https://www.cnil.fr/fr/les-fiches-pratiques-ia) detail the GDPR obligations that apply to an AI system, but they focus on the development phase of those systems: they do not remove the need to check, for a tool already in use, what guarantees the provider actually offers on the data sent to it.
+
+## What actually gets automated in a law firm
+
+Once the framework is set, the question becomes concrete: what can be delegated, and what cannot.
+
+| Task | What can be automated | What stays with the lawyer |
+|---|---|---|
+| Drafting a document | First version from the firm's own templates | Final wording, persuasive phrasing |
+| File tracking | Deadlines and overdue tasks visible on one screen | Prioritizing, deciding what to act on |
+| Document research | Finding matches in the firm's existing library | Legal judgment on the result |
+| Billing | Preparing the time spent entries | Setting the fee |
+
+For document research, a [document AI agent](/en/ai-document-agent) can read a firm's existing library and surface a precedent or a standard clause in seconds, where a manual search often takes dozens of minutes. The lawyer keeps control over how the result is used.
+
+## What AI should not do in a law firm
+
+Three tasks do not get delegated, whatever the tool. The final wording of a document stays with the lawyer: a version prepared by an agent is a draft, never a deliverable. Legal judgment on a case, reading a situation and choosing a strategy, does not transfer either, that is exactly what the client is paying for. The relationship with the client, finally, stays with the lawyer, not handed to an automated assistant answering in their place.
+
+This is not a technical limit, it is an ethical one set by the bar council's own guide through its independence requirement: the decision stays the lawyer's, the tool only prepares the ground. This is the same human validation principle we cover in [how to stay in control of an AI agent](/en/blog/securing-ai-agents-business).
+
+## The real starting point: your templates, not the tool
+
+The blocker is almost never the AI tool itself, it is the state of the firm's document library before connecting anything to it.
+
+<Terrain>
+A law firm in Lyon specializing in road traffic law, a lawyer working alone with one assistant, fifteen years of specialization. Everything lived in an aging case management tool, and document templates lived scattered across files: every new case started from a copy and paste.
+
+We analyzed the firm's existing document library and turned it into reusable templates by document type. Specialized agents pick up these templates and the firm's own writing style to prepare a first version, which the lawyer corrects. A case tracking system runs in parallel, with deadlines and overdue tasks visible on a single screen.
+
+The first version of a document is no longer a blank page. The time saved is not on the final wording, which stays entirely the lawyer's own work, but on everything that comes before it.
+
+What did not go as planned: pulling data out of the old software imposed a schedule the firm did not choose, a short download window and deadlines set by the software vendor. Switching tools gets planned on the vendor's calendar, not the firm's own.
+</Terrain>
+
+## Where to start without breaking anything
+
+The starting point is not picking a tool, it is the state of the existing document library: the document templates, the way the firm writes, what is already reused from one case to the next. A first targeted project, on a single document type or a single tracking process, starts at 1,500 euros as a flat fee, never a daily rate.
+
+Before any commitment, a free 30-minute assessment checks what is genuinely automatable in the firm's current setup, and what needs to stay manual to preserve professional secrecy. Discover our [support for law firms](/en/law-firm-automation).
+
+## The takeaway
+
+The bar council's March 2026 guide does not ban AI in law firms, it sets the conditions for it: professional secrecy preserved, GDPR compliance, competence, caution, independence, client information. What actually gets automated sits in the preparation, never in the final decision, which stays entirely the lawyer's own work. The real starting point is not picking a tool, it is the state of the firm's document library.
+
+To find out what is genuinely automatable in your firm without touching professional secrecy, our free 30-minute assessment starts from your actual files and tools. See [how our method works](/en/method) or check out our [case studies](/en/case-studies).

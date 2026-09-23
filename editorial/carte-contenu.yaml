@@ -265,13 +265,13 @@ entries:
   # ---- Sujets validés par Mathis le 2026-09-22, en attente de rédaction ----
 
   - id: law-firm-ai
-    status: brief
+    status: publie
     primaryKeyword: "intelligence artificielle cabinet d'avocat"
     intent: info-commerciale
     cluster: metiers
     pillar: sectorLegal
     secondaryKeywords: ["ia avocat", "cabinet avocat intelligence artificielle", "deontologie ia avocat"]
-    fr: { slug: intelligence-artificielle-cabinet-avocat, published: null, updated: null }
+    fr: { slug: intelligence-artificielle-cabinet-avocat, published: "2026-09-23", updated: null }
     en: { slug: ai-in-law-firms }
     covers: ["ia pour avocat", "chatgpt avocat", "secret professionnel ia"]
     crossSite: null
