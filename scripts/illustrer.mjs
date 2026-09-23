@@ -29,6 +29,7 @@ const DRY = process.argv.includes("--dry");
 
 const MODELE_TEXTE = "gpt-5.4-mini";
 const MODELE_IMAGE = "gpt-image-2";
+const ACCENTUEES = /[àâäçéèêëîïôöùûüÿœæ]/i;
 
 /** Le style du site : fond presque noir, lueur violette, touche de cyan, verre. */
 const STYLE = [
@@ -93,7 +94,8 @@ async function concevoir(article) {
           "Return a JSON object with three keys. " +
           "scene: in English, one or two sentences describing a calm still life of two or three concrete, recognisable objects that symbolise the article topic, rendered as glass objects. Never text, letters, numbers, people, faces or screens showing writing. " +
           "The objects always stand on a dark reflective surface in a dark room, lit in violet: describe them that way. " +
-          "alt_fr: in French with correct spelling and accents, 60 to 110 characters, a factual description of what is visible, starting with a noun, never starting with 'Illustration', 'Image' or 'Photo'. Straight apostrophes only. " +
+          "The readers are French: every symbol must fit a French context. Never a judge's gavel (French courts do not use one), never a dollar sign, never a US flag. " +
+          "alt_fr : en français correctement orthographié et accentué (é, è, à, ç, ô), de 60 à 110 caractères, une description factuelle de ce qu'on voit, qui commence par un nom, jamais par « Illustration », « Image » ou « Photo ». " +
           "alt_en: the same description in English, same constraints.",
       },
       {
@@ -105,9 +107,32 @@ async function concevoir(article) {
   const brut = JSON.parse(json.choices[0].message.content);
   return {
     scene: propre(brut.scene, 600),
-    altFr: propre(brut.alt_fr, 120),
+    altFr: await accentuer(propre(brut.alt_fr, 120)),
     altEn: propre(brut.alt_en, 120),
   };
+}
+
+/**
+ * Le petit modèle écrit parfois le français sans un seul accent (constaté le
+ * 23/09 sur le blog Kaelia). Un texte alternatif sans aucune lettre accentuée
+ * est relu une fois ; s'il n'en fallait pas, il revient tel quel.
+ */
+async function accentuer(alt) {
+  if (ACCENTUEES.test(alt)) return alt;
+  const json = await openai("chat/completions", {
+    model: MODELE_TEXTE,
+    response_format: { type: "json_object" },
+    messages: [
+      {
+        role: "system",
+        content:
+          "Corrige l'orthographe et les accents de ce texte français, sans rien changer d'autre. " +
+          "Réponds par un objet JSON dont la seule clé est texte.",
+      },
+      { role: "user", content: alt },
+    ],
+  });
+  return propre(JSON.parse(json.choices[0].message.content).texte ?? alt, 120);
 }
 
 async function dessiner(scene) {

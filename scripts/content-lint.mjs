@@ -438,7 +438,7 @@ function checkArticle(article, context) {
   } else if (LIMITS.imageRequired) {
     level(file, "image", "aucune illustration");
   } else {
-    warn(file, "image", "aucune illustration (acceptée tant que la génération d'images n'est pas branchée)");
+    warn(file, "image", "aucune illustration : normal pour un article neuf, l'Action Illustrations la dessine après le push");
   }
 
   // Longueur

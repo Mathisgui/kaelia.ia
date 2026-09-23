@@ -11,6 +11,7 @@ import FaqAccordion from "@/components/ui/FaqAccordion";
 import AuthorCard from "./AuthorCard";
 import RelatedPosts from "./RelatedPosts";
 import { mdxComponents } from "./mdx-components";
+import { insecables, remarkInsecables } from "@/lib/typographie";
 
 interface BlogArticleProps {
   post: NonNullable<ReturnType<typeof getPostBySlug>>;
@@ -53,11 +54,11 @@ export default function BlogArticle({
           {content.title}
         </Link>
         <span aria-hidden="true">/</span>
-        <span className="text-white/60">{meta.title}</span>
+        <span className="text-white/60">{insecables(meta.title)}</span>
       </nav>
 
       <h1 className="mb-4 text-4xl font-bold leading-tight text-white md:text-5xl">
-        {meta.title}
+        {insecables(meta.title)}
       </h1>
 
       <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-white/40">
@@ -107,7 +108,7 @@ export default function BlogArticle({
         <MDXRemote
           source={post.content}
           components={mdxComponents}
-          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm, remarkInsecables] } }}
         />
       </div>
 
@@ -116,7 +117,12 @@ export default function BlogArticle({
           <h2 className="mb-6 text-2xl font-bold text-white">
             {labels.faqTitle}
           </h2>
-          <FaqAccordion items={meta.faq} />
+          <FaqAccordion
+            items={meta.faq.map((item) => ({
+              question: insecables(item.question),
+              answer: insecables(item.answer),
+            }))}
+          />
         </section>
       ) : null}
 
@@ -134,7 +140,7 @@ export default function BlogArticle({
                   rel="noopener noreferrer"
                   className="text-[#a78bfa] hover:underline"
                 >
-                  {source.title}
+                  {insecables(source.title)}
                 </a>
                 {source.date ? (
                   <span className="text-white/40">

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog";
 import type { Locale } from "@/lib/routes";
+import { insecables } from "@/lib/typographie";
 
 /**
  * Articles liés en pied d'article : donne au lecteur une suite, et relie
@@ -31,10 +32,10 @@ export default function RelatedPosts({
               className="flex h-full flex-col rounded-xl border border-white/10 bg-white/[0.02] p-5 transition-colors hover:border-[#7c3aed]/40"
             >
               <span className="text-sm font-medium leading-snug text-white">
-                {post.title}
+                {insecables(post.title)}
               </span>
               <span className="mt-2 line-clamp-3 text-xs leading-relaxed text-white/50">
-                {post.excerpt}
+                {insecables(post.excerpt)}
               </span>
             </Link>
           </li>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/routes";
 import { routePath } from "@/lib/routes";
+import { insecables } from "@/lib/typographie";
 
 /**
  * Bloc auteur en pied d'article. Rend visible ce que les données structurées
@@ -41,7 +42,7 @@ export default function AuthorCard({ locale }: { locale: Locale }) {
       <div>
         <p className="text-base font-semibold text-white">Mathis Guillemois</p>
         <p className="text-sm text-[#a78bfa]">{copy.role}</p>
-        <p className="mt-3 text-sm leading-relaxed text-white/70">{copy.bio}</p>
+        <p className="mt-3 text-sm leading-relaxed text-white/70">{insecables(copy.bio)}</p>
         <Link
           href={routePath("about", locale)}
           className="mt-3 inline-block text-sm text-[#a78bfa] hover:underline"
