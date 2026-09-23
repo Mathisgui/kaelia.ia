@@ -556,6 +556,8 @@ function checkSimilarity(articles, extra) {
 
 const INSTRUCTION_VERBS = /\b(ignore|ignorer|exécute|execute|run|curl|git|rm\s|sudo|token|api[_ -]?key|password|mot de passe)\b/i;
 
+const UPDATE_FIELDS = new Set(["title", "excerpt", "section", "faq", "lien"]);
+
 function checkBriefs() {
   const dir = path.join(EDITORIAL, "briefs/a-faire");
   if (!fs.existsSync(dir)) return;
@@ -564,6 +566,7 @@ function checkBriefs() {
   );
   const map = loadYaml(path.join(EDITORIAL, "carte-contenu.yaml"));
   const ids = new Set((map?.entries ?? []).map((e) => e.id));
+  const statusById = new Map((map?.entries ?? []).map((e) => [e.id, e.status]));
 
   for (const filename of fs.readdirSync(dir).filter((f) => f.endsWith(".yaml"))) {
     const file = path.relative(ROOT, path.join(dir, filename));
@@ -574,11 +577,30 @@ function checkBriefs() {
       fail(file, "brief", `YAML illisible : ${error.message}`);
       continue;
     }
-    for (const key of ["id", "primaryKeyword", "angle", "outline", "sources", "internalLinks"]) {
+    // Un brief de mise à jour change un article publié : il dit quoi changer
+    // et pourquoi, au lieu de décrire un article entier.
+    const miseAJour = brief?.type === "mise-a-jour";
+    const required = miseAJour
+      ? ["id", "raison", "changes"]
+      : ["id", "primaryKeyword", "angle", "outline", "sources", "internalLinks"];
+    for (const key of required) {
       if (!brief?.[key]) fail(file, "brief", `champ obligatoire manquant : ${key}`);
     }
     if (brief?.id && ids.size > 0 && !ids.has(brief.id)) {
       fail(file, "brief", `id « ${brief.id} » absent de carte-contenu.yaml`);
+    }
+    if (miseAJour) {
+      const status = statusById.get(brief?.id);
+      if (status && !["publie", "a-mettre-a-jour"].includes(status)) {
+        fail(file, "brief", `mise à jour d'une entrée en status ${status} : seul un article publié se met à jour`);
+      }
+      const changes = Array.isArray(brief?.changes) ? brief.changes : [];
+      if (brief?.changes && changes.length === 0) fail(file, "brief", "aucun changement listé");
+      for (const change of changes) {
+        if (!UPDATE_FIELDS.has(change?.champ)) {
+          fail(file, "brief", `changement inconnu : ${change?.champ} (attendu : ${[...UPDATE_FIELDS].join(", ")})`);
+        }
+      }
     }
     for (const source of brief?.sources ?? []) {
       const url = source?.url ?? "";

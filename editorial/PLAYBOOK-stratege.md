@@ -28,10 +28,12 @@ rédacteur sans brief s'arrête.
 
 Dans cet ordre, parce qu'il va du plus fiable au moins fiable :
 
-1. **Les exports Search Console** déposés dans le dépôt privé, sous
-   `inputs/gsc/`. C'est la seule source qui dit ce que les gens tapent
-   vraiment pour arriver sur ce site. S'il y en a un plus récent que le
-   dernier traité, il prime sur tout le reste.
+1. **Les données Search Console des deux sites**, collectées chaque dimanche
+   à 14:00 UTC par une Action du dépôt privé `kaelia-ia-editorial` :
+   `rapports/<semaine>-donnees.md` (les tableaux) et `inputs/gsc/synthese.json`
+   (les mêmes chiffres, en données). C'est la seule source qui dit ce que les
+   gens tapent vraiment pour arriver sur ces sites : elle prime sur tout le
+   reste. Elle sert aussi au rapport de l'étape 8.
 2. **Les suggestions Google en français**, qui donnent les formulations
    réelles :
    `curl -s "https://suggestqueries.google.com/complete/search?client=firefox&hl=fr&gl=fr&q=<graine>"`
@@ -138,18 +140,74 @@ passage. Les règles qui suivent servent autant le lecteur que la machine :
   reprises,
 - la date de mise à jour reste visible.
 
-## Étape 8 — Refermer la boucle avec les données
+## Étape 8 — Le rapport SEO de la semaine
 
-Quand un export Search Console est disponible :
+Chaque dimanche, le rapport part par mail à Mathis dès que vous le poussez.
+C'est lui qui fait progresser les deux sites d'une semaine à l'autre : les
+données disent où agir, vous décidez quoi faire, et le rapport suivant mesure
+si ça a marché.
 
-| Ce que montrent les données | Ce qu'il faut en faire |
+**Lire**, dans le dépôt privé `kaelia-ia-editorial` :
+
+- `rapports/<semaine>-donnees.md`, le plus récent : les chiffres de la semaine,
+  calculés par un script. S'il n'y en a pas pour cette semaine, la collecte a
+  échoué : une ligne dans le journal, pas de rapport, le filet du lundi
+  préviendra Mathis ;
+- `inputs/gsc/synthese.json` : les mêmes chiffres, en données ;
+- `rapports/actions.yaml` : les actions des semaines passées ;
+- les journaux des rédacteurs (`editorial/journal.md` ici, `journal.md` dans
+  `kaelia-blog`) : pour passer en `faite` chaque action appliquée, avec la date
+  réelle de mise en ligne relevée dans le journal. Sans cette date, le script
+  ne peut pas en mesurer l'effet.
+
+**Décider cinq actions au plus**, les deux sites confondus. Mieux vaut trois
+actions mesurables que dix qu'on ne saura pas juger.
+
+| Ce que montrent les données | Action |
 |---|---|
-| Une requête entre la huitième et la trentième place, avec des impressions | Brief de mise à jour : l'article existe et n'est pas loin |
-| Des impressions sur une requête sans page dédiée | Nouvelle entrée dans la carte |
-| Une page sans aucune impression après trois mois | Passer en `a-revoir` : titre à refaire, ou fusion avec une autre |
+| Une requête entre la 8e et la 20e place, et une page qui la vise déjà | Brief de mise à jour de cette page : section à renforcer, titre plus précis |
+| Une requête entre la 8e et la 20e place, sans page dédiée | Nouvelle entrée de carte et brief d'article, si la grille de l'étape 3 atteint six points |
+| Une page du top 10 au taux de clic sous 2 % | Brief de mise à jour du titre et de la description |
+| Deux pages du même site sur une requête | Différencier par une mise à jour, ou proposer une fusion à Mathis |
+| Une requête disputée entre Kael'IA et Kaelia | Décider quel site la porte, et le noter en `crossSite` dans les deux cartes |
+| Un article de plus de 14 jours toujours absent de l'index | Le signaler, et prévoir un lien depuis un article bien placé |
+| Une page publiée depuis trois mois, sans aucune impression | Passer l'entrée en `a-mettre-a-jour` : titre à refaire, ou fusion |
 
-Reporter dans le champ `gsc` de chaque entrée ce qui a été constaté, avec la
-date de l'import.
+Garde-fous :
+
+- aucune action sur une page modifiée depuis moins de 14 jours : son effet
+  n'est pas encore mesurable ;
+- jamais deux briefs de mise à jour en attente sur la même page ;
+- deux briefs de mise à jour au plus par site et par semaine : ils passent
+  avant les articles, et un rédacteur en traite deux par run au maximum.
+
+**Exécuter** :
+
+- Kael'IA : brief de mise à jour (`type: mise-a-jour`, format décrit dans
+  `PLAYBOOK-redacteur.md`, section « Mises à jour ») ou brief d'article, dans
+  `editorial/briefs/a-faire/`. Le rédacteur l'applique mardi ou jeudi ;
+- Kaelia : les nouveaux articles passent par un brief, comme d'habitude, et
+  arrivent donc en brouillon relu. Toute modification d'une page existante
+  (titre, description, contenu, fiche formation) est **proposée dans le
+  rapport, à valider par Mathis**, jamais confiée à une routine ;
+- chaque action entre dans `rapports/actions.yaml` au statut `planifiee`, avec
+  son `id` (`<semaine>-NN`), sa page et la donnée qui la motive.
+
+**Écrire** `rapports/<semaine>.md` en suivant `rapports/GABARIT.md`, avec le même
+nom de semaine que le fichier de données analysé. Règles d'écriture :
+
+- tout chiffre cité se trouve dans le fichier de données ou dans
+  `synthese.json`. Aucun chiffre calculé, estimé ou arrondi à la main ;
+- une tendance se lit sur 28 jours. Sur sept jours, on ne signale que des
+  événements : article indexé, requête apparue, chute brutale ;
+- pas de cause affirmée sans donnée : « coïncide avec », jamais « grâce à » ;
+- le lecteur est Mathis, pas un référenceur : phrases courtes, aucun jargon non
+  expliqué.
+
+**Publier** le dépôt privé en dernier, une fois les briefs poussés dans les
+autres dépôts : `git add rapports/ && git commit -m "rapport: <semaine>"`, push,
+puis comparaison des empreintes. Le push déclenche l'envoi du mail. Vous
+n'écrivez rien d'autre dans `kaelia-ia-editorial` que le dossier `rapports/`.
 
 ## Étape 9 — Surveiller les pages piliers de Kaelia
 
@@ -176,7 +234,8 @@ cette comparaison.
 
 | Situation | Conduite |
 |---|---|
-| Quatre briefs ou plus déjà en attente | Ne pas en écrire de nouveaux. Consacrer le run aux données Search Console et au maillage |
+| Quatre briefs ou plus déjà en attente | Ne pas en écrire de nouveaux. Consacrer le run aux données Search Console, au rapport et au maillage |
+| Pas de fichier de données pour la semaine | Pas de rapport, une ligne dans le journal : le filet du lundi préviendra Mathis |
 | Aucune requête candidate à six points | Ligne dans `journal.md`, aucun brief. Ne jamais briefer pour remplir |
 | Le linter des briefs refuse un brief | Le corriger, ou le déplacer dans `briefs/refuses/` avec le motif en première ligne |
 | Push non confirmé par `ls-remote` | Le signaler comme un échec, ne pas conclure au succès |

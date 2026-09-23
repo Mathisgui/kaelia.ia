@@ -26,8 +26,10 @@ routines automatiques et par toute personne qui écrit un article à la main.
 | `briefs/refuses/` | Briefs écartés, avec le motif en tête de fichier |
 | `journal.md` | Une ligne par exécution : ce qui a été fait, ou pourquoi rien ne l'a été |
 
-Les cas clients anonymisés, les exports Search Console et les notes de
-position vivent dans le dépôt privé, pas ici : ce dépôt est public.
+Les cas clients anonymisés, les données Search Console et le rapport SEO
+hebdomadaire vivent dans le dépôt privé `kaelia-ia-editorial`, pas ici : ce
+dépôt est public. Les briefs de mise à jour (`type: mise-a-jour`), tirés de ce
+rapport, arrivent en revanche dans `briefs/a-faire/` comme les autres.
 
 ## Règles qui ne se négocient pas
 
