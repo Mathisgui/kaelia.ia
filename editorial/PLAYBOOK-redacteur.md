@@ -85,20 +85,13 @@ le linter vérifie sa présence dans le titre, et un titre anglais ne contient
 pas de français. Le `pillar` anglais est la même clé de `routes.ts` que le
 français.
 
-## Étape 5 — Produire l'illustration, si c'est possible
+## Étape 5 — Ne pas produire d'illustration
 
-La génération d'images n'est pas encore branchée sur l'environnement de la
-routine. Tant que c'est le cas :
-
-- ne pas tenter de générer une image,
-- ne pas écrire les champs `image` et `imageAlt` dans le frontmatter : un champ
-  `image` qui pointe vers un fichier absent est un blocage,
-- l'article part sans illustration, et le linter l'avertit sans bloquer.
-
-Quand l'accès sera branché, générer l'image selon le style du brief, la
-traiter avec `node scripts/image-post.mjs`, vérifier que le fichier existe
-dans `public/blog/`, puis renseigner `image` et `imageAlt`. Une image qui
-échoue deux fois ne bloque pas l'article : il part sans elle.
+La routine ne génère pas d'image et n'écrit ni `image` ni `imageAlt`. Après la
+publication, la GitHub Action `illustrations.yml` repère l'article, génère une
+illustration dans le style du site, l'ajoute aux versions française et
+anglaise, vérifie le build et redéploie. La clé de génération reste ainsi dans
+les secrets du dépôt, hors de portée de la routine.
 
 ## Étape 6 — Poser les liens retour
 
@@ -123,24 +116,34 @@ En cas d'échec : corriger, au maximum deux fois. Si le rouge persiste, tout ann
 écrire la raison dans `journal.md`, pousser cette seule ligne, et s'arrêter.
 Un article à moitié conforme ne part pas.
 
-## Étape 8 — Publier
+## Étape 8 — Refermer la boucle AVANT de publier
+
+Ces mises à jour partent dans le même commit que l'article. Faites après le
+push, elles seraient perdues avec le bac à sable, le brief resterait « à
+faire », et la routine suivante réécrirait le même article.
+
+- dans `carte-contenu.yaml`, passer l'entrée en `status: publie` et renseigner
+  `fr.published` avec la date du jour,
+- déplacer le brief de `briefs/a-faire/` vers `briefs/faits/`,
+- ajouter une ligne à `journal.md` : date, sujet, deux slugs.
+
+## Étape 9 — Publier, en un seul commit
 
 ```bash
 git add -A
 git commit -m "content(blog): <translationKey> (FR+EN)"
 git push origin master
-git ls-remote origin master   # doit égaler git rev-parse HEAD
+git rev-parse HEAD && git ls-remote origin master
 ```
 
-La comparaison des deux empreintes est la seule preuve que l'article est
-parti. Un run qui se termine sans cette vérification n'a rien prouvé, quel que
-soit son statut.
+Les deux empreintes doivent être identiques. Leur comparaison est la seule
+preuve que l'article est parti : un run qui se termine sans elle n'a rien
+prouvé, quel que soit son statut. Si elles diffèrent, c'est un échec, et il
+se dit comme tel.
 
-## Étape 9 — Refermer la boucle
-
-Passer l'entrée de `carte-contenu.yaml` en `status: publie` avec la date,
-déplacer le brief dans `briefs/faits/`, ajouter une ligne à `journal.md` :
-date, sujet, deux slugs, empreinte du commit, résultat de la vérification.
+L'illustration n'est pas de votre ressort : une GitHub Action la génère après
+le push, l'ajoute aux deux versions de l'article et redéploie le site. Vous ne
+la verrez pas, ne l'annoncez pas.
 
 ## Conditions d'arrêt
 
@@ -149,5 +152,5 @@ date, sujet, deux slugs, empreinte du commit, résultat de la vérification.
 | Aucun brief disponible | Ligne dans `journal.md`, arrêt. Ne jamais inventer un sujet |
 | Sujet déjà couvert | Brief en `refuses/`, passer au suivant |
 | Linter ou build rouge après deux corrections | Tout annuler, journal, arrêt |
-| Image impossible, ou génération non branchée | L'article part sans illustration, sans champ `image` |
+| Illustration | Jamais du ressort de la routine : l'Action s'en charge après publication |
 | Push non confirmé par `ls-remote` | Le signaler comme un échec, ne pas conclure au succès |

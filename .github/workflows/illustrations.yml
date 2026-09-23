@@ -1,0 +1,48 @@
+name: Illustrations
+
+# Après chaque publication, génère l'illustration des articles qui n'en ont
+# pas encore, l'ajoute aux versions française et anglaise, vérifie le build et
+# redéploie. La routine de rédaction n'a ni la clé ni l'accès : la clé reste
+# ici, dans les secrets du dépôt.
+
+on:
+  push:
+    branches: [master]
+    paths: ["src/content/blog/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: illustrations
+  cancel-in-progress: false
+
+jobs:
+  illustrer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Générer les illustrations manquantes
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/illustrer.mjs
+      - name: Vérifier puis publier
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo "rien à illustrer"
+            exit 0
+          fi
+          node scripts/content-lint.mjs
+          npm run build
+          git config user.name "kaelia-ia[bot]"
+          git config user.email "kaelia-ia-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "content(blog): illustrations"
+          git pull --rebase origin master
+          git push origin HEAD:master

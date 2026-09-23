@@ -44,7 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.meta.title,
       description: post.meta.excerpt,
       type: "article",
-      image: post.meta.image,
+      // L'aperçu social est le JPEG 1200x630, recadré pour ce format.
+      image: post.meta.image?.replace(/^\/blog\/(.+)\.webp$/, "/blog/og/$1.jpg"),
       publishedTime: post.meta.date,
       modifiedTime: post.meta.updated,
     }),
