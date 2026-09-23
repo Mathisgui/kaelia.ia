@@ -154,17 +154,9 @@ export default function BlogArticle({
         </section>
       ) : null}
 
-      <div className="mt-12 flex flex-wrap gap-2">
-        {meta.keywords.map((kw) => (
-          <span
-            key={kw}
-            className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/40"
-          >
-            {kw}
-          </span>
-        ))}
-      </div>
-
+      {/* Les mots-clés restent dans les métadonnées et le JSON-LD. Ils ne sont
+          plus affichés : c'étaient des requêtes brutes, souvent tapées sans
+          accents, qui ne menaient nulle part. */}
       <AuthorCard locale={locale} />
 
       <RelatedPosts
