@@ -78,11 +78,27 @@ mêmes chiffres, mêmes sources, mêmes questions de FAQ, mais des tournures
 naturelles. Les liens internes pointent vers les pages anglaises, jamais vers
 les françaises. Le `translationKey` est identique des deux côtés.
 
-## Étape 5 — Produire l'illustration
+Le `primaryKeyword` de la version anglaise est l'expression anglaise que vise
+l'article, et elle doit figurer dans le titre anglais et dans son premier
+paragraphe. Ne jamais recopier la requête française dans le fichier anglais :
+le linter vérifie sa présence dans le titre, et un titre anglais ne contient
+pas de français. Le `pillar` anglais est la même clé de `routes.ts` que le
+français.
 
-Générer l'image selon le style décrit dans le brief, la traiter avec
-`node scripts/image-post.mjs`, et vérifier que le fichier existe bien dans
-`public/blog/`. Deux tentatives au maximum. Sans image, l'article ne part pas.
+## Étape 5 — Produire l'illustration, si c'est possible
+
+La génération d'images n'est pas encore branchée sur l'environnement de la
+routine. Tant que c'est le cas :
+
+- ne pas tenter de générer une image,
+- ne pas écrire les champs `image` et `imageAlt` dans le frontmatter : un champ
+  `image` qui pointe vers un fichier absent est un blocage,
+- l'article part sans illustration, et le linter l'avertit sans bloquer.
+
+Quand l'accès sera branché, générer l'image selon le style du brief, la
+traiter avec `node scripts/image-post.mjs`, vérifier que le fichier existe
+dans `public/blog/`, puis renseigner `image` et `imageAlt`. Une image qui
+échoue deux fois ne bloque pas l'article : il part sans elle.
 
 ## Étape 6 — Poser les liens retour
 
@@ -98,8 +114,12 @@ node scripts/content-lint.mjs --changed
 npm ci && npm run build
 ```
 
-Les deux doivent être au vert. En cas d'échec : corriger, au maximum deux
-fois. Si le rouge persiste, tout annuler (`git checkout -- . && git clean -fd`),
+Les deux doivent être au vert. Les avertissements ne bloquent pas ; seuls
+les bloquants comptent. Les articles anciens dans lesquels vous avez posé un
+lien retour restent contrôlés avec les règles souples de leur époque : c'est
+normal qu'ils portent des avertissements.
+
+En cas d'échec : corriger, au maximum deux fois. Si le rouge persiste, tout annuler (`git checkout -- . && git clean -fd`),
 écrire la raison dans `journal.md`, pousser cette seule ligne, et s'arrêter.
 Un article à moitié conforme ne part pas.
 
@@ -129,5 +149,5 @@ date, sujet, deux slugs, empreinte du commit, résultat de la vérification.
 | Aucun brief disponible | Ligne dans `journal.md`, arrêt. Ne jamais inventer un sujet |
 | Sujet déjà couvert | Brief en `refuses/`, passer au suivant |
 | Linter ou build rouge après deux corrections | Tout annuler, journal, arrêt |
-| Image impossible après deux essais | Tout annuler, journal, arrêt |
+| Image impossible, ou génération non branchée | L'article part sans illustration, sans champ `image` |
 | Push non confirmé par `ls-remote` | Le signaler comme un échec, ne pas conclure au succès |

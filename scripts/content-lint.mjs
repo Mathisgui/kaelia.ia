@@ -64,6 +64,10 @@ const LIMITS = {
   wordsMin: 1000,
   wordsMax: 1800,
   imageMaxKb: 250,
+  // Passe à true quand les routines ont accès à la génération d'images
+  // (identifiant OpenAI posé sur l'environnement cloud). D'ici là, un article
+  // sans illustration part avec un avertissement plutôt que d'être annulé.
+  imageRequired: false,
   similarityBlock: 0.35,
   similarityWarn: 0.2,
   briefConstraintsMax: 300,
@@ -206,16 +210,26 @@ function loadArticles(dir, locale) {
     });
 }
 
+/**
+ * Fichiers touchés depuis le dernier commit, séparés en deux : ceux qui
+ * existaient déjà et ceux qui viennent d'être créés. La distinction compte :
+ * une routine qui ajoute un lien retour dans un article de juillet ne doit pas
+ * le voir contrôlé comme s'il venait d'être écrit.
+ */
 function changedFiles() {
-  try {
-    const out = execSync("git diff --name-only HEAD && git ls-files --others --exclude-standard", {
-      cwd: ROOT,
-      encoding: "utf-8",
-    });
-    return new Set(out.split("\n").filter(Boolean));
-  } catch {
-    return new Set();
-  }
+  const run = (cmd) => {
+    try {
+      return execSync(cmd, { cwd: ROOT, encoding: "utf-8" }).split("\n").filter(Boolean);
+    } catch {
+      return [];
+    }
+  };
+  const modified = run("git diff --name-only HEAD");
+  const added = [
+    ...run("git ls-files --others --exclude-standard"),
+    ...run("git diff --name-only --diff-filter=A HEAD"),
+  ];
+  return { all: new Set([...modified, ...added]), added: new Set(added) };
 }
 
 /* ------------------------------------------------------------------ */
@@ -224,7 +238,10 @@ function changedFiles() {
 
 function checkArticle(article, context) {
   const { file, meta, body, isNewFormat, locale } = article;
-  const strict = isNewFormat || context.forceStrict.has(file);
+  // Strict pour un article au nouveau format, et pour tout article qui vient
+  // d'être créé même s'il a oublié le champ cluster. Un article ancien qui
+  // reçoit seulement un lien retour garde le régime souple.
+  const strict = isNewFormat || context.newFiles.has(file);
   const level = strict ? fail : warn;
   const clean = stripCode(body);
   const focus = meta.primaryKeyword ?? (meta.keywords ?? [])[0] ?? "";
@@ -418,8 +435,10 @@ function checkArticle(article, context) {
     else if (/^(image|photo|illustration) (de|du|d')/i.test(meta.imageAlt)) {
       warn(file, "image", "alt commençant par « image de »");
     }
-  } else {
+  } else if (LIMITS.imageRequired) {
     level(file, "image", "aucune illustration");
+  } else {
+    warn(file, "image", "aucune illustration (acceptée tant que la génération d'images n'est pas branchée)");
   }
 
   // Longueur
@@ -598,6 +617,7 @@ function main() {
       ? LOCALES.flatMap((locale) => loadArticles(path.resolve(AGAINST, locale), locale))
       : [];
 
+    const changes = MODE_CHANGED ? changedFiles() : { all: new Set(), added: new Set() };
     const context = {
       routes: knownRoutes(),
       slugs: Object.fromEntries(
@@ -609,11 +629,11 @@ function main() {
       allowedDomains: new Set(
         (loadYaml(path.join(EDITORIAL, "sources-autorisees.yaml"))?.domains ?? []).map(String)
       ),
-      forceStrict: MODE_CHANGED ? changedFiles() : new Set(),
+      newFiles: MODE_CHANGED ? changes.added : new Set(),
     };
 
     const scope = MODE_CHANGED
-      ? articles.filter((a) => context.forceStrict.has(a.file))
+      ? articles.filter((a) => changes.all.has(a.file))
       : articles;
 
     for (const article of scope) checkArticle(article, context);
