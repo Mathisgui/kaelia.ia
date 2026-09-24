@@ -278,13 +278,13 @@ entries:
     gsc: { lastImport: null, position: null, impressions: null }
 
   - id: real-estate-ai
-    status: brief
+    status: publie
     primaryKeyword: "ia pour agent immobilier"
     intent: info-commerciale
     cluster: metiers
     pillar: agents
     secondaryKeywords: ["ia agence immobiliere", "intelligence artificielle agent immobilier", "agent ia immobilier"]
-    fr: { slug: ia-pour-agent-immobilier, published: null, updated: null }
+    fr: { slug: ia-pour-agent-immobilier, published: "2026-09-24", updated: null }
     en: { slug: ai-for-real-estate-agents }
     covers: ["meilleur ia pour agent immobilier", "ia pour agence immobiliere"]
     crossSite: null
