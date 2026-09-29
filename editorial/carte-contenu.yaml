@@ -291,13 +291,13 @@ entries:
     gsc: { lastImport: null, position: null, impressions: null }
 
   - id: craftsman-ai
-    status: brief
+    status: publie
     primaryKeyword: "agent ia pour artisan"
     intent: info-commerciale
     cluster: metiers
     pillar: automations
     secondaryKeywords: ["ia pour artisan", "assistant ia artisan", "ia batiment tpe"]
-    fr: { slug: agent-ia-pour-artisan, published: null, updated: null }
+    fr: { slug: agent-ia-pour-artisan, published: "2026-09-29", updated: null }
     en: { slug: ai-agents-for-tradespeople }
     covers: ["meilleur ia pour artisan", "ia artisanat", "ia btp tpe"]
     crossSite: null
