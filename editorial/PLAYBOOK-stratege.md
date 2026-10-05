@@ -29,7 +29,7 @@ rédacteur sans brief s'arrête.
 Dans cet ordre, parce qu'il va du plus fiable au moins fiable :
 
 1. **Les données Search Console des deux sites**, collectées chaque dimanche
-   à 14:00 UTC par une Action du dépôt privé `kaelia-ia-editorial` :
+   matin par une Action du dépôt privé `kaelia-ia-editorial` :
    `rapports/<semaine>-donnees.md` (les tableaux) et `inputs/gsc/synthese.json`
    (les mêmes chiffres, en données). C'est la seule source qui dit ce que les
    gens tapent vraiment pour arriver sur ces sites : elle prime sur tout le
@@ -60,11 +60,17 @@ les résultats. Compter un point par ligne vraie :
   veut dire que Google manque de contenu structuré,
 - des résultats en anglais apparaissent sur une requête française,
 - la requête nomme un métier ou une tâche précise, pas une catégorie,
-- Kael'IA a une page ou un cas réel qui s'y rattache,
+- Kael'IA a une page qui s'y rattache,
+- un cas client validé de `cas-anonymises.md` appuie l'angle : une expérience
+  vécue, que les pages plus longues en tête n'ont pas, est ce qui fait citer un
+  article (ligne ajoutée le 05/10, après deux semaines où les seuls sujets
+  appuyés sur un cas réel plafonnaient à cinq points),
 - l'intention laisse deviner un budget, même petit,
 - aucune entrée de la carte ne couvre déjà cette intention.
 
-À partir de six points, la requête mérite un brief. En dessous, elle
+Le critère d'ancienneté ne se remplit presque jamais sur un sujet d'IA, où tout
+date de l'année : c'est la raison de la ligne « cas client validé ». À partir
+de six points, la requête mérite un brief. En dessous, elle
 attend : mieux vaut trois briefs solides que cinq briefs de remplissage. Une
 semaine sans rien trouver se note dans le journal et ne se compense pas.
 
