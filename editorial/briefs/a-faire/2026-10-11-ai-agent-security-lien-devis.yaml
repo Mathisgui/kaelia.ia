@@ -1,0 +1,35 @@
+id: ai-agent-security
+type: mise-a-jour
+actionId: 2026-S41-05
+createdBy: stratege
+createdAt: 2026-10-11
+page: https://kaelia-ai.com/blog/securiser-agent-ia-entreprise
+raison: >-
+  L'article automatiser-creation-devis, publié le 2026-09-22, reste au verdict
+  « NEUTRAL », état « Détectée, actuellement non indexée », sans date de dernier
+  passage (rapport 2026-S41-donnees, collecte du 2026-10-11, tableau « Articles des
+  30 derniers jours : indexation »). Le seul article qui pointe vers lui,
+  agent-ia-pour-artisan, est indexé mais a été publié il y a moins de 14 jours.
+  securiser-agent-ia-entreprise est indexé (verdict PASS, dernier passage le
+  2026-10-09) et parle déjà de brouillons de devis : un lien depuis cette page aide
+  Google à découvrir et à juger l'article sur les devis.
+changes:
+  - champ: lien
+    section: "La validation humaine sur les actions qui comptent"
+    fr:
+      phrase: >-
+        Classer un email, résumer un document ou préparer un brouillon de devis sont des
+        actions réversibles à faible risque : l'agent peut les faire seul.
+      ancre: "préparer un brouillon de devis"
+      cible: /blog/automatiser-creation-devis
+    en:
+      phrase: >-
+        Sorting an email, summarizing a document, or drafting a quote are reversible,
+        low-risk actions: the agent can handle them alone.
+      ancre: "drafting a quote"
+      cible: /en/blog/automate-quote-creation
+    note: >-
+      Seul changement demandé : transformer l'ancre existante en lien, sans réécrire la
+      phrase ni le reste de la section. Ne pas ajouter d'autre lien dans l'article.
+sources: []
+constraints: "Un lien, FR et EN, rien d'autre. Mettre updated à la date du jour dans les deux fichiers."
