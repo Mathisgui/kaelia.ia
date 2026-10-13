@@ -243,8 +243,8 @@ entries:
     cluster: securite-rgpd
     pillar: agents
     secondaryKeywords: ["contrôle agent IA", "validation humaine IA", "traçabilité IA entreprise"]
-    fr: { slug: securiser-agent-ia-entreprise, published: "2026-09-15", updated: null }
-    en: { slug: securing-ai-agents-business }
+    fr: { slug: securiser-agent-ia-entreprise, published: "2026-09-15", updated: "2026-10-13" }
+    en: { slug: securing-ai-agents-business, updated: "2026-10-13" }
     covers: []
     crossSite: null
     gsc: { lastImport: null, position: null, impressions: null }
