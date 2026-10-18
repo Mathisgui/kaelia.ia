@@ -12,7 +12,7 @@
 
 version: 1
 site: kaelia-ai.com
-updated: "2026-09-22"
+updated: "2026-10-18"
 
 entries:
   - id: smb-automation-examples
@@ -301,4 +301,21 @@ entries:
     en: { slug: ai-agents-for-tradespeople }
     covers: ["meilleur ia pour artisan", "ia artisanat", "ia btp tpe"]
     crossSite: null
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  # ---- Proposé par le stratège le 2026-10-18 ----
+
+  - id: ai-watch-agent
+    status: brief
+    primaryKeyword: "agent ia veille concurrentielle"
+    intent: info-commerciale
+    cluster: agents-ia
+    pillar: agents
+    secondaryKeywords: ["agent ia veille", "veille concurrentielle automatisée", "agent ia veille réglementaire"]
+    fr: { slug: agent-ia-veille-concurrentielle, published: null, updated: null }
+    en: { slug: ai-competitive-monitoring-agent }
+    covers: ["comment automatiser une veille concurrentielle", "veille concurrentielle avec ia", "agent ia veille juridique", "agent ia veille technologique"]
+    crossSite: "Aucune entrée Kaelia sur la veille (contrôle du 2026-10-18). Se former à la veille avec l'IA relèverait de Kaelia."
+    brief: briefs/a-faire/2026-10-18-ai-watch-agent.yaml
+    grille: { score: 7, releve: "2026-10-18" }
     gsc: { lastImport: null, position: null, impressions: null }

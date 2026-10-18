@@ -1,0 +1,166 @@
+id: ai-watch-agent
+createdBy: stratege
+createdAt: 2026-10-18
+validatedBy: null
+primaryKeyword: "agent ia veille concurrentielle"
+titleCandidates:
+  - "Agent IA de veille concurrentielle : ce qu'il trie pour vous"
+  - "Veille concurrentielle par agent IA : le guide pour PME"
+slug: agent-ia-veille-concurrentielle
+angle: >-
+  Les pages en tête vendent une formation, un service de freelance ou une
+  plateforme, ou racontent un montage à base de flux RSS sans dire ce qui
+  coince. L'article part du vrai problème d'une veille automatisée, trop
+  d'information et pas assez de tri, montre ce qu'un agent fait de plus qu'un
+  flux (juger la pertinence, résumer, déclencher une action), et dit franchement
+  ce qu'il ne faut pas lui confier, y compris ce que la CNIL rappelle sur la
+  collecte de pages web.
+audience: dirigeants de PME et indépendants qui suivent un marché, des concurrents ou une réglementation
+searchIntent: >-
+  Un dirigeant ou un indépendant fait sa veille à la main, ou ne la fait plus
+  faute de temps. Il a entendu parler d'agents IA et se demande si l'un d'eux
+  peut surveiller ses concurrents et son marché à sa place, ce que ça demande,
+  et ce que ça coûte.
+
+grille:
+  score: 7
+  releve: "2026-10-18"
+  note: >-
+    Résultats observés avec l'outil de recherche de la routine, qui ne restitue
+    pas la page de Google France : ni questions associées, ni rang exact. Les
+    lignes non observables sont comptées fausses.
+  lignes_vraies:
+    - "Aucune marque forte du secteur dans les cinq premiers : enpratique.substack.com (newsletter), thecmo.com/fr (traduction d'un média américain), maven.com (page de cours), comeup.com (place de marché de freelances), businesswire.com (communiqué)."
+    - "Pages en tête courtes : la page substack fait environ 1 044 mots et la page maven environ 870 mots, menus compris (comptés le 2026-10-18). La page comeup dépasse (environ 3 225 mots, surtout de l'interface) ; thecmo a refusé la lecture automatique."
+    - "La requête nomme une tâche précise : la veille concurrentielle."
+    - "Kael'IA a une page qui s'y rattache : /agents-ia."
+    - "Un cas validé appuie l'angle : cas-02, où « une veille métier alimente ses envois »."
+    - "Intention à budget : les résultats proposent des prestations payantes (freelance comeup, cours maven)."
+    - "Aucune entrée des deux cartes ne couvre la veille (contrôle du 2026-10-18)."
+  lignes_fausses:
+    - "Contenus de plus de douze mois : la page substack date du 2026-03-04, la page comeup a été modifiée le 2026-08-07."
+    - "Questions associées, forum ou réseau social, résultats en anglais : non observés."
+
+serpNotes:
+  - "La page substack (cas d'une PME industrielle) pose bien le problème, « beaucoup de contenu pour peu d'analyse », mais décrit un montage sur un outil précis sans parler de coût, de limites ni de données personnelles."
+  - "Les pages maven et comeup vendent une formation ou une prestation : elles promettent sans montrer comment l'agent décide de ce qui compte."
+  - "Aucune page lue ne parle du cadre de la collecte de pages web (conditions d'utilisation des sites, données personnelles), ni de la validation humaine avant qu'une information de veille serve à agir."
+questionsPAA:
+  # Suggestions Google relevées le 2026-10-18 (pas de questions associées observables)
+  - "agent ia veille concurrentielle"
+  - "agent ia veille réglementaire"
+  - "agent ia veille juridique"
+  - "agent ia veille technologique"
+  - "comment automatiser une veille concurrentielle"
+  - "veille concurrentielle automatisée"
+  - "veille concurrentielle avec ia"
+  - "veille concurrentielle a quoi sert"
+  - "outils de veille automatisée"
+
+outline:
+  - h2: "Qu'est-ce qu'un agent IA de veille concurrentielle ?"
+    mustInclude:
+      - "réponse en 40 à 60 mots : un programme qui lit des sources choisies à intervalle fixe, juge ce qui compte pour vous selon des critères posés à l'avance, résume, et vous signale ou déclenche une suite ; la décision reste humaine"
+      - "définition isolée, une phrase, reprise telle quelle dans la FAQ"
+  - h2: "Flux RSS, alertes, agent : ce qui change vraiment"
+    mustInclude:
+      - "tableau à trois colonnes (alerte par mots-clés, lecteur de flux, agent IA) : ce que chacun lit, ce qu'il trie, ce qu'il produit, ce qu'il demande à mettre en place"
+      - "le flux et l'alerte collectent ; l'agent ajoute le tri et le résumé. Exemple technique : dans n8n, un déclencheur démarre un enchaînement à chaque nouvel article d'un flux RSS (source s3)"
+      - "réponse franche : sans critères de tri écrits, un agent produit autant de bruit qu'une alerte"
+  - h2: "Que peut surveiller un agent de veille dans une PME ?"
+    mustInclude:
+      - "réponse en 40 à 60 mots, puis une liste courte : prix et offres publiés des concurrents, appels d'offres, actualité réglementaire du métier, avis clients publics, nominations et recrutements annoncés"
+      - "chaque usage dit ce qui en sort : une note hebdomadaire, une alerte, un brouillon à valider"
+      - "variante réglementaire et juridique (suggestions « veille réglementaire », « veille juridique ») : l'agent signale et résume, la lecture du texte source reste à faire par un humain"
+  - h2: "Une veille qui alimente une action, pas une pile de lectures"
+    mustInclude:
+      - "encadré Terrain sur cas-02, sans rien ajouter au cas : la veille métier alimente ses envois plutôt que de produire du contenu générique, validation humaine sur toute sortie vers un client, périmètre réduit à ce qui est sûr"
+      - "leçon du cas, telle qu'écrite dans le fichier des cas : mieux vaut trois automatisations sûres que dix approximatives"
+      - "lien vers l'article ia-pour-agent-immobilier, qui raconte le même cas sous l'angle du suivi des contacts"
+  - h2: "Ce que la CNIL rappelle sur la collecte de pages web"
+    mustInclude:
+      - "citer s2 : le moissonnage « n'est pas interdit en lui-même mais doit faire l'objet d'une analyse au cas par cas », et il « peut être interdit par d'autres réglementations (par exemple par des conditions générales d'utilisation […]) »"
+      - "conséquence pratique, sans aller au-delà de s2 : préférer les flux et pages que l'éditeur publie pour être lus, définir à l'avance des critères précis de collecte, écarter les données personnelles dont la veille n'a pas besoin"
+      - "dire que la fiche de la CNIL porte sur le développement de systèmes d'IA : ce sont des principes à transposer, pas une règle écrite pour la veille"
+      - "lien vers l'article rgpd-agents-ia-entreprise"
+  - h2: "Combien coûte un agent de veille et par où commencer ?"
+    mustInclude:
+      - "ordres de grandeur de faits-reference.yaml uniquement : forfait à partir de tarif-forfait-min, coût d'API de cout-api-mensuel, avec decote-prudence"
+      - "contexte daté : en 2026, 40 % des TPE PME déclarent utiliser au moins une solution d'IA, et 11 % s'en servent pour l'automatisation des tâches (s1, baromètre France Num 2026)"
+      - "première étape faisable seul : lister cinq sources et écrire, pour chacune, ce qui justifierait une alerte"
+      - "diagnostic-gratuit"
+  - h2: "Ce qu'il faut retenir"
+    mustInclude:
+      - "trois à cinq phrases, puis /agents-ia"
+
+sources:
+  - id: s1
+    title: "Baromètre France Num 2026 : le numérique et l'intelligence artificielle dans les TPE et PME"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2026-le"
+    date: "2026-10-18"
+    verified: >-
+      Page ouverte le 2026-10-18 (publiée le 17 septembre 2026, mise à jour le 12 octobre
+      2026). Citations exactes : « En 2026, 40 % des TPE PME déclarent utiliser au moins une
+      solution d'intelligence artificielle, en progression de 14 points par rapport à l'an
+      dernier » ; « Les usages les plus fréquents sont : la génération de contenus (texte,
+      voix ou image) : 34 % (+12 pts) ; les assistants conversationnels et chatbots : 24 %
+      (+10 pts) ; l'analyse et de classification de documents : 13 % (+7 pts) ;
+      l'automatisation des tâches : 11 % (+6 pts) » ; « 68 % des entreprises utilisatrices
+      de solutions d'IA considèrent qu'elle a un impact positif sur l'entreprise » ; « Cette
+      6ème édition, s'appuie sur les réponses de 9 655 entreprises dont 6 786 TPE. »
+    attention: "Le baromètre ne mesure pas la veille en particulier : ne jamais écrire qu'un pourcentage de PME fait de la veille par IA. Toujours dater les chiffres (enquête 2026)."
+  - id: s2
+    title: "CNIL, fiche focus sur les mesures à prendre en cas de collecte des données par moissonnage (web scraping)"
+    url: "https://www.cnil.fr/fr/focus-interet-legitime-collecte-par-moissonnage"
+    date: "2026-10-18"
+    verified: >-
+      Page ouverte le 2026-10-18 (datée du 19 juin 2025). Citations exactes : « Pour autant,
+      le moissonnage n'est pas interdit en lui-même mais doit faire l'objet d'une analyse au
+      cas par cas. » ; « Si le recours à des techniques de moissonnage n'est pas en soi
+      incompatible avec les exigences du RGPD, il peut être interdit par d'autres
+      réglementations (par exemple par des conditions générales d'utilisation qui
+      s'appuieraient sur le droit des producteurs de bases de données ou sur le droit
+      d'auteur). » ; parmi les mesures obligatoires au titre de la minimisation :
+      « définir, en amont, des critères précis de collecte » et « exclure de la collecte
+      certaines catégories de données lorsqu'elles ne sont pas nécessaires ». La fiche
+      précise qu'elle porte sur les conditions dans lesquelles ces traitements « pourraient
+      être mis en œuvre pour le développement d'un système d'IA ».
+    attention: "Fiche écrite pour le développement de systèmes d'IA : la présenter comme un éclairage, pas comme une règle propre à la veille. Aucun conseil juridique au-delà de ces citations."
+  - id: s3
+    title: "n8n Docs, RSS Feed Trigger"
+    url: "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger/"
+    date: "2026-10-18"
+    verified: >-
+      Page ouverte le 2026-10-18. Citations exactes : « The RSS Feed Trigger node allows you
+      to start an n8n workflow when a new RSS feed item has been published. » ; « Feed URL :
+      Enter the URL of the RSS feed to poll. »
+faitsReference: [tarif-forfait-min, cout-api-mensuel, diagnostic-gratuit, decote-prudence]
+internalLinks:
+  pillar: "/agents-ia"
+  lateral:
+    - "/blog/ia-pour-agent-immobilier"
+    - "/blog/rgpd-agents-ia-entreprise"
+    - "/blog/securiser-agent-ia-entreprise"
+  backlinksToInsert:
+    - in: "ia-pour-agent-immobilier"
+      anchor: "une veille métier"
+      sentenceHint: "Dans l'encadré Terrain de la section « Le suivi d'un portefeuille de contacts, le vrai sujet », la phrase « Une veille métier alimente ses envois » ; si l'encadré n'accepte pas de lien, ajouter une phrase juste après lui avec l'ancre « comment fonctionne un agent de veille »."
+    - in: "taches-a-automatiser-pme"
+      anchor: "surveiller vos concurrents"
+      sentenceHint: "Dans la section « Comment choisir la première », une phrase qui signale qu'au-delà de ces dix tâches, un agent peut aussi surveiller vos concurrents et votre marché."
+terrainCaseId: cas-02
+terrainNote: >-
+  cas-02 (conseil en investissement immobilier, indépendant), validé le 2026-09-22.
+  N'en reprendre que ce que dit cas-anonymises.md, déjà repris dans l'article
+  ia-pour-agent-immobilier : veille métier qui alimente ses envois, validation
+  humaine sur toute sortie vers un client, périmètre réduit. Ne rien inventer sur les
+  sources surveillées, la fréquence ou les outils : le cas ne les donne pas.
+crossSite: >-
+  Vérifié le 2026-10-18 dans les deux cartes : aucune entrée Kael'IA ne vise la veille ;
+  côté Kaelia, aucune entrée non plus (le blog Kaelia traite du financement et du
+  portage). Ne pas glisser vers « se former à la veille avec l'IA », terrain de Kaelia.
+en:
+  slug: ai-competitive-monitoring-agent
+  titleCandidates:
+    - "AI agents for competitive monitoring: a practical guide"
+constraints: "Aucun outil de veille du marché nommé ou comparé. Chiffres de s1 datés (enquête 2026). Rien sur le droit au-delà des citations de s2. Pas d'encadré Scenario : le cas réel suffit."
