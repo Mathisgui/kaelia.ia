@@ -10,6 +10,7 @@ domains:
   - economie.gouv.fr
   - service-public.fr
   - entreprendre.service-public.fr
+  - service-public.gouv.fr  # migration en .gouv.fr (301 constaté le 2026-10-22, www. et entreprendre.)
   - insee.fr
   - francenum.gouv.fr
   - europa.eu
