@@ -74,6 +74,71 @@ de six points, la requête mérite un brief. En dessous, elle
 attend : mieux vaut trois briefs solides que cinq briefs de remplissage. Une
 semaine sans rien trouver se note dans le journal et ne se compense pas.
 
+### Grille du blog Kaelia (depuis le 22/10/2026)
+
+La grille ci-dessus est pensée pour Kael'IA. Appliquée à Kaelia, quatre de
+ses lignes sont toujours fausses : les questions associées, les forums et les
+résultats en anglais ne sont pas observables avec vos outils (relevé du
+18/10), et il n'existe aucun cas client Kaelia. Les sujets Kaelia plafonnaient
+donc à cinq points, sous le seuil. Pour une requête Kaelia, comptez un point
+par ligne vraie de cette grille-ci.
+
+Concurrence, observée dans les résultats :
+
+1. aucune marque forte du secteur (éditeur juridique, grand organisme de
+   formation, plateforme nationale) dans les cinq premiers résultats ;
+2. les pages en tête font moins de mille cinq cents mots ;
+3. les pages en tête datent de plus de douze mois, ou d'avant le dernier
+   changement de règle du dispositif.
+
+Intention :
+
+4. la requête nomme un dispositif, un statut ou une démarche précise
+   (« remboursement FAFCEA », « président de SAS »), pas une catégorie ;
+5. une page pilier Kaelia s'y rattache (`kaelia-blog/etat/sitemap.txt`) ;
+6. la personne cherche à se former ou à faire financer une formation, pas
+   seulement à comprendre une règle ;
+7. aucune entrée des deux cartes ne couvre déjà cette intention.
+
+Ce que les moteurs IA reprendront (GEO). ChatGPT, Perplexity et les aperçus
+IA de Google répondent à partir des pages en tête et des sources officielles.
+Ces quatre lignes observent ce matériau :
+
+8. **réponse fausse en circulation** : au moins une page en tête donne un
+   montant, un plafond, une date ou une règle différente de la source
+   officielle en vigueur, ou deux pages en tête se contredisent. C'est ce que
+   les assistants répètent ; un passage daté et sourcé qui corrige devient la
+   réponse à citer. Cette ligne ne compte que si la carte porte, dans `note`,
+   la page fautive, ce qu'elle dit, et la citation officielle qui la contredit ;
+9. **source officielle peu exploitable** : la règle existe sur un site
+   officiel, mais éparpillée sur plusieurs pages, dans un PDF ou une
+   circulaire, ou sans phrase qui réponde directement à la question. Un
+   assistant cite le passage qui répond en une phrase, pas la page qui oblige
+   à recouper ;
+10. **question en langage parlé** : les suggestions Google contiennent la
+    requête sous forme de question complète (« est-ce que », « combien »,
+    « qui peut », « quand », « comment »). C'est la forme des questions posées
+    à un assistant ;
+11. **fait vérifié absent des pages en tête** : Kaelia peut répondre avec un
+    fait de `kaelia-blog/conformite/faits-financeurs.yaml` ou d'une source officielle que
+    les cinq premières pages n'ont pas : une date d'entrée en vigueur, un cas
+    de figure (président de SAS, micro-entrepreneur, formation à distance), une
+    réponse négative assumée.
+
+Même seuil : six points. Dans la carte, `grille` porte le score, la date du
+relevé et les lignes vraies : `{ score: 7, releve: "2026-10-25", lignes: [2,
+4, 5, 7, 8, 10, 11] }`. Une notation qu'on ne peut pas relire ne vaut rien.
+
+Vous n'interrogez aucun assistant et n'écrivez jamais ce qu'il « répondrait » :
+vous n'en avez pas les moyens, et une réponse imaginée ferait une fausse
+preuve. Les lignes 8 à 11 se constatent sur des pages que vous avez ouvertes.
+
+**Renotation** : avant de chercher de nouvelles requêtes, renotez avec cette
+grille chaque entrée Kaelia en `planifie` dont le score est `null`, ou sous six
+avec un relevé antérieur au 22/10/2026 (champ `releve`). Les règles habituelles s'appliquent aux briefs qui en sortent :
+sources officielles avec citation exacte, quatre briefs au plus en attente.
+Notez dans le journal Kaelia les scores avant et après.
+
 ## Étape 4 — Ne jamais produire deux fois le même article
 
 Avant d'ouvrir un brief, comparer l'intention candidate à toutes les entrées
