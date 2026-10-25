@@ -1,0 +1,157 @@
+id: insurance-broker-ai
+createdBy: stratege
+createdAt: 2026-10-25
+validatedBy: null
+primaryKeyword: "ia pour courtier en assurance"
+titleCandidates:
+  - "IA pour courtier en assurance : par quoi commencer"
+  - "IA et courtage en assurance : ce qu'un agent fait vraiment"
+slug: ia-courtier-assurance
+angle: >-
+  Les pages en tête vendent une formation d'une journée ou un cours en ligne, ou
+  répondent à côté (devenir courtier, lexique). L'article part de ce qui coince
+  vraiment chez un courtier indépendant, une information stockée deux fois et un
+  suivi tenu dans des rappels, montre ce que des assistants branchés sur un espace
+  unique prennent en charge, et dit franchement ce qui restera manuel quand un outil
+  du secteur n'a pas de connexion utilisable.
+audience: courtiers en assurance indépendants et petits cabinets de courtage
+searchIntent: >-
+  Un courtier seul ou un petit cabinet entend parler d'IA partout et se demande
+  ce qu'elle peut faire concrètement pour lui : quelles tâches, avec quels outils
+  déjà en place, à quel prix, et sans risque pour les données de ses clients.
+
+grille:
+  score: 7
+  releve: "2026-10-25"
+  note: >-
+    Résultats observés avec l'outil de recherche de la routine, qui ne restitue
+    pas la page de Google France : ni questions associées, ni rang exact. Les
+    lignes non observables sont comptées fausses.
+  lignes_vraies:
+    - "Aucune marque forte du secteur de l'IA ou de l'automatisation dans les cinq premiers : tensoria.fr (petit cabinet IA, page de formation), paperjam.lu (média luxembourgeois, portrait d'une courtière), findskill.ai (cours en ligne), legalplace.fr et apec.fr (marques connues, mais hors sujet : devenir courtier, fiche métier)."
+    - "Un réseau social en première page : un profil lu.linkedin.com, signe que Google manque de contenu structuré sur la requête."
+    - "La requête nomme un métier précis : courtier en assurance."
+    - "Kael'IA a une page qui s'y rattache : /agents-ia."
+    - "Un cas validé appuie l'angle : cas-03 (courtier en assurance indépendant, Lyon)."
+    - "Intention à budget : les résultats proposent des formations payantes (tensoria « finançable OPCO », findskill)."
+    - "Aucune entrée des deux cartes ne couvre le courtage (contrôle du 2026-10-25)."
+  lignes_fausses:
+    - "Pages en tête courtes : tensoria.fr environ 3 665 mots, findskill.ai environ 1 845 (menus compris) ; seule paperjam.lu reste sous 1 500 (environ 1 132)."
+    - "Contenus de plus de douze mois : findskill.ai daté du 2026-05-08, paperjam.lu du 2026-02-24."
+    - "Questions associées et résultats en anglais : non observés."
+
+serpNotes:
+  - "tensoria.fr et findskill.ai décrivent des usages (comparaison de garanties, rapports de sinistre, relances de renouvellement) dans une page qui vend une formation : rien sur le branchement aux outils existants ni sur ce qui ne se connecte pas."
+  - "Aucune page lue ne parle de la double saisie entre les dossiers du courtier et l'outil de son réseau, le problème central de cas-03."
+  - "Aucune page lue ne cite la CNIL sur le déploiement d'une IA générative avec des données clients."
+questionsPAA:
+  # Suggestions Google relevées le 2026-10-25 (pas de questions associées observables)
+  - "ia pour courtier en assurance"
+  - "ia courtier assurance"
+  - "ia courtage assurance"
+  - "agent ia assurance"
+  - "courtier en assurance ia"
+
+outline:
+  - h2: "Que peut faire l'IA pour un courtier en assurance ?"
+    mustInclude:
+      - "réponse en 40 à 60 mots : préparer, trier et relancer ; demandes de pièces, documents de conformité, préparation des rendez-vous ; le conseil et la décision restent au courtier"
+      - "définition isolée d'un assistant métier, une phrase : un programme branché sur vos dossiers, qui prépare une tâche répétitive et vous la soumet avant tout envoi"
+  - h2: "Le vrai problème : une information stockée deux fois"
+    mustInclude:
+      - "encadré Terrain sur cas-03, sans rien ajouter au cas : tout stocké deux fois, dans les dossiers et dans l'outil du réseau ; suivi en rappels manuels et notes papier ; un suivi déjà bricolé dans un tableur"
+      - "ce qui a été fait, tel qu'écrit dans le fichier des cas : un espace de travail unique qui fait référence, puis des assistants branchés dessus"
+      - "leçon du cas : le gain n'est pas le temps de saisie, c'est de ne plus se demander quelle version est la bonne"
+  - h2: "Trois tâches à confier en premier"
+    mustInclude:
+      - "tableau à trois lignes (demandes de pièces, documents de conformité, préparation des rendez-vous) et trois colonnes : ce que l'assistant prépare, ce que le courtier valide, ce qu'il faut avoir rangé avant"
+      - "pour les demandes de pièces, renvoi à l'article relances-clients-automatiques (variante « pièces manquantes »)"
+      - "aucune promesse de temps gagné chiffrée : le cas n'en donne pas"
+  - h2: "Et si un outil du secteur ne se connecte pas ?"
+    mustInclude:
+      - "réponse en 40 à 60 mots, franche : une étape reste manuelle. Un outil d'automatisation comme n8n se branche sur une application qui expose une API REST (s3) ; sans connexion utilisable, on ne force pas"
+      - "leçon de cas-03, telle qu'écrite : une étape est restée manuelle, et cela a été dit avant de vendre ; annoncer une limite coûte moins cher que de la découvrir en production"
+  - h2: "Les données de vos clients : ce que rappelle la CNIL"
+    mustInclude:
+      - "citer s2 : partir d'un besoin concret ; définir « une liste d'utilisations autorisées et interdites », « par exemple ne pas fournir de données personnelles au système, ou bien ne pas confier de prise de décision » ; déterminer « dans quelle mesure le prestataire opérant le système est susceptible de réutiliser les données fournies »"
+      - "conséquence pratique, sans aller au-delà de s2 : validation humaine avant tout envoi à un client, aucune décision confiée à l'outil ; lien vers rgpd-agents-ia-entreprise"
+      - "ne rien écrire sur la réglementation propre à l'assurance (devoir de conseil, DDA, ORIAS) : aucune source autorisée ouverte"
+  - h2: "Combien ça coûte et par où commencer ?"
+    mustInclude:
+      - "ordres de grandeur de faits-reference.yaml uniquement : tarif-forfait-min, cout-api-mensuel, maintenance-mensuelle, avec decote-prudence"
+      - "contexte daté : en 2026, 40 % des TPE PME déclarent utiliser au moins une solution d'IA ; dans les activités financières, 46 % (s1, baromètre France Num 2026) ; ne jamais présenter ce 46 % comme un chiffre propre au courtage"
+      - "première étape faisable seul : lister où chaque information client est stockée aujourd'hui, et rayer les doublons"
+      - "diagnostic-gratuit"
+  - h2: "Ce qu'il faut retenir"
+    mustInclude:
+      - "trois à cinq phrases, puis /agents-ia"
+
+sources:
+  - id: s1
+    title: "Baromètre France Num 2026 : le numérique et l'intelligence artificielle dans les TPE et PME"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2026-le"
+    date: "2026-10-25"
+    verified: >-
+      Page rouverte le 2026-10-25 (publiée le 17 septembre 2026, mise à jour le 12 octobre
+      2026). Citations exactes : « En 2026, 40 % des TPE PME déclarent utiliser au moins une
+      solution d'intelligence artificielle, en progression de 14 points par rapport à l'an
+      dernier » ; « Le recours à l'IA varie selon le secteur d'activité, mais tous
+      accélèrent : Numérique : 72 % (x 1,4 en un an) ; Services spécialisés / techniques :
+      60 % (x 1,5) ; Activités financières : 46 % (x 1,5) » ; « l'automatisation des tâches :
+      11 % (+6 pts) » ; « Cette 6ème édition, s'appuie sur les réponses de 9 655 entreprises
+      dont 6 786 TPE. »
+    attention: "Le baromètre n'isole pas le courtage : « Activités financières » est un secteur large. Toujours dater (enquête 2026)."
+  - id: s2
+    title: "CNIL, Comment déployer une IA générative ? La CNIL apporte de premières précisions"
+    url: "https://www.cnil.fr/fr/comment-deployer-une-ia-generative-la-cnil-apporte-de-premieres-precisions"
+    date: "2026-10-25"
+    verified: >-
+      Page ouverte le 2026-10-25 (datée du 18 juillet 2024). Citations exactes : « Partir
+      d'un besoin concret, c'est-à-dire d'éviter de déployer un système d'IA générative sans
+      but précis, mais pour répondre à un ensemble d'usages déjà identifiés. » ; « Encadrer
+      les usages en définissant une liste d'utilisations autorisées et interdites compte tenu
+      de ces risques (par exemple ne pas fournir de données personnelles au système, ou bien
+      ne pas confier de prise de décision). » ; « A défaut, il faut déterminer dans quelle
+      mesure le prestataire opérant le système est susceptible de réutiliser les données
+      fournies au système d'IA, et adapter l'usage en conséquence. » ; « du fait de leur
+      nature probabiliste, ces systèmes sont susceptibles de générer des résultats inexacts
+      qui peuvent, pourtant, paraître plausibles. »
+    attention: "Premières précisions de 2024 : les présenter comme des recommandations, pas comme une règle propre à l'assurance."
+  - id: s3
+    title: "n8n Docs, HTTP Request node"
+    url: "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/"
+    date: "2026-10-25"
+    verified: >-
+      Page ouverte le 2026-10-25. Citation exacte : « The HTTP Request node is one of the
+      most versatile nodes in n8n. It allows you to make HTTP requests to query data from any
+      app or service with a REST API. »
+faitsReference: [tarif-forfait-min, cout-api-mensuel, maintenance-mensuelle, diagnostic-gratuit, decote-prudence]
+internalLinks:
+  pillar: "/agents-ia"
+  lateral:
+    - "/blog/relances-clients-automatiques"
+    - "/blog/rgpd-agents-ia-entreprise"
+    - "/blog/intelligence-artificielle-cabinet-avocat"
+  backlinksToInsert:
+    - in: "relances-clients-automatiques"
+      anchor: "chez un courtier en assurance"
+      sentenceHint: "Dans la section « Devis, factures, pièces manquantes : trois variantes », après le point « Les pièces manquantes », une phrase qui signale que c'est la première tâche confiée à un assistant chez un courtier en assurance."
+    - in: "taches-a-automatiser-pme"
+      anchor: "une information stockée en double"
+      sentenceHint: "Dans la section « Comment choisir la première », une phrase qui dit qu'avant d'automatiser, il vaut mieux supprimer une information stockée en double, exemple d'un courtier."
+terrainCaseId: cas-03
+terrainNote: >-
+  cas-03 (courtier en assurance indépendant, Lyon), validé le 2026-09-22. N'en reprendre que
+  ce que dit cas-anonymises.md : double stockage, rappels manuels et notes papier, tableur
+  bricolé, espace de travail unique, assistants pour les demandes de pièces, les documents de
+  conformité et la préparation des rendez-vous, une étape restée manuelle et annoncée avant
+  la vente. Ne nommer ni le réseau, ni ses outils, ni aucun logiciel.
+crossSite: >-
+  Vérifié le 2026-10-25 dans les deux cartes : aucune entrée Kael'IA ne vise l'assurance ou
+  le courtage ; côté Kaelia, aucune non plus (financement et portage). Ne pas glisser vers
+  « se former à l'IA quand on est courtier », terrain de Kaelia et des pages en tête.
+en:
+  slug: ai-for-insurance-brokers
+  titleCandidates:
+    - "AI for insurance brokers: where to start"
+constraints: "Rien sur la réglementation de l'assurance. Aucun outil du secteur nommé. Chiffres de s1 datés, jamais attribués au courtage. Aucun gain de temps chiffré. Pas d'encadré Scenario : le cas réel suffit."

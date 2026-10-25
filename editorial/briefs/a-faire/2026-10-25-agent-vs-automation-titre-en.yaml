@@ -1,0 +1,20 @@
+id: agent-vs-automation
+type: mise-a-jour
+actionId: 2026-S43-01
+page: https://kaelia-ai.com/en/blog/ai-agent-vs-automation
+raison: >-
+  Requêtes à portée sur 28 jours (rapport 2026-S43-donnees) : « ai automation agent »
+  14 impressions, 0 clic, position 19 ; « agent automation » 5 impressions, 0 clic,
+  position 15,2, toutes deux sur cette page. Nouvelle requête « ai agents vs automation » :
+  35 impressions, position 34,7. Le titre anglais actuel, « AI agent or automation: what's
+  the difference? », ne contient aucune de ces formulations. Page jamais modifiée depuis
+  sa publication (carte : updated null), donc hors de la fenêtre de 14 jours.
+changes:
+  - champ: title
+    en: "AI agents vs automation: what's the difference?"
+    fr: null  # titre français inchangé, aucune donnée française ne le motive
+  - champ: excerpt
+    en: "AI agents vs automation: clear definitions, what an AI automation agent adds to a workflow, three real examples and simple criteria to choose for your processes."
+    fr: null
+sources: []
+constraints: "Ne changer que le titre et l'extrait anglais. Corps, slug, keywords et version française intacts, pour que l'effet se mesure."
