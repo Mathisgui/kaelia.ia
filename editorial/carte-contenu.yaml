@@ -328,16 +328,15 @@ entries:
   # ---- Proposé par le stratège le 2026-10-25 ----
 
   - id: insurance-broker-ai
-    status: brief
+    status: publie
     primaryKeyword: "ia pour courtier en assurance"
     intent: info-commerciale
     cluster: metiers
     pillar: agents
     secondaryKeywords: ["ia courtier assurance", "ia courtage assurance", "agent ia assurance"]
-    fr: { slug: ia-courtier-assurance, published: null, updated: null }
+    fr: { slug: ia-courtier-assurance, published: "2026-10-27", updated: null }
     en: { slug: ai-for-insurance-brokers }
     covers: ["courtier en assurance ia", "ia pour courtier"]
     crossSite: "Aucune entrée Kaelia sur l'assurance ou le courtage (contrôle du 2026-10-25). Se former à l'IA quand on est courtier relèverait de Kaelia."
-    brief: briefs/a-faire/2026-10-25-insurance-broker-ai.yaml
     grille: { score: 7, releve: "2026-10-25" }
     gsc: { lastImport: null, position: null, impressions: null }

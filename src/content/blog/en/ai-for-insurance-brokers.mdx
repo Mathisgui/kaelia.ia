@@ -1,0 +1,86 @@
+---
+title: "AI for insurance brokers: where to actually start"
+date: "2026-10-27"
+updated: "2026-10-27"
+excerpt: "Three tasks an AI assistant can take off an insurance broker's plate, what stays manual when a sector tool will not connect, and what regulators say about client data."
+keywords: ["ai for insurance brokers", "ai insurance broker", "insurance broker ai agent", "ai agent insurance"]
+translationKey: "insurance-broker-ai"
+primaryKeyword: "ai for insurance brokers"
+cluster: "metiers"
+pillar: "agents"
+faq:
+  - question: "What tasks can an insurance broker hand to an AI assistant?"
+    answer: "Requests for missing documents, the compliance paperwork a file needs, and the preparation of information before a client meeting. In each case the assistant drafts a document or a message, you review it, then you decide whether to send it. The advice given to the client, the risk assessment, and the final decision stay the broker's work, never the tool's."
+  - question: "Can AI replace an insurance broker's advice?"
+    answer: "No. An assistant prepares a repetitive task and submits it for review before anything is sent, but it carries no judgment on a client's risk or on which coverage fits. French regulators even recommend never handing a decision to a generative AI system without human review. For a broker, that means a systematic check before anything reaches a client."
+  - question: "How much does AI cost for an independent insurance broker?"
+    answer: "A custom project starts from 1,500 euros fixed price, with monthly running costs then limited to a few dozen euros of API calls, plus maintenance of 100 to 200 euros a month, or handled in house. These are order-of-magnitude figures to announce on the low side of what is observed, not an estimate specific to insurance broking."
+  - question: "What happens when a sector tool will not connect to AI?"
+    answer: "An automation connects to an application that exposes a REST API, or at minimum a usable export. Without a working connection, it is better to say a step will stay manual than to patch together a fragile integration that breaks at the first change. Saying so before the sale always costs less than discovering it once the system is live."
+sources:
+  - title: "Baromètre France Num 2026 : le numérique et l'intelligence artificielle dans les TPE et PME"
+    url: "https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2026-le"
+    date: "2026-10-25"
+  - title: "CNIL, Comment déployer une IA générative ? La CNIL apporte de premières précisions"
+    url: "https://www.cnil.fr/fr/comment-deployer-une-ia-generative-la-cnil-apporte-de-premieres-precisions"
+    date: "2026-10-25"
+  - title: "n8n Docs, HTTP Request node"
+    url: "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/"
+    date: "2026-10-25"
+---
+
+AI for insurance brokers prepares requests for missing documents, sorts the compliance paperwork a file needs, and preps meetings before they land on your calendar. The advice given to a client and the final decision always stay yours: the assistant drafts a proposal, it never sends it itself without your review.
+
+## What can AI actually do for an insurance broker?
+
+It prepares requests for missing documents from a client, sorts the compliance paperwork a file needs, and preps the information useful before a meeting, without ever deciding in your place. A business assistant is a program connected to your files that prepares a repetitive task and submits it for review before anything is sent. The advice given to a client, the risk assessment, and the final decision always stay the broker's work.
+
+## The real problem: information stored in two places
+
+For an independent insurance broker, the real problem almost never comes from the volume of files: it comes from information stored in two different places. The same client exists in your own files and in your network's tool, a meeting tracked in a manual reminder rather than in a single system. Updating one place is not enough, you still have to remember to update the other.
+
+<Terrain>
+I worked with an independent insurance broker in Lyon, five years into the job, who admitted himself that his processes were not tight. Everything was stored twice, in his own files and in his network's tool, and client follow-up lived in manual reminders and paper notes, after he had already patched together some tracking in a spreadsheet. We set up a single workspace that acts as the source of truth, then connected assistants to it for requests for missing documents, compliance paperwork, and meeting preparation. The gain is not the time spent on data entry: it is no longer having to wonder which version is the right one.
+</Terrain>
+
+The lesson fits in one sentence: before adding an assistant, you need a single place where information is authoritative. Without that, the assistant would read and write into a place that is already not the right version.
+
+## Three tasks to hand off first
+
+Three tasks come up for most insurance brokers, and they are the first worth handing to an assistant:
+
+- requests for missing documents,
+- the compliance paperwork a file needs,
+- preparing information before a meeting.
+
+| Task | What the assistant prepares | What the broker checks | What needs to be in order first |
+|---|---|---|---|
+| Requests for missing documents | The message listing what is missing and how to send it | The tone and the timing of the message | The list of documents expected per file type |
+| Compliance paperwork | The document pre-filled from the file's information | The accuracy of the information and the signature | An up-to-date document template |
+| Meeting preparation | The file summary and the points to cover | The content and the conduct of the meeting | A complete and current client file |
+
+For requests for missing documents, this follows the same principle we detail for small businesses in our article on [automated client follow ups](/en/blog/automated-client-follow-ups), the missing documents variant.
+
+None of these three gains is quantified here in hours or euros: the case behind this article does not give one, and a made-up number would mislead more than it would help.
+
+## What happens when a sector tool will not connect?
+
+A step stays manual, and it is better to say so before the sale than to discover it once the system is live. An automation tool such as [n8n](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/) connects to an application that exposes a REST API, as confirmed by its documentation on the HTTP request node. Without a usable connection on the business software side, you do not force a patched-together integration that breaks at the first change.
+
+That is exactly what happened with the broker mentioned above: some tools in his sector had no usable connection, one step stayed manual, and that was said before the sale, not after. Flagging a limit always costs less than discovering it once the system is in production.
+
+## Your clients' data: what regulators say
+
+French data protection authority CNIL recommends starting from a concrete need before deploying a generative AI system. Its guidance on deploying generative AI states that organizations should ["start from a concrete need, meaning avoid deploying a generative AI system without a specific purpose, but to meet a set of already identified uses"](https://www.cnil.fr/fr/comment-deployer-une-ia-generative-la-cnil-apporte-de-premieres-precisions), then "frame uses by defining a list of authorized and forbidden uses given these risks (for example not supplying personal data to the system, or not handing it any decision-making)." It adds that otherwise, you must determine to what extent the provider operating the system might reuse the data supplied, and adjust the use accordingly.
+
+In practice for a broker, that means human review before anything is sent to a client, with no decision handed to the tool, not on the amount of a coverage, not on accepting a file. Our article on [GDPR and AI agents](/en/blog/gdpr-ai-agents-business) details how to set this framework before connecting an assistant to personal data. Other regulated professions go through the same framing, as we show for [law firms](/en/blog/ai-in-law-firms).
+
+## How much does it cost and where do you start?
+
+A custom project starts from 1,500 euros fixed price, never a day rate, with monthly running costs then limited to a few dozen euros of API calls, plus maintenance of 100 to 200 euros a month, or handled in house. In 2026, 40 percent of French small and midsize businesses report using at least one AI solution, and that share reaches 46 percent in financial activities, according to the [2026 France Num barometer](https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/barometre-france-num-2026-le); that dated figure does not single out insurance broking, a broad sector that groups several different trades.
+
+The first step needs no tool at all: list where each piece of client information is stored today, and cross out the duplicates. See how our [method](/en/method) works, or book a free 30-minute diagnostic to check what in your files is worth automating first.
+
+## The takeaway
+
+AI for insurance brokers prepares requests for missing documents, compliance paperwork, and meetings, never the advice given to a client or the final decision. The real gain comes from a single workspace where information is not duplicated, not from time saved on data entry. A step sometimes stays manual when a sector tool will not connect, and it is better to say so before the sale. Client data calls for systematic human review before anything is sent. To go further, discover our [AI agents](/en/ai-agents).
