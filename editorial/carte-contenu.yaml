@@ -80,10 +80,9 @@ entries:
     pillar: agents
     secondaryKeywords: ["automatisation", "différence agent IA automatisation", "workflow", "n8n", "PME"]
     fr: { slug: agent-ia-vs-automatisation, published: "2026-06-18", updated: null }
-    en: { slug: ai-agent-vs-automation }
+    en: { slug: ai-agent-vs-automation, updated: "2026-10-27" }
     covers: []
     crossSite: null
-    brief: briefs/a-faire/2026-10-25-agent-vs-automation-titre-en.yaml  # mise à jour du titre et de l'extrait anglais, action 2026-S43-01
     gsc: { lastImport: "2026-10-25", position: null, impressions: null }  # requêtes à portée : « ai automation agent » position 19, « agent automation » position 15,2 (rapport 2026-S43-donnees)
 
   - id: follow-up-automation
