@@ -1,0 +1,22 @@
+# Brief de mise à jour du 2026-11-01 (stratège), action 2026-S44-02 du rapport SEO.
+id: automation-mistakes
+type: mise-a-jour
+actionId: 2026-S44-02
+page: https://kaelia-ai.com/en/blog/automation-mistakes-smb
+raison: >-
+  Page vue mais peu cliquée sur 28 jours (rapport 2026-S44-donnees) : 31 impressions,
+  0 clic, taux de clic 0,0 %, position 6,9. La page est déjà en première page : c'est le
+  titre et l'extrait affichés par Google qui ne donnent pas envie de cliquer. Titre anglais
+  actuel : « The 5 classic mistakes of a first automation project ». Article publié le
+  2026-08-11, jamais modifié depuis (carte : updated null), donc hors de la fenêtre de
+  14 jours. Aucune requête détaillée n'est rattachée à cette page dans les données.
+changes:
+  - champ: title
+    en: "First automation project: 5 mistakes that sink it"
+    fr: null  # aucune donnée française ne motive un changement
+  - champ: excerpt
+    en: "Five mistakes that sink a first automation project, from a fuzzy process to no maintenance plan, and the checks to make before you sign with anyone."
+    fr: null
+sources: []
+terrainCaseId: null
+constraints: "Ne changer que le titre et l'extrait anglais. Corps, slug, keywords et version française intacts, pour que l'effet se mesure."

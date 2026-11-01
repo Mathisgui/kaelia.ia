@@ -1,0 +1,31 @@
+# Brief de mise à jour du 2026-11-01 (stratège), action 2026-S44-01 du rapport SEO.
+id: chatgpt-vs-agent
+type: mise-a-jour
+actionId: 2026-S44-01
+page: https://kaelia-ai.com/blog/chatgpt-vs-agent-ia-entreprise
+raison: >-
+  Requête à portée sur 28 jours (rapport 2026-S44-donnees) : « quelle différence entre
+  chatgpt et un agent ia ? » 52 impressions, 0 clic, position 8,3, sur cette page. C'est
+  aussi une nouvelle requête de la semaine. Le titre français actuel, « ChatGPT ou agent
+  IA : que faut-il à votre entreprise ? », ne contient pas le mot « différence », et aucun
+  titre de section ne pose la question telle que les gens la tapent : la réponse est
+  dispersée entre « Là où ChatGPT s'arrête » et « Ce qu'un agent IA change ». Article publié
+  le 2026-06-05, jamais modifié depuis (carte : updated null), donc hors de la fenêtre de
+  14 jours.
+changes:
+  - champ: title
+    fr: "ChatGPT ou agent IA : quelle différence pour une entreprise ?"
+    en: null  # aucune donnée anglaise ne motive un changement
+  - champ: section
+    h2: "Quelle différence entre ChatGPT et un agent IA ?"
+    placement: "nouvelle section, juste après l'introduction, avant « Ce que ChatGPT fait très bien »"
+    mustInclude:
+      - "réponse dans les 40 à 60 premiers mots, autonome : ChatGPT répond à une personne qui lui écrit, dans une fenêtre de conversation, sans accès à vos outils ; un agent IA est branché sur vos outils (messagerie, tableur, logiciel métier), déclenche lui-même une suite d'actions et rend compte, avec une validation humaine sur ce qui part vers un client"
+      - "un tableau à deux colonnes (ChatGPT, agent IA) et quatre lignes : qui déclenche, à quoi il a accès, ce qu'il produit, qui vérifie. Reprendre uniquement des idées déjà présentes dans l'article, sans aucun chiffre nouveau"
+      - "une phrase qui renvoie aux sections suivantes pour les situations comparées et le prix, sans répéter leur contenu"
+    en:
+      h2: "What is the difference between ChatGPT and an AI agent?"
+      note: "même section, adaptée en anglais, même placement, même tableau"
+sources: []  # aucune donnée chiffrée nouvelle
+terrainCaseId: null
+constraints: "Ne changer que le titre français et ajouter cette section (FR et EN). Slug, extrait, keywords et autres sections intacts, pour que l'effet se mesure. Aucun chiffre nouveau."
