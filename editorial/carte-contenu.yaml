@@ -53,11 +53,10 @@ entries:
     cluster: agents-ia
     pillar: agents
     secondaryKeywords: ["agent IA vs ChatGPT", "IA pour PME", "agent IA entreprise", "automatisation IA"]
-    fr: { slug: chatgpt-vs-agent-ia-entreprise, published: "2026-06-05", updated: null }
-    en: { slug: chatgpt-vs-ai-agent-business }
+    fr: { slug: chatgpt-vs-agent-ia-entreprise, published: "2026-06-05", updated: "2026-11-03" }
+    en: { slug: chatgpt-vs-ai-agent-business, updated: "2026-11-03" }
     covers: ["quelle différence entre chatgpt et un agent ia"]
     crossSite: null
-    brief: briefs/a-faire/2026-11-01-chatgpt-vs-agent-question.yaml  # mise à jour 2026-S44-01
     gsc: { lastImport: "2026-11-01", position: null, impressions: null }  # « quelle différence entre chatgpt et un agent ia ? » 52 impressions, 0 clic, position 8,3 (rapport 2026-S44-donnees)
 
   - id: invoice-automation
