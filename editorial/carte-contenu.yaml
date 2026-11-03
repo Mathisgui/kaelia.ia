@@ -184,10 +184,9 @@ entries:
     pillar: automations
     secondaryKeywords: ["echec automatisation", "projet automatisation", "premier projet IA"]
     fr: { slug: erreurs-automatisation-pme, published: "2026-08-11", updated: null }
-    en: { slug: automation-mistakes-smb }
+    en: { slug: automation-mistakes-smb, updated: "2026-11-03" }
     covers: []
     crossSite: null
-    brief: briefs/a-faire/2026-11-01-automation-mistakes-titre-en.yaml  # mise à jour 2026-S44-02
     gsc: { lastImport: "2026-11-01", position: null, impressions: null }  # page anglaise : 31 impressions, 0 clic, position 6,9 (rapport 2026-S44-donnees)
 
   - id: customer-service-automation
