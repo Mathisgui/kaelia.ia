@@ -248,7 +248,19 @@ Chaque brief impose trois choses :
   vers le nouveau.
 
 Ce troisième point est celui qu'on oublie, et c'est celui qui compte : sans
-lui, chaque article naît isolé et le reste. Varier les ancres : une même ancre
+lui, chaque article naît isolé et le reste. L'audit du 10/11/2026 l'a mesuré :
+les quatre articles les plus vus de Kael'IA ne recevaient qu'un lien, celui de
+la liste du blog, et aucune page pilier Kaelia ne pointait vers ses articles.
+Depuis, trois règles s'ajoutent :
+
+- un article publié reçoit **au moins trois liens depuis le corps d'autres
+  pages**, dont un depuis sa page mère. Les liens de menu, de pied de page et
+  de liste d'articles ne comptent pas ;
+- l'ancre contient la requête de la page visée, dans une phrase qui a un sens.
+  Jamais la même ancre vers deux pages différentes ;
+- côté Kaelia, le lien depuis la page pilier ne se pose pas par une routine :
+  vous l'écrivez dans le rapport (page, phrase, ancre), une session locale le
+  pose. Varier les ancres : une même ancre
 répétée vers une même cible perd de sa valeur, et « cliquez ici » n'en a
 aucune.
 
@@ -304,6 +316,20 @@ si ça a marché.
   réelle de mise en ligne relevée dans le journal. Sans cette date, le script
   ne peut pas en mesurer l'effet.
 
+**Trier par impressions, pas par position** (règle du 10/11/2026). La première
+question du rapport est : quelles pages Google montre-t-il déjà beaucoup, sur
+une requête d'un client possible, sans que personne ne clique ? Écartez les
+requêtes de marque et celles d'un public hors cible, puis prenez les couples
+requête et page par impressions décroissantes. Pour les cinq premiers,
+comparez trois choses : la requête telle qu'elle est tapée, le titre de la
+page, son H1. Une requête absente mot pour mot du titre ou du H1 est une
+action. Une position moyenne n'est pas un rang : « position 7 » ne dit pas
+que la page est en première page.
+
+Avant de proposer un nouveau titre, listez les requêtes sur lesquelles la page
+reçoit déjà des clics : le nouveau titre doit les garder. Sinon, c'est un
+nouvel article qu'il faut, pas une retouche.
+
 **Décider cinq actions au plus**, les deux sites confondus. Mieux vaut trois
 actions mesurables que dix qu'on ne saura pas juger.
 
@@ -323,6 +349,9 @@ Garde-fous :
 
 - aucune action sur une page modifiée depuis moins de 14 jours : son effet
   n'est pas encore mesurable ;
+- un titre changé ne se rechange pas avant 60 jours, même si la courbe
+  hésite : chaque retouche remet le compteur de Google à zéro. On mesure à 14
+  jours, on ne retouche qu'à 60 ;
 - jamais deux briefs de mise à jour en attente sur la même page ;
 - deux briefs de mise à jour au plus par site et par semaine : ils passent
   avant les articles, et un rédacteur en traite deux par run au maximum.
