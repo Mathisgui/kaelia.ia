@@ -15,9 +15,19 @@
 # pos. 18 sur 28 jours) ; Kael'IA porte « kael ia » et « kael ai ». Aucune page
 # a modifier.
 
+# demande : preuve de demande exigee avant tout brief (prefiltre du 2026-11-10,
+#   PLAYBOOK-stratege.md etape 2 bis) : { requete, impressions, position, releve }
+#   releve dans Search Console, ou { suggestion, releve }
+#
+# LIGNE EDITORIALE (decision de Mathis du 2026-11-10) : priorite aux comparatifs
+# en forme de question (ChatGPT ou agent IA, agent IA ou automatisation), en
+# francais et en anglais, par mise a jour des pages existantes. Les nouveaux
+# articles « agent IA pour tel metier » sont suspendus (14 pages, 180
+# impressions sur 28 jours) sauf cas client valide ou requete relevee.
+
 version: 1
 site: kaelia-ai.com
-updated: "2026-11-01"
+updated: "2026-11-10"
 
 entries:
   - id: smb-automation-examples
@@ -57,6 +67,7 @@ entries:
     en: { slug: chatgpt-vs-ai-agent-business, updated: "2026-11-03" }
     covers: ["quelle différence entre chatgpt et un agent ia"]
     crossSite: null
+    demande: { requete: "quelle différence entre chatgpt et un agent ia ?", impressions: 61, position: 8.4, releve: "2026-11-05" }  # priorité 1 : section posée le 03/11, à mesurer le 17/11 avant toute nouvelle action
     gsc: { lastImport: "2026-11-01", position: null, impressions: null }  # « quelle différence entre chatgpt et un agent ia ? » 52 impressions, 0 clic, position 8,3 (rapport 2026-S44-donnees)
 
   - id: invoice-automation
@@ -83,6 +94,7 @@ entries:
     en: { slug: ai-agent-vs-automation, updated: "2026-10-27" }
     covers: []
     crossSite: null
+    demande: { requete: "ai agents vs automation", impressions: 113, position: 31.5, releve: "2026-11-05" }  # priorité 1, page anglaise : tableau comparatif et FAQ ; la page française (7 impressions) est à relier ou à fusionner
     gsc: { lastImport: "2026-10-25", position: null, impressions: null }  # requêtes à portée : « ai automation agent » position 19, « agent automation » position 15,2 (rapport 2026-S43-donnees)
 
   - id: follow-up-automation
@@ -339,4 +351,45 @@ entries:
     covers: ["courtier en assurance ia", "ia pour courtier"]
     crossSite: "Aucune entrée Kaelia sur l'assurance ou le courtage (contrôle du 2026-10-25). Se former à l'IA quand on est courtier relèverait de Kaelia."
     grille: { score: 7, releve: "2026-10-25" }
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  # ---- Ajouté le 2026-11-10 (analyse des articles du 09/11, décisions de Mathis) ----
+  # Chiffres Search Console : 28 jours au 2026-11-05 (kaelia-ia-editorial/inputs/gsc/kaelia-ai/).
+
+  - id: sales-agent-explainer
+    status: planifie
+    primaryKeyword: "agent ia commercial"
+    intent: info-commerciale
+    cluster: agents-ia
+    pillar: agentSales
+    secondaryKeywords: ["agents commerciaux ia", "agent commercial ia"]
+    fr: { slug: null, published: null, updated: null }
+    en: { slug: null }
+    covers: []
+    crossSite: "Aucune entrée Kaelia sur la prospection ou la vente (contrôle du 2026-11-10)."
+    demande: { requete: "agent ia commercial", impressions: 35, position: 47.9, releve: "2026-11-05" }
+    note: >-
+      Article, pas une page service : ce qu'un agent IA commercial fait et ne fait pas. Requêtes
+      voisines : « agents commerciaux ia » 15 impressions (position 41,3), « agent commercial ia »
+      11 (27,5). La page service /agent-ia-commercial fait 77 impressions en position 42 : l'article
+      remonte vers elle. À noter sur la grille avant tout brief.
+    grille: { score: null, releve: null }
+    gsc: { lastImport: null, position: null, impressions: null }
+
+  - id: chiffres-automatisation-pme
+    status: planifie
+    type: page-de-chiffres   # page hors blog, pas un article (PLAYBOOK-stratege.md, étape 7)
+    primaryKeyword: "chiffres automatisation pme"
+    intent: reference
+    cluster: chiffres
+    pillar: automations
+    fr: { slug: null, published: null, updated: null }   # l'année va dans le titre, jamais dans l'adresse
+    en: { slug: null }
+    covers: []
+    crossSite: "Kaelia aura sa propre page (chiffres-financement-formation) : aucun chiffre commun."
+    demande: null   # page de référence pour être citée, pas une page à trafic : dispensée du préfiltre
+    chiffres_maison_valides: false   # passe à true quand Mathis a fourni des chiffres mesurés sur des projets réels
+    chiffres: []   # le stratège y range chaque chiffre tiers cité dans un brief : chiffre, auteur, date, lien, citation
+    note: "Pas de brief tant que chiffres_maison_valides vaut false."
+    grille: { score: null, releve: null }
     gsc: { lastImport: null, position: null, impressions: null }

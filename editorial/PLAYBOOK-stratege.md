@@ -45,21 +45,74 @@ Dans cet ordre, parce qu'il va du plus fiable au moins fiable :
    candidate.
 4. **La lecture des pages en tête**, pour repérer ce qu'elles ne traitent pas.
 
+## Étape 2 bis — Ligne éditoriale et préfiltre de demande (décisions de Mathis du 10/11/2026)
+
+L'analyse du 09/11 a montré que la grille de l'étape 3 note la faisabilité et
+jamais la demande : des articles bien notés font 8 à 23 impressions en deux
+mois, pendant que des requêtes à 80 impressions n'ont jamais été notées. Ces
+règles passent avant la grille.
+
+**Ce que chaque blog écrit.**
+
+| Blog | Priorité | Ce qui s'arrête |
+|---|---|---|
+| Kaelia | Financement de la formation (démarches concrètes par financeur) et portage Qualiopi. L'IA est l'exception : un sujet IA n'entre dans la carte que s'il se rattache à une formation du catalogue ou à son financement (« formation ia opco », « formation ia fifpl », « formation claude cowork »), ou si une requête d'un dirigeant ou d'un indépendant existe déjà dans Search Console et que Kaelia a un fait vérifié à apporter. Un seul brief IA en attente à la fois | Les articles « outil IA grand public » (créer une chanson, un visuel, un design) : ils amènent des créateurs de contenu, pas des personnes à former. Les pages existantes restent en ligne. L'actualité réglementaire générale sans démarche à la clé |
+| Kael'IA | Les comparatifs en forme de question (« quelle différence entre ChatGPT et un agent IA ? », agent IA ou automatisation), en français et en anglais, par mise à jour des pages existantes jusqu'à la première page. Ensuite l'agent IA commercial, puis la mise à jour des articles emails et relances | Les nouveaux articles « agent IA pour tel métier » : suspendus. Un métier ne revient que si un cas client validé de `cas-anonymises.md` le porte, ou si une requête de ce métier fait déjà dix impressions dans Search Console |
+
+L'anglais porte 62 % des impressions du blog Kael'IA : il se pilote. Tout brief
+qui touche un comparatif donne le titre, la FAQ et les liens des deux langues,
+et une requête anglaise de Search Console vaut une requête française pour le
+préfiltre.
+
+**Préfiltre de demande.** Une requête n'est notée sur la grille que si l'une
+de ces deux preuves existe :
+
+1. elle, ou une requête voisine du même thème, figure dans le dernier relevé
+   Search Console du site (`rapports/<semaine>-donnees.md` ou
+   `inputs/gsc/synthese.json`) avec au moins dix impressions sur 28 jours ;
+2. une suggestion Google la contient sous forme de question entière.
+
+Sans preuve, l'entrée reste en `planifie`, sans brief, quel que soit son
+score. La preuve s'écrit dans la carte, champ `demande` :
+`{ requete: "portage qualiopi tarif", impressions: 87, position: 24.6, releve: "2026-11-05" }`,
+ou `{ suggestion: "<la question relevée>", releve: "<date>" }`. Un brief sans
+champ `demande` rempli ne part pas.
+
+**Le pilier ne couvre pas tout.** Quand une page pilier reçoit plus de
+cinquante impressions sur une requête où elle est au-delà de la vingtième
+place, et que cette requête porte une intention distincte (tarif, délai, cas
+de figure, comparaison), elle justifie un article satellite lié au pilier. Ce
+n'est pas un doublon : c'est la page pilier qui ne répond pas.
+
+**Titres.** Les requêtes cliquées sont des démarches (« point d'accueil »,
+« remboursement », « cumuler ») ou des questions entières. Les deux titres
+proposés dans un brief reprennent la requête telle qu'elle est tapée. Aucun
+titre de promesse (« Gagnez du temps avec… », « Optimisez… », « Libérez… ») :
+ce sont ceux des articles que personne ne clique.
+
 ## Étape 3 — Juger une requête sans outil payant
 
 Il n'y a pas de volume de recherche disponible, et il ne faut jamais en
-inventer un. Une requête se juge sur la concurrence réelle, observable dans
-les résultats. Compter un point par ligne vraie :
+inventer un : les impressions de Search Console ne mesurent la demande que là
+où le site apparaît déjà, et c'est le rôle du préfiltre de l'étape 2 bis. Une
+fois le préfiltre passé, la requête se juge sur la concurrence réelle,
+observable dans les résultats. Compter un point par ligne vraie :
 
 - aucune marque forte du secteur dans les cinq premiers résultats,
 - les pages en tête font moins de mille cinq cents mots,
 - les contenus en tête datent de plus de douze mois,
-- la page de résultats affiche des questions associées, signe d'une intention
-  riche et mal couverte,
+- une requête de ce thème est déjà entre la 8e et la 30e place dans Search
+  Console (ligne du 10/11, à la place des « questions associées », que vos
+  outils ne montrent pas),
 - un forum, un réseau social ou une discussion figure en première page, ce qui
   veut dire que Google manque de contenu structuré,
-- des résultats en anglais apparaissent sur une requête française,
-- la requête nomme un métier ou une tâche précise, pas une catégorie,
+- une requête de ce thème est posée en question entière ou avec un mot
+  d'intention : comment, combien, délai, tarif, exemple, différence (ligne du
+  10/11, à la place des « résultats en anglais », jamais observables),
+- la requête nomme une tâche précise, pas une catégorie. Un métier seul ne
+  vaut plus ce point : il ne compte que si une requête de ce métier existe dans
+  Search Console (quatre articles métier briefés sur cette ligne, 65
+  impressions à eux quatre),
 - Kael'IA a une page qui s'y rattache,
 - un cas client validé de `cas-anonymises.md` appuie l'angle : une expérience
   vécue, que les pages plus longues en tête n'ont pas, est ce qui fait citer un
@@ -97,7 +150,10 @@ Intention :
    (« remboursement FAFCEA », « président de SAS »), pas une catégorie ;
 5. une page pilier Kaelia s'y rattache (`kaelia-blog/etat/sitemap.txt`) ;
 6. la personne cherche à se former ou à faire financer une formation, pas
-   seulement à comprendre une règle ;
+   seulement à comprendre une règle. Pour le cluster `portage`, la ligne est
+   vraie quand un formateur cherche à exercer ou à facturer sous une
+   certification (tarif, partage, différence avec le portage salarial) :
+   c'est le client de l'offre partenaire (précision du 10/11) ;
 7. aucune entrée des deux cartes ne couvre déjà cette intention.
 
 Ce que les moteurs IA reprendront (GEO). ChatGPT, Perplexity et les aperçus
@@ -211,6 +267,44 @@ passage. Les règles qui suivent servent autant le lecteur que la machine :
   reprises,
 - la date de mise à jour reste visible.
 
+### Les chiffres, et la page de chiffres (depuis le 10/11/2026)
+
+Un journaliste comme un assistant cite celui qui a produit le chiffre, pas
+celui qui le recopie. Quatre règles pour tout brief qui porte un chiffre :
+
+- **un chiffre par ligne**, dans une phrase courte qui se comprend seule ;
+- **un chiffre tiers porte le nom de son auteur, sa date et son lien** :
+  « France compétences, rapport 2025 : reste à charge moyen de 38 % ». Le
+  crédit va à la source, la page qui le range proprement reçoit le lien ;
+- **un chiffre maison porte son nom, sa base et sa période** : jamais « 42 %
+  des dossiers », toujours « Relevé Kaelia 2026 : 42 % des dossiers, sur N
+  dossiers déposés entre telle et telle date ». Qui recopie la phrase recopie
+  le nom ;
+- **l'année va dans le titre, jamais dans l'adresse** : la page se remet à
+  jour chaque année sans redirection.
+
+Chaque site aura une page de chiffres, hors blog, que les articles citent
+comme leur preuve : `chiffres-financement-formation` côté Kaelia,
+`chiffres-automatisation-pme` côté Kael'IA (entrées de carte du 10/11, en
+`planifie`). Elle vise une requête de très longue traîne (« chiffres
+financement formation indépendants 2026 ») pour être trouvée par ceux qui
+cherchent un chiffre à citer : ce n'est pas une page à trafic.
+
+Ce que vous faites : à chaque brief, relever les chiffres officiels cités et
+les ajouter à la liste de la page, dans le champ `chiffres` de son entrée de
+carte (chiffre, auteur, date, lien, citation exacte). Ce que vous ne faites
+jamais :
+
+- inventer une statistique ou la déduire d'un comptage de commentaires, de
+  suggestions ou de résultats (« 53 % des dirigeants se demandent… ») : un
+  pourcentage sans base comptée est un faux ;
+- écrire un chiffre maison. Ils viennent de Mathis, comptés sur des dossiers
+  réels, avec leur base. Côté Kaelia, tout indicateur de satisfaction ou de
+  réussite reste interdit hors du format de `conformite/liste-rouge.yaml` ;
+- ouvrir le brief de la page tant que l'entrée ne porte pas
+  `chiffres_maison_valides: true`. Une page faite des seuls chiffres des autres
+  ressemble à toutes les autres.
+
 ## Étape 8 — Le rapport SEO de la semaine
 
 Chaque dimanche, le rapport part par mail à Mathis dès que vous le poussez.
@@ -242,7 +336,9 @@ actions mesurables que dix qu'on ne saura pas juger.
 | Deux pages du même site sur une requête | Différencier par une mise à jour, ou proposer une fusion à Mathis |
 | Une requête disputée entre Kael'IA et Kaelia | Décider quel site la porte, et le noter en `crossSite` dans les deux cartes |
 | Un article de plus de 14 jours toujours absent de l'index | Le signaler, et prévoir un lien depuis un article bien placé |
-| Une page publiée depuis trois mois, sans aucune impression | Passer l'entrée en `a-mettre-a-jour` : titre à refaire, ou fusion |
+| Un article publié depuis 60 jours ou plus, indexé, sous 20 impressions sur 28 jours (relecture à 60 jours, règle du 10/11) | Passer l'entrée en `a-mettre-a-jour` avec le motif `relecture-60j`, puis une seule suite : titre refait sur une requête relevée, ou fusion dans l'article voisin proposée à Mathis. Deux entrées au plus par semaine et par site, les plus anciennes d'abord |
+| Un pilier à plus de 50 impressions sur une requête d'intention distincte, au-delà de la 20e place | Entrée de carte et brief d'article satellite (étape 2 bis), lié au pilier |
+| Un article « agent IA pour un métier » ou « outil IA grand public » demandé par la grille seule | Rien : hors ligne éditoriale depuis le 10/11 (étape 2 bis) |
 
 Garde-fous :
 
@@ -308,5 +404,6 @@ cette comparaison.
 | Quatre briefs ou plus déjà en attente | Ne pas en écrire de nouveaux. Consacrer le run aux données Search Console, au rapport et au maillage |
 | Pas de fichier de données pour la semaine | Pas de rapport, une ligne dans le journal : le filet du lundi préviendra Mathis |
 | Aucune requête candidate à six points | Ligne dans `journal.md`, aucun brief. Ne jamais briefer pour remplir |
+| Une requête à six points sans preuve de demande (étape 2 bis) | Entrée en `planifie`, sans brief. Le score ne remplace pas la preuve |
 | Le linter des briefs refuse un brief | Le corriger, ou le déplacer dans `briefs/refuses/` avec le motif en première ligne |
 | Push non confirmé par `ls-remote` | Le signaler comme un échec, ne pas conclure au succès |

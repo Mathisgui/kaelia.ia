@@ -48,6 +48,13 @@ Ce qui fait la différence entre un article qui sert et un article qui remplit :
 - **La première réponse est dans les cinquante premiers mots.** Le premier
   paragraphe répond à la question posée par la requête, en une réponse
   autonome, compréhensible sans le reste. C'est ce passage qu'un moteur cite.
+- **Un chiffre par ligne, avec le nom de son auteur et sa date** (règle du
+  10/11/2026). Un chiffre tiers s'écrit « Auteur, année : chiffre », avec son
+  lien ; un chiffre issu d'un cas de `cas-anonymises.md` porte sa base (« sur
+  un cabinet de trois personnes, mesuré sur un mois »). Aucun pourcentage sans
+  base comptée, et jamais l'année dans le slug.
+- **Le titre reprend la requête du brief telle qu'elle est tapée.** Aucun
+  titre de promesse (« Gagnez du temps… », « Libérez… »).
 - **Chaque section se tient seule.** Quelqu'un qui arrive au milieu de
   l'article doit comprendre la section sans avoir lu ce qui précède. Cela
   suppose de répéter le sujet plutôt que d'écrire « cela », « ce dernier ».
