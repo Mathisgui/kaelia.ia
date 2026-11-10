@@ -255,7 +255,9 @@ Depuis, trois règles s'ajoutent :
 
 - un article publié reçoit **au moins trois liens depuis le corps d'autres
   pages**, dont un depuis sa page mère. Les liens de menu, de pied de page et
-  de liste d'articles ne comptent pas ;
+  de liste d'articles ne comptent pas. Ce seuil de trois est le nôtre :
+  Google ne donne aucun nombre idéal, il demande seulement qu'une page qui
+  compte reçoive au moins un lien d'une autre page du site ;
 - l'ancre contient la requête de la page visée, dans une phrase qui a un sens.
   Jamais la même ancre vers deux pages différentes ;
 - côté Kaelia, le lien depuis la page pilier ne se pose pas par une routine :
@@ -322,8 +324,12 @@ une requête d'un client possible, sans que personne ne clique ? Écartez les
 requêtes de marque et celles d'un public hors cible, puis prenez les couples
 requête et page par impressions décroissantes. Pour les cinq premiers,
 comparez trois choses : la requête telle qu'elle est tapée, le titre de la
-page, son H1. Une requête absente mot pour mot du titre ou du H1 est une
-action. Une position moyenne n'est pas un rang : « position 7 » ne dit pas
+page, son H1. Si les mots de la requête manquent dans le titre, c'est une
+action. Le H1 doit dire la même chose que le titre, car Google peut l'afficher
+à sa place dans les résultats. Vérifié le 10/11/2026 dans la documentation de
+Google : le H1 seul ne fait pas monter une page, et aucun mot-clé n'y est
+exigé. Ne proposez donc jamais un changement de H1 comme levier de position.
+Une position moyenne n'est pas un rang : « position 7 » ne dit pas
 que la page est en première page.
 
 Avant de proposer un nouveau titre, listez les requêtes sur lesquelles la page
@@ -350,8 +356,10 @@ Garde-fous :
 - aucune action sur une page modifiée depuis moins de 14 jours : son effet
   n'est pas encore mesurable ;
 - un titre changé ne se rechange pas avant 60 jours, même si la courbe
-  hésite : chaque retouche remet le compteur de Google à zéro. On mesure à 14
-  jours, on ne retouche qu'à 60 ;
+  hésite : deux retouches rapprochées empêchent de savoir laquelle a agi.
+  Google annonce un effet entre quelques heures et plusieurs mois, les 60
+  jours sont notre règle de prudence, pas la sienne. On mesure à 14 jours, on
+  ne retouche qu'à 60 ;
 - jamais deux briefs de mise à jour en attente sur la même page ;
 - deux briefs de mise à jour au plus par site et par semaine : ils passent
   avant les articles, et un rédacteur en traite deux par run au maximum.
