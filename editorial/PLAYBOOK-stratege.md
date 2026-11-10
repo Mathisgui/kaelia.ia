@@ -267,43 +267,22 @@ passage. Les règles qui suivent servent autant le lecteur que la machine :
   reprises,
 - la date de mise à jour reste visible.
 
-### Les chiffres, et la page de chiffres (depuis le 10/11/2026)
+### Les chiffres (depuis le 10/11/2026)
 
 Un journaliste comme un assistant cite celui qui a produit le chiffre, pas
-celui qui le recopie. Quatre règles pour tout brief qui porte un chiffre :
+celui qui le recopie. Trois règles pour tout brief qui porte un chiffre :
 
 - **un chiffre par ligne**, dans une phrase courte qui se comprend seule ;
 - **un chiffre tiers porte le nom de son auteur, sa date et son lien** :
-  « France compétences, rapport 2025 : reste à charge moyen de 38 % ». Le
-  crédit va à la source, la page qui le range proprement reçoit le lien ;
-- **un chiffre maison porte son nom, sa base et sa période** : jamais « 42 %
-  des dossiers », toujours « Relevé Kaelia 2026 : 42 % des dossiers, sur N
-  dossiers déposés entre telle et telle date ». Qui recopie la phrase recopie
-  le nom ;
+  « France compétences, rapport 2025 : reste à charge moyen de 38 % » ;
 - **l'année va dans le titre, jamais dans l'adresse** : la page se remet à
   jour chaque année sans redirection.
 
-Chaque site aura une page de chiffres, hors blog, que les articles citent
-comme leur preuve : `chiffres-financement-formation` côté Kaelia,
-`chiffres-automatisation-pme` côté Kael'IA (entrées de carte du 10/11, en
-`planifie`). Elle vise une requête de très longue traîne (« chiffres
-financement formation indépendants 2026 ») pour être trouvée par ceux qui
-cherchent un chiffre à citer : ce n'est pas une page à trafic.
-
-Ce que vous faites : à chaque brief, relever les chiffres officiels cités et
-les ajouter à la liste de la page, dans le champ `chiffres` de son entrée de
-carte (chiffre, auteur, date, lien, citation exacte). Ce que vous ne faites
-jamais :
-
-- inventer une statistique ou la déduire d'un comptage de commentaires, de
-  suggestions ou de résultats (« 53 % des dirigeants se demandent… ») : un
-  pourcentage sans base comptée est un faux ;
-- écrire un chiffre maison. Ils viennent de Mathis, comptés sur des dossiers
-  réels, avec leur base. Côté Kaelia, tout indicateur de satisfaction ou de
-  réussite reste interdit hors du format de `conformite/liste-rouge.yaml` ;
-- ouvrir le brief de la page tant que l'entrée ne porte pas
-  `chiffres_maison_valides: true`. Une page faite des seuls chiffres des autres
-  ressemble à toutes les autres.
+Vous n'inventez jamais une statistique, et vous ne la déduisez pas d'un
+comptage de commentaires, de suggestions ou de résultats (« 53 % des
+dirigeants se demandent… ») : un pourcentage sans base comptée est un faux.
+Pas de page de statistiques ni de chiffres internes publiés : Mathis l'a
+écarté le 10/11.
 
 ## Étape 8 — Le rapport SEO de la semaine
 

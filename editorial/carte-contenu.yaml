@@ -375,21 +375,3 @@ entries:
       remonte vers elle. À noter sur la grille avant tout brief.
     grille: { score: null, releve: null }
     gsc: { lastImport: null, position: null, impressions: null }
-
-  - id: chiffres-automatisation-pme
-    status: planifie
-    type: page-de-chiffres   # page hors blog, pas un article (PLAYBOOK-stratege.md, étape 7)
-    primaryKeyword: "chiffres automatisation pme"
-    intent: reference
-    cluster: chiffres
-    pillar: automations
-    fr: { slug: null, published: null, updated: null }   # l'année va dans le titre, jamais dans l'adresse
-    en: { slug: null }
-    covers: []
-    crossSite: "Kaelia aura sa propre page (chiffres-financement-formation) : aucun chiffre commun."
-    demande: null   # page de référence pour être citée, pas une page à trafic : dispensée du préfiltre
-    chiffres_maison_valides: false   # passe à true quand Mathis a fourni des chiffres mesurés sur des projets réels
-    chiffres: []   # le stratège y range chaque chiffre tiers cité dans un brief : chiffre, auteur, date, lien, citation
-    note: "Pas de brief tant que chiffres_maison_valides vaut false."
-    grille: { score: null, releve: null }
-    gsc: { lastImport: null, position: null, impressions: null }
