@@ -1,0 +1,35 @@
+# Brief de mise à jour du 2026-11-15 (stratège), action 2026-S46-02 du rapport SEO.
+id: follow-up-automation
+type: mise-a-jour
+actionId: 2026-S46-02
+page: https://kaelia-ai.com/blog/relances-clients-automatiques
+raison: >-
+  Requête à portée sur 28 jours (rapport 2026-S46-donnees) : « automatiser relances clients »
+  9 impressions, 0 clic, position 15,2, sur cette page. Nouvelles requêtes de la semaine :
+  « relance automatique » 20 impressions, position 37,2, et « relance devis automatique » 15
+  impressions, position 38. La page reçoit 123 impressions, 0 clic, position 22,2. Aucun titre
+  de section ne contient « relance automatique » ni « devis » sous forme de question ; la règle
+  du devis tient en une puce de « Devis, factures, pièces manquantes : trois variantes ». Mise à
+  jour des articles relances : troisième priorité de la ligne éditoriale du 10/11. Dernière
+  modification le 2026-10-27 (liens), plus de 14 jours.
+changes:
+  - champ: section
+    h2: "Comment mettre en place une relance automatique de devis ?"
+    placement: "nouvelle section, juste après « Le circuit type d'une relance automatisée », avant « Devis, factures, pièces manquantes : trois variantes »"
+    mustInclude:
+      - "réponse dans les 40 à 60 premiers mots, autonome : fixer le délai avant la première relance selon votre métier, limiter à deux relances, arrêter tout envoi dès que le client répond, faire préparer chaque message avec le contexte du devis, et commencer avec une validation humaine en un clic"
+      - "une liste en quatre étapes reprise du circuit type, appliquée au devis seulement : détection du devis sans réponse, message qui apporte une précision, validation ou envoi, escalade vers le commercial après la deuxième relance"
+      - "réponse négative assumée : la relance de devis est la dernière à passer en envoi direct, parce que le ton commercial y compte le plus (idée déjà présente dans « Validation humaine ou envoi direct ? »)"
+      - "aucun taux de réponse, aucun délai chiffré autre que l'exemple de 4 jours déjà présent dans « Les règles avant l'outil », présenté comme un exemple"
+    en:
+      h2: "How do you set up an automatic quote follow-up?"
+      placement: "même placement dans automated-client-follow-ups.mdx"
+      note: "même section en anglais"
+  - champ: lien
+    from: "nouvelle section (FR et EN)"
+    to: "/blog/automatiser-creation-devis (FR) et /en/blog/automate-quote-creation (EN)"
+    anchor: "automatiser la création de devis"
+    note: "un seul lien, dans la phrase sur la détection du devis ; l'article devis n'est toujours pas indexé (rapport 2026-S46-donnees)"
+sources: []  # aucune donnée chiffrée nouvelle
+terrainCaseId: null
+constraints: "Ajouter cette section et ce lien (FR et EN), rien d'autre : titres, extraits, slug et keywords intacts. Aucun chiffre nouveau. Ne pas toucher au passage existant sur « un cas sur trois »."

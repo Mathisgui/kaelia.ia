@@ -1,0 +1,29 @@
+# Brief de mise à jour du 2026-11-15 (stratège), action 2026-S46-01 du rapport SEO.
+id: agent-vs-automation
+type: mise-a-jour
+actionId: 2026-S46-01
+page: https://kaelia-ai.com/en/blog/ai-agent-vs-automation
+raison: >-
+  Requêtes à portée sur 28 jours (rapport 2026-S46-donnees), toutes sur la page anglaise :
+  « what's the difference between an ai agent and a marketing workflow automation? »
+  10 impressions, 0 clic, position 8,4 ; « ai agent automation » 45 impressions, position
+  14,6 ; « automation ai agents » 29, position 15,2 ; « ai automation agent » 27, position
+  15,7. La page anglaise est la plus vue du site (503 impressions, 1 clic, position 22,4) et
+  aucune section ne pose la question marketing telle qu'elle est tapée. Titre anglais changé
+  le 2026-10-27 (action 2026-S43-01) : il ne se rechange pas avant 60 jours, seule une section
+  s'ajoute. Dernière modification il y a plus de 14 jours.
+changes:
+  - champ: section
+    h2: "Agent IA ou automatisation marketing : quelle différence ?"
+    placement: "nouvelle section, juste avant la section dont le titre commence par « Le système combiné »"
+    mustInclude:
+      - "réponse dans les 40 à 60 premiers mots, autonome : une automatisation marketing déroule un scénario écrit à l'avance (formulaire rempli, contact créé dans le CRM, email de bienvenue, tâche au commercial) ; un agent IA lit un contenu qui varie (la réponse d'un prospect, une demande écrite librement), en comprend l'intention et choisit l'action dans un périmètre défini, avec validation humaine sur ce qui part vers un client"
+      - "un tableau à deux colonnes (automatisation marketing, agent IA) et quatre lignes : ce qui la déclenche, le contenu qu'elle traite, ce qu'elle produit, ce qui se passe face à un cas imprévu. Reprendre uniquement des idées déjà présentes dans l'article (exemple du formulaire, déterministe, limitée au prévu, interprétation du texte libre), sans aucun chiffre nouveau"
+      - "une phrase qui renvoie à la section suivante sur le système combiné, sans répéter son contenu"
+    en:
+      h2: "What's the difference between an AI agent and a marketing workflow automation?"
+      placement: "même placement, juste avant « The combined system: the agent decides, the workflow executes »"
+      note: "même section en anglais, même tableau ; le titre de section reprend la requête telle qu'elle est tapée"
+sources: []  # aucune donnée chiffrée nouvelle
+terrainCaseId: null
+constraints: "Ajouter cette seule section (FR et EN). Titres, extraits, slug, keywords et autres sections intacts, pour que l'effet se mesure. Aucun chiffre nouveau, aucun outil marketing nommé."

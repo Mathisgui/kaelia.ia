@@ -27,11 +27,12 @@
 
 version: 1
 site: kaelia-ai.com
-updated: "2026-11-10"
+updated: "2026-11-15"
 
 entries:
   - id: smb-automation-examples
-    status: publie
+    status: a-mettre-a-jour  # motif relecture-60j (rapport 2026-S46, action 2026-S46-05) : publiée le 2026-05-21, indexée, 0 impression FR et EN sur 28 jours au 2026-11-12 ; aucune requête relevée pour refaire le titre, suite proposée à Mathis : fusion dans par-ou-commencer-automatisation
+    motif: relecture-60j
     primaryKeyword: "automatisation PME"
     intent: ""            # a renseigner par le stratege
     cluster: automatisation
@@ -44,7 +45,8 @@ entries:
     gsc: { lastImport: null, position: null, impressions: null }
 
   - id: getting-started-automation
-    status: publie
+    status: a-mettre-a-jour  # motif relecture-60j (rapport 2026-S46, action 2026-S46-05) : publiée le 2026-05-28, indexée, 1 impression FR et 0 EN sur 28 jours au 2026-11-12 ; page qui recevrait la fusion de smb-automation-examples, à valider par Mathis
+    motif: relecture-60j
     primaryKeyword: "commencer automatisation"
     intent: ""            # a renseigner par le stratege
     cluster: automatisation
@@ -84,7 +86,7 @@ entries:
     gsc: { lastImport: null, position: null, impressions: null }
 
   - id: agent-vs-automation
-    status: publie
+    status: publie  # brief de mise à jour 2026-S46-01 en attente : editorial/briefs/a-faire/2026-11-15-agent-vs-automation-marketing.yaml
     primaryKeyword: "agent IA"
     intent: ""            # a renseigner par le stratege
     cluster: agents-ia
@@ -98,7 +100,7 @@ entries:
     gsc: { lastImport: "2026-10-25", position: null, impressions: null }  # requêtes à portée : « ai automation agent » position 19, « agent automation » position 15,2 (rapport 2026-S43-donnees)
 
   - id: follow-up-automation
-    status: publie
+    status: publie  # brief de mise à jour 2026-S46-02 en attente : editorial/briefs/a-faire/2026-11-15-relances-devis-question.yaml
     primaryKeyword: "relance client automatique"
     intent: ""            # a renseigner par le stratege
     cluster: automatisation
