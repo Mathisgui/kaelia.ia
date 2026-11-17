@@ -100,14 +100,14 @@ entries:
     gsc: { lastImport: "2026-10-25", position: null, impressions: null }  # requêtes à portée : « ai automation agent » position 19, « agent automation » position 15,2 (rapport 2026-S43-donnees)
 
   - id: follow-up-automation
-    status: publie  # brief de mise à jour 2026-S46-02 en attente : editorial/briefs/a-faire/2026-11-15-relances-devis-question.yaml
+    status: publie
     primaryKeyword: "relance client automatique"
     intent: ""            # a renseigner par le stratege
     cluster: automatisation
     pillar: agentSales
     secondaryKeywords: ["relance devis", "relance facture impayée", "automatisation commerciale", "relance automatique PME"]
-    fr: { slug: relances-clients-automatiques, published: "2026-06-24", updated: null }
-    en: { slug: automated-client-follow-ups }
+    fr: { slug: relances-clients-automatiques, published: "2026-06-24", updated: "2026-11-17" }
+    en: { slug: automated-client-follow-ups, updated: "2026-11-17" }
     covers: []
     crossSite: null
     gsc: { lastImport: null, position: null, impressions: null }
