@@ -86,14 +86,14 @@ entries:
     gsc: { lastImport: null, position: null, impressions: null }
 
   - id: agent-vs-automation
-    status: publie  # brief de mise à jour 2026-S46-01 en attente : editorial/briefs/a-faire/2026-11-15-agent-vs-automation-marketing.yaml
+    status: publie
     primaryKeyword: "agent IA"
     intent: ""            # a renseigner par le stratege
     cluster: agents-ia
     pillar: agents
     secondaryKeywords: ["automatisation", "différence agent IA automatisation", "workflow", "n8n", "PME"]
-    fr: { slug: agent-ia-vs-automatisation, published: "2026-06-18", updated: null }
-    en: { slug: ai-agent-vs-automation, updated: "2026-10-27" }
+    fr: { slug: agent-ia-vs-automatisation, published: "2026-06-18", updated: "2026-11-17" }
+    en: { slug: ai-agent-vs-automation, updated: "2026-11-17" }
     covers: []
     crossSite: null
     demande: { requete: "ai agents vs automation", impressions: 113, position: 31.5, releve: "2026-11-05" }  # priorité 1, page anglaise : tableau comparatif et FAQ ; la page française (7 impressions) est à relier ou à fusionner
