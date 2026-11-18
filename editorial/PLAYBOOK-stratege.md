@@ -313,6 +313,11 @@ si ça a marché.
   préviendra Mathis ;
 - `inputs/gsc/synthese.json` : les mêmes chiffres, en données ;
 - `rapports/actions.yaml` : les actions des semaines passées ;
+- `rapports/comportement-manuel.md`, seulement si la section « Comportement des visiteurs » du
+  fichier de données dit « Non mesuré » : c'est un relevé fait à la main dans Google Analytics, daté
+  en tête. Citez-le avec sa date, jamais comme un chiffre de la semaine, et rappelez sa réserve
+  (très peu de visiteurs mesurés). Il sert à choisir où regarder : une page vue mais quittée en
+  quelques secondes, un simulateur qui retient mais que personne n'atteint ;
 - les journaux des rédacteurs (`editorial/journal.md` ici, `journal.md` dans
   `kaelia-blog`) : pour passer en `faite` chaque action appliquée, avec la date
   réelle de mise en ligne relevée dans le journal. Sans cette date, le script
