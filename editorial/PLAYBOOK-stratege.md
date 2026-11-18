@@ -369,10 +369,39 @@ Garde-fous :
 - Kael'IA : brief de mise à jour (`type: mise-a-jour`, format décrit dans
   `PLAYBOOK-redacteur.md`, section « Mises à jour ») ou brief d'article, dans
   `editorial/briefs/a-faire/`. Le rédacteur l'applique mardi ou jeudi ;
-- Kaelia : les nouveaux articles passent par un brief, comme d'habitude, et
-  arrivent donc en brouillon relu. Toute modification d'une page existante
-  (titre, description, contenu, fiche formation) est **proposée dans le
-  rapport, à valider par Mathis**, jamais confiée à une routine ;
+- Kaelia, nouveaux articles : par brief, comme d'habitude. Ils arrivent en
+  brouillon relu par Mathis ;
+- Kaelia, **titre et description d'une page existante : vous décidez et
+  c'est appliqué** (décision de Mathis du 18/11/2026). Inscrivez l'action
+  au registre avec `application: auto`, `wp_type`, `wp_id`, `titre` (20 à 60
+  caractères) et `description` (70 à 160). L'identifiant se relève sur
+  `https://kaelia-formacoach.com/wp-json/wp/v2/posts?slug=<slug>&_fields=id,link`
+  (ou `pages`), et le lien rendu doit être celui de l'action. Au push du
+  rapport, `scripts/appliquer.mjs` contrôle, sauvegarde, pose dans Yoast,
+  relit, passe l'action en `faite` avec sa date, et le mail affiche le
+  résultat en tête. Vous n'avez donc ni à appliquer ni à dater ces actions ;
+- le contrôle est mécanique et ne se discute pas : il refuse tout nombre
+  (montant, délai, pourcentage, année) absent de la page en ligne, toute
+  formulation de la liste rouge, une page modifiée depuis moins de 14 jours et
+  un titre changé depuis moins de 60. N'écrivez donc jamais dans un titre un
+  chiffre que la page ne porte pas déjà. Une action refusée revient au
+  registre avec un champ `refus` : au rapport suivant, soit vous corrigez la
+  proposition et retirez `refus`, soit vous la portez dans « Décisions pour
+  toi » ;
+- Kaelia, tout le reste d'une page existante (contenu, fiche formation,
+  fusion, redirection, suppression, nouvelle page hors blog) : jamais appliqué
+  par une routine. Vous le **demandez à Mathis** dans la section « Décisions
+  pour toi » du rapport, avec votre recommandation ;
+- **retour arrière** : quand la section « Effet des actions enregistrées » des
+  données montre, 28 jours après un titre que vous avez posé, des clics en
+  baisse sur la page alors qu'elle garde au moins 100 impressions sur la
+  période, inscrivez une action `type: titre`, `application: auto`,
+  `retour_de: <id de l'action>`, sans titre ni description : le script repose
+  l'état d'avant depuis `rapports/sauvegardes/`. Sous 100 impressions, c'est du
+  bruit : « à surveiller », pas de retour ;
+- avant d'écrire le rapport, recopiez `kaelia-blog/conformite/liste-rouge.yaml`
+  dans `kaelia-ia-editorial/rapports/conformite/liste-rouge.yaml` : le script
+  n'a accès qu'à ce dépôt, et sans cette copie il n'applique rien ;
 - chaque action entre dans `rapports/actions.yaml` au statut `planifiee`, avec
   son `id` (`<semaine>-NN`), sa page et la donnée qui la motive.
 
