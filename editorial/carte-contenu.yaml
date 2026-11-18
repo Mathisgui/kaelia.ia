@@ -27,12 +27,11 @@
 
 version: 1
 site: kaelia-ai.com
-updated: "2026-11-15"
+updated: "2026-11-18"
 
 entries:
   - id: smb-automation-examples
-    status: a-mettre-a-jour  # motif relecture-60j (rapport 2026-S46, action 2026-S46-05) : publiée le 2026-05-21, indexée, 0 impression FR et EN sur 28 jours au 2026-11-12 ; aucune requête relevée pour refaire le titre, suite proposée à Mathis : fusion dans par-ou-commencer-automatisation
-    motif: relecture-60j
+    status: retire  # fusionnée dans getting-started-automation le 2026-11-18 (action 2026-S46-05, validée par Mathis) : liste des dix tâches versée en section, redirection permanente des deux URL vers par-ou-commencer-automatisation et where-to-start-automation (next.config.ts), fichiers gardés en draft: true. Avant : relecture-60j, 0 impression FR et EN sur 28 jours au 2026-11-12
     primaryKeyword: "automatisation PME"
     intent: ""            # a renseigner par le stratege
     cluster: automatisation
@@ -45,16 +44,15 @@ entries:
     gsc: { lastImport: null, position: null, impressions: null }
 
   - id: getting-started-automation
-    status: a-mettre-a-jour  # motif relecture-60j (rapport 2026-S46, action 2026-S46-05) : publiée le 2026-05-28, indexée, 1 impression FR et 0 EN sur 28 jours au 2026-11-12 ; page qui recevrait la fusion de smb-automation-examples, à valider par Mathis
-    motif: relecture-60j
+    status: publie  # a reçu la fusion de smb-automation-examples le 2026-11-18 (action 2026-S46-05) : section « Les 10 tâches qu'une PME peut automatiser en premier » FR et EN. Avant : relecture-60j, 1 impression FR et 0 EN sur 28 jours au 2026-11-12
     primaryKeyword: "commencer automatisation"
     intent: ""            # a renseigner par le stratege
     cluster: automatisation
     pillar: method
     secondaryKeywords: ["automatisation entreprise débutant", "premier projet automatisation", "automatisation PME", "pilote automatisation"]
-    fr: { slug: par-ou-commencer-automatisation, published: "2026-05-28", updated: null }
-    en: { slug: where-to-start-automation }
-    covers: []
+    fr: { slug: par-ou-commencer-automatisation, published: "2026-05-28", updated: "2026-11-18" }
+    en: { slug: where-to-start-automation, updated: "2026-11-18" }
+    covers: ["tâches à automatiser", "exemples automatisation"]
     crossSite: null
     gsc: { lastImport: null, position: null, impressions: null }
 

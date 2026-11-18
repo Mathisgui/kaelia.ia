@@ -16,6 +16,17 @@ const nextConfig: NextConfig = {
         destination: "/agents-ia",
         permanent: true,
       },
+      // Article fusionné dans « par où commencer » (action SEO 2026-S46-05, 2026-11-18).
+      {
+        source: "/blog/taches-a-automatiser-pme",
+        destination: "/blog/par-ou-commencer-automatisation",
+        permanent: true,
+      },
+      {
+        source: "/en/blog/tasks-smb-can-automate",
+        destination: "/en/blog/where-to-start-automation",
+        permanent: true,
+      },
     ];
   },
 };
