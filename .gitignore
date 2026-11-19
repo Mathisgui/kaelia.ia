@@ -47,3 +47,8 @@ AGENTS.md
 Claude.md
 business.md
 tasks/
+
+# cloudflare / opennext
+.open-next
+.wrangler
+.dev.vars

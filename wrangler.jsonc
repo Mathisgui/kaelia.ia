@@ -1,0 +1,24 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Site Kael'IA sur Cloudflare Workers via OpenNext (migration depuis Vercel, 2026-11-19).
+	"main": ".open-next/worker.js",
+	"name": "kaelia-ai",
+	"compatibility_date": "2026-11-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			// Auto-référence exigée par OpenNext, le nom doit être celui du worker.
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "kaelia-ai"
+		}
+	],
+	"images": {
+		// Optimisation de next/image par Cloudflare Images (offre gratuite : 5 000 transformations/mois).
+		"binding": "IMAGES"
+	},
+	"observability": { "enabled": true }
+}

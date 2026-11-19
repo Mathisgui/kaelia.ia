@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { fontClasses } from "@/lib/fonts";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import { professionalServiceJsonLd, jsonLdScript } from "@/lib/jsonld";
@@ -60,8 +58,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-bg text-white font-[family-name:var(--font-sans)]">
         {children}
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
