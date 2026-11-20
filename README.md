@@ -29,8 +29,14 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Déploiement (Cloudflare Workers, depuis le 2026-11-20)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Le site tourne sur Cloudflare Workers via l'adaptateur OpenNext (`@opennextjs/cloudflare`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Automatique** : chaque push sur `master` déclenche Workers Builds (compte Cloudflare Kaelia,
+  Worker `kaelia-ai`) : `npm run content:lint && npx opennextjs-cloudflare build`, puis
+  `npx opennextjs-cloudflare deploy`. Un contenu qui échoue au lint bloque la mise en ligne.
+- **Manuel** (secours) : `npm run deploy` (demande `wrangler login` sur le compte Kaelia).
+- **Test local au plus près de la prod** : `npm run preview`.
+- Configuration : `wrangler.jsonc` (routes `kaelia-ai.com/*` et `www.kaelia-ai.com/*`),
+  `open-next.config.ts`, en-têtes de sécurité et redirections dans `next.config.ts`.
