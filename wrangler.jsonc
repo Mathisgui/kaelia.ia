@@ -22,8 +22,11 @@
 	},
 	"observability": { "enabled": true },
 	// Domaines du site (zone kaelia-ai.com sur Cloudflare depuis le 2026-11-20).
+	// Routes (et non « custom domains ») : elles s'appliquent aux entrées DNS proxifiées de la
+	// zone, ce qui permet une bascule sans coupure (piège du 20/11 : les custom domains ont
+	// laissé le domaine sans adresse pendant l'activation de la zone).
 	"routes": [
-		{ "pattern": "kaelia-ai.com", "custom_domain": true },
-		{ "pattern": "www.kaelia-ai.com", "custom_domain": true }
+		{ "pattern": "kaelia-ai.com/*", "zone_name": "kaelia-ai.com" },
+		{ "pattern": "www.kaelia-ai.com/*", "zone_name": "kaelia-ai.com" }
 	]
 }
