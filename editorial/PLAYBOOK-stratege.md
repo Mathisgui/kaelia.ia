@@ -266,6 +266,47 @@ Depuis, trois règles s'ajoutent :
 répétée vers une même cible perd de sa valeur, et « cliquez ici » n'en a
 aucune.
 
+## Étape 6 bis — La page portage d'abord (décision de Mathis du 20/11/2026)
+
+`/portage-qualiopi/` est la page qui vend, et la plus mal servie du site. Mesuré le 19/11/2026 :
+environ 480 impressions entre la 15e et la 36e place, 8 liens reçus depuis le corps de 7 pages
+(aucun article du blog), et Kaelia absente de toutes les réponses des assistants sur le portage
+(relevé `business/kaelia/site-web/mesure/panel-geo.md` du vault : six moteurs, questions 1 à 4).
+Les concurrents cités publient des grappes de pages ; Formagora en a onze. Tant que la page pilier
+n'est pas dans les dix premiers résultats sur « portage qualiopi », quatre règles s'appliquent au
+blog Kaelia :
+
+- **Un brief sur deux relève du cluster `portage`**, tant que le préfiltre de demande trouve une
+  requête. Chercher d'abord dans le relevé Search Console les requêtes qui contiennent « portage »,
+  « sous-traitance formation », « formateur indépendant », « organisme porteur », « travailler
+  avec un organisme Qualiopi », puis les suggestions Google en question entière. Une requête à
+  moins de dix impressions se note quand même dans la carte, en `planifie`, avec sa date.
+- **Chaque brief du cluster dit en une ligne en quoi son intention diffère de la page pilier et de
+  sa FAQ** (champ `distinctDuPilier`). Sans cette ligne, pas de brief : un article qui répond à la
+  même question que le pilier lui prend sa place au lieu de le pousser. Une entrée retirée par
+  Mathis reste retirée (« portage qualiopi interdit », 05/10/2026) ; une page de tarif Kaelia
+  aussi (décision du 13/11/2026 : aucun chiffre Kaelia publié).
+- **Tout brief Kaelia impose un lien vers `/portage-qualiopi/`**, dans `internalLinks` : dans le
+  corps, avec une ancre qui contient « portage Qualiopi », pour le cluster `portage` et l'audience
+  `formateur-partenaire` ; en une phrase de fin adressée aux formateurs pour les clusters de
+  financement (modèle dans `gabarit-article.md` du dépôt kaelia-blog). Le linter le vérifie.
+  Varier l'ancre d'un article à l'autre : « portage Qualiopi avec Kaelia », « formation portée par
+  un organisme certifié Qualiopi », « devenir formateur partenaire en portage Qualiopi ».
+- **Chaque brief du cluster vise aussi les assistants.** Il fournit : une définition du portage
+  Qualiopi en une phrase autonome de moins de quarante mots ; au moins deux titres repris tels
+  quels des questions 1 à 4 du panel GEO quand le sujet s'y prête ; un tableau de comparaison ;
+  les textes de 2026 que les concurrents n'ont pas (circulaire DGEFP du 17 février 2026, loi du
+  25 juin 2026), chacun avec son lien ; et une phrase qui nomme l'acteur et son rôle sans
+  promesse, du type « Kaelia, organisme de formation certifié Qualiopi à Neulise et Lyon,
+  conçoit le parcours, contractualise avec le client et répond de la qualité ». Les assistants
+  citent aujourd'hui les acteurs qui publient un prix : ne jamais inventer ni suggérer un tarif
+  Kaelia, mais donner les fourchettes de marché sourcées, nom de l'auteur et date.
+
+Dans le rapport, section « Décisions pour toi » : toute retouche de la page pilier elle-même
+(titre, FAQ, sommaire, bloc de réponse) se propose, phrase et emplacement à l'appui, elle ne se
+pose jamais par une routine. Une fois par mois, reporter dans le rapport la ligne du panel GEO la
+plus récente pour les questions 1 à 4, et dire si Kaelia y apparaît.
+
 ## Étape 7 — Écrire pour être cité, pas seulement classé
 
 Un assistant qui répond à une question ne cite pas une page, il cite un
