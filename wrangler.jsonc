@@ -20,5 +20,10 @@
 		// Optimisation de next/image par Cloudflare Images (offre gratuite : 5 000 transformations/mois).
 		"binding": "IMAGES"
 	},
-	"observability": { "enabled": true }
+	"observability": { "enabled": true },
+	// Domaines du site (zone kaelia-ai.com sur Cloudflare depuis le 2026-11-20).
+	"routes": [
+		{ "pattern": "kaelia-ai.com", "custom_domain": true },
+		{ "pattern": "www.kaelia-ai.com", "custom_domain": true }
+	]
 }

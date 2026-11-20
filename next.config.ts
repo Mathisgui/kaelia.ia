@@ -26,6 +26,13 @@ const nextConfig: NextConfig = {
         destination: "https://kaelia-ai.com/:path*",
         permanent: true,
       },
+      // www -> domaine nu (comme sur Vercel), une seule version indexée.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.kaelia-ai.com" }],
+        destination: "https://kaelia-ai.com/:path*",
+        permanent: true,
+      },
       // Ancienne page services, remplacée par les pages Agents IA / Automatisations.
       {
         source: "/services",
